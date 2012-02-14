@@ -2,8 +2,7 @@
     " General "{{{
         set nocompatible                   " explicitly get out of vi-compatible mode
         set history=100                    " keep 100 lines of command line history
-        set clipboard=unnamed              " use clipboard register ‘*’ for all y, d, c, p ops
-        set timeoutlen=700                 " Time to wait after ESC (default causes an annoying delay)
+        set clipboard+=unnamed             " use clipboard register ‘*’ for all y, d, c, p ops
         set backspace=2                    " make backspace work normal
         set nostartofline                  " don't jump to first character when paging
         set report=0                       " tell us when anything is changed via :...0
@@ -19,6 +18,7 @@
         set diffopt+=iwhite                " Ignore whitespace changes (focus on code changes)
         set esckeys                        " Allow cursor keys in insert mode.
         set ttyfast                        " smoother changes
+        set gdefault                       " regex /g by default
         " When vimrc is edited, reload it"{{{
             autocmd! bufwritepost .vimrc source %
         "}}}
@@ -79,11 +79,11 @@
         " switch syntax highlighting on, when the terminal has colors "{{{
             if &t_Co > 2 || has('gui_running')
                 syntax on
-                set t_Co=256
             endif
         "}}}
         " default colorscheme "{{{
             if &t_Co >= 256 || has('gui_running')
+                set t_Co=256
                 set background=dark
                 colorscheme molokai
                 "colorscheme eddie
@@ -95,7 +95,10 @@
                 "colorscheme getafe
                 "colorscheme jellybeans
             else
-                colorscheme default
+                set t_Co=8
+                set t_Sf=^[[3%p1%dm
+                set t_Sb=^[[4%p1%dm
+                colorscheme robokai
             endif
         "}}}
         " GUI options "{{{
@@ -172,12 +175,12 @@
     "}}}
     " wrap "{{{
         set textwidth=79
-        set wrapmargin=0
         set nowrap             " word wrap
         set wrapscan           " Searches wrap around end of file
         set display=lastline   " don't display @ with long paragraphs
         set lbr                " line break
         set whichwrap+=<,>,h,l " whichwrap -- left/right keys can traverse up/down
+        let &sbr = nr2char(8618).' '    " Show ↪ at the beginning of wrapped lines
     "}}}
     " search config "{{{
         set ignorecase      " select case-insenitiv search
@@ -188,12 +191,11 @@
         set matchpairs+=<:> " these tokens belong together
         set hlsearch        " highlight all matches...
         set incsearch       " ...and also during entering the pattern
-        set gdefault        " By default add g flag to search/replace. Add g to toggle.
+        set viminfo='100,f1 "Save up to 100 marks, enable capital marks
         nohlsearch          " avoid highlighting when reloading vimrc
     "}}}
     " folding "{{{
         set foldenable
-        "set foldclose=all
         set foldmethod=marker " Markers are used to specify folds.
         set foldlevel=0
     "}}}
@@ -231,7 +233,7 @@
         nnoremap <Leader><Leader>w :call SplitScreen()<cr>
     " }}}
     " Sudo to write "{{{
-        cmap W :w !sudo tee % >/dev/null
+        cmap w!! %!sudo tee > /dev/null %
     "}}}
     " Quick yanking to the end of the line"{{{
         nmap Y y$
@@ -253,15 +255,23 @@
     " Use tab to indent a line "{{{
         vmap <TAB> >gv
         vmap <S-TAB> <gv
+        vnoremap < <gv
+        vnoremap > >gv
     "}}}
     "  Moving Between Windows "{{{
-        nnoremap <Leader>h <C-w>h
-        nnoremap <Leader>l <C-w>l
-        nnoremap <Leader>j <C-w>j
-        nnoremap <Leader>k <C-w>k
+        " Next buffer
+        nmap <silent> ,. :bnext<CR>
+        " Previous buffer
+        nmap <silent> ,m :bprev<CR>
     "}}}
     "  When pressing <leader>cd switch to the directory of the open buffer "{{{
         map <leader>cd :cd %:p:h<cr>
+    "}}}
+    " Swap two words "{{{
+        nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+    "}}}
+    " set text wrapping toggles "{{{
+        nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
     "}}}
 "}}}
 " Plugins Bundle "{{{
@@ -274,6 +284,7 @@
     Bundle 'buftabs'
     Bundle 'matchit.zip'
     Bundle 'scratch.vim'
+    Bundle 'altercation/vim-colors-solarized'
     Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'gregsexton/VimCalc'
@@ -391,8 +402,8 @@
      let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
      " Plugin key-mappings.
-     imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-     smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+     imap <C-space>     <Plug>(neocomplcache_snippets_expand)
+     smap <C-space>     <Plug>(neocomplcache_snippets_expand)
      inoremap <expr><C-g>     neocomplcache#undo_completion()
      inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
@@ -414,6 +425,8 @@
      autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
      autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
      autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+     autocmd FileType c set omnifunc=ccomplete#Complete
+     autocmd FileType java set omnifunc=javacomplete#Complete
 
      " Enable heavy omni completion.
      if !exists('g:neocomplcache_omni_patterns')
@@ -502,10 +515,12 @@
     "}}}
     " Spell Check "{{{
     let b:myLang=0
-    let g:myLangList=["disable","pt","en"]
+    let g:myLangList=["nospell","pt","en"]
     function! ToggleSpell()
         let b:myLang=b:myLang+1
-        if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
+        if b:myLang>=len(g:myLangList)
+            let b:myLang=0
+        endif
         if b:myLang==0
             setlocal nospell
         else
@@ -576,3 +591,5 @@
         "}}}
     endif
 "}}}
+"
+
