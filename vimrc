@@ -172,6 +172,7 @@
     "}}}
     " wrap "{{{
         set textwidth=79
+        set wrapmargin=0
         set nowrap             " word wrap
         set wrapscan           " Searches wrap around end of file
         set display=lastline   " don't display @ with long paragraphs
@@ -286,7 +287,8 @@
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
-    Bundle 'neocomplcache'
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'Shougo/neocomplcache-snippets-complete'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-markdown'
     Bundle 'visualstar.vim'
@@ -389,8 +391,8 @@
      let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
      " Plugin key-mappings.
-     imap <C-CR>     <Plug>(neocomplcache_snippets_expand)
-     smap <C-CR>     <Plug>(neocomplcache_snippets_expand)
+     imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+     smap <C-k>     <Plug>(neocomplcache_snippets_expand)
      inoremap <expr><C-g>     neocomplcache#undo_completion()
      inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
