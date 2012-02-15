@@ -1,0 +1,769 @@
+4chanimages|||4chanimages|||[T] .tags|||f
+<BS>|||inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"|||[T] .tags|||m
+<C-e>|||inoremap <expr><C-e> neocomplcache#cancel_popup()|||[T] .tags|||m
+<C-g>|||inoremap <expr><C-g> neocomplcache#undo_completion()|||[T] .tags|||m
+<C-h>|||inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"|||[T] .tags|||m
+<C-l>|||inoremap <expr><C-l> neocomplcache#complete_common_string()|||[T] .tags|||m
+<C-left>|||noremap <C-left> :bprev<CR>|||[T] .tags|||m
+<C-right>|||noremap <C-right> :bnext<CR>|||[T] .tags|||m
+<C-space>|||imap <C-space> <Plug>(neocomplcache_snippets_expand)|||[T] .tags|||m
+<C-y>|||inoremap <expr><C-y> neocomplcache#close_popup()|||[T] .tags|||m
+<F8>|||<F8>|||[T] .tags|||m
+<leader>/|||nmap <leader>/ :nohl<CR>|||[T] .tags|||m
+<Leader><Leader>w|||nnoremap <Leader><Leader>w :call SplitScreen()<cr>|||[T] .tags|||m
+<Leader>a)|||<Leader>a)|||[T] .tags|||m
+<Leader>a:|||nmap <Leader>a: :Tabularize /:\zs<CR>|||[T] .tags|||m
+<Leader>a=|||nmap <Leader>a= :Tabularize /=<CR>|||[T] .tags|||m
+<leader>ac|||nmap <leader>ac :center<CR>|||[T] .tags|||m
+<leader>al|||nmap <leader>al :left<CR>|||[T] .tags|||m
+<leader>ar|||nmap <leader>ar :right<CR>|||[T] .tags|||m
+<leader>ca|||nmap <leader>ca :Calendar<CR>|||[T] .tags|||m
+<leader>cd|||map <leader>cd :cd %:p:h<cr>|||[T] .tags|||m
+<leader>cfg|||map <leader>cfg :e! ~/.vimrc <cr>|||[T] .tags|||m
+<Leader>cl|||map <silent><Leader>cl :call CalcLine(".")<CR>|||[T] .tags|||m
+<Leader>h|||nnoremap <Leader>h <C-w>h|||[T] .tags|||m
+<Leader>j|||nnoremap <Leader>j <C-w>j|||[T] .tags|||m
+<Leader>k|||nnoremap <Leader>k <C-w>k|||[T] .tags|||m
+<leader>L|||nmap <silent> <leader>L :set nolist!<CR>|||[T] .tags|||m
+<Leader>l|||nnoremap <Leader>l <C-w>l|||[T] .tags|||m
+<Leader>nt|||nmap <silent><Leader>nt :NERDTreeToggle<CR>|||[T] .tags|||m
+<leader>p|||nmap <silent><leader>p :MDP<CR>|||[T] .tags|||m
+<leader>pb|||nmap <leader>pb :CtrlPBuffer<CR>|||[T] .tags|||m
+<leader>pm|||nmap <leader>pm :CtrlPMRUFiles<CR>|||[T] .tags|||m
+<leader>s|||nmap <leader>s :call ToggleScratch()<CR>|||[T] .tags|||m
+<leader>s?|||map <leader>s? z=|||[T] .tags|||m
+<leader>sa|||map <leader>sa zg|||[T] .tags|||m
+<leader>sn|||map <leader>sn ]s|||[T] .tags|||m
+<leader>sp|||map <leader>sp [s|||[T] .tags|||m
+<Leader>ss|||nmap <silent><Leader>ss :call ToggleSpell()<CR>|||[T] .tags|||m
+<leader>T|||nmap <silent><leader>T :TagbarToggle<CR>|||[T] .tags|||m
+<leader>tw|||nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>|||[T] .tags|||m
+<leader>u|||nmap <leader>u :GundoToggle<CR>|||[T] .tags|||m
+<Leader>yr|||nmap <silent><Leader>yr :YRShow<cr>|||[T] .tags|||m
+<S-TAB>|||vmap <S-TAB> <gv|||[T] .tags|||m
+<Space>|||nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>|||[T] .tags|||m
+<TAB>|||inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"|||[T] .tags|||m
+abort|||function abort()|||[T] .tags|||f
+about|||function about() {|||[T] .tags|||f
+addfunction|||addfunction|||[T] .tags|||f
+add_daemon|||function add_daemon(){ #{{{|||[T] .tags|||f
+add_module|||function add_module(){ #{{{|||[T] .tags|||f
+align_center|||align_center|||[T] .tags|||f
+align_right|||align_right|||[T] .tags|||f
+allips|||function allips()|||[T] .tags|||f
+allStrings|||allStrings|||[T] .tags|||f
+allVideos|||allVideos|||[T] .tags|||f
+anagrams|||function anagrams()|||[T] .tags|||f
+anagram_|||anagram_|||[T] .tags|||f
+apath|||function apath()|||[T] .tags|||f
+append|||function append() {|||[T] .tags|||f
+aptg|||function aptg() # debian specific.|||[T] .tags|||f
+aptitude|||aptitude|||[T] .tags|||f
+arabic2roman|||arabic2roman|||[T] .tags|||f
+archwikisearch|||function archwikisearch() {|||[T] .tags|||f
+asc2all|||asc2all|||[T] .tags|||f
+asc2b32|||asc2b32|||[T] .tags|||f
+asc2b64|||asc2b64|||[T] .tags|||f
+asc2bin|||asc2bin|||[T] .tags|||f
+asc2dec|||asc2dec|||[T] .tags|||f
+asc2hex|||asc2hex|||[T] .tags|||f
+asc2oct|||asc2oct|||[T] .tags|||f
+atomtitles|||function atomtitles()|||[T] .tags|||f
+atv2avi|||atv2avi|||[T] .tags|||f
+atv2avi_w|||atv2avi_w|||[T] .tags|||f
+atv_|||function atv_()|||[T] .tags|||f
+audioextract|||function audioextract()|||[T] .tags|||f
+audiorecord|||audiorecord|||[T] .tags|||f
+aurget|||function aurget() {|||[T] .tags|||f
+aurhelper_install|||function aurhelper_install(){ #{{{|||[T] .tags|||f
+b:myLang|||b:myLang|||[T] .tags|||v
+backupsfolder|||function backupsfolder()|||[T] .tags|||f
+backup_bashfiles|||function backup_bashfiles()|||[T] .tags|||f
+bashtips|||function bashtips() {|||[T] .tags|||f
+batchexec|||function batchexec()|||[T] .tags|||f
+bclock|||function bclock()|||[T] .tags|||f
+bclock2|||bclock2|||[T] .tags|||f
+bg_wrapper|||function bg_wrapper()|||[T] .tags|||f
+bin2all|||bin2all|||[T] .tags|||f
+bin2asc|||bin2asc|||[T] .tags|||f
+bin2b32|||bin2b32|||[T] .tags|||f
+bin2b64|||bin2b64|||[T] .tags|||f
+bin2dec|||bin2dec|||[T] .tags|||f
+bin2hex|||bin2hex|||[T] .tags|||f
+bin2oct|||bin2oct|||[T] .tags|||f
+blank_rename|||function blank_rename()|||[T] .tags|||f
+bluray2xvid|||bluray2xvid|||[T] .tags|||f
+bookmark|||function bookmark() {|||[T] .tags|||f
+boxeedl|||function boxeedl()|||[T] .tags|||f
+brownian|||function brownian()|||[T] .tags|||f
+buffer|||buffer|||[T] .tags|||f
+build|||function build()|||[T] .tags|||f
+build_|||function build_() {|||[T] .tags|||f
+calc|||function calc() {|||[T] .tags|||f
+calculate|||function calculate() # Here's where the actual work gets done.|||[T] .tags|||f
+casepat|||casepat|||[T] .tags|||f
+cat_pdfs|||function cat_pdfs() { python '/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py' "$@" ; }|||[T] .tags|||f
+ccopy|||function ccopy() { for i in $*; do cp -a $i /tmp/ccopy.$i; done }|||[T] .tags|||f
+cel2fah|||cel2fah|||[T] .tags|||f
+cel2kel|||cel2kel|||[T] .tags|||f
+cgrep|||cgrep|||[T] .tags|||f
+checkbox|||function checkbox(){ #{{{|||[T] .tags|||f
+checksum|||function checksum()|||[T] .tags|||f
+check_|||function check_()|||[T] .tags|||f
+check_root|||function check_root() {|||[T] .tags|||f
+choose_aurhelper|||function choose_aurhelper(){|||[T] .tags|||f
+cifsmount|||cifsmount|||[T] .tags|||f
+cifsumount|||cifsumount|||[T] .tags|||f
+clean_orphan_packages|||function clean_orphan_packages(){|||[T] .tags|||f
+clearIptables|||function clearIptables()|||[T] .tags|||f
+clock|||function clock()|||[T] .tags|||f
+cmdfu|||cmdfu|||[T] .tags|||f
+cmdfu_rating|||function cmdfu_rating()|||[T] .tags|||f
+cmdfu_rating_|||function cmdfu_rating_()|||[T] .tags|||f
+cmdpkg|||cmdpkg|||[T] .tags|||f
+coin|||function coin-flip()|||[T] .tags|||f
+collatz|||function collatz()|||[T] .tags|||f
+color|||function color-picker()|||[T] .tags|||f
+ColorChart|||ColorChart()|||[T] .tags|||f
+colorize|||function colorize-text()|||[T] .tags|||f
+colors|||function colors()|||[T] .tags|||f
+colors2|||colors2|||[T] .tags|||f
+colors2nums|||colors2nums|||[T] .tags|||f
+comics|||function comics() {|||[T] .tags|||f
+command|||function command-timer() { echo "notify-send TimeToQuit" | at "$@" ; }|||[T] .tags|||f
+comp|||comp|||[T] .tags|||f
+comparenclean|||comparenclean|||[T] .tags|||f
+comparenclean_|||comparenclean_|||[T] .tags|||f
+compression_level|||function compression_level()|||[T] .tags|||f
+compress_|||function compress_() {|||[T] .tags|||f
+configure_fonts|||function configure_fonts(){|||[T] .tags|||f
+connected|||connected|||[T] .tags|||f
+connected_|||connected_|||[T] .tags|||f
+conv2avi|||conv2avi|||[T] .tags|||f
+convertatemp|||function convertatemp()|||[T] .tags|||f
+corename|||function corename()|||[T] .tags|||f
+countbraces|||countbraces|||[T] .tags|||f
+countdown|||countdown|||[T] .tags|||f
+count_files|||function count_files()|||[T] .tags|||f
+count_files_by_ext|||function count_files_by_ext() { find . -type f | sed -n 's/..*\.//p' | sort -f | uniq -ic ; }|||[T] .tags|||f
+count_processes|||function count_processes()|||[T] .tags|||f
+cp_mp3_to|||cp_mp3_to|||[T] .tags|||f
+cp_p|||function cp_p() {|||[T] .tags|||f
+create_user|||function create_user(){|||[T] .tags|||f
+create_user_list|||function create_user_list()|||[T] .tags|||f
+crontest|||crontest|||[T] .tags|||f
+crypt|||function crypt() {|||[T] .tags|||f
+currency_convert|||currency_convert|||[T] .tags|||f
+currency_convert_|||currency_convert_|||[T] .tags|||f
+currency_convert_help|||function currency_convert_help() {|||[T] .tags|||f
+custom_repositories|||function custom_repositories(){|||[T] .tags|||f
+cuttail|||function cuttail()|||[T] .tags|||f
+cyanide|||function cyanide() { display "$(wget -q http://explosm.net/comics/random/ -O - | grep -Po 'http://www.explosm.net/db/files/Comics/*/[^"]+(png|jpg|jpeg)')"; }|||[T] .tags|||f
+cycle|||cycle|||[T] .tags|||f
+daemon|||function daemon()|||[T] .tags|||f
+deadlib|||deadlib|||[T] .tags|||f
+deadlink|||function deadlink() {|||[T] .tags|||f
+debextract|||function debextract()|||[T] .tags|||f
+debremaker|||function debremaker()|||[T] .tags|||f
+debug_http|||function debug_http() { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }|||[T] .tags|||f
+dec2all|||dec2all|||[T] .tags|||f
+dec2asc|||dec2asc|||[T] .tags|||f
+dec2b32|||dec2b32|||[T] .tags|||f
+dec2b64|||dec2b64|||[T] .tags|||f
+dec2bin|||dec2bin|||[T] .tags|||f
+dec2hex|||dec2hex|||[T] .tags|||f
+dec2oct|||dec2oct|||[T] .tags|||f
+dec2text|||dec2text|||[T] .tags|||f
+dec2text_|||dec2text_|||[T] .tags|||f
+decry|||function decry()|||[T] .tags|||f
+define|||function define() {|||[T] .tags|||f
+defrag|||function defrag()|||[T] .tags|||f
+defrag2|||defrag2|||[T] .tags|||f
+delete|||function delete() {|||[T] .tags|||f
+detectlanguage|||detectlanguage|||[T] .tags|||f
+diffxml|||diffxml|||[T] .tags|||f
+dirsize|||function dirsize()|||[T] .tags|||f
+display|||function display-off()|||[T] .tags|||f
+doscheck|||function doscheck()|||[T] .tags|||f
+dot_ln|||function dot_ln()|||[T] .tags|||f
+downforme|||function downforme() {|||[T] .tags|||f
+dtv2avi|||dtv2avi|||[T] .tags|||f
+DTV2AVI|||DTV2AVI|||[T] .tags|||f
+dtv2avi_w|||dtv2avi_w|||[T] .tags|||f
+dtv2yt|||dtv2yt|||[T] .tags|||f
+dubigf|||function dubigf() {|||[T] .tags|||f
+dups|||function dups() { sort "$@" | uniq -d; }|||[T] .tags|||f
+dupscleaner|||function dupscleaner() { sort "$@" | uniq -d > dupscleaned.txt; }|||[T] .tags|||f
+dupsonly|||function dupsonly() { sort "$@" | uniq -D > dupsonly.txt; }|||[T] .tags|||f
+dvd2iso|||dvd2iso|||[T] .tags|||f
+dvd2mpg|||dvd2mpg|||[T] .tags|||f
+dvdaudio|||function dvdaudio()|||[T] .tags|||f
+echange|||function echange() {|||[T] .tags|||f
+ed2k|||ed2k|||[T] .tags|||f
+editd|||function editd() {|||[T] .tags|||f
+empty|||function empty() {|||[T] .tags|||f
+encry|||function encry()|||[T] .tags|||f
+encrypt|||function encrypt()|||[T] .tags|||f
+enquote|||function enquote() { /usr/bin/sed 's/^/"/;s/$/"/' ; }|||[T] .tags|||f
+error|||function error()|||[T] .tags|||f
+eview|||function eview() {|||[T] .tags|||f
+examples|||examples|||[T] .tags|||f
+exchange|||function exchange()|||[T] .tags|||f
+expandurl|||expandurl|||[T] .tags|||f
+exportmykeys_private|||function exportmykeys_private()|||[T] .tags|||f
+exportmykeys_public|||function exportmykeys_public()|||[T] .tags|||f
+extract|||function extract() {|||[T] .tags|||f
+fact|||function fact() {|||[T] .tags|||f
+factorial|||function factorial()|||[T] .tags|||f
+fah2cel|||fah2cel|||[T] .tags|||f
+fah2kel|||fah2kel|||[T] .tags|||f
+fail|||function fail()|||[T] .tags|||f
+fakepass|||function fakepass()|||[T] .tags|||f
+fest|||function fest() {|||[T] .tags|||f
+ffind|||ffind|||[T] .tags|||f
+fileName|||fileName|||[T] .tags|||f
+filetypesettings|||augroup filetypesettings "{{{|||[T] .tags|||a
+filext|||filext|||[T] .tags|||f
+findlocation|||findlocation|||[T] .tags|||f
+findPid|||function findPid() { sudo /usr/sbin/lsof -t -c "$@" ; }|||[T] .tags|||f
+findtcp|||function findtcp()|||[T] .tags|||f
+findword|||function findword() { /usr/bin/grep ^"$@"$ /usr/share/dict/words ; }|||[T] .tags|||f
+find_alternatives|||find_alternatives|||[T] .tags|||f
+find_larger|||find_larger|||[T] .tags|||f
+finish|||function finish(){|||[T] .tags|||f
+fixlines|||function fixlines() { /usr/bin/perl -pi~ -e 's/\r\n?/\n/g' "$@" ; }|||[T] .tags|||f
+flac2mp3|||flac2mp3|||[T] .tags|||f
+flac2ogg|||flac2ogg|||[T] .tags|||f
+flag|||function flag() {|||[T] .tags|||f
+flagcommand|||function flagcommand() {|||[T] .tags|||f
+flight_status|||flight_status|||[T] .tags|||f
+flipd|||function flipd() {|||[T] .tags|||f
+focus|||focus|||[T] .tags|||f
+forecast|||function forecast() {|||[T] .tags|||f
+fork|||fork|||[T] .tags|||f
+fragcheck|||function fragcheck()|||[T] .tags|||f
+fragcheck2|||fragcheck2|||[T] .tags|||f
+freemusiccharts|||function freemusiccharts()|||[T] .tags|||f
+fstr|||function fstr()|||[T] .tags|||f
+fuman|||fuman|||[T] .tags|||f
+functions|||function functions() { read -p "File name> "; sort -d $REPLY | grep "() {" | sed -e 's/() {//g' | less; }|||[T] .tags|||f
+funny_face|||function funny_face() {|||[T] .tags|||f
+g:acp_enableAtStartup|||g:acp_enableAtStartup|||[T] .tags|||v
+g:buftabs_only_basename|||g:buftabs_only_basename|||[T] .tags|||v
+g:calendar_current_idx|||g:calendar_current_idx|||[T] .tags|||v
+g:calendar_list|||let g:calendar_list = [|||[T] .tags|||v
+g:ctrlp_cache_dir|||let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'|||[T] .tags|||v
+g:ctrlp_clear_cache_on_exit|||g:ctrlp_clear_cache_on_exit|||[T] .tags|||v
+g:ctrlp_custom_ignore|||let g:ctrlp_custom_ignore = {|||[T] .tags|||v
+g:ctrlp_map|||let g:ctrlp_map = '<c-p>'|||[T] .tags|||v
+g:ctrlp_max_height|||g:ctrlp_max_height|||[T] .tags|||v
+g:ctrlp_mruf_exclude|||let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux|||[T] .tags|||v
+g:EasyMotion_leader_key|||let g:EasyMotion_leader_key = '<Leader>m'|||[T] .tags|||v
+g:easytags_cmd|||let g:easytags_cmd = '/usr/local/bin/ctags'|||[T] .tags|||v
+g:easytags_file|||let g:easytags_file = $HOME.'/.vim/.tags'|||[T] .tags|||v
+g:easytags_updatetime_autodisable|||g:easytags_updatetime_autodisable|||[T] .tags|||v
+g:gundo_right|||g:gundo_right|||[T] .tags|||v
+g:gundo_width|||g:gundo_width|||[T] .tags|||v
+g:mapleader|||let g:mapleader=","|||[T] .tags|||v
+g:MarkdownPreviewTMP|||let g:MarkdownPreviewTMP = $HOME.'/Sites/'|||[T] .tags|||v
+g:myLangList|||let g:myLangList=["nospell","pt","en"]|||[T] .tags|||v
+g:neocomplcache_enable_at_startup|||g:neocomplcache_enable_at_startup|||[T] .tags|||v
+g:neocomplcache_enable_camel_case_completion|||g:neocomplcache_enable_camel_case_completion|||[T] .tags|||v
+g:neocomplcache_enable_smart_case|||g:neocomplcache_enable_smart_case|||[T] .tags|||v
+g:neocomplcache_enable_underbar_completion|||g:neocomplcache_enable_underbar_completion|||[T] .tags|||v
+g:neocomplcache_keyword_patterns|||let g:neocomplcache_keyword_patterns = {}|||[T] .tags|||v
+g:neocomplcache_lock_buffer_name_pattern|||let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'|||[T] .tags|||v
+g:neocomplcache_min_syntax_length|||g:neocomplcache_min_syntax_length|||[T] .tags|||v
+g:neocomplcache_omni_patterns|||let g:neocomplcache_omni_patterns = {}|||[T] .tags|||v
+g:neocomplcache_snippets_dir|||let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'|||[T] .tags|||v
+g:neocomplcache_temporary_dir|||let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'|||[T] .tags|||v
+g:NERDTreeCaseSensitiveSort|||g:NERDTreeCaseSensitiveSort|||[T] .tags|||v
+g:NERDTreeChristmasTree|||g:NERDTreeChristmasTree|||[T] .tags|||v
+g:NERDTreeQuitOnOpen|||g:NERDTreeQuitOnOpen|||[T] .tags|||v
+g:Powerline_symbols|||let g:Powerline_symbols = 'fancy'|||[T] .tags|||v
+g:syntastic_auto_jump|||g:syntastic_auto_jump|||[T] .tags|||v
+g:syntastic_auto_loc_list|||g:syntastic_auto_loc_list|||[T] .tags|||v
+g:syntastic_enable_signs|||g:syntastic_enable_signs|||[T] .tags|||v
+g:tagbar_autoclose|||g:tagbar_autoclose|||[T] .tags|||v
+g:tagbar_autofocus|||g:tagbar_autofocus|||[T] .tags|||v
+g:tagbar_compact|||g:tagbar_compact|||[T] .tags|||v
+g:tagbar_ctags_bin|||let g:tagbar_ctags_bin = '/usr/local/bin/ctags'|||[T] .tags|||v
+g:tagbar_expand|||g:tagbar_expand|||[T] .tags|||v
+g:tagbar_width|||g:tagbar_width|||[T] .tags|||v
+g:yankring_history_file|||let g:yankring_history_file = '/.vim/.yankring_history'|||[T] .tags|||v
+g:yankring_ignore_operator|||let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'|||[T] .tags|||v
+g:yankring_map_dot|||g:yankring_map_dot|||[T] .tags|||v
+g:yankring_replace_n_nkey|||let g:yankring_replace_n_nkey = '<m-n>'|||[T] .tags|||v
+g:yankring_replace_n_pkey|||let g:yankring_replace_n_pkey = '<m-p>'|||[T] .tags|||v
+geniso|||function geniso() {|||[T] .tags|||f
+geoip|||function geoip() {|||[T] .tags|||f
+geoiplookup|||geoiplookup|||[T] .tags|||f
+geoipme|||function geoipme()|||[T] .tags|||f
+getBookmark|||function getBookmark() {|||[T] .tags|||f
+getcolumn|||getcolumn|||[T] .tags|||f
+getExtension|||function getExtension()|||[T] .tags|||f
+getFileName|||function getFileName()|||[T] .tags|||f
+getip|||function getip() { lynx -dump http://whatismyip.org/; }|||[T] .tags|||f
+getMaxDate|||function getMaxDate {|||[T] .tags|||f
+getPath|||function getPath()|||[T] .tags|||f
+get_duration|||get_duration|||[T] .tags|||f
+get_kernel|||function get_kernel() {|||[T] .tags|||f
+get_xserver|||function get_xserver()|||[T] .tags|||f
+gfx_resizeImage|||gfx_resizeImage() {|||[T] .tags|||f
+git_action|||function git_action() {|||[T] .tags|||f
+git_branch|||function git_branch() {|||[T] .tags|||f
+git_bzip|||function git_bzip() {|||[T] .tags|||f
+git_e|||function git_e() {|||[T] .tags|||f
+git_export|||function git_export() {|||[T] .tags|||f
+git_gnome|||function git_gnome() {|||[T] .tags|||f
+git_kde|||function git_kde() {|||[T] .tags|||f
+git_revision|||function git_revision() {|||[T] .tags|||f
+git_xfce|||function git_xfce() {|||[T] .tags|||f
+git_xz|||function git_xz() {|||[T] .tags|||f
+goclf|||function goclf()|||[T] .tags|||f
+google|||function google() {|||[T] .tags|||f
+google_chart|||function google_chart()|||[T] .tags|||f
+goto|||goto|||[T] .tags|||f
+gotxt2imgmail|||gotxt2imgmail|||[T] .tags|||f
+grabtweets|||grabtweets|||[T] .tags|||f
+grepcolor|||function grepcolor()|||[T] .tags|||f
+grepfind|||grepfind|||[T] .tags|||f
+grepincl|||grepincl|||[T] .tags|||f
+grepp|||grepp|||[T] .tags|||f
+hex2all|||hex2all|||[T] .tags|||f
+hex2asc|||hex2asc|||[T] .tags|||f
+hex2b32|||hex2b32|||[T] .tags|||f
+hex2b64|||hex2b64|||[T] .tags|||f
+hex2bin|||hex2bin|||[T] .tags|||f
+hex2dec|||hex2dec|||[T] .tags|||f
+hex2oct|||hex2oct|||[T] .tags|||f
+hgrep|||function hgrep() {|||[T] .tags|||f
+hgrepl|||function hgrepl() {|||[T] .tags|||f
+hhgrep|||function hhgrep() {|||[T] .tags|||f
+hideme|||function hideme()|||[T] .tags|||f
+hilow|||function hilow()|||[T] .tags|||f
+historyawk|||historyawk|||[T] .tags|||f
+hourglass|||hourglass|||[T] .tags|||f
+http_headers|||function http_headers() { /usr/bin/curl -I -L $@ ; }|||[T] .tags|||f
+human_filesize|||human_filesize|||[T] .tags|||f
+image_resize|||function image_resize()|||[T] .tags|||f
+imdb|||function imdb()|||[T] .tags|||f
+imgur|||imgur|||[T] .tags|||f
+info|||function info() {|||[T] .tags|||f
+Initialize_Slots|||function Initialize_Slots() { # Zero out all elements of the array.|||[T] .tags|||f
+install_additional_firmwares|||function install_additional_firmwares(){|||[T] .tags|||f
+install_audio_apps|||function install_audio_apps(){|||[T] .tags|||f
+install_basic_setup|||function install_basic_setup(){|||[T] .tags|||f
+install_cups|||function install_cups(){|||[T] .tags|||f
+install_desktop_environment|||function install_desktop_environment(){|||[T] .tags|||f
+install_development_apps|||function install_development_apps(){|||[T] .tags|||f
+install_fonts|||function install_fonts(){|||[T] .tags|||f
+install_games|||function install_games(){|||[T] .tags|||f
+install_git_tor|||function install_git_tor(){|||[T] .tags|||f
+install_graphics_apps|||function install_graphics_apps(){|||[T] .tags|||f
+install_internet_apps|||function install_internet_apps(){|||[T] .tags|||f
+install_lamp|||function install_lamp(){|||[T] .tags|||f
+install_nm_wicd|||function install_nm_wicd(){|||[T] .tags|||f
+install_office_apps|||function install_office_apps(){|||[T] .tags|||f
+install_status|||function install_status(){ #{{{|||[T] .tags|||f
+install_system_apps|||function install_system_apps(){|||[T] .tags|||f
+install_tlp|||function install_tlp(){|||[T] .tags|||f
+install_video_apps|||function install_video_apps(){|||[T] .tags|||f
+install_video_cards|||function install_video_cards(){|||[T] .tags|||f
+install_xorg|||function install_xorg(){|||[T] .tags|||f
+inStr|||function inStr()|||[T] .tags|||f
+intro|||function intro() {|||[T] .tags|||f
+in_path|||function in_path()|||[T] .tags|||f
+ip2loc|||ip2loc|||[T] .tags|||f
+ip2locall|||ip2locall|||[T] .tags|||f
+ip2locate|||ip2locate|||[T] .tags|||f
+ippriv|||function ippriv()|||[T] .tags|||f
+isdef|||isdef|||[T] .tags|||f
+isgd|||isgd|||[T] .tags|||f
+JumpCursorOnEdit|||augroup JumpCursorOnEdit|||[T] .tags|||a
+kel2cel|||kel2cel|||[T] .tags|||f
+kel2fah|||kel2fah|||[T] .tags|||f
+killps|||function killps()|||[T] .tags|||f
+kindle_connect|||function kindle_connect()|||[T] .tags|||f
+kindle_disconnect|||function kindle_disconnect()|||[T] .tags|||f
+kitt|||function kitt() {|||[T] .tags|||f
+kitty|||function kitty() {|||[T] .tags|||f
+language_selector|||function language_selector(){|||[T] .tags|||f
+lastfile|||lastfile|||[T] .tags|||f
+LastModified|||function! LastModified() "{{{|||[T] .tags|||f
+lcfiles|||function lcfiles() {|||[T] .tags|||f
+lcfirst|||function lcfirst() {|||[T] .tags|||f
+ldapfind|||function ldapfind() {|||[T] .tags|||f
+length|||function length()|||[T] .tags|||f
+linesort|||function linesort()|||[T] .tags|||f
+list|||function list() {|||[T] .tags|||f
+listhw|||function listhw() { curl -s -S --data-urlencode "txt=$(sudo lshw -html)" "http://pastehtml.com/upload/create?input_type=html&result=address";echo; }|||[T] .tags|||f
+liveh|||liveh|||[T] .tags|||f
+llist|||function llist() {|||[T] .tags|||f
+localIps|||function localIps()|||[T] .tags|||f
+locatemusic|||function locatemusic()|||[T] .tags|||f
+lower|||function lower() { echo ${@,,}; }|||[T] .tags|||f
+lowercase|||function lowercase()|||[T] .tags|||f
+lower_|||function lower_() { tr [A-Z] [a-z]; }|||[T] .tags|||f
+lsbytes|||function lsbytes() {|||[T] .tags|||f
+lscd|||function lscd() {|||[T] .tags|||f
+lsext|||function lsext()|||[T] .tags|||f
+lsmac|||lsmac|||[T] .tags|||f
+lsofg|||function lsofg()|||[T] .tags|||f
+lsr_|||lsr_|||[T] .tags|||f
+ltrim|||function ltrim() {|||[T] .tags|||f
+madd|||function madd()|||[T] .tags|||f
+mailme|||function mailme()|||[T] .tags|||f
+mailme_|||function mailme_() { mailx -s "$@" $USER <<< "$@"; }|||[T] .tags|||f
+man2pdf|||man2pdf|||[T] .tags|||f
+man2text|||man2text|||[T] .tags|||f
+manswitch|||manswitch|||[T] .tags|||f
+man_|||function man_()|||[T] .tags|||f
+man_ext|||function man_ext()|||[T] .tags|||f
+mapleader|||let mapleader=","|||[T] .tags|||v
+math|||function math-log()|||[T] .tags|||f
+mcap|||function mcap()|||[T] .tags|||f
+md5_|||md5_|||[T] .tags|||f
+meta|||function meta-backup()|||[T] .tags|||f
+mkalias|||function mkalias()|||[T] .tags|||f
+mkcdr|||function mkcdr() {|||[T] .tags|||f
+mkdircd|||function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }|||[T] .tags|||f
+mktar|||mktar|||[T] .tags|||f
+mktbz|||mktbz|||[T] .tags|||f
+mktgz|||mktgz|||[T] .tags|||f
+mnote|||function mnote()|||[T] .tags|||f
+morse2text|||morse2text|||[T] .tags|||f
+most_frequent|||function most_frequent()|||[T] .tags|||f
+mount_fat|||function mount_fat()|||[T] .tags|||f
+Move|||function Move() { # Move one unit right / left, or stay put.|||[T] .tags|||f
+mozz|||function mozz()|||[T] .tags|||f
+mp3_tagging|||mp3_tagging|||[T] .tags|||f
+msquare|||function msquare()|||[T] .tags|||f
+mtube|||function mtube() {|||[T] .tags|||f
+multitables|||function multitables()|||[T] .tags|||f
+musiccdinfo|||function musiccdinfo()|||[T] .tags|||f
+mwiki|||function mwiki() { blah=`echo $@ | sed -e 's/ /_/g'`; dig +short txt $blah.wp.dg.cx; }|||[T] .tags|||f
+mwiki_|||function mwiki_() { local IFS=_; dig +short txt "${*^}".wp.dg.cx; }|||[T] .tags|||f
+myip|||function myip()|||[T] .tags|||f
+my_ps|||function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }|||[T] .tags|||f
+natdebt|||function natdebt()|||[T] .tags|||f
+NERDTreeBookmarksFile|||let NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')|||[T] .tags|||v
+NERDTreeIgnore|||let NERDTreeIgnore=[|||[T] .tags|||v
+NERDTreeMouseMode|||NERDTreeMouseMode|||[T] .tags|||v
+NERDTreeShowBookmarks|||NERDTreeShowBookmarks|||[T] .tags|||v
+NERDTreeWinPos|||let NERDTreeWinPos = "right"|||[T] .tags|||v
+NERDTreeWinSize|||NERDTreeWinSize|||[T] .tags|||v
+netinfo|||function netinfo()|||[T] .tags|||f
+newbies|||function newbies()|||[T] .tags|||f
+newest|||newest|||[T] .tags|||f
+ngramviewerdl|||function ngramviewerdl()|||[T] .tags|||f
+nicenumber|||function nicenumber()|||[T] .tags|||f
+nice_number|||function nice_number()|||[T] .tags|||f
+nmount|||function nmount() {|||[T] .tags|||f
+nondups|||function nondups() { sort "$@" | uniq -u; }|||[T] .tags|||f
+nondupsonly|||function nondupsonly() { sort "$@" | uniq -u > nondupsonly.txt; }|||[T] .tags|||f
+normal2unix|||normal2unix|||[T] .tags|||f
+notADot|||function notADot()|||[T] .tags|||f
+notAForwardSlash|||function notAForwardSlash()|||[T] .tags|||f
+note|||function note()|||[T] .tags|||f
+NotifyOnBATTERY|||NotifyOnBATTERY|||[T] .tags|||f
+nseq|||function nseq()|||[T] .tags|||f
+nuke|||function nuke() { if [ $(whoami) != "root" ] ; then for x in $@; do sudo apt-get autoremove --purge $x; done; else for x in $@; do apt-get autoremove --purge $x; done; fi }|||[T] .tags|||f
+numberLines|||function numberLines() { perl -pe 's/^/$. /' "$@" ; }|||[T] .tags|||f
+numpages|||numpages|||[T] .tags|||f
+oct2all|||oct2all|||[T] .tags|||f
+oct2asc|||oct2asc|||[T] .tags|||f
+oct2b32|||oct2b32|||[T] .tags|||f
+oct2b64|||oct2b64|||[T] .tags|||f
+oct2bin|||oct2bin|||[T] .tags|||f
+oct2dec|||oct2dec|||[T] .tags|||f
+oct2hex|||oct2hex|||[T] .tags|||f
+ogg2mp3|||ogg2mp3|||[T] .tags|||f
+ogg_info|||function ogg_info()|||[T] .tags|||f
+oneliners|||function oneliners()|||[T] .tags|||f
+open|||function open() {|||[T] .tags|||f
+overwriter|||function overwriter()|||[T] .tags|||f
+package|||package() {|||[T] .tags|||f
+packagehold|||function packagehold()|||[T] .tags|||f
+packagelistdl|||function packagelistdl()|||[T] .tags|||f
+packageunhold|||function packageunhold()|||[T] .tags|||f
+package_unity|||package_unity() {|||[T] .tags|||f
+pacman_package_signing|||function pacman_package_signing(){|||[T] .tags|||f
+pacsearch|||function pacsearch() {|||[T] .tags|||f
+pagerank|||function pagerank()|||[T] .tags|||f
+pascal|||pascal|||[T] .tags|||f
+paste|||function paste() { curl -s -S --data-urlencode "txt=$($*)" "http://pastehtml.com/upload/create?input_type=txt&result=address";echo; }|||[T] .tags|||f
+pathremove|||function pathremove() {|||[T] .tags|||f
+pause_function|||function pause_function(){ #{{{|||[T] .tags|||f
+pcharc|||pcharc|||[T] .tags|||f
+pdf2png|||pdf2png|||[T] .tags|||f
+phone2text|||phone2text|||[T] .tags|||f
+pick|||function pick-card()|||[T] .tags|||f
+piratebay|||function piratebay()|||[T] .tags|||f
+Play|||function Play() { # Single pass (inner loop).|||[T] .tags|||f
+plot|||function plot() { { echo 'plot "-"' "$@"; cat; } | gnuplot -persist; }|||[T] .tags|||f
+pngoptim|||function pngoptim()|||[T] .tags|||f
+popd|||function popd() {|||[T] .tags|||f
+port|||function port() {|||[T] .tags|||f
+portcheck|||function portcheck() { for i in $@;do curl -s "deluge-torrent.org/test-port.php?port=$i" | sed '/^$/d;s/<br><br>/ /g';done; }|||[T] .tags|||f
+portscan|||function portscan()|||[T] .tags|||f
+power|||function power() {|||[T] .tags|||f
+prep|||prep|||[T] .tags|||f
+primes|||function primes()|||[T] .tags|||f
+Primes|||Primes()|||[T] .tags|||f
+printd|||function printd() {|||[T] .tags|||f
+printdriver|||function printdriver() {|||[T] .tags|||f
+println|||function println()|||[T] .tags|||f
+print_line|||function print_line(){ #{{{|||[T] .tags|||f
+print_result|||function print_result()|||[T] .tags|||f
+print_square|||function print_square() # Output square, one row at a time.|||[T] .tags|||f
+print_title|||function print_title (){ #{{{|||[T] .tags|||f
+private|||function private()|||[T] .tags|||f
+proceed_sudo|||proceed_sudo|||[T] .tags|||f
+program|||function program-timer() { perl -e 'alarm shift; exec @ARGV' "$@" & exit; }|||[T] .tags|||f
+progressbar|||function progressbar()|||[T] .tags|||f
+pronounce|||pronounce|||[T] .tags|||f
+pronounce_|||pronounce_|||[T] .tags|||f
+psaux|||function psaux() {|||[T] .tags|||f
+psgrep|||function psgrep() {|||[T] .tags|||f
+pskill|||function pskill() {|||[T] .tags|||f
+publicfolder|||function publicfolder()|||[T] .tags|||f
+pullout|||function pullout() {|||[T] .tags|||f
+pushd|||function pushd() {|||[T] .tags|||f
+qrurl|||qrurl|||[T] .tags|||f
+question_for_answer|||function question_for_answer(){ #{{{|||[T] .tags|||f
+quickemail|||function quickemail() { echo "$*" | mail -s "$*" email@email.com; }|||[T] .tags|||f
+Quietly|||Quietly|||[T] .tags|||f
+quietly|||function quietly() { "$@" |&:; }|||[T] .tags|||f
+quietly_|||quietly_|||[T] .tags|||f
+radical|||function radical() {|||[T] .tags|||f
+radio|||radio|||[T] .tags|||f
+random|||function random() {|||[T] .tags|||f
+randomblanks|||function randomblanks()|||[T] .tags|||f
+randomfile|||function randomfile() {|||[T] .tags|||f
+randomline|||function randomline()|||[T] .tags|||f
+randomnumbers|||function randomnumbers()|||[T] .tags|||f
+randompw|||function randompw() {|||[T] .tags|||f
+randomwp|||function randomwp()|||[T] .tags|||f
+randomwpt|||function randomwpt()|||[T] .tags|||f
+random_cow|||function random_cow()|||[T] .tags|||f
+rankmirror|||function rankmirror(){|||[T] .tags|||f
+readfile|||readfile|||[T] .tags|||f
+reboot_now|||function reboot_now(){ #{{{|||[T] .tags|||f
+relinux|||function relinux-copy()|||[T] .tags|||f
+remastersys|||function remastersys-copy()|||[T] .tags|||f
+remindme|||function remindme()|||[T] .tags|||f
+remount|||function remount() {|||[T] .tags|||f
+removeduplines|||function removeduplines()|||[T] .tags|||f
+remove_daemon|||function remove_daemon(){ #{{{|||[T] .tags|||f
+remove_module|||function remove_module(){ #{{{|||[T] .tags|||f
+repath|||repath|||[T] .tags|||f
+repeat|||function repeat() {|||[T] .tags|||f
+repoadd|||function repoadd() {|||[T] .tags|||f
+repository|||function repository-update-check() {|||[T] .tags|||f
+resetleds|||function resetleds()|||[T] .tags|||f
+resetp|||function resetp() {|||[T] .tags|||f
+reset_display|||function reset_display()|||[T] .tags|||f
+resizeimg|||function resizeimg()|||[T] .tags|||f
+resolve|||resolve|||[T] .tags|||f
+restoremykeys|||function restoremykeys()|||[T] .tags|||f
+restowin|||restowin|||[T] .tags|||f
+rewrite|||function rewrite {|||[T] .tags|||f
+right|||right|||[T] .tags|||f
+rmall_but|||rmall_but|||[T] .tags|||f
+rminode|||function rminode() {|||[T] .tags|||f
+rmspaces|||function rmspaces() {|||[T] .tags|||f
+roll|||function roll()|||[T] .tags|||f
+roll_die|||function roll_die() {|||[T] .tags|||f
+roman|||function roman-numeral()|||[T] .tags|||f
+rot13|||rot13|||[T] .tags|||f
+rot47|||rot47|||[T] .tags|||f
+rotd|||function rotd() {|||[T] .tags|||f
+round|||function round() {|||[T] .tags|||f
+rtfm|||function rtfm() { help $@ || man $@ || lynx "http://www.google.com/search?q=$@"; }|||[T] .tags|||f
+rtrim|||function rtrim() {|||[T] .tags|||f
+ruler|||ruler|||[T] .tags|||f
+safeedit|||function safeedit() {|||[T] .tags|||f
+sanitize|||function sanitize()|||[T] .tags|||f
+save|||save|||[T] .tags|||f
+saveit|||function saveit() {|||[T] .tags|||f
+say_|||function say_()|||[T] .tags|||f
+scpsend|||function scpsend()|||[T] .tags|||f
+screencastw|||function screencastw()|||[T] .tags|||f
+searchnreplace|||function searchnreplace()|||[T] .tags|||f
+sec2all|||sec2all|||[T] .tags|||f
+seconds|||function seconds-convert-part()|||[T] .tags|||f
+sedi|||sedi|||[T] .tags|||f
+send|||function send() {|||[T] .tags|||f
+service|||function service() {|||[T] .tags|||f
+services|||services|||[T] .tags|||f
+service_|||function service_() {|||[T] .tags|||f
+setperms|||function setperms()|||[T] .tags|||f
+setupmykeys|||function setupmykeys()|||[T] .tags|||f
+set_wallpaper|||function set_wallpaper() {|||[T] .tags|||f
+set_xtitle|||function set_xtitle()|||[T] .tags|||f
+shebang|||shebang|||[T] .tags|||f
+shot|||function shot() {|||[T] .tags|||f
+shout|||shout|||[T] .tags|||f
+showa|||showa|||[T] .tags|||f
+showdiff|||function showdiff()|||[T] .tags|||f
+showfile|||function showfile()|||[T] .tags|||f
+showTimes|||function showTimes() { stat -f "%N: %m %c %a" "$@" ; }|||[T] .tags|||f
+show_battery_load|||function show_battery_load()|||[T] .tags|||f
+show_cpu_load|||function show_cpu_load()|||[T] .tags|||f
+show_ip|||function show_ip()|||[T] .tags|||f
+show_mem|||function show_mem() {|||[T] .tags|||f
+show_size|||function show_size()|||[T] .tags|||f
+Show_Slots|||function Show_Slots() {|||[T] .tags|||f
+show_space|||function show_space()|||[T] .tags|||f
+show_system_load|||function show_system_load() {|||[T] .tags|||f
+show_tty|||function show_tty()|||[T] .tags|||f
+show_uptime|||function show_uptime() {|||[T] .tags|||f
+sh_colormsg|||function sh_colormsg()|||[T] .tags|||f
+sh_coloroff|||function sh_coloroff()|||[T] .tags|||f
+sh_error|||function sh_error()|||[T] .tags|||f
+sh_fcore|||function sh_fcore()|||[T] .tags|||f
+sh_info|||function sh_info()|||[T] .tags|||f
+sh_mesg|||function sh_mesg()|||[T] .tags|||f
+sh_success|||function sh_success()|||[T] .tags|||f
+sh_svnprev|||function sh_svnprev()|||[T] .tags|||f
+sitepass|||sitepass|||[T] .tags|||f
+sitepass2|||sitepass2|||[T] .tags|||f
+slak|||function slak()|||[T] .tags|||f
+sleeper|||sleeper|||[T] .tags|||f
+slow2|||slow2|||[T] .tags|||f
+slpg|||function slpg()|||[T] .tags|||f
+slssh|||function slssh()|||[T] .tags|||f
+sort_csn|||sort_csn|||[T] .tags|||f
+source_print|||source_print|||[T] .tags|||f
+spanner|||function spanner() {|||[T] .tags|||f
+spell|||function spell()|||[T] .tags|||f
+spellcheck|||spellcheck|||[T] .tags|||f
+spin|||function spin() {|||[T] .tags|||f
+spinner|||function spinner()|||[T] .tags|||f
+spinner2|||spinner2|||[T] .tags|||f
+SplitScreen|||function! SplitScreen() "{{{|||[T] .tags|||f
+splitvideo|||function splitvideo()|||[T] .tags|||f
+sprunge|||sprunge|||[T] .tags|||f
+sqrt|||function sqrt()|||[T] .tags|||f
+sshmysql|||function sshmysql()|||[T] .tags|||f
+sshpg|||function sshpg()|||[T] .tags|||f
+sshpg2|||sshpg2|||[T] .tags|||f
+statt|||statt|||[T] .tags|||f
+stock|||function stock()|||[T] .tags|||f
+stock_|||function stock_()|||[T] .tags|||f
+stopwatch|||function stopwatch() {|||[T] .tags|||f
+stop_watch|||function stop_watch()|||[T] .tags|||f
+strerror|||strerror|||[T] .tags|||f
+strim|||function strim() {|||[T] .tags|||f
+string2array|||string2array|||[T] .tags|||f
+string2bin|||string2bin|||[T] .tags|||f
+strtolower|||function strtolower() {|||[T] .tags|||f
+strtoupper|||function strtoupper() {|||[T] .tags|||f
+subdir_find|||function subdir_find()|||[T] .tags|||f
+sumary|||function sumary(){ #{{{|||[T] .tags|||f
+suntimes|||function suntimes()|||[T] .tags|||f
+supportsWrap|||supportsWrap|||[T] .tags|||f
+svnlogedit|||function svnlogedit() {|||[T] .tags|||f
+svnradd|||svnradd|||[T] .tags|||f
+svn_find|||svn_find|||[T] .tags|||f
+svn_rev|||function svn_rev() {|||[T] .tags|||f
+svn_uplog|||function svn_uplog() {|||[T] .tags|||f
+swap|||function swap()|||[T] .tags|||f
+swap2|||swap2|||[T] .tags|||f
+swapd|||function swapd() {|||[T] .tags|||f
+switchfile|||function switchfile() {|||[T] .tags|||f
+system_infos|||function system_infos()|||[T] .tags|||f
+system_upgrade|||function system_upgrade(){|||[T] .tags|||f
+tarball|||function tarball()|||[T] .tags|||f
+tarcp|||function tarcp() {|||[T] .tags|||f
+terminal_title|||function terminal_title {|||[T] .tags|||f
+termproxy|||function termproxy()|||[T] .tags|||f
+termproxyX|||function termproxyX()|||[T] .tags|||f
+terrorist|||function terrorist-level()|||[T] .tags|||f
+text2morse|||text2morse|||[T] .tags|||f
+themeinfo|||function themeinfo() {|||[T] .tags|||f
+timeDNS|||timeDNS|||[T] .tags|||f
+timer|||function timer()|||[T] .tags|||f
+title|||function title() { sed 's/\<\w*/\u&/g' <<<$@; }|||[T] .tags|||f
+ToggleScratch|||function! ToggleScratch()|||[T] .tags|||f
+ToggleSpell|||function! ToggleSpell()|||[T] .tags|||f
+top10|||top10|||[T] .tags|||f
+torswitch|||function torswitch() {|||[T] .tags|||f
+touchpad_off|||function touchpad_off()|||[T] .tags|||f
+touchpad_on|||function touchpad_on()|||[T] .tags|||f
+translate|||translate|||[T] .tags|||f
+translate_help|||function translate_help() {|||[T] .tags|||f
+transmissionbl|||function transmissionbl()|||[T] .tags|||f
+trashit|||function trashit()|||[T] .tags|||f
+treecd|||function treecd() {|||[T] .tags|||f
+treefind|||function treefind() {|||[T] .tags|||f
+treeps|||function treeps() {|||[T] .tags|||f
+trig|||function trig-angle()|||[T] .tags|||f
+trim|||function trim() {|||[T] .tags|||f
+trunc_pwd|||function trunc_pwd()|||[T] .tags|||f
+tvcom|||function tvcom() {|||[T] .tags|||f
+tweet|||tweet|||[T] .tags|||f
+txt2pdf|||txt2pdf|||[T] .tags|||f
+type|||type|||[T] .tags|||f
+ucfirst|||function ucfirst() {|||[T] .tags|||f
+ucwords|||function ucwords() {|||[T] .tags|||f
+uncolorpdf|||function uncolorpdf()|||[T] .tags|||f
+underscore|||function underscore()|||[T] .tags|||f
+unix2normal|||unix2normal|||[T] .tags|||f
+unjar|||unjar|||[T] .tags|||f
+unlatex|||function unlatex() {|||[T] .tags|||f
+unmark|||function unmark() {|||[T] .tags|||f
+upalevel|||function upalevel()|||[T] .tags|||f
+update_count|||function update_count()|||[T] .tags|||f
+upper|||function upper() { echo ${@^^}; }|||[T] .tags|||f
+upper_|||function upper_() { tr [a-z] [A-Z]; }|||[T] .tags|||f
+uptime_min|||function uptime_min()|||[T] .tags|||f
+upto|||function upto() { cd "${PWD/\/$@\/*//$@}"; }|||[T] .tags|||f
+usage|||usage () {|||[T] .tags|||f
+usage_message|||function usage_message()|||[T] .tags|||f
+utime|||utime|||[T] .tags|||f
+validate|||function validate()|||[T] .tags|||f
+validator|||function validator()|||[T] .tags|||f
+vcd2mpeg|||vcd2mpeg|||[T] .tags|||f
+vers|||vers|||[T] .tags|||f
+video2avi|||video2avi|||[T] .tags|||f
+video2dvd|||video2dvd|||[T] .tags|||f
+vimcmd|||vimcmd|||[T] .tags|||f
+wallpaperWarn|||wallpaperWarn|||[T] .tags|||f
+weather|||function weather()|||[T] .tags|||f
+webcrawl|||function webcrawl()|||[T] .tags|||f
+webspell|||function webspell()|||[T] .tags|||f
+webster|||webster|||[T] .tags|||f
+welcome|||function welcome(){|||[T] .tags|||f
+wgetall|||wgetall|||[T] .tags|||f
+where|||function where()|||[T] .tags|||f
+whichpath|||whichpath|||[T] .tags|||f
+whodat|||function whodat()|||[T] .tags|||f
+wininfo|||function wininfo() {|||[T] .tags|||f
+wipe_|||function wipe_() {|||[T] .tags|||f
+wordfreq|||function wordfreq()|||[T] .tags|||f
+wordnet|||wordnet|||[T] .tags|||f
+words|||function words()|||[T] .tags|||f
+working|||function working()|||[T] .tags|||f
+writeiso|||function writeiso() {|||[T] .tags|||f
+wscan|||function wscan()|||[T] .tags|||f
+wwwrc|||function wwwrc()|||[T] .tags|||f
+xchown|||function xchown() {|||[T] .tags|||f
+xdel|||function xdel() {|||[T] .tags|||f
+xpath|||xpath|||[T] .tags|||f
+xtitle|||function xtitle()|||[T] .tags|||f
+yaourt|||function yaourt() {|||[T] .tags|||f
+yaourtd|||function yaourtd() {|||[T] .tags|||f
+yt2mp3|||yt2mp3|||[T] .tags|||f
+yt2ogg|||yt2ogg|||[T] .tags|||f
+ytplay|||ytplay|||[T] .tags|||f
+zero|||function zero() {|||[T] .tags|||f
+zipf|||zipf|||[T] .tags|||f
+_expand|||function _expand()|||[T] .tags|||f
+_get_longopts|||function _get_longopts()|||[T] .tags|||f
+_killall|||function _killall()|||[T] .tags|||f
+_longopts|||function _longopts()|||[T] .tags|||f
+_make|||function _make()|||[T] .tags|||f
+_meta_comp|||function _meta_comp()|||[T] .tags|||f
+_tar|||function _tar()|||[T] .tags|||f

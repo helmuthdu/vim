@@ -1,0 +1,19 @@
+/media/documentos/Helmuth/set-documents-folders
+/media/documentos/Helmuth/.bashrc
+/home/helmuth/.vimrc
+/home/helmuth/.bashrc
+/media/documentos/Helmuth/.dircolors_256
+/media/documentos/Helmuth/Github/aui/aui
+/home/helmuth/.dir_colors
+/media/documentos/Helmuth/Downloads/scripts/set-documents-folders
+/home/helmuth/Downloads/scripts/set-documents-folders
+/home/helmuth/Downloads/v2011.365c/PQLX/env/makeAll
+/home/helmuth/Downloads/v2011.365c/PQLX/env/makeVars
+/home/helmuth/Downloads/.bashrc
+/home/helmuth/Área de trabalho/.directory
+/media/documentos/Helmuth/Music/.directory
+/home/helmuth/Música/.directory
+/media/documentos/Helmuth/Pictures/.directory
+/home/helmuth/Imagens/.directory
+/home/helmuth/.profile
+/media/documentos/Helmuth/Github/vim/vimrc

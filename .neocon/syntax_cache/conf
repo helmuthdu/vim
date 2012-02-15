@@ -1,0 +1,12 @@
+xxx|||xxx|||[S] confTodo|||
+XXX|||XXX|||[S] confTodo|||
+match|||match|||[S] confComment|||
+TODO|||TODO|||[S] confTodo|||
+FIXME|||FIXME|||[S] confTodo|||
+skip|||skip|||[S] confString|||
+start|||start|||[S] confString|||
+end|||end|||[S] confString|||
+confTodo|||confTodo|||[S] confTodo|||
+confComment|||confComment|||[S] confComment|||
+contains|||contains|||[S] confComment|||
+confString|||confString|||[S] confString|||

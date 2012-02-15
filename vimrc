@@ -1,8 +1,9 @@
 " Global "{{{
     " General "{{{
         set nocompatible                   " explicitly get out of vi-compatible mode
-        set history=100                    " keep 100 lines of command line history
-        set clipboard+=unnamed             " use clipboard register ‘*’ for all y, d, c, p ops
+        set title                          " change the terminal's title
+        set history=300                    " keep 100 lines of command line history
+        set clipboard=unnamed              " use clipboard register ‘*’ for all y, d, c, p ops
         set backspace=2                    " make backspace work normal
         set nostartofline                  " don't jump to first character when paging
         set report=0                       " tell us when anything is changed via :...0
@@ -10,15 +11,19 @@
         set autowrite                      " Auto save before commands like next and make
         set autoread                       " Set to auto read when a file is changed from the outside
         set fileformats=unix,mac,dos       " support all three, in this order
-        set encoding=utf-8
         set printoptions=paper:a4,syntax:n " controls the default paper size and the printing of syntax highlighting (:n -> none)
-        set scrolloff=5                    " set X lines to the curors - when moving vertical..
-        set sidescrolloff=3
         set diffopt=filler                 " Add vertical spaces to keep right and left aligned
         set diffopt+=iwhite                " Ignore whitespace changes (focus on code changes)
         set esckeys                        " Allow cursor keys in insert mode.
         set ttyfast                        " smoother changes
         set gdefault                       " regex /g by default
+        set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
+        set viminfo='20,\"80               " read/write a .viminfo file, don't store more
+        " vertical/horizontal scroll off settings "{{{
+            set scrolloff=3
+            set sidescrolloff=7
+            set sidescroll=1
+        "}}}
         " When vimrc is edited, reload it"{{{
             autocmd! bufwritepost .vimrc source %
         "}}}
@@ -32,9 +37,11 @@
             set vb t_vb=     " disable any beeps or flashes on error
         "}}}
         " Enable mouse"{{{
-            set mouse=a
-            set mousemodel=popup
-            set mousehide
+            if has("mouse")
+                set mouse=a
+                set mousemodel=popup
+                set mousehide
+            endif
         "}}}
     "}}}
     " Plugins Manager "{{{
@@ -56,14 +63,16 @@
         set number               " turn on line numbers
         set linespace=0          " space it out a little more (easier to read)
         set cmdheight=1          " the command bar is 1 high
-        set pumheight=10         " Keep a small completion window
         set laststatus=2         " always show statusline
         set guicursor=a:blinkon0 " cursor-blinking off!!
         set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
-        set complete=.,w,b,u,t,i
+        set encoding=utf-8
+        set termencoding=utf-8
+        set fileencoding=utf-8
         set completeopt+=longest
         " wildmode "{{{
             set wildmenu           " nice tab-completion on the command line
+            set wildchar=9         " tab as completion character
             set wildmode=longest:full,list:full
             set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.ncb,*.opt,*.plg,.svn,.git,.hg,.app
         "}}}
@@ -120,17 +129,18 @@
                     " r = show right scroll bar
                     " L = show left scrollbar on split
                     " i = icon
-                    set guioptions-=T
+                    set guioptions=ac
                 "}}}
                 " Linux "{{{
                 if has('gui_gtk')
                     set guioptions-=m
                     nnoremap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-                    set gfn=Liberation\ Mono\ 9
+                    set gfn=Deja\ Vu\ Sans\ Mono\ 10
                 endif
                 "}}}
                 " Mac "{{{
                 if has('gui_mac') || has('gui_macvim')
+                    set transp=5
                     set guifont=Menlo:h12
                 endif
                 "}}}
@@ -174,13 +184,13 @@
     " }}}
     "}}}
     " wrap "{{{
+        set nowrap                   " word wrap
+        set wrapscan                 " Searches wrap around end of file
+        set display=lastline         " don't display @ with long paragraphs
+        set lbr                      " line break
+        let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
         set textwidth=79
-        set nowrap             " word wrap
-        set wrapscan           " Searches wrap around end of file
-        set display=lastline   " don't display @ with long paragraphs
-        set lbr                " line break
-        set whichwrap+=<,>,h,l " whichwrap -- left/right keys can traverse up/down
-        let &sbr = nr2char(8618).' '    " Show ↪ at the beginning of wrapped lines
+        set formatoptions=qrn1
     "}}}
     " search config "{{{
         set ignorecase      " select case-insenitiv search
@@ -191,95 +201,75 @@
         set matchpairs+=<:> " these tokens belong together
         set hlsearch        " highlight all matches...
         set incsearch       " ...and also during entering the pattern
-        set viminfo='100,f1 "Save up to 100 marks, enable capital marks
         nohlsearch          " avoid highlighting when reloading vimrc
     "}}}
     " folding "{{{
-        set foldenable
-        set foldmethod=marker " Markers are used to specify folds.
-        set foldlevel=0
+        set foldenable        " enable folding
+        set foldcolumn=2      " add a fold column
+        set foldmethod=marker " detect triple-{ style fold markers
+        set foldlevelstart=0  " start out with everything folded
+        set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+                              " which commands trigger auto-unfold
     "}}}
 "}}}
 " Keymappings "{{{
     " Set mapleader
     let mapleader=","
     let g:mapleader=","
-    " F2 = Paste Toggle (in insert mode, pasting indented text behavior changes) "{{{
-        set pastetoggle=<F2>
-    "}}}
-    " search+replace word under cursor "{{{
-        nnoremap <C-h> :,$s/\<<C-R><C-W>\>/
-    "}}}
-    "calculate the value in one line "{{{
-        map <silent><Leader>cl :call CalcLine(".")<CR>
-    "}}}
-    " spacebar create/open/close folding "{{{
-        nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
-        vnoremap <Space> zf
-    "}}}
-    " Fast editing of .vimrc "{{{
-        map <leader>cfg :e! ~/.vimrc <cr>
-    "}}}
-    " enable/disable list "{{{
-        nmap <silent> <leader>L :set nolist!<CR>
-    "}}}
-    " ,/ turn off search highlighting "{{{
-        nmap <leader>/ :nohl<CR>
-    "}}}
-    "Map escape key to jj -- much faster "{{{
-        imap jj <esc>
-    "}}}
-    " Vertically split window and select it "{{{
-        nnoremap <Leader><Leader>w :call SplitScreen()<cr>
-    " }}}
-    " Sudo to write "{{{
-        cmap w!! %!sudo tee > /dev/null %
-    "}}}
-    " Quick yanking to the end of the line"{{{
-        nmap Y y$
-    "}}}
-    " Quick alignment of text"{{{
-        nmap <leader>al :left<CR>
-        nmap <leader>ar :right<CR>
-        nmap <leader>ac :center<CR>
-    "}}}
-    " Toggle Spellcheck "{{{
-        nmap <silent><Leader>ss :call ToggleSpell()<CR>
-    "}}}
-    " Spell commands "{{{
-        map <leader>sn ]s
-        map <leader>sp [s
-        map <leader>sa zg
-        map <leader>s? z=
-    "}}}
-    " Use tab to indent a line "{{{
-        vmap <TAB> >gv
-        vmap <S-TAB> <gv
-        vnoremap < <gv
-        vnoremap > >gv
-    "}}}
-    "  Moving Between Windows "{{{
-        " Next buffer
-        nmap <silent> ,. :bnext<CR>
-        " Previous buffer
-        nmap <silent> ,m :bprev<CR>
-    "}}}
-    "  When pressing <leader>cd switch to the directory of the open buffer "{{{
-        map <leader>cd :cd %:p:h<cr>
-    "}}}
-    " Swap two words "{{{
-        nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-    "}}}
-    " set text wrapping toggles "{{{
-        nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-    "}}}
+    " F2 = Paste Toggle
+    set pastetoggle=<F2>
+    " search+replace word under cursor
+    nnoremap <C-h> :,$s/\<<C-R><C-W>\>/
+    " calculate the value in one line
+    map <silent><Leader>cl :call CalcLine(".")<CR>
+    " spacebar create/open/close folding
+    nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
+    vnoremap <Space> zf
+    " Fast editing of .vimrc
+    map <leader>cfg :e! ~/.vimrc <cr>
+    " enable/disable list
+    nmap <silent> <leader>L :set nolist!<CR>
+    " ,/ turn off search highlighting
+    nmap <leader>/ :nohl<CR>
+    " Map escape key to jj -- much faster
+    imap jj <esc>
+    " Vertically split window and select it
+    nnoremap <Leader><Leader>w :call SplitScreen()<cr>
+    " Sudo to write
+    cmap W :w !sudo tee % >/dev/null
+    " Quick yanking to the end of the line
+    nmap Y y$
+    " Quick alignment of text
+    nmap <leader>al :left<CR>
+    nmap <leader>ar :right<CR>
+    nmap <leader>ac :center<CR>
+    " Toggle Spellcheck
+    nmap <silent><Leader>ss :call ToggleSpell()<CR>
+    " Spell commands
+    map <leader>sn ]s
+    map <leader>sp [s
+    map <leader>sa zg
+    map <leader>s? z=
+    " Use tab to indent a line
+    vmap <TAB> >gv
+    vmap <S-TAB> <gv
+    vnoremap < <gv
+    vnoremap > >gv
+    " Moving Between buffers
+    nmap <silent> ,. :bnext<CR>
+    nmap <silent> ,m :bprev<CR>
+    " Moving Between Windows
+    nnoremap <Leader>h <C-w>h
+    nnoremap <Leader>l <C-w>l
+    nnoremap <Leader>j <C-w>j
+    nnoremap <Leader>k <C-w>k
+    " switch to the directory of the open buffer
+    map <leader>cd :cd %:p:h<cr>
+    " set text wrapping toggles
+    nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 "}}}
 " Plugins Bundle "{{{
-    Bundle 'DrawIt'
-    Bundle 'EasyGrep'
-    Bundle 'EasyMotion'
     Bundle 'Gundo'
-    Bundle 'Tagbar'
     Bundle 'YankRing.vim'
     Bundle 'buftabs'
     Bundle 'matchit.zip'
@@ -292,7 +282,9 @@
     Bundle 'hotoo/calendar-vim'
     Bundle 'jiangmiao/auto-pairs'
     Bundle 'kien/ctrlp.vim'
+    Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Lokaltog/vim-powerline'
+    Bundle 'majutsushi/tagbar'
     Bundle 'mkitt/markdown-preview.vim'
     Bundle 'roman/golden-ratio'
     Bundle 'scrooloose/nerdcommenter'
@@ -318,12 +310,6 @@
             \   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
         \ ]
         let g:calendar_current_idx = 1
-    "}}}
-    " easygrep "{{{
-        let g:EasyGrepMode=2
-        let g:EasyGrepCommand=1
-        let g:EasyGrepRecursive=1
-        let g:EasyGrepOpenWindowOnMatch=1
     "}}}
     " easymotion "{{{
         let g:EasyMotion_leader_key = '<Leader>m'
@@ -439,13 +425,17 @@
      let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
      "}}}
     " powerline "{{{
-        let g:Powerline_symbols = 'fancy'
-        "let g:Powerline_cache_file = ""
+        if &t_Co >= 256 || has('gui_running')
+            let g:Powerline_symbols = 'fancy'
+            "let g:Powerline_cache_file = ""
+        endif
     "}}}
     " tabularize "{{{
         if exists(":Tabularize")
             nmap <Leader>a= :Tabularize /=<CR>
             vmap <Leader>a= :Tabularize /=<CR>
+            nmap <Leader>a) :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>a) :Tabularize /)/r1c1l0<CR>
             nmap <Leader>a: :Tabularize /:\zs<CR>
             vmap <Leader>a: :Tabularize /:\zs<CR>
         endif
@@ -456,13 +446,13 @@
             let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
         end
 
-        nmap <silent><leader>T :TagbarToggle<CR>
-
         let g:tagbar_width = 30
         let g:tagbar_autoclose = 1
         let g:tagbar_autofocus = 1
         let g:tagbar_compact = 1
-        let g:tagbar_expand = 1
+        let g:tagbar_expand = 0
+
+        nmap <silent><leader>T :TagbarToggle<CR>
     "}}}
     " scratch "{{{
         " toggle scratch window
@@ -513,7 +503,7 @@
         endif
     endfunctio
     "}}}
-    " Spell Check "{{{
+    " function! ToggleSpell() "{{{
     let b:myLang=0
     let g:myLangList=["nospell","pt","en"]
     function! ToggleSpell()
@@ -591,5 +581,3 @@
         "}}}
     endif
 "}}}
-"
-

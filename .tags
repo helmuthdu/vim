@@ -1,0 +1,927 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+"	/home/helmuth/.vimrc	/^        nohlsearch          " avoid highlighting when reloading vimrc$/;"	m	language:Vim
+,.	/home/helmuth/.vimrc	/^    nmap <silent> ,. :bnext<CR>$/;"	m	language:Vim
+,m	/home/helmuth/.vimrc	/^    nmap <silent> ,m :bprev<CR>$/;"	m	language:Vim
+4chanimages	/media/documentos/Helmuth/Downloads/.bashrc	/^function 4chanimages()$/;"	f	language:Sh
+<	/home/helmuth/.vimrc	/^    vnoremap < <gv$/;"	m	language:Vim
+<BS>	/home/helmuth/.vimrc	/^     inoremap <expr><BS> neocomplcache#smart_close_popup()."\\<C-h>"$/;"	m	language:Vim
+<C-e>	/home/helmuth/.vimrc	/^     inoremap <expr><C-e>  neocomplcache#cancel_popup()$/;"	m	language:Vim
+<C-g>	/home/helmuth/.vimrc	/^     inoremap <expr><C-g>     neocomplcache#undo_completion()$/;"	m	language:Vim
+<C-h>	/home/helmuth/.vimrc	/^     inoremap <expr><C-h> neocomplcache#smart_close_popup()."\\<C-h>"$/;"	m	language:Vim
+<C-h>	/home/helmuth/.vimrc	/^    nnoremap <C-h> :,$s\/\\<<C-R><C-W>\\>\/$/;"	m	language:Vim
+<C-l>	/home/helmuth/.vimrc	/^     inoremap <expr><C-l>     neocomplcache#complete_common_string()$/;"	m	language:Vim
+<C-left>	/home/helmuth/.vimrc	/^        noremap <C-left> :bprev<CR>$/;"	m	language:Vim
+<C-right>	/home/helmuth/.vimrc	/^        noremap <C-right> :bnext<CR>$/;"	m	language:Vim
+<C-space>	/home/helmuth/.vimrc	/^     imap <C-space>     <Plug>(neocomplcache_snippets_expand)$/;"	m	language:Vim
+<C-y>	/home/helmuth/.vimrc	/^     inoremap <expr><C-y>  neocomplcache#close_popup()$/;"	m	language:Vim
+<F8>	/home/helmuth/.vimrc	/^                    nnoremap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>$/;"	m	language:Vim
+<leader>/	/home/helmuth/.vimrc	/^    nmap <leader>\/ :nohl<CR>$/;"	m	language:Vim
+<Leader><Leader>w	/home/helmuth/.vimrc	/^    nnoremap <Leader><Leader>w :call SplitScreen()<cr>$/;"	m	language:Vim
+<Leader>a)	/home/helmuth/.vimrc	/^            nmap <Leader>a) :Tabularize \/)\/r1c1l0<CR>$/;"	m	language:Vim
+<Leader>a)	/home/helmuth/.vimrc	/^            vmap <Leader>a) :Tabularize \/)\/r1c1l0<CR>$/;"	m	language:Vim
+<Leader>a:	/home/helmuth/.vimrc	/^            nmap <Leader>a: :Tabularize \/:\\zs<CR>$/;"	m	language:Vim
+<Leader>a:	/home/helmuth/.vimrc	/^            vmap <Leader>a: :Tabularize \/:\\zs<CR>$/;"	m	language:Vim
+<Leader>a=	/home/helmuth/.vimrc	/^            nmap <Leader>a= :Tabularize \/=<CR>$/;"	m	language:Vim
+<Leader>a=	/home/helmuth/.vimrc	/^            vmap <Leader>a= :Tabularize \/=<CR>$/;"	m	language:Vim
+<leader>ac	/home/helmuth/.vimrc	/^    nmap <leader>ac :center<CR>$/;"	m	language:Vim
+<leader>al	/home/helmuth/.vimrc	/^    nmap <leader>al :left<CR>$/;"	m	language:Vim
+<leader>ar	/home/helmuth/.vimrc	/^    nmap <leader>ar :right<CR>$/;"	m	language:Vim
+<leader>ca	/home/helmuth/.vimrc	/^        nmap <leader>ca :Calendar<CR>$/;"	m	language:Vim
+<leader>cd	/home/helmuth/.vimrc	/^    map <leader>cd :cd %:p:h<cr>$/;"	m	language:Vim
+<leader>cfg	/home/helmuth/.vimrc	/^    map <leader>cfg :e! ~\/.vimrc <cr>$/;"	m	language:Vim
+<Leader>cl	/home/helmuth/.vimrc	/^    map <silent><Leader>cl :call CalcLine(".")<CR>$/;"	m	language:Vim
+<Leader>h	/home/helmuth/.vimrc	/^    nnoremap <Leader>h <C-w>h$/;"	m	language:Vim
+<Leader>j	/home/helmuth/.vimrc	/^    nnoremap <Leader>j <C-w>j$/;"	m	language:Vim
+<Leader>k	/home/helmuth/.vimrc	/^    nnoremap <Leader>k <C-w>k$/;"	m	language:Vim
+<leader>L	/home/helmuth/.vimrc	/^    nmap <silent> <leader>L :set nolist!<CR>$/;"	m	language:Vim
+<Leader>l	/home/helmuth/.vimrc	/^    nnoremap <Leader>l <C-w>l$/;"	m	language:Vim
+<Leader>nt	/home/helmuth/.vimrc	/^        nmap <silent><Leader>nt :NERDTreeToggle<CR>$/;"	m	language:Vim
+<leader>p	/home/helmuth/.vimrc	/^        nmap <silent><leader>p :MDP<CR>$/;"	m	language:Vim
+<leader>pb	/home/helmuth/.vimrc	/^        nmap <leader>pb :CtrlPBuffer<CR>$/;"	m	language:Vim
+<leader>pm	/home/helmuth/.vimrc	/^        nmap <leader>pm :CtrlPMRUFiles<CR>$/;"	m	language:Vim
+<leader>s	/home/helmuth/.vimrc	/^        nmap <leader>s :call ToggleScratch()<CR>$/;"	m	language:Vim
+<leader>s?	/home/helmuth/.vimrc	/^    map <leader>s? z=$/;"	m	language:Vim
+<leader>sa	/home/helmuth/.vimrc	/^    map <leader>sa zg$/;"	m	language:Vim
+<leader>sn	/home/helmuth/.vimrc	/^    map <leader>sn ]s$/;"	m	language:Vim
+<leader>sp	/home/helmuth/.vimrc	/^    map <leader>sp [s$/;"	m	language:Vim
+<Leader>ss	/home/helmuth/.vimrc	/^    nmap <silent><Leader>ss :call ToggleSpell()<CR>$/;"	m	language:Vim
+<leader>T	/home/helmuth/.vimrc	/^        nmap <silent><leader>T :TagbarToggle<CR>$/;"	m	language:Vim
+<leader>tw	/home/helmuth/.vimrc	/^    nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>$/;"	m	language:Vim
+<leader>u	/home/helmuth/.vimrc	/^        nmap <leader>u :GundoToggle<CR>$/;"	m	language:Vim
+<Leader>yr	/home/helmuth/.vimrc	/^        nmap <silent><Leader>yr :YRShow<cr>$/;"	m	language:Vim
+<S-TAB>	/home/helmuth/.vimrc	/^    vmap <S-TAB> <gv$/;"	m	language:Vim
+<Space>	/home/helmuth/.vimrc	/^    nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>$/;"	m	language:Vim
+<Space>	/home/helmuth/.vimrc	/^    vnoremap <Space> zf$/;"	m	language:Vim
+<TAB>	/home/helmuth/.vimrc	/^     inoremap <expr><TAB>  pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m	language:Vim
+<TAB>	/home/helmuth/.vimrc	/^    vmap <TAB> >gv$/;"	m	language:Vim
+>	/home/helmuth/.vimrc	/^    vnoremap > >gv$/;"	m	language:Vim
+abort	/media/documentos/Helmuth/Downloads/.bashrc	/^function abort()$/;"	f	language:Sh
+about	/media/documentos/Helmuth/Downloads/.bashrc	/^function about() {$/;"	f	language:Sh
+addfunction	/media/documentos/Helmuth/Downloads/.bashrc	/^function addfunction() { declare -f $1 >> ~\/.bashrc ; }$/;"	f	language:Sh
+add_daemon	/media/documentos/Helmuth/Github/aui/aui	/^function add_daemon(){ #{{{$/;"	f	language:Sh
+add_module	/media/documentos/Helmuth/Github/aui/aui	/^function add_module(){ #{{{$/;"	f	language:Sh
+align_center	/media/documentos/Helmuth/Downloads/.bashrc	/^function align_center() { l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})\/2));echo "$(while ((--j>0)); do printf " ";done;)$l";done;} #; ls --color=none \/ | center$/;"	f	language:Sh
+align_right	/media/documentos/Helmuth/Downloads/.bashrc	/^function align_right() { l="$(cat -)"; [ -n "$1" ] && s=$1 || s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j-->0)); do printf " ";done;)$l";done;} #; ls --color=none \/ | right 150$/;"	f	language:Sh
+allips	/media/documentos/Helmuth/Downloads/.bashrc	/^function allips()$/;"	f	language:Sh
+allStrings	/media/documentos/Helmuth/Downloads/.bashrc	/^function allStrings() { cat "$1" | tr -d "\\0" | strings ; }$/;"	f	language:Sh
+allVideos	/media/documentos/Helmuth/Downloads/.bashrc	/^function allVideos() { find .\/ -type f -print0 | xargs -0 file -iNf - | grep ": video\/" | cut -d: -f1 ; }$/;"	f	language:Sh
+anagrams	/media/documentos/Helmuth/Downloads/.bashrc	/^function anagrams()$/;"	f	language:Sh
+anagram_	/media/documentos/Helmuth/Downloads/.bashrc	/^function anagram_() { function s() { sed 's\/[[:space:]]*\/\/g;s\/.\/\\n\\0\/g'<<<"$@"|tr A-Z a-z|sort;};cmp -s <(s $1) <(s $2)||echo -n "not ";echo anagram; }$/;"	f	language:Sh
+apath	/media/documentos/Helmuth/Downloads/.bashrc	/^function apath()$/;"	f	language:Sh
+append	/media/documentos/Helmuth/Downloads/.bashrc	/^function append() {$/;"	f	language:Sh
+apt	/media/documentos/Helmuth/Downloads/.bashrc	/^function apt-history() {$/;"	f	language:Sh
+aptg	/media/documentos/Helmuth/Downloads/.bashrc	/^function aptg()		# debian specific.$/;"	f	language:Sh
+aptitude	/media/documentos/Helmuth/Downloads/.bashrc	/^function aptitude-remove-dep() { sudo aptitude markauto $(apt-cache showsrc "$1" | grep Build-Depends | perl -p -e 's\/(?:[\\[(].+?[\\])]|Build-Depends:|,|\\|)\/\/g'); }$/;"	f	language:Sh
+arabic2roman	/media/documentos/Helmuth/Downloads/.bashrc	/^function arabic2roman() {$/;"	f	language:Sh
+archwikisearch	/media/documentos/Helmuth/Downloads/.bashrc	/^function archwikisearch() {$/;"	f	language:Sh
+asc2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2all() {$/;"	f	language:Sh
+asc2b32	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2b32() {$/;"	f	language:Sh
+asc2b64	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2b64() {$/;"	f	language:Sh
+asc2bin	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2bin() {$/;"	f	language:Sh
+asc2dec	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2dec() {$/;"	f	language:Sh
+asc2hex	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2hex() {$/;"	f	language:Sh
+asc2oct	/media/documentos/Helmuth/Downloads/.bashrc	/^function asc2oct() {$/;"	f	language:Sh
+ask	/media/documentos/Helmuth/Downloads/.bashrc	/^function ask()$/;"	f	language:Sh
+atb	/media/documentos/Helmuth/Downloads/.bashrc	/^function atb() { l=$(tar tf $1); if [ $(echo "$l" | wc -l) -eq $(echo "$l" | grep $(echo "$l" | head -n1) | wc -l) ]; then tar xf $1; else mkdir ${1%.tar.gz} && tar xf $1 -C ${1%.tar.gz}; fi ; }$/;"	f	language:Sh
+atomtitles	/media/documentos/Helmuth/Downloads/.bashrc	/^function atomtitles()$/;"	f	language:Sh
+atv	/media/documentos/Helmuth/Downloads/.bashrc	/^function atv()$/;"	f	language:Sh
+ATV	/media/documentos/Helmuth/Downloads/.bashrc	/^function ATV()$/;"	f	language:Sh
+atv2avi	/media/documentos/Helmuth/Downloads/.bashrc	/^function atv2avi()$/;"	f	language:Sh
+atv2avi_w	/media/documentos/Helmuth/Downloads/.bashrc	/^function atv2avi_w()$/;"	f	language:Sh
+atv_	/media/documentos/Helmuth/Downloads/.bashrc	/^function atv_()$/;"	f	language:Sh
+audioextract	/media/documentos/Helmuth/Downloads/.bashrc	/^function audioextract()$/;"	f	language:Sh
+audiorecord	/media/documentos/Helmuth/Downloads/.bashrc	/^function audiorecord-45dB()$/;"	f	language:Sh
+aurget	/media/documentos/Helmuth/Downloads/.bashrc	/^function aurget() {$/;"	f	language:Sh
+aurhelper_install	/media/documentos/Helmuth/Github/aui/aui	/^function aurhelper_install(){ #{{{$/;"	f	language:Sh
+avg	/media/documentos/Helmuth/Downloads/.bashrc	/^function avg() { awk "\/$2\/{sum += \\$$1; lc += 1;} END {printf \\"Average over %d lines: %f\\n\\", lc, sum\/lc}"; }$/;"	f	language:Sh
+b:myLang	/home/helmuth/.vimrc	/^    let b:myLang=0$/;"	v	language:Vim
+backupsfolder	/media/documentos/Helmuth/Downloads/.bashrc	/^function backupsfolder()$/;"	f	language:Sh
+backup_bashfiles	/media/documentos/Helmuth/Downloads/.bashrc	/^function backup_bashfiles()$/;"	f	language:Sh
+bak	/media/documentos/Helmuth/Downloads/.bashrc	/^function bak()$/;"	f	language:Sh
+bashtips	/media/documentos/Helmuth/Downloads/.bashrc	/^function bashtips() {$/;"	f	language:Sh
+batchexec	/media/documentos/Helmuth/Downloads/.bashrc	/^function batchexec()$/;"	f	language:Sh
+bclock	/media/documentos/Helmuth/Downloads/.bashrc	/^function bclock()$/;"	f	language:Sh
+bclock2	/media/documentos/Helmuth/Downloads/.bashrc	/^function bclock2()$/;"	f	language:Sh
+bg_wrapper	/media/documentos/Helmuth/Downloads/.bashrc	/^function bg_wrapper()$/;"	f	language:Sh
+bin2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2all() {$/;"	f	language:Sh
+bin2asc	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2asc() {$/;"	f	language:Sh
+bin2b32	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2b32() {$/;"	f	language:Sh
+bin2b64	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2b64() {$/;"	f	language:Sh
+bin2dec	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2dec() {$/;"	f	language:Sh
+bin2hex	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2hex() {$/;"	f	language:Sh
+bin2oct	/media/documentos/Helmuth/Downloads/.bashrc	/^function bin2oct() {$/;"	f	language:Sh
+blank_rename	/media/documentos/Helmuth/Downloads/.bashrc	/^function blank_rename()$/;"	f	language:Sh
+bluray2xvid	/media/documentos/Helmuth/Downloads/.bashrc	/^function bluray2xvid()$/;"	f	language:Sh
+bookmark	/media/documentos/Helmuth/Downloads/.bashrc	/^function bookmark() {$/;"	f	language:Sh
+box	/media/documentos/Helmuth/Downloads/.bashrc	/^function box() { t="$1xxxx";c=${2:-#}; echo ${t\/\/?\/$c}; echo "$c $1 $c"; echo ${t\/\/?\/$c}; }$/;"	f	language:Sh
+boxeedl	/media/documentos/Helmuth/Downloads/.bashrc	/^function boxeedl()$/;"	f	language:Sh
+brownian	/media/documentos/Helmuth/Downloads/.bashrc	/^function brownian()$/;"	f	language:Sh
+bu	/media/documentos/Helmuth/Downloads/.bashrc	/^function bu() { cp $1 ${1}-`date +%Y%m%d%H%M`.backup ; }$/;"	f	language:Sh
+buf	/media/documentos/Helmuth/Downloads/.bashrc	/^function buf() { cp -v $1 ${1\/${1%%.*}\/$f-$(date +"%Y%m%d_%H%M%S")}; }$/;"	f	language:Sh
+buffer	/media/documentos/Helmuth/Downloads/.bashrc	/^function buffer() { tty -s && return; tmp=$(mktemp); cat > "${tmp}"; if [ -n "$1" ] && ( ( [ -f "$1" ] && [ -w "$1" ] ) || ( ! [ -a "$1" ] && [ -w "$(dirname "$1")" ] ) ); then mv -f "${tmp}" "$1"; else echo "Can't write in \\"$1\\""; rm -f "${tmp}"; fi }$/;"	f	language:Sh
+build	/media/documentos/Helmuth/Downloads/.bashrc	/^function build()$/;"	f	language:Sh
+build	/tmp/yaourt-tmp-helmuth/aur-appmenu-gtk/PKGBUILD	/^build() {$/;"	f	language:Sh
+build	/tmp/yaourt-tmp-helmuth/aur-egtk-bzr/PKGBUILD	/^build() {$/;"	f	language:Sh
+build	/tmp/yaourt-tmp-helmuth/aur-gtk-engine-murrine-git/PKGBUILD	/^build() {$/;"	f	language:Sh
+build	/tmp/yaourt-tmp-helmuth/aur-unity/PKGBUILD	/^build() {$/;"	f	language:Sh
+build_	/media/documentos/Helmuth/Downloads/.bashrc	/^function build_() {$/;"	f	language:Sh
+calc	/media/documentos/Helmuth/Downloads/.bashrc	/^function calc() {$/;"	f	language:Sh
+calculate	/media/documentos/Helmuth/Downloads/.bashrc	/^function calculate()       # Here's where the actual work gets done.$/;"	f	language:Sh
+casepat	/media/documentos/Helmuth/Downloads/.bashrc	/^function casepat() { perl -pe 's\/([a-zA-Z])\/sprintf("[%s%s]",uc($1),$1)\/ge' ; }$/;"	f	language:Sh
+cat_pdfs	/media/documentos/Helmuth/Downloads/.bashrc	/^function cat_pdfs() { python '\/System\/Library\/Automator\/Combine PDF Pages.action\/Contents\/Resources\/join.py' "$@" ; }$/;"	f	language:Sh
+ccopy	/media/documentos/Helmuth/Downloads/.bashrc	/^function ccopy() { for i in $*; do cp -a $i \/tmp\/ccopy.$i; done }$/;"	f	language:Sh
+cd	/media/documentos/Helmuth/Downloads/.bashrc	/^function cd() { if [ -n "$1" ]; then [ -f "$1" ] && set -- "${1%\/*}"; else [ -n "$CDDIR" ] && set -- "$CDDIR"; fi; command cd "$@"; }$/;"	f	language:Sh
+cds	/media/documentos/Helmuth/Downloads/.bashrc	/^function cds() {$/;"	f	language:Sh
+cel2fah	/media/documentos/Helmuth/Downloads/.bashrc	/^function cel2fah() {$/;"	f	language:Sh
+cel2kel	/media/documentos/Helmuth/Downloads/.bashrc	/^function cel2kel() {$/;"	f	language:Sh
+cgrep	/media/documentos/Helmuth/Downloads/.bashrc	/^function cgrep() { GREP_COLOR="1;3$((RANDOM%6+1))" grep --color=always "$@" ; }$/;"	f	language:Sh
+checkbox	/media/documentos/Helmuth/Github/aui/aui	/^function checkbox(){ #{{{$/;"	f	language:Sh
+checksum	/media/documentos/Helmuth/Downloads/.bashrc	/^function checksum()$/;"	f	language:Sh
+check_	/media/documentos/Helmuth/Downloads/.bashrc	/^function check_()$/;"	f	language:Sh
+check_root	/media/documentos/Helmuth/Github/aui/aui	/^function check_root() {$/;"	f	language:Sh
+choose_aurhelper	/media/documentos/Helmuth/Github/aui/aui	/^function choose_aurhelper(){$/;"	f	language:Sh
+chr	/media/documentos/Helmuth/Downloads/.bashrc	/^function chr() { printf \\\\$(($1\/64*100+$1%64\/8*10+$1%8)); }$/;"	f	language:Sh
+cifsmount	/media/documentos/Helmuth/Downloads/.bashrc	/^function cifsmount() { sudo mount -t cifs -o username=${USER},uid=${UID},gid=${GROUPS} $1 $2; }$/;"	f	language:Sh
+cifsumount	/media/documentos/Helmuth/Downloads/.bashrc	/^function cifsumount() { sudo umount $1; }$/;"	f	language:Sh
+clean_orphan_packages	/media/documentos/Helmuth/Github/aui/aui	/^function clean_orphan_packages(){$/;"	f	language:Sh
+clearIptables	/media/documentos/Helmuth/Downloads/.bashrc	/^function clearIptables()$/;"	f	language:Sh
+clock	/media/documentos/Helmuth/Downloads/.bashrc	/^function clock()$/;"	f	language:Sh
+cmdfu	/media/documentos/Helmuth/Downloads/.bashrc	/^function cmdfu() { curl "http:\/\/www.commandlinefu.com\/commands\/matching\/$@\/$(echo -n $@ | openssl base64)\/plaintext" --silent | sed "s\/\\(^#.*\\)\/\\x1b[32m\\1\\x1b[0m\/g" | less -R ; }$/;"	f	language:Sh
+cmdfu_rating	/media/documentos/Helmuth/Downloads/.bashrc	/^function cmdfu_rating()$/;"	f	language:Sh
+cmdfu_rating_	/media/documentos/Helmuth/Downloads/.bashrc	/^function cmdfu_rating_()$/;"	f	language:Sh
+cmdpkg	/media/documentos/Helmuth/Downloads/.bashrc	/^function cmdpkg() { PACKAGE=$(dpkg -S $(which $1) | cut -d':' -f1); echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}" ;}$/;"	f	language:Sh
+cn	/media/documentos/Helmuth/Downloads/.bashrc	/^function cn() { for i in *.mp3; do id3v2 --TXXX "Catalog Number":"$1" "$i"; done; }$/;"	f	language:Sh
+coin	/media/documentos/Helmuth/Downloads/.bashrc	/^function coin-flip()$/;"	f	language:Sh
+collatz	/media/documentos/Helmuth/Downloads/.bashrc	/^function collatz()$/;"	f	language:Sh
+color	/media/documentos/Helmuth/Downloads/.bashrc	/^function color-picker()$/;"	f	language:Sh
+ColorChart	/media/documentos/Helmuth/Downloads/.bashrc	/^	ColorChart()$/;"	f	language:Sh
+colorize	/media/documentos/Helmuth/Downloads/.bashrc	/^function colorize-text()$/;"	f	language:Sh
+colors	/media/documentos/Helmuth/Downloads/.bashrc	/^function colors()$/;"	f	language:Sh
+colors2	/media/documentos/Helmuth/Downloads/.bashrc	/^function colors2()$/;"	f	language:Sh
+colors2nums	/media/documentos/Helmuth/Downloads/.bashrc	/^function colors2nums()$/;"	f	language:Sh
+comics	/media/documentos/Helmuth/Downloads/.bashrc	/^function comics() {$/;"	f	language:Sh
+command	/media/documentos/Helmuth/Downloads/.bashrc	/^function command-timer() { echo "notify-send TimeToQuit" | at "$@" ; }$/;"	f	language:Sh
+comp	/media/documentos/Helmuth/Downloads/.bashrc	/^function comp() { # compare the speed of two commands (loop $1 times)$/;"	f	language:Sh
+comparenclean	/media/documentos/Helmuth/Downloads/.bashrc	/^function comparenclean() { grep -Fvf $1 $2 > $3 ; }$/;"	f	language:Sh
+comparenclean_	/media/documentos/Helmuth/Downloads/.bashrc	/^function comparenclean_() { comm -13 <(sort $1) <(sort $2) > $3 ; }$/;"	f	language:Sh
+compression_level	/media/documentos/Helmuth/Downloads/.bashrc	/^function compression_level()$/;"	f	language:Sh
+compress_	/media/documentos/Helmuth/Downloads/.bashrc	/^function compress_() {$/;"	f	language:Sh
+configure_fonts	/media/documentos/Helmuth/Github/aui/aui	/^function configure_fonts(){$/;"	f	language:Sh
+connected	/media/documentos/Helmuth/Downloads/.bashrc	/^function connected() { ping -c1 -w2 google.com > \/dev\/null 2>&1; }$/;"	f	language:Sh
+connected_	/media/documentos/Helmuth/Downloads/.bashrc	/^function connected_() { rm -f \/tmp\/connect; http_proxy='http:\/\/a.b.c.d:8080' wget -q -O \/tmp\/connect http:\/\/www.google.com; if [[ -s \/tmp\/connect ]]; then return 0; else return 1; fi; }$/;"	f	language:Sh
+conv2avi	/media/documentos/Helmuth/Downloads/.bashrc	/^function conv2avi() {$/;"	f	language:Sh
+convertatemp	/media/documentos/Helmuth/Downloads/.bashrc	/^function convertatemp()$/;"	f	language:Sh
+corename	/media/documentos/Helmuth/Downloads/.bashrc	/^function corename()$/;"	f	language:Sh
+countbraces	/media/documentos/Helmuth/Downloads/.bashrc	/^function countbraces() { COUNT_OPENING=$(echo $1 | grep -o "(" | wc -l); COUNT_CLOSING=$(echo $1 | grep -o ")" | wc -l); echo Opening: $COUNT_OPENING; echo Closing: $COUNT_CLOSING; }$/;"	f	language:Sh
+countdown	/media/documentos/Helmuth/Downloads/.bashrc	/^function countdown() { case "$1" in -s) shift;; *) set $(($1 * 60));; esac; local S=" "; for i in $(seq "$1" -1 1); do echo -ne "$S\\r $i\\r"; sleep 1; done; echo -e "$S\\rBOOM!"; }$/;"	f	language:Sh
+count_files	/media/documentos/Helmuth/Downloads/.bashrc	/^function count_files()$/;"	f	language:Sh
+count_files_by_ext	/media/documentos/Helmuth/Downloads/.bashrc	/^function count_files_by_ext() { find . -type f | sed -n 's\/..*\\.\/\/p' | sort -f | uniq -ic ; }$/;"	f	language:Sh
+count_processes	/media/documentos/Helmuth/Downloads/.bashrc	/^function count_processes()$/;"	f	language:Sh
+cpf	/home/helmuth/.bashrc	/^cpf() { cp "$@" && goto "$_"; }$/;"	f	language:Sh
+cpf	/media/documentos/Helmuth/.bashrc	/^cpf() { cp "$@" && goto "$_"; }$/;"	f	language:Sh
+cpo	/media/documentos/Helmuth/Downloads/.bashrc	/^function cpo() { [[ $# -lt 2 ]] && echo 'need IP and port' && return 2; [[ `wget -q "http:\/\/dnstools.com\/?count=3&checkp=on&portNum=$2&target=$1&submit=Go\\!" -O - |grep -ic "Connected successfully to port $2"` -gt 0 ]] && echo OPEN || echo CLOSED; }$/;"	f	language:Sh
+cp_mp3_to	/media/documentos/Helmuth/Downloads/.bashrc	/^function cp_mp3_to() { PID=`pidof audacious2`; FILEPATH=`lsof -p $PID| grep mp3| sed s\/[^\\\/]*\/\/`; cp "$FILEPATH" "$1"; }$/;"	f	language:Sh
+cp_p	/media/documentos/Helmuth/Downloads/.bashrc	/^function cp_p() {$/;"	f	language:Sh
+create_user	/media/documentos/Helmuth/Github/aui/aui	/^function create_user(){$/;"	f	language:Sh
+create_user_list	/media/documentos/Helmuth/Downloads/.bashrc	/^function create_user_list()$/;"	f	language:Sh
+crontest	/media/documentos/Helmuth/Downloads/.bashrc	/^function crontest() { date '-d +2 minutes' +'%M %k %d %m *'; }$/;"	f	language:Sh
+crypt	/media/documentos/Helmuth/Downloads/.bashrc	/^function crypt() {$/;"	f	language:Sh
+cto	/media/documentos/Helmuth/Downloads/.bashrc	/^function cto() {$/;"	f	language:Sh
+currency_convert	/media/documentos/Helmuth/Downloads/.bashrc	/^function currency_convert() { wget -qO- "http:\/\/www.google.com\/finance\/converter?a=$1&from=$2&to=$3&hl=es" | sed '\/res\/!d;s\/<[^>]*>\/\/g'; }$/;"	f	language:Sh
+currency_convert_	/media/documentos/Helmuth/Downloads/.bashrc	/^function currency_convert_() { curl "http:\/\/www.xe.com\/wap\/2co\/convert.cgi?Amount=$1&From=$2&To=$3" -A "Mozilla" -s | sed -n "s\/.*>\\(.*\\) $3<.*\/\\1\/p"; }$/;"	f	language:Sh
+currency_convert_help	/media/documentos/Helmuth/Downloads/.bashrc	/^function currency_convert_help() {$/;"	f	language:Sh
+custom_repositories	/media/documentos/Helmuth/Github/aui/aui	/^function custom_repositories(){$/;"	f	language:Sh
+cuttail	/media/documentos/Helmuth/Downloads/.bashrc	/^function cuttail()$/;"	f	language:Sh
+cyanide	/media/documentos/Helmuth/Downloads/.bashrc	/^function cyanide() { display "$(wget -q http:\/\/explosm.net\/comics\/random\/ -O - | grep -Po 'http:\/\/www.explosm.net\/db\/files\/Comics\/*\/[^"]+(png|jpg|jpeg)')"; }$/;"	f	language:Sh
+cycle	/media/documentos/Helmuth/Downloads/.bashrc	/^function cycle() { while :;do((i++));echo -n "${3:$(($i%${#3})):1}";sleep .$(($RANDOM%$2+$1));done;}$/;"	f	language:Sh
+d	/media/documentos/Helmuth/Downloads/.bashrc	/^function d() {$/;"	f	language:Sh
+d2u	/media/documentos/Helmuth/Downloads/.bashrc	/^function d2u() {$/;"	f	language:Sh
+daemon	/media/documentos/Helmuth/Downloads/.bashrc	/^function daemon()$/;"	f	language:Sh
+deadlib	/media/documentos/Helmuth/Downloads/.bashrc	/^function deadlib() { lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u; }$/;"	f	language:Sh
+deadlink	/media/documentos/Helmuth/Downloads/.bashrc	/^function deadlink() {$/;"	f	language:Sh
+debextract	/media/documentos/Helmuth/Downloads/.bashrc	/^function debextract()$/;"	f	language:Sh
+debremaker	/media/documentos/Helmuth/Downloads/.bashrc	/^function debremaker()$/;"	f	language:Sh
+debug_http	/media/documentos/Helmuth/Downloads/.bashrc	/^function debug_http() { \/usr\/bin\/curl $@ -o \/dev\/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\\n" ; }$/;"	f	language:Sh
+dec	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec()		{ printf "%d\\n" $1; }$/;"	f	language:Sh
+dec2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2all() {$/;"	f	language:Sh
+dec2asc	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2asc() {$/;"	f	language:Sh
+dec2b32	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2b32() {$/;"	f	language:Sh
+dec2b64	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2b64() {$/;"	f	language:Sh
+dec2bin	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2bin() {$/;"	f	language:Sh
+dec2hex	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2hex() {$/;"	f	language:Sh
+dec2oct	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2oct() {$/;"	f	language:Sh
+dec2text	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2text()$/;"	f	language:Sh
+dec2text_	/media/documentos/Helmuth/Downloads/.bashrc	/^function dec2text_()$/;"	f	language:Sh
+decry	/media/documentos/Helmuth/Downloads/.bashrc	/^function decry()$/;"	f	language:Sh
+define	/media/documentos/Helmuth/Downloads/.bashrc	/^function define() {$/;"	f	language:Sh
+defrag	/media/documentos/Helmuth/Downloads/.bashrc	/^function defrag()$/;"	f	language:Sh
+defrag2	/media/documentos/Helmuth/Downloads/.bashrc	/^function defrag2()$/;"	f	language:Sh
+del	/media/documentos/Helmuth/Downloads/.bashrc	/^function del()$/;"	f	language:Sh
+delete	/media/documentos/Helmuth/Downloads/.bashrc	/^function delete() {$/;"	f	language:Sh
+detectlanguage	/media/documentos/Helmuth/Downloads/.bashrc	/^function detectlanguage() { curl -s "http:\/\/ajax.googleapis.com\/ajax\/services\/language\/detect?v=1.0&q=$@" | sed 's\/{"responseData": {"language":"\\([^"]*\\)".*\/\\1\\n\/'; }$/;"	f	language:Sh
+dic	/media/documentos/Helmuth/Downloads/.bashrc	/^function dic() { curl dict:\/\/dict.org\/d:"$@" ; }$/;"	f	language:Sh
+die	/media/documentos/Helmuth/Downloads/.bashrc	/^function die() { result=$1;shift;[ -n "$*" ]&&printf "%s\\n" "$*" >&2;exit $result;}$/;"	f	language:Sh
+diffxml	/media/documentos/Helmuth/Downloads/.bashrc	/^function diffxml() { diff -wb <(xmllint --format "$1") <(xmllint --format "$2"); }$/;"	f	language:Sh
+dirsize	/media/documentos/Helmuth/Downloads/.bashrc	/^function dirsize()$/;"	f	language:Sh
+display	/media/documentos/Helmuth/Downloads/.bashrc	/^function display-off()$/;"	f	language:Sh
+display	/media/documentos/Helmuth/Downloads/.bashrc	/^function display-offed() { LF=\/tmp\/screen-lock; if [ -f $LF ]; then \/bin\/rm $LF; else touch $LF; sleep .5; while [ -f  $LF ]; do xset dpms force off; sleep 2; done; fi ; }$/;"	f	language:Sh
+display	/media/documentos/Helmuth/Downloads/.bashrc	/^function display-oft()$/;"	f	language:Sh
+doc	/media/documentos/Helmuth/Downloads/.bashrc	/^function doc() {$/;"	f	language:Sh
+doscheck	/media/documentos/Helmuth/Downloads/.bashrc	/^function doscheck()$/;"	f	language:Sh
+dot_ln	/media/documentos/Helmuth/Downloads/.bashrc	/^function dot_ln()$/;"	f	language:Sh
+downforme	/media/documentos/Helmuth/Downloads/.bashrc	/^function downforme() {$/;"	f	language:Sh
+ds	/media/documentos/Helmuth/Downloads/.bashrc	/^function ds()$/;"	f	language:Sh
+ds_	/media/documentos/Helmuth/Downloads/.bashrc	/^function ds_() { echo -n "search : "; read ST; EST=`php -r "echo rawurlencode('$ST');"`; B64=`echo -n $ST| openssl enc -base64`; curl -s "http:\/\/www.commandlinefu.com\/commands\/matching\/$EST\/$B64\/plaintext" | less -p "$ST"; } ; bind '"\\C-k"':"\\"ds\\C-m\\""$/;"	f	language:Sh
+dtv	/media/documentos/Helmuth/Downloads/.bashrc	/^function dtv()$/;"	f	language:Sh
+dtv2avi	/media/documentos/Helmuth/Downloads/.bashrc	/^function dtv2avi()$/;"	f	language:Sh
+DTV2AVI	/media/documentos/Helmuth/Downloads/.bashrc	/^function DTV2AVI()$/;"	f	language:Sh
+dtv2avi_w	/media/documentos/Helmuth/Downloads/.bashrc	/^function dtv2avi_w()$/;"	f	language:Sh
+dtv2yt	/media/documentos/Helmuth/Downloads/.bashrc	/^function dtv2yt()$/;"	f	language:Sh
+dubigf	/media/documentos/Helmuth/Downloads/.bashrc	/^function dubigf() {$/;"	f	language:Sh
+dups	/media/documentos/Helmuth/Downloads/.bashrc	/^function dups() { sort "$@" | uniq -d; }$/;"	f	language:Sh
+dupscleaner	/media/documentos/Helmuth/Downloads/.bashrc	/^function dupscleaner() { sort "$@" | uniq -d > dupscleaned.txt; }$/;"	f	language:Sh
+dupsonly	/media/documentos/Helmuth/Downloads/.bashrc	/^function dupsonly() { sort "$@" | uniq -D > dupsonly.txt; }$/;"	f	language:Sh
+dvd2iso	/media/documentos/Helmuth/Downloads/.bashrc	/^function dvd2iso()$/;"	f	language:Sh
+dvd2mpg	/media/documentos/Helmuth/Downloads/.bashrc	/^function dvd2mpg()$/;"	f	language:Sh
+dvdaudio	/media/documentos/Helmuth/Downloads/.bashrc	/^function dvdaudio()$/;"	f	language:Sh
+echange	/media/documentos/Helmuth/Downloads/.bashrc	/^function echange() {$/;"	f	language:Sh
+ed2k	/media/documentos/Helmuth/Downloads/.bashrc	/^function ed2k()$/;"	f	language:Sh
+editd	/media/documentos/Helmuth/Downloads/.bashrc	/^function editd() {$/;"	f	language:Sh
+eh	/media/documentos/Helmuth/Downloads/.bashrc	/^function eh() { history -a ; vi ~\/.bash_history ; history -r ; }$/;"	f	language:Sh
+ele	/media/documentos/Helmuth/Downloads/.bashrc	/^function ele() {$/;"	f	language:Sh
+empty	/media/documentos/Helmuth/Downloads/.bashrc	/^function empty() {$/;"	f	language:Sh
+encry	/media/documentos/Helmuth/Downloads/.bashrc	/^function encry()$/;"	f	language:Sh
+encrypt	/media/documentos/Helmuth/Downloads/.bashrc	/^function encrypt()$/;"	f	language:Sh
+enquote	/media/documentos/Helmuth/Downloads/.bashrc	/^function enquote() { \/usr\/bin\/sed 's\/^\/"\/;s\/$\/"\/' ; }$/;"	f	language:Sh
+err	/media/documentos/Helmuth/Downloads/.bashrc	/^function err()$/;"	f	language:Sh
+error	/media/documentos/Helmuth/Downloads/.bashrc	/^function error()$/;"	f	language:Sh
+eview	/media/documentos/Helmuth/Downloads/.bashrc	/^function eview() {$/;"	f	language:Sh
+examples	/media/documentos/Helmuth/Downloads/.bashrc	/^function examples() { lynx -width=$COLUMNS -nonumbers -dump "http:\/\/www.shell-fu.org\/lister.php?tag=$1" | \\$/;"	f	language:Sh
+exchange	/media/documentos/Helmuth/Downloads/.bashrc	/^function exchange()$/;"	f	language:Sh
+expandurl	/media/documentos/Helmuth/Downloads/.bashrc	/^function expandurl() { curl -sIL $1 2>&1 | awk '\/^Location\/ {print $2}' | tail -n1; }$/;"	f	language:Sh
+exportmykeys_private	/media/documentos/Helmuth/Downloads/.bashrc	/^function exportmykeys_private()$/;"	f	language:Sh
+exportmykeys_public	/media/documentos/Helmuth/Downloads/.bashrc	/^function exportmykeys_public()$/;"	f	language:Sh
+extract	/home/helmuth/.bashrc	/^function extract() {$/;"	f	language:Sh
+extract	/media/documentos/Helmuth/.bashrc	/^function extract() {$/;"	f	language:Sh
+extract	/media/documentos/Helmuth/Downloads/.bashrc	/^function extract() {$/;"	f	language:Sh
+fact	/media/documentos/Helmuth/Downloads/.bashrc	/^function fact() {$/;"	f	language:Sh
+factorial	/media/documentos/Helmuth/Downloads/.bashrc	/^function factorial()$/;"	f	language:Sh
+fah2cel	/media/documentos/Helmuth/Downloads/.bashrc	/^function fah2cel() {$/;"	f	language:Sh
+fah2kel	/media/documentos/Helmuth/Downloads/.bashrc	/^function fah2kel() {$/;"	f	language:Sh
+fail	/media/documentos/Helmuth/Downloads/.bashrc	/^function fail()$/;"	f	language:Sh
+fakepass	/media/documentos/Helmuth/Downloads/.bashrc	/^function fakepass()$/;"	f	language:Sh
+fe	/media/documentos/Helmuth/Downloads/.bashrc	/^function fe() { find . -type f -iname '*'$1'*' -exec "${2:-file}" {} \\;  ; }$/;"	f	language:Sh
+fest	/media/documentos/Helmuth/Downloads/.bashrc	/^function fest() {$/;"	f	language:Sh
+ff	/media/documentos/Helmuth/Downloads/.bashrc	/^function ff() { \/usr\/bin\/find . -name "$@" ; }$/;"	f	language:Sh
+ffa	/media/documentos/Helmuth/Downloads/.bashrc	/^function ffa() { (($# < 2)) && { echo "usage: ffa pat1 pat2 [...]" >&2; return 1; };awk "\/$1\/$(printf "&&\/%s\/" "${@:2}")"'{ print FILENAME ":" $0 }' *; }$/;"	f	language:Sh
+ffe	/media/documentos/Helmuth/Downloads/.bashrc	/^function ffe() { \/usr\/bin\/find . -name '*'"$@" ; }$/;"	f	language:Sh
+ffind	/media/documentos/Helmuth/Downloads/.bashrc	/^function ffind() { local a=$1; local b=$2; local c="$a"*\/*"$b"*; case $# in [01])echo usage: ff drive string [match-no\\(s\\)];; 2)printf "%s\\n" $c|less -SN;; 3)less $(printf "%s\\n" $c|sed -n "$3"p|tr '\\n' ' ');; esac; }$/;"	f	language:Sh
+ffs	/media/documentos/Helmuth/Downloads/.bashrc	/^function ffs() { \/usr\/bin\/find . -name "$@"'*' ; }$/;"	f	language:Sh
+fileName	/media/documentos/Helmuth/Downloads/.bashrc	/^function fileName()  { echo "$1"  | grep -o "[^\/]*$"; }$/;"	f	language:Sh
+filetypesettings	/home/helmuth/.vimrc	/^        augroup filetypesettings "{{{$/;"	a	language:Vim
+filext	/media/documentos/Helmuth/Downloads/.bashrc	/^function filext() { echo ${1##*.}; }$/;"	f	language:Sh
+findlocation	/media/documentos/Helmuth/Downloads/.bashrc	/^function findlocation() { place=`echo $1 | sed 's\/ \/%20\/g'` ; curl -s "http:\/\/maps.google.com\/maps\/geo?output=json&oe=utf-8&q=$place" | grep -e "address" -e "coordinates" | sed -e 's\/^ *\/\/' -e 's\/"\/\/g' -e 's\/address\/Full Address\/';}$/;"	f	language:Sh
+findPid	/media/documentos/Helmuth/Downloads/.bashrc	/^function findPid() { sudo \/usr\/sbin\/lsof -t -c "$@" ; }$/;"	f	language:Sh
+findtcp	/media/documentos/Helmuth/Downloads/.bashrc	/^function findtcp()$/;"	f	language:Sh
+findword	/media/documentos/Helmuth/Downloads/.bashrc	/^function findword() { \/usr\/bin\/grep ^"$@"$ \/usr\/share\/dict\/words ; }$/;"	f	language:Sh
+find_alternatives	/media/documentos/Helmuth/Downloads/.bashrc	/^function find_alternatives() { for i;do which "$i" >\/dev\/null && { echo "$i"; return 0;};done;return 1; }$/;"	f	language:Sh
+find_larger	/media/documentos/Helmuth/Downloads/.bashrc	/^function find_larger() { find . -type f -size +${1}c ; }$/;"	f	language:Sh
+finish	/media/documentos/Helmuth/Github/aui/aui	/^function finish(){$/;"	f	language:Sh
+fix	/media/documentos/Helmuth/Downloads/.bashrc	/^function fix() {$/;"	f	language:Sh
+fix	/media/documentos/Helmuth/Downloads/.bashrc	/^function fix-tabs() { expand -t 4 "$1" > "$1.expanded"; mv -f "$1.expanded" "$1"; }$/;"	f	language:Sh
+fixlines	/media/documentos/Helmuth/Downloads/.bashrc	/^function fixlines() { \/usr\/bin\/perl -pi~ -e 's\/\\r\\n?\/\\n\/g' "$@" ; }$/;"	f	language:Sh
+flac2mp3	/media/documentos/Helmuth/Downloads/.bashrc	/^function flac2mp3()$/;"	f	language:Sh
+flac2ogg	/media/documentos/Helmuth/Downloads/.bashrc	/^function flac2ogg()$/;"	f	language:Sh
+flag	/media/documentos/Helmuth/Downloads/.bashrc	/^function flag() {$/;"	f	language:Sh
+flagcommand	/media/documentos/Helmuth/Downloads/.bashrc	/^function flagcommand() {$/;"	f	language:Sh
+flight_status	/media/documentos/Helmuth/Downloads/.bashrc	/^function flight_status() { if [[ $# -eq 3 ]];then offset=$3; else offset=0; fi; curl "http:\/\/mobile.flightview.com\/TrackByRoute.aspx?view=detail&al="$1"&fn="$2"&dpdat=$(date +%Y%m%d -d ${offset}day)" 2>\/dev\/null |html2text |grep ":"; }$/;"	f	language:Sh
+flipd	/media/documentos/Helmuth/Downloads/.bashrc	/^function flipd() {$/;"	f	language:Sh
+focus	/media/documentos/Helmuth/Downloads/.bashrc	/^function focus() { winID=`xprop -root |awk '\/_NET_ACTIVE_WINDOW\/ {print $5; exit;}'`; $@; wmctrl -i -a $winID; }$/;"	f	language:Sh
+forecast	/media/documentos/Helmuth/Downloads/.bashrc	/^function forecast() {$/;"	f	language:Sh
+fork	/media/documentos/Helmuth/Downloads/.bashrc	/^function fork() { tf=$(tempfile -d \/tmp -p $1.);echo -n "$tf "; $@ &>$tf& }$/;"	f	language:Sh
+fp	/media/documentos/Helmuth/Downloads/.bashrc	/^function fp()$/;"	f	language:Sh
+fragcheck	/media/documentos/Helmuth/Downloads/.bashrc	/^function fragcheck()$/;"	f	language:Sh
+fragcheck2	/media/documentos/Helmuth/Downloads/.bashrc	/^function fragcheck2()$/;"	f	language:Sh
+freemusiccharts	/media/documentos/Helmuth/Downloads/.bashrc	/^function freemusiccharts()$/;"	f	language:Sh
+fstr	/media/documentos/Helmuth/Downloads/.bashrc	/^function fstr()$/;"	f	language:Sh
+fuman	/media/documentos/Helmuth/Downloads/.bashrc	/^function fuman() { lynx -width=$COLUMNS -nonumbers -dump "http:\/\/www.commandlinefu.com\/commands\/using\/$1" |sed '\/Add to favourites\/,\/This is sample output\/!d' |sed 's\/ *Add to favourites\/----\/' |less -r; }$/;"	f	language:Sh
+functions	/media/documentos/Helmuth/Downloads/.bashrc	/^function functions() { read -p "File name> "; sort -d $REPLY | grep "() {" | sed -e 's\/() {\/\/g' | less; }$/;"	f	language:Sh
+funny_face	/media/documentos/Helmuth/Downloads/.bashrc	/^function funny_face() {$/;"	f	language:Sh
+fur	/media/documentos/Helmuth/Downloads/.bashrc	/^function fur() { curl -sL 'http:\/\/www.commandlinefu.com\/commands\/random\/plaintext' | grep -v "^# commandlinefu" ; }$/;"	f	language:Sh
+g	/media/documentos/Helmuth/Downloads/.bashrc	/^function g() {$/;"	f	language:Sh
+g:acp_enableAtStartup	/home/helmuth/.vimrc	/^     let g:acp_enableAtStartup = 0$/;"	v	language:Vim
+g:buftabs_only_basename	/home/helmuth/.vimrc	/^        let g:buftabs_only_basename=1$/;"	v	language:Vim
+g:calendar_current_idx	/home/helmuth/.vimrc	/^        let g:calendar_current_idx = 1$/;"	v	language:Vim
+g:calendar_list	/home/helmuth/.vimrc	/^        let g:calendar_list = [$/;"	v	language:Vim
+g:ctrlp_cache_dir	/home/helmuth/.vimrc	/^        let g:ctrlp_cache_dir = $HOME.'\/.vim\/.ctrlp_cache'$/;"	v	language:Vim
+g:ctrlp_clear_cache_on_exit	/home/helmuth/.vimrc	/^        let g:ctrlp_clear_cache_on_exit = 1$/;"	v	language:Vim
+g:ctrlp_custom_ignore	/home/helmuth/.vimrc	/^        let g:ctrlp_custom_ignore = {$/;"	v	language:Vim
+g:ctrlp_map	/home/helmuth/.vimrc	/^        let g:ctrlp_map = '<c-p>'$/;"	v	language:Vim
+g:ctrlp_max_height	/home/helmuth/.vimrc	/^        let g:ctrlp_max_height = 15$/;"	v	language:Vim
+g:ctrlp_mruf_exclude	/home/helmuth/.vimrc	/^        let g:ctrlp_mruf_exclude = '\/tmp\/.*\\|\/temp\/.*' " MacOSX\/Linux$/;"	v	language:Vim
+g:EasyMotion_leader_key	/home/helmuth/.vimrc	/^        let g:EasyMotion_leader_key = '<Leader>m'$/;"	v	language:Vim
+g:easytags_cmd	/home/helmuth/.vimrc	/^            let g:easytags_cmd = '\/usr\/local\/bin\/ctags'$/;"	v	language:Vim
+g:easytags_cmd	/home/helmuth/.vimrc	/^        let g:easytags_cmd = '\/usr\/bin\/ctags'$/;"	v	language:Vim
+g:easytags_file	/home/helmuth/.vimrc	/^        let g:easytags_file = $HOME.'\/.vim\/.tags'$/;"	v	language:Vim
+g:easytags_updatetime_autodisable	/home/helmuth/.vimrc	/^        let g:easytags_updatetime_autodisable = 1$/;"	v	language:Vim
+g:gundo_right	/home/helmuth/.vimrc	/^        let g:gundo_right = 1$/;"	v	language:Vim
+g:gundo_width	/home/helmuth/.vimrc	/^        let g:gundo_width = 50$/;"	v	language:Vim
+g:mapleader	/home/helmuth/.vimrc	/^    let g:mapleader=","$/;"	v	language:Vim
+g:MarkdownPreviewTMP	/home/helmuth/.vimrc	/^        let g:MarkdownPreviewTMP = $HOME.'\/Sites\/'$/;"	v	language:Vim
+g:myLangList	/home/helmuth/.vimrc	/^    let g:myLangList=["nospell","pt","en"]$/;"	v	language:Vim
+g:neocomplcache_enable_at_startup	/home/helmuth/.vimrc	/^     let g:neocomplcache_enable_at_startup = 1$/;"	v	language:Vim
+g:neocomplcache_enable_camel_case_completion	/home/helmuth/.vimrc	/^     let g:neocomplcache_enable_camel_case_completion = 1$/;"	v	language:Vim
+g:neocomplcache_enable_smart_case	/home/helmuth/.vimrc	/^     let g:neocomplcache_enable_smart_case = 1$/;"	v	language:Vim
+g:neocomplcache_enable_underbar_completion	/home/helmuth/.vimrc	/^     let g:neocomplcache_enable_underbar_completion = 1$/;"	v	language:Vim
+g:neocomplcache_keyword_patterns	/home/helmuth/.vimrc	/^         let g:neocomplcache_keyword_patterns = {}$/;"	v	language:Vim
+g:neocomplcache_keyword_patterns	/home/helmuth/.vimrc	/^     let g:neocomplcache_keyword_patterns['default'] = '\\h\\w*'$/;"	v	language:Vim
+g:neocomplcache_lock_buffer_name_pattern	/home/helmuth/.vimrc	/^     let g:neocomplcache_lock_buffer_name_pattern = '\\*ku\\*'$/;"	v	language:Vim
+g:neocomplcache_min_syntax_length	/home/helmuth/.vimrc	/^     let g:neocomplcache_min_syntax_length = 3$/;"	v	language:Vim
+g:neocomplcache_omni_patterns	/home/helmuth/.vimrc	/^         let g:neocomplcache_omni_patterns = {}$/;"	v	language:Vim
+g:neocomplcache_omni_patterns	/home/helmuth/.vimrc	/^     let g:neocomplcache_omni_patterns.c = '\\%(\\.\\|->\\)\\h\\w*'$/;"	v	language:Vim
+g:neocomplcache_omni_patterns	/home/helmuth/.vimrc	/^     let g:neocomplcache_omni_patterns.cpp = '\\h\\w*\\%(\\.\\|->\\)\\h\\w*\\|\\h\\w*::'$/;"	v	language:Vim
+g:neocomplcache_omni_patterns	/home/helmuth/.vimrc	/^     let g:neocomplcache_omni_patterns.php = '[^. \\t]->\\h\\w*\\|\\h\\w*::'$/;"	v	language:Vim
+g:neocomplcache_omni_patterns	/home/helmuth/.vimrc	/^     let g:neocomplcache_omni_patterns.ruby = '[^. *\\t]\\.\\w*\\|\\h\\w*::'$/;"	v	language:Vim
+g:neocomplcache_snippets_dir	/home/helmuth/.vimrc	/^     let g:neocomplcache_snippets_dir = $HOME.'\/.vim\/bundle\/snipmate-snippets\/snippets\/'$/;"	v	language:Vim
+g:neocomplcache_temporary_dir	/home/helmuth/.vimrc	/^     let g:neocomplcache_temporary_dir = $HOME.'\/.vim\/.neocon'$/;"	v	language:Vim
+g:NERDTreeCaseSensitiveSort	/home/helmuth/.vimrc	/^        let g:NERDTreeCaseSensitiveSort = 1$/;"	v	language:Vim
+g:NERDTreeChristmasTree	/home/helmuth/.vimrc	/^        let g:NERDTreeChristmasTree = 1$/;"	v	language:Vim
+g:NERDTreeQuitOnOpen	/home/helmuth/.vimrc	/^        let g:NERDTreeQuitOnOpen = 1$/;"	v	language:Vim
+g:Powerline_symbols	/home/helmuth/.vimrc	/^            let g:Powerline_symbols = 'fancy'$/;"	v	language:Vim
+g:syntastic_auto_jump	/home/helmuth/.vimrc	/^        let g:syntastic_auto_jump=1$/;"	v	language:Vim
+g:syntastic_auto_loc_list	/home/helmuth/.vimrc	/^        let g:syntastic_auto_loc_list=1$/;"	v	language:Vim
+g:syntastic_enable_signs	/home/helmuth/.vimrc	/^        let g:syntastic_enable_signs=1$/;"	v	language:Vim
+g:tagbar_autoclose	/home/helmuth/.vimrc	/^        let g:tagbar_autoclose = 1$/;"	v	language:Vim
+g:tagbar_autofocus	/home/helmuth/.vimrc	/^        let g:tagbar_autofocus = 1$/;"	v	language:Vim
+g:tagbar_compact	/home/helmuth/.vimrc	/^        let g:tagbar_compact = 1$/;"	v	language:Vim
+g:tagbar_ctags_bin	/home/helmuth/.vimrc	/^            let g:tagbar_ctags_bin = '\/usr\/local\/bin\/ctags'$/;"	v	language:Vim
+g:tagbar_expand	/home/helmuth/.vimrc	/^        let g:tagbar_expand = 0$/;"	v	language:Vim
+g:tagbar_width	/home/helmuth/.vimrc	/^        let g:tagbar_width = 30$/;"	v	language:Vim
+g:yankring_history_file	/home/helmuth/.vimrc	/^        let g:yankring_history_file = '\/.vim\/.yankring_history'$/;"	v	language:Vim
+g:yankring_ignore_operator	/home/helmuth/.vimrc	/^        let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'$/;"	v	language:Vim
+g:yankring_map_dot	/home/helmuth/.vimrc	/^        let g:yankring_map_dot = 0$/;"	v	language:Vim
+g:yankring_replace_n_nkey	/home/helmuth/.vimrc	/^        let g:yankring_replace_n_nkey = '<m-n>'$/;"	v	language:Vim
+g:yankring_replace_n_pkey	/home/helmuth/.vimrc	/^        let g:yankring_replace_n_pkey = '<m-p>'$/;"	v	language:Vim
+geniso	/media/documentos/Helmuth/Downloads/.bashrc	/^function geniso() {$/;"	f	language:Sh
+geoip	/media/documentos/Helmuth/Downloads/.bashrc	/^function geoip() {$/;"	f	language:Sh
+geoiplookup	/media/documentos/Helmuth/Downloads/.bashrc	/^function geoiplookup() { curl -A "Mozilla\/5.0" -s "http:\/\/www.geody.com\/geoip.php?ip=$1" | grep "^IP.*$1" | html2text; }$/;"	f	language:Sh
+geoipme	/media/documentos/Helmuth/Downloads/.bashrc	/^function geoipme()$/;"	f	language:Sh
+getBookmark	/media/documentos/Helmuth/Downloads/.bashrc	/^function getBookmark() {$/;"	f	language:Sh
+getcolumn	/media/documentos/Helmuth/Downloads/.bashrc	/^function getcolumn() { perl -ne '@cols = split; print "$cols['$1']\\n"' ; }$/;"	f	language:Sh
+getExtension	/media/documentos/Helmuth/Downloads/.bashrc	/^function getExtension()$/;"	f	language:Sh
+getFileName	/media/documentos/Helmuth/Downloads/.bashrc	/^function getFileName()$/;"	f	language:Sh
+getip	/media/documentos/Helmuth/Downloads/.bashrc	/^function getip()		{ lynx -dump http:\/\/whatismyip.org\/; }$/;"	f	language:Sh
+getMaxDate	/media/documentos/Helmuth/Downloads/.bashrc	/^function getMaxDate {$/;"	f	language:Sh
+getPath	/media/documentos/Helmuth/Downloads/.bashrc	/^function getPath()$/;"	f	language:Sh
+get_duration	/media/documentos/Helmuth/Downloads/.bashrc	/^function get_duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo ${durline#*\\: }; }$/;"	f	language:Sh
+get_kernel	/media/documentos/Helmuth/Downloads/.bashrc	/^function get_kernel() {$/;"	f	language:Sh
+get_xserver	/media/documentos/Helmuth/Downloads/.bashrc	/^function get_xserver()$/;"	f	language:Sh
+gfx_resizeImage	/media/documentos/Helmuth/Downloads/.bashrc	/^gfx_resizeImage() {$/;"	f	language:Sh
+git_action	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_action() {$/;"	f	language:Sh
+git_branch	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_branch() {$/;"	f	language:Sh
+git_bzip	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_bzip() {$/;"	f	language:Sh
+git_e	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_e() {$/;"	f	language:Sh
+git_export	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_export() {$/;"	f	language:Sh
+git_gnome	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_gnome() {$/;"	f	language:Sh
+git_kde	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_kde() {$/;"	f	language:Sh
+git_revision	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_revision() {$/;"	f	language:Sh
+git_xfce	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_xfce() {$/;"	f	language:Sh
+git_xz	/media/documentos/Helmuth/Downloads/.bashrc	/^function git_xz() {$/;"	f	language:Sh
+glu	/media/documentos/Helmuth/Downloads/.bashrc	/^function glu() { (local IFS="$1"; shift && echo "$*") }$/;"	f	language:Sh
+goclf	/media/documentos/Helmuth/Downloads/.bashrc	/^function goclf()$/;"	f	language:Sh
+google	/media/documentos/Helmuth/Downloads/.bashrc	/^function google() {$/;"	f	language:Sh
+google	/media/documentos/Helmuth/Downloads/.bashrc	/^function google-fonts() {$/;"	f	language:Sh
+google_chart	/media/documentos/Helmuth/Downloads/.bashrc	/^function google_chart()$/;"	f	language:Sh
+goto	/home/helmuth/.bashrc	/^function goto() { [ -d "$1" ] && cd "$1" || cd "$(dirname "$1")"; }$/;"	f	language:Sh
+goto	/media/documentos/Helmuth/.bashrc	/^function goto() { [ -d "$1" ] && cd "$1" || cd "$(dirname "$1")"; }$/;"	f	language:Sh
+gotxt2imgmail	/media/documentos/Helmuth/Downloads/.bashrc	/^function gotxt2imgmail() { if [ $# != 1 ]; then echo 'gotxt2imgmail < email >'; return; fi; e="$1"; f=$RANDOM.png; convert label:@- $f; echo "" | mailx -s $f -a $f $e ; }$/;"	f	language:Sh
+grabtweets	/media/documentos/Helmuth/Downloads/.bashrc	/^function grabtweets() { curl -s "twitter.com\/$1" | sed -ne '\/entry-content\/{s\/<[^>]*>\/\/g;s\/^[ \\t]*\/\/;p}'; }$/;"	f	language:Sh
+grepcolor	/media/documentos/Helmuth/Downloads/.bashrc	/^function grepcolor()$/;"	f	language:Sh
+grepfind	/media/documentos/Helmuth/Downloads/.bashrc	/^function grepfind() { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }$/;"	f	language:Sh
+grepincl	/media/documentos/Helmuth/Downloads/.bashrc	/^function grepincl() { (cd \/usr\/include; find . -type f -name '*.h' -print0 | xargs -0 grep "$1" ) ; }$/;"	f	language:Sh
+grepp	/media/documentos/Helmuth/Downloads/.bashrc	/^function grepp() { [ $# -eq 1 ] && perl -00ne "print if \/$1\/i" || perl -00ne "print if \/$1\/i" < "$2";}$/;"	f	language:Sh
+gup	/media/documentos/Helmuth/Downloads/.bashrc	/^function gup() {$/;"	f	language:Sh
+hex	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex()		{ printf "0x%08x\\n" $1; }$/;"	f	language:Sh
+hex2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2all() {$/;"	f	language:Sh
+hex2asc	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2asc() {$/;"	f	language:Sh
+hex2b32	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2b32() {$/;"	f	language:Sh
+hex2b64	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2b64() {$/;"	f	language:Sh
+hex2bin	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2bin() {$/;"	f	language:Sh
+hex2dec	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2dec() {$/;"	f	language:Sh
+hex2oct	/media/documentos/Helmuth/Downloads/.bashrc	/^function hex2oct() {$/;"	f	language:Sh
+hgg	/media/documentos/Helmuth/Downloads/.bashrc	/^function hgg()$/;"	f	language:Sh
+hgrep	/media/documentos/Helmuth/Downloads/.bashrc	/^function hgrep() {$/;"	f	language:Sh
+hgrepl	/media/documentos/Helmuth/Downloads/.bashrc	/^function hgrepl() {$/;"	f	language:Sh
+hhgrep	/media/documentos/Helmuth/Downloads/.bashrc	/^function hhgrep() {$/;"	f	language:Sh
+hideme	/media/documentos/Helmuth/Downloads/.bashrc	/^function hideme()$/;"	f	language:Sh
+hilow	/media/documentos/Helmuth/Downloads/.bashrc	/^function hilow()$/;"	f	language:Sh
+historyawk	/media/documentos/Helmuth/Downloads/.bashrc	/^function historyawk() { history|awk '{a[$2]++}END{for(i in a){printf"%5d\\t%s\\n",a[i],i}}'|sort -nr|head; }$/;"	f	language:Sh
+hourglass	/media/documentos/Helmuth/Downloads/.bashrc	/^function hourglass() { s=$(($SECONDS +${1:-10}));(tput civis;while [[ $SECONDS -lt $s ]];do for f in '|' ' ' '\\-' \/;do echo -n $f&&sleep .2s&&tput cub1;done;done);tput cnorm; }$/;"	f	language:Sh
+http_headers	/media/documentos/Helmuth/Downloads/.bashrc	/^function http_headers() { \/usr\/bin\/curl -I -L $@ ; }$/;"	f	language:Sh
+human_filesize	/media/documentos/Helmuth/Downloads/.bashrc	/^function human_filesize() { awk -v sum="$1" ' BEGIN {hum[1024^3]="Gb"; hum[1024^2]="Mb"; hum[1024]="Kb"; for (x=1024^3; x>=1024; x\/=1024) { if (sum>=x) { printf "%.2f %s\\n",sum\/x,hum[x]; break; } } if (sum<1024) print "1kb"; } ' ; }$/;"	f	language:Sh
+ii	/media/documentos/Helmuth/Downloads/.bashrc	/^function ii()$/;"	f	language:Sh
+image_resize	/media/documentos/Helmuth/Downloads/.bashrc	/^function image_resize()$/;"	f	language:Sh
+imdb	/media/documentos/Helmuth/Downloads/.bashrc	/^function imdb()$/;"	f	language:Sh
+imgur	/media/documentos/Helmuth/Downloads/.bashrc	/^function imgur() { convert label:@- png:-|curl -F "image=@-" -F "key=1913b4ac473c692372d108209958fd15" http:\/\/api.imgur.com\/2\/upload.xml|grep -E -o "<original>(.)*<\/original>" | grep -E -o "http:\/\/i.imgur.com\/[^<]*" ; }$/;"	f	language:Sh
+inc	/media/documentos/Helmuth/Downloads/.bashrc	/^function inc() {$/;"	f	language:Sh
+info	/media/documentos/Helmuth/Downloads/.bashrc	/^function info() {$/;"	f	language:Sh
+Initialize_Slots	/media/documentos/Helmuth/Downloads/.bashrc	/^function Initialize_Slots() { 	# Zero out all elements of the array.$/;"	f	language:Sh
+install_additional_firmwares	/media/documentos/Helmuth/Github/aui/aui	/^function install_additional_firmwares(){$/;"	f	language:Sh
+install_audio_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_audio_apps(){$/;"	f	language:Sh
+install_basic_setup	/media/documentos/Helmuth/Github/aui/aui	/^function install_basic_setup(){$/;"	f	language:Sh
+install_cups	/media/documentos/Helmuth/Github/aui/aui	/^function install_cups(){$/;"	f	language:Sh
+install_desktop_environment	/media/documentos/Helmuth/Github/aui/aui	/^function install_desktop_environment(){$/;"	f	language:Sh
+install_development_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_development_apps(){$/;"	f	language:Sh
+install_fonts	/media/documentos/Helmuth/Github/aui/aui	/^function install_fonts(){$/;"	f	language:Sh
+install_games	/media/documentos/Helmuth/Github/aui/aui	/^function install_games(){$/;"	f	language:Sh
+install_git_tor	/media/documentos/Helmuth/Github/aui/aui	/^function install_git_tor(){$/;"	f	language:Sh
+install_graphics_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_graphics_apps(){$/;"	f	language:Sh
+install_internet_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_internet_apps(){$/;"	f	language:Sh
+install_lamp	/media/documentos/Helmuth/Github/aui/aui	/^function install_lamp(){$/;"	f	language:Sh
+install_nm_wicd	/media/documentos/Helmuth/Github/aui/aui	/^function install_nm_wicd(){$/;"	f	language:Sh
+install_office_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_office_apps(){$/;"	f	language:Sh
+install_status	/media/documentos/Helmuth/Github/aui/aui	/^function install_status(){ #{{{$/;"	f	language:Sh
+install_system_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_system_apps(){$/;"	f	language:Sh
+install_tlp	/media/documentos/Helmuth/Github/aui/aui	/^function install_tlp(){$/;"	f	language:Sh
+install_video_apps	/media/documentos/Helmuth/Github/aui/aui	/^function install_video_apps(){$/;"	f	language:Sh
+install_video_cards	/media/documentos/Helmuth/Github/aui/aui	/^function install_video_cards(){$/;"	f	language:Sh
+install_xorg	/media/documentos/Helmuth/Github/aui/aui	/^function install_xorg(){$/;"	f	language:Sh
+inStr	/media/documentos/Helmuth/Downloads/.bashrc	/^function inStr()$/;"	f	language:Sh
+intro	/media/documentos/Helmuth/Downloads/.bashrc	/^function intro() {$/;"	f	language:Sh
+in_path	/media/documentos/Helmuth/Downloads/.bashrc	/^function in_path()$/;"	f	language:Sh
+ip2loc	/media/documentos/Helmuth/Downloads/.bashrc	/^function ip2loc() { wget -qO - www.ip2location.com\/$1 | grep "<span id=\\"dgLookup__ctl2_lblICountry\\">" | sed 's\/<[^>]*>\/\/g; s\/^[\\t]*\/\/; s\/&quot;\/"\/g; s\/<\/<\/g; s\/>\/>\/g; s\/&amp;\/\\&\/g'; }$/;"	f	language:Sh
+ip2locall	/media/documentos/Helmuth/Downloads/.bashrc	/^function ip2locall() {$/;"	f	language:Sh
+ip2locate	/media/documentos/Helmuth/Downloads/.bashrc	/^function ip2locate() {$/;"	f	language:Sh
+ippriv	/media/documentos/Helmuth/Downloads/.bashrc	/^function ippriv()$/;"	f	language:Sh
+ips	/media/documentos/Helmuth/Downloads/.bashrc	/^function ips()$/;"	f	language:Sh
+isdef	/media/documentos/Helmuth/Downloads/.bashrc	/^function isdef() { eval test -n \\"\\${$1+1}\\"; }$/;"	f	language:Sh
+isgd	/media/documentos/Helmuth/Downloads/.bashrc	/^function isgd() { \/usr\/bin\/wget -qO - "http:\/\/is.gd\/create.php?format=simple&url=$1" ;}$/;"	f	language:Sh
+jd	/media/documentos/Helmuth/Downloads/.bashrc	/^function jd() { cd **\/"$@"; }$/;"	f	language:Sh
+jda	/media/documentos/Helmuth/Downloads/.bashrc	/^function jda() { cd $(pwd | sed "s\/\\(\\\/$@\\\/\\).*\/\\1\/g"); }$/;"	f	language:Sh
+jj	/home/helmuth/.vimrc	/^    imap jj <esc>$/;"	m	language:Vim
+JumpCursorOnEdit	/home/helmuth/.vimrc	/^        augroup JumpCursorOnEdit$/;"	a	language:Vim
+kel2cel	/media/documentos/Helmuth/Downloads/.bashrc	/^function kel2cel() {$/;"	f	language:Sh
+kel2fah	/media/documentos/Helmuth/Downloads/.bashrc	/^function kel2fah() {$/;"	f	language:Sh
+killps	/media/documentos/Helmuth/Downloads/.bashrc	/^function killps()$/;"	f	language:Sh
+kindle_connect	/media/documentos/Helmuth/Downloads/.bashrc	/^function kindle_connect()$/;"	f	language:Sh
+kindle_disconnect	/media/documentos/Helmuth/Downloads/.bashrc	/^function kindle_disconnect()$/;"	f	language:Sh
+kitt	/media/documentos/Helmuth/Downloads/.bashrc	/^function kitt() {$/;"	f	language:Sh
+kitty	/media/documentos/Helmuth/Downloads/.bashrc	/^function kitty() {$/;"	f	language:Sh
+l1	/media/documentos/Helmuth/Downloads/.bashrc	/^function l1() {$/;"	f	language:Sh
+la	/media/documentos/Helmuth/Downloads/.bashrc	/^function la() {$/;"	f	language:Sh
+language_selector	/media/documentos/Helmuth/Github/aui/aui	/^function language_selector(){$/;"	f	language:Sh
+lastfile	/media/documentos/Helmuth/Downloads/.bashrc	/^function lastfile() { find ${1:-.} -maxdepth 1 -type f -printf "%T+ %p\\n" | sort -n | tail -n1 | sed 's\/[^[:space:]]\\+ \/\/'; }$/;"	f	language:Sh
+LastModified	/home/helmuth/.vimrc	/^    function! LastModified() "{{{$/;"	f	language:Vim
+lcfiles	/media/documentos/Helmuth/Downloads/.bashrc	/^function lcfiles() {$/;"	f	language:Sh
+lcfirst	/media/documentos/Helmuth/Downloads/.bashrc	/^function lcfirst() {$/;"	f	language:Sh
+ldapfind	/media/documentos/Helmuth/Downloads/.bashrc	/^function ldapfind() {$/;"	f	language:Sh
+length	/media/documentos/Helmuth/Downloads/.bashrc	/^function length()$/;"	f	language:Sh
+lg	/media/documentos/Helmuth/Downloads/.bashrc	/^function lg() {$/;"	f	language:Sh
+linesort	/media/documentos/Helmuth/Downloads/.bashrc	/^function linesort()$/;"	f	language:Sh
+list	/media/documentos/Helmuth/Downloads/.bashrc	/^function list() {$/;"	f	language:Sh
+listhw	/media/documentos/Helmuth/Downloads/.bashrc	/^function listhw() { curl -s -S --data-urlencode "txt=$(sudo lshw -html)" "http:\/\/pastehtml.com\/upload\/create?input_type=html&result=address";echo; }$/;"	f	language:Sh
+liveh	/media/documentos/Helmuth/Downloads/.bashrc	/^function liveh() { tcpdump -lnnAs512 ${1-} tcp |sed ' s\/.*GET \/GET \/;s\/.*Host: \/Host: \/;s\/.*POST \/POST \/;\/[GPH][EOo][TSs]\/!d;w '"${2-liveh.txt}"' ' >\/dev\/null ; }$/;"	f	language:Sh
+ll	/media/documentos/Helmuth/Downloads/.bashrc	/^function ll() {$/;"	f	language:Sh
+llist	/media/documentos/Helmuth/Downloads/.bashrc	/^function llist() {$/;"	f	language:Sh
+lls	/media/documentos/Helmuth/Downloads/.bashrc	/^function lls() {$/;"	f	language:Sh
+lm	/media/documentos/Helmuth/Downloads/.bashrc	/^function lm() {$/;"	f	language:Sh
+lo	/media/documentos/Helmuth/Downloads/.bashrc	/^function lo() {$/;"	f	language:Sh
+localIps	/media/documentos/Helmuth/Downloads/.bashrc	/^function localIps()$/;"	f	language:Sh
+locatemusic	/media/documentos/Helmuth/Downloads/.bashrc	/^function locatemusic()$/;"	f	language:Sh
+log	/media/documentos/Helmuth/Downloads/.bashrc	/^function log() {$/;"	f	language:Sh
+lower	/media/documentos/Helmuth/Downloads/.bashrc	/^function lower() { echo ${@,,}; }$/;"	f	language:Sh
+lowercase	/media/documentos/Helmuth/Downloads/.bashrc	/^function lowercase()$/;"	f	language:Sh
+lower_	/media/documentos/Helmuth/Downloads/.bashrc	/^function lower_() { tr [A-Z] [a-z]; }$/;"	f	language:Sh
+lsbytes	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsbytes() {$/;"	f	language:Sh
+lscd	/media/documentos/Helmuth/Downloads/.bashrc	/^function lscd() {$/;"	f	language:Sh
+lsext	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsext()$/;"	f	language:Sh
+lsmac	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsmac() { ifconfig -a | awk '\/HWaddr\/ {print $5}' ; }$/;"	f	language:Sh
+lsofg	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsofg()$/;"	f	language:Sh
+lsr	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsr() { \/bin\/ls -l "$@"\/..namedfork\/rsrc ; }$/;"	f	language:Sh
+lsr_	/media/documentos/Helmuth/Downloads/.bashrc	/^function lsr_() { find "${@:-.}" -print0 |sort -z |xargs -0 ls $LS_OPTIONS -dla; }$/;"	f	language:Sh
+ltrim	/media/documentos/Helmuth/Downloads/.bashrc	/^function ltrim() {$/;"	f	language:Sh
+madd	/media/documentos/Helmuth/Downloads/.bashrc	/^function madd()$/;"	f	language:Sh
+mailme	/media/documentos/Helmuth/Downloads/.bashrc	/^function mailme()$/;"	f	language:Sh
+mailme_	/media/documentos/Helmuth/Downloads/.bashrc	/^function mailme_() { mailx -s "$@" $USER <<< "$@"; }$/;"	f	language:Sh
+man2pdf	/media/documentos/Helmuth/Downloads/.bashrc	/^function man2pdf()$/;"	f	language:Sh
+man2text	/media/documentos/Helmuth/Downloads/.bashrc	/^function man2text()$/;"	f	language:Sh
+manswitch	/media/documentos/Helmuth/Downloads/.bashrc	/^function manswitch() { man $1 | less -p "^ +$2"; }$/;"	f	language:Sh
+man_	/media/documentos/Helmuth/Downloads/.bashrc	/^function man_()$/;"	f	language:Sh
+man_ext	/media/documentos/Helmuth/Downloads/.bashrc	/^function man_ext()$/;"	f	language:Sh
+map	/media/documentos/Helmuth/Downloads/.bashrc	/^function map-files() { find $1 -name $2 -exec ${@:3} {} \\ ; }$/;"	f	language:Sh
+mapleader	/home/helmuth/.vimrc	/^    let mapleader=","$/;"	v	language:Vim
+math	/media/documentos/Helmuth/Downloads/.bashrc	/^function math-log()$/;"	f	language:Sh
+mcap	/media/documentos/Helmuth/Downloads/.bashrc	/^function mcap()$/;"	f	language:Sh
+md5	/media/documentos/Helmuth/Downloads/.bashrc	/^function md5()$/;"	f	language:Sh
+md5_	/media/documentos/Helmuth/Downloads/.bashrc	/^function md5_() {$/;"	f	language:Sh
+mem	/media/documentos/Helmuth/Downloads/.bashrc	/^function mem() { { case $1 in st*|[gid]*) printf "%s " "$@";; *) dd if=$3 2>&1|sed '$!d;\/^0\/d;s\/ .*\/\/;s\/^\/'"$1"' '"$2"' 1 0 \/; r '"$3"'' 2>\/dev\/null;;esac;printf "\\r\\nquit\\r\\n";}|nc -n 127.0.0.1 11211; }$/;"	f	language:Sh
+meta	/media/documentos/Helmuth/Downloads/.bashrc	/^function meta-backup()$/;"	f	language:Sh
+mkalias	/media/documentos/Helmuth/Downloads/.bashrc	/^function mkalias()$/;"	f	language:Sh
+mkcdr	/media/documentos/Helmuth/Downloads/.bashrc	/^function mkcdr() {$/;"	f	language:Sh
+mkdircd	/media/documentos/Helmuth/Downloads/.bashrc	/^function mkdircd()	{ mkdir -p "$@" && eval cd "\\"\\$$#\\""; }$/;"	f	language:Sh
+mktar	/media/documentos/Helmuth/Downloads/.bashrc	/^function mktar() { tar cvf  "${1%%\/}.tar"     "${1%%\/}\/"; }$/;"	f	language:Sh
+mktbz	/media/documentos/Helmuth/Downloads/.bashrc	/^function mktbz() { tar cvjf "${1%%\/}.tar.bz2" "${1%%\/}\/"; }$/;"	f	language:Sh
+mktgz	/media/documentos/Helmuth/Downloads/.bashrc	/^function mktgz() { tar cvzf "${1%%\/}.tar.gz"  "${1%%\/}\/"; }$/;"	f	language:Sh
+mnote	/media/documentos/Helmuth/Downloads/.bashrc	/^function mnote()$/;"	f	language:Sh
+morse2text	/media/documentos/Helmuth/Downloads/.bashrc	/^function morse2text()$/;"	f	language:Sh
+most_frequent	/media/documentos/Helmuth/Downloads/.bashrc	/^function most_frequent()$/;"	f	language:Sh
+mount_fat	/media/documentos/Helmuth/Downloads/.bashrc	/^function mount_fat()$/;"	f	language:Sh
+Move	/media/documentos/Helmuth/Downloads/.bashrc	/^function Move() {              	# Move one unit right \/ left, or stay put.$/;"	f	language:Sh
+moz	/media/documentos/Helmuth/Downloads/.bashrc	/^function moz()$/;"	f	language:Sh
+mozz	/media/documentos/Helmuth/Downloads/.bashrc	/^function mozz()$/;"	f	language:Sh
+mp3_tagging	/media/documentos/Helmuth/Downloads/.bashrc	/^function mp3_tagging()$/;"	f	language:Sh
+msg	/media/documentos/Helmuth/Downloads/.bashrc	/^function msg()$/;"	f	language:Sh
+msg	/media/documentos/Helmuth/Downloads/.bashrc	/^msg() {$/;"	f	language:Sh
+msquare	/media/documentos/Helmuth/Downloads/.bashrc	/^function msquare()$/;"	f	language:Sh
+mto	/media/documentos/Helmuth/Downloads/.bashrc	/^function mto() {$/;"	f	language:Sh
+mtube	/media/documentos/Helmuth/Downloads/.bashrc	/^function mtube() {$/;"	f	language:Sh
+multitables	/media/documentos/Helmuth/Downloads/.bashrc	/^function multitables()$/;"	f	language:Sh
+musiccdinfo	/media/documentos/Helmuth/Downloads/.bashrc	/^function musiccdinfo()$/;"	f	language:Sh
+mvf	/home/helmuth/.bashrc	/^mvf() { mv "$@" && goto "$_"; }$/;"	f	language:Sh
+mvf	/media/documentos/Helmuth/.bashrc	/^mvf() { mv "$@" && goto "$_"; }$/;"	f	language:Sh
+mwiki	/media/documentos/Helmuth/Downloads/.bashrc	/^function mwiki() { blah=`echo $@ | sed -e 's\/ \/_\/g'`; dig +short txt $blah.wp.dg.cx; }$/;"	f	language:Sh
+mwiki_	/media/documentos/Helmuth/Downloads/.bashrc	/^function mwiki_() { local IFS=_; dig +short txt "${*^}".wp.dg.cx; }$/;"	f	language:Sh
+myip	/media/documentos/Helmuth/Downloads/.bashrc	/^function myip()$/;"	f	language:Sh
+my_ps	/media/documentos/Helmuth/Downloads/.bashrc	/^function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }$/;"	f	language:Sh
+natdebt	/media/documentos/Helmuth/Downloads/.bashrc	/^function natdebt()$/;"	f	language:Sh
+NERDTreeBookmarksFile	/home/helmuth/.vimrc	/^        let NERDTreeBookmarksFile = expand($HOME.'\/.vim\/.NERDTreeBookmarks')$/;"	v	language:Vim
+NERDTreeIgnore	/home/helmuth/.vimrc	/^        let NERDTreeIgnore=[$/;"	v	language:Vim
+NERDTreeMouseMode	/home/helmuth/.vimrc	/^        let NERDTreeMouseMode=2$/;"	v	language:Vim
+NERDTreeShowBookmarks	/home/helmuth/.vimrc	/^        let NERDTreeShowBookmarks = 1$/;"	v	language:Vim
+NERDTreeWinPos	/home/helmuth/.vimrc	/^        let NERDTreeWinPos = "right"$/;"	v	language:Vim
+NERDTreeWinSize	/home/helmuth/.vimrc	/^        let NERDTreeWinSize = 45$/;"	v	language:Vim
+netinfo	/media/documentos/Helmuth/Downloads/.bashrc	/^function netinfo()$/;"	f	language:Sh
+newbies	/media/documentos/Helmuth/Downloads/.bashrc	/^function newbies()$/;"	f	language:Sh
+newest	/media/documentos/Helmuth/Downloads/.bashrc	/^function newest() { find ${1:-\\.} -type f |xargs ls -lrt ; }$/;"	f	language:Sh
+ngramviewerdl	/media/documentos/Helmuth/Downloads/.bashrc	/^function ngramviewerdl()$/;"	f	language:Sh
+nh	/media/documentos/Helmuth/Downloads/.bashrc	/^function nh() {$/;"	f	language:Sh
+nicenumber	/media/documentos/Helmuth/Downloads/.bashrc	/^function nicenumber()$/;"	f	language:Sh
+nice_number	/media/documentos/Helmuth/Downloads/.bashrc	/^function nice_number()$/;"	f	language:Sh
+nmount	/home/helmuth/.bashrc	/^function nmount() {$/;"	f	language:Sh
+nmount	/media/documentos/Helmuth/.bashrc	/^function nmount() {$/;"	f	language:Sh
+nondups	/media/documentos/Helmuth/Downloads/.bashrc	/^function nondups() { sort "$@" | uniq -u; }$/;"	f	language:Sh
+nondupsonly	/media/documentos/Helmuth/Downloads/.bashrc	/^function nondupsonly() { sort "$@" | uniq -u > nondupsonly.txt; }$/;"	f	language:Sh
+normal2unix	/media/documentos/Helmuth/Downloads/.bashrc	/^function normal2unix()$/;"	f	language:Sh
+notADot	/media/documentos/Helmuth/Downloads/.bashrc	/^function notADot()$/;"	f	language:Sh
+notAForwardSlash	/media/documentos/Helmuth/Downloads/.bashrc	/^function notAForwardSlash()$/;"	f	language:Sh
+note	/media/documentos/Helmuth/Downloads/.bashrc	/^function note()$/;"	f	language:Sh
+NotifyOnBATTERY	/media/documentos/Helmuth/Downloads/.bashrc	/^function NotifyOnBATTERY() { while :; do on_ac_power||notify-send "Running on BATTERY"; sleep 1m; done ; }$/;"	f	language:Sh
+nseq	/media/documentos/Helmuth/Downloads/.bashrc	/^function nseq()$/;"	f	language:Sh
+nth	/media/documentos/Helmuth/Downloads/.bashrc	/^function nth() {$/;"	f	language:Sh
+nuke	/media/documentos/Helmuth/Downloads/.bashrc	/^function nuke() { if [ $(whoami) != "root" ] ; then for x in $@; do sudo apt-get autoremove --purge $x; done; else for x in $@; do apt-get autoremove --purge $x; done; fi }$/;"	f	language:Sh
+numberLines	/media/documentos/Helmuth/Downloads/.bashrc	/^function numberLines() { perl -pe 's\/^\/$. \/' "$@" ; }$/;"	f	language:Sh
+numpages	/media/documentos/Helmuth/Downloads/.bashrc	/^function numpages() { echo $(($(wc -l $* | sed -n 's\/ total$\/\/p')\/60)); }$/;"	f	language:Sh
+o3	/media/documentos/Helmuth/Downloads/.bashrc	/^function o3() { unzip -p "$1" content.xml | o3totxt | utf8tolatin1; }$/;"	f	language:Sh
+oct2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2all() {$/;"	f	language:Sh
+oct2asc	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2asc() {$/;"	f	language:Sh
+oct2b32	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2b32() {$/;"	f	language:Sh
+oct2b64	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2b64() {$/;"	f	language:Sh
+oct2bin	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2bin() {$/;"	f	language:Sh
+oct2dec	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2dec() {$/;"	f	language:Sh
+oct2hex	/media/documentos/Helmuth/Downloads/.bashrc	/^function oct2hex() {$/;"	f	language:Sh
+ogg2mp3	/media/documentos/Helmuth/Downloads/.bashrc	/^function ogg2mp3()$/;"	f	language:Sh
+ogg_info	/media/documentos/Helmuth/Downloads/.bashrc	/^function ogg_info()$/;"	f	language:Sh
+one	/media/documentos/Helmuth/Downloads/.bashrc	/^function one-die()$/;"	f	language:Sh
+oneliners	/media/documentos/Helmuth/Downloads/.bashrc	/^function oneliners()$/;"	f	language:Sh
+open	/media/documentos/Helmuth/Downloads/.bashrc	/^function open() {$/;"	f	language:Sh
+out	/media/documentos/Helmuth/Downloads/.bashrc	/^function out() { tmp=$(mktemp); awk '{print $0}' > $tmp; if [ $(wc -l $tmp | awk '{print $1}') -gt $(tput lines) ]; then less $tmp; else cat $tmp; fi; rm -fr $tmp; }$/;"	f	language:Sh
+overwriter	/media/documentos/Helmuth/Downloads/.bashrc	/^function overwriter()$/;"	f	language:Sh
+own	/media/documentos/Helmuth/Downloads/.bashrc	/^function own() { chown -R "$2":"$2" ${1:-.}; }$/;"	f	language:Sh
+p	/media/documentos/Helmuth/Downloads/.bashrc	/^function p() {$/;"	f	language:Sh
+package	/tmp/yaourt-tmp-helmuth/aur-egtk-bzr/PKGBUILD	/^package() {$/;"	f	language:Sh
+packagehold	/media/documentos/Helmuth/Downloads/.bashrc	/^function packagehold()$/;"	f	language:Sh
+packagelistdl	/media/documentos/Helmuth/Downloads/.bashrc	/^function packagelistdl()$/;"	f	language:Sh
+packageunhold	/media/documentos/Helmuth/Downloads/.bashrc	/^function packageunhold()$/;"	f	language:Sh
+package_unity	/tmp/yaourt-tmp-helmuth/aur-unity/PKGBUILD	/^package_unity() {$/;"	f	language:Sh
+pacman_package_signing	/media/documentos/Helmuth/Github/aui/aui	/^function pacman_package_signing(){$/;"	f	language:Sh
+pacsearch	/media/documentos/Helmuth/Downloads/.bashrc	/^function pacsearch() {$/;"	f	language:Sh
+pagerank	/media/documentos/Helmuth/Downloads/.bashrc	/^function pagerank()$/;"	f	language:Sh
+pascal	/media/documentos/Helmuth/Downloads/.bashrc	/^function pascal() { l=15;for((i=0;i<$l;i++));do eval "a$i=($(pv=1;v=1;for((j=0;j<$l-$i;j++));do [ $i -eq 0 -o $j -eq 0 ]&&{ v=1 && pv=1; }||v=$((pv+a$((i-1))[$((j))]));echo -n "$v ";pv=$v;done;));";o="$(eval echo "$(for((k=0;k<=$i;k++)); do eval "echo -n \\"\\$((a\\$((i-k))[k])) \\""; done)")";echo "$o";s="${#o}"; done; } | while read l; do j=$((s-${#l}\/2)); echo "$(while ((i++ < j)); do echo -n " ";done;)$l";done$/;"	f	language:Sh
+paste	/media/documentos/Helmuth/Downloads/.bashrc	/^function paste() { curl -s -S --data-urlencode "txt=$($*)" "http:\/\/pastehtml.com\/upload\/create?input_type=txt&result=address";echo; }$/;"	f	language:Sh
+pathremove	/media/documentos/Helmuth/Downloads/.bashrc	/^function pathremove() {$/;"	f	language:Sh
+pause_function	/media/documentos/Helmuth/Github/aui/aui	/^function pause_function(){ #{{{$/;"	f	language:Sh
+pcharc	/media/documentos/Helmuth/Downloads/.bashrc	/^function pcharc() { perl -e 'for (0..255) {$_ = chr($_); print if \/['$1']\/}' | cat -v; echo; }$/;"	f	language:Sh
+pdf2png	/media/documentos/Helmuth/Downloads/.bashrc	/^function pdf2png()$/;"	f	language:Sh
+phone2text	/media/documentos/Helmuth/Downloads/.bashrc	/^function phone2text()$/;"	f	language:Sh
+pick	/media/documentos/Helmuth/Downloads/.bashrc	/^function pick-card()$/;"	f	language:Sh
+piratebay	/media/documentos/Helmuth/Downloads/.bashrc	/^function piratebay()$/;"	f	language:Sh
+Play	/media/documentos/Helmuth/Downloads/.bashrc	/^function Play() {               # Single pass (inner loop).$/;"	f	language:Sh
+plot	/media/documentos/Helmuth/Downloads/.bashrc	/^function plot() { { echo 'plot "-"' "$@"; cat; } | gnuplot -persist; }$/;"	f	language:Sh
+pngoptim	/media/documentos/Helmuth/Downloads/.bashrc	/^function pngoptim()$/;"	f	language:Sh
+popd	/media/documentos/Helmuth/Downloads/.bashrc	/^function popd() {$/;"	f	language:Sh
+port	/media/documentos/Helmuth/Downloads/.bashrc	/^function port() {$/;"	f	language:Sh
+portcheck	/media/documentos/Helmuth/Downloads/.bashrc	/^function portcheck() { for i in $@;do curl -s "deluge-torrent.org\/test-port.php?port=$i" | sed '\/^$\/d;s\/<br><br>\/ \/g';done; }$/;"	f	language:Sh
+portscan	/media/documentos/Helmuth/Downloads/.bashrc	/^function portscan()$/;"	f	language:Sh
+power	/media/documentos/Helmuth/Downloads/.bashrc	/^function power() {$/;"	f	language:Sh
+pp	/media/documentos/Helmuth/Downloads/.bashrc	/^function pp() { my_ps f | awk '!\/awk\/ && $0~var' var=${1:-".*"} ; }$/;"	f	language:Sh
+prep	/media/documentos/Helmuth/Downloads/.bashrc	/^function prep() { perl -nle 'print if '"$1"';' $2 ; }$/;"	f	language:Sh
+primes	/media/documentos/Helmuth/Downloads/.bashrc	/^function primes()$/;"	f	language:Sh
+Primes	/media/documentos/Helmuth/Downloads/.bashrc	/^Primes()$/;"	f	language:Sh
+printd	/media/documentos/Helmuth/Downloads/.bashrc	/^function printd() {$/;"	f	language:Sh
+printdriver	/media/documentos/Helmuth/Downloads/.bashrc	/^function printdriver() {$/;"	f	language:Sh
+println	/media/documentos/Helmuth/Downloads/.bashrc	/^function println()$/;"	f	language:Sh
+print_line	/media/documentos/Helmuth/Github/aui/aui	/^function print_line(){ #{{{$/;"	f	language:Sh
+print_result	/media/documentos/Helmuth/Downloads/.bashrc	/^function print_result()$/;"	f	language:Sh
+print_result	/media/documentos/Helmuth/Downloads/.bashrc	/^function print_result()$/;"	f	language:Sh
+print_square	/media/documentos/Helmuth/Downloads/.bashrc	/^function print_square()               # Output square, one row at a time.$/;"	f	language:Sh
+print_title	/media/documentos/Helmuth/Github/aui/aui	/^function print_title (){ #{{{$/;"	f	language:Sh
+private	/media/documentos/Helmuth/Downloads/.bashrc	/^function private()$/;"	f	language:Sh
+proceed_sudo	/media/documentos/Helmuth/Downloads/.bashrc	/^function proceed_sudo() { sudor_command="`HISTTIMEFORMAT=\\"\\" history 1 | sed -r -e 's\/^.*?sudor\/\/' -e 's\/\\"\/\\\\\\"\/g'`" ; sudo sh -c "$sudor_command"; }; alias sudor="proceed_sudo # "$/;"	f	language:Sh
+program	/media/documentos/Helmuth/Downloads/.bashrc	/^function program-timer() { perl -e 'alarm shift; exec @ARGV' "$@" & exit; }$/;"	f	language:Sh
+progressbar	/media/documentos/Helmuth/Downloads/.bashrc	/^function progressbar()$/;"	f	language:Sh
+pronounce	/media/documentos/Helmuth/Downloads/.bashrc	/^function pronounce() { for a in $@; do wget -qO- $(wget -qO- "http:\/\/www.m-w.com\/dictionary\/$a" | grep 'return au' | sed -r "s|.*return au\\('([^']*)', '([^'])[^']*'\\).*|http:\/\/cougar.eb.com\/soundc11\/\\2\/\\1|") | aplay -q; done }$/;"	f	language:Sh
+pronounce_	/media/documentos/Helmuth/Downloads/.bashrc	/^function pronounce_() { wget -qO- $(wget -qO- "http:\/\/dictionary.reference.com\/browse\/$@" | grep 'soundUrl' | head -n 1 | sed 's|.*soundUrl=\\([^&]*\\)&.*|\\1|' | sed 's\/%3A\/:\/g;s\/%2F\/\\\/\/g') | mpg123 -; }$/;"	f	language:Sh
+psaux	/media/documentos/Helmuth/Downloads/.bashrc	/^function psaux() {$/;"	f	language:Sh
+psg	/media/documentos/Helmuth/Downloads/.bashrc	/^function psg()$/;"	f	language:Sh
+psgrep	/media/documentos/Helmuth/Downloads/.bashrc	/^function psgrep() {$/;"	f	language:Sh
+pskill	/media/documentos/Helmuth/Downloads/.bashrc	/^function pskill() {$/;"	f	language:Sh
+publicfolder	/media/documentos/Helmuth/Downloads/.bashrc	/^function publicfolder()$/;"	f	language:Sh
+pullout	/media/documentos/Helmuth/Downloads/.bashrc	/^function pullout() {$/;"	f	language:Sh
+pushd	/media/documentos/Helmuth/Downloads/.bashrc	/^function pushd() {$/;"	f	language:Sh
+pw	/media/documentos/Helmuth/Downloads/.bashrc	/^function pw()$/;"	f	language:Sh
+qrurl	/media/documentos/Helmuth/Downloads/.bashrc	/^function qrurl() { curl -sS "http:\/\/chart.apis.google.com\/chart?chs=200x200&cht=qr&chld=H|0&chl=$1" -o - | display -filter point -resize 600x600 png:-; }$/;"	f	language:Sh
+question_for_answer	/media/documentos/Helmuth/Github/aui/aui	/^function question_for_answer(){ #{{{$/;"	f	language:Sh
+quickemail	/media/documentos/Helmuth/Downloads/.bashrc	/^function quickemail() { echo "$*" | mail -s "$*" email@email.com; }$/;"	f	language:Sh
+Quietly	/media/documentos/Helmuth/Downloads/.bashrc	/^function Quietly() { "$@" > \/dev\/null 2>&1; }$/;"	f	language:Sh
+quietly	/media/documentos/Helmuth/Downloads/.bashrc	/^function quietly() { "$@" |&:; }$/;"	f	language:Sh
+quietly_	/media/documentos/Helmuth/Downloads/.bashrc	/^function quietly_() { $* 2> \/dev\/null > \/dev\/null; }$/;"	f	language:Sh
+r	/media/documentos/Helmuth/Downloads/.bashrc	/^function r() {$/;"	f	language:Sh
+radical	/media/documentos/Helmuth/Downloads/.bashrc	/^function radical() {$/;"	f	language:Sh
+radio	/media/documentos/Helmuth/Downloads/.bashrc	/^function radio() { if [ "$(pidof mpg123)" ] ; then killall mpg123; else mpg123 -q -@ http:\/\/173.236.29.51:8200 & fi }$/;"	f	language:Sh
+random	/media/documentos/Helmuth/Downloads/.bashrc	/^function random() {$/;"	f	language:Sh
+randomblanks	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomblanks()$/;"	f	language:Sh
+randomfile	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomfile() {$/;"	f	language:Sh
+randomline	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomline()$/;"	f	language:Sh
+randomnumbers	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomnumbers()$/;"	f	language:Sh
+randompw	/media/documentos/Helmuth/Downloads/.bashrc	/^function randompw() {$/;"	f	language:Sh
+randomwp	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomwp()$/;"	f	language:Sh
+randomwpt	/media/documentos/Helmuth/Downloads/.bashrc	/^function randomwpt()$/;"	f	language:Sh
+random_cow	/media/documentos/Helmuth/Downloads/.bashrc	/^function random_cow()$/;"	f	language:Sh
+rankmirror	/media/documentos/Helmuth/Github/aui/aui	/^function rankmirror(){$/;"	f	language:Sh
+rd_	/media/documentos/Helmuth/Downloads/.bashrc	/^function rd_() { IFS='<ctrl-m>';$@;for i in `sed 's.\\\\\\.\\\\\\134.g;s.%.\\\\\\045.g'`;do printf "$i$IFS";sleep 1;done ; }$/;"	f	language:Sh
+readfile	/media/documentos/Helmuth/Downloads/.bashrc	/^function readfile() { curl -sGA Mozilla -d "language=en&format=audio\/mp3&options=MaxQuality&appid=To6RoRW0R9Pt9emvqxsqEImBiS_ElZ19Dxpu9j6WURkg*&text=`python3 -c 'from urllib.parse import quote_plus; from sys import stdin; print(quote_plus(stdin.read()))' <${1:?file name is empty}`" 'http:\/\/api.microsofttranslator.com\/V2\/Http.svc\/Speak' | mpg321 -q -; }$/;"	f	language:Sh
+reboot_now	/media/documentos/Helmuth/Github/aui/aui	/^function reboot_now(){ #{{{$/;"	f	language:Sh
+ref	/media/documentos/Helmuth/Downloads/.bashrc	/^function ref()$/;"	f	language:Sh
+relinux	/media/documentos/Helmuth/Downloads/.bashrc	/^function relinux-copy()$/;"	f	language:Sh
+remastersys	/media/documentos/Helmuth/Downloads/.bashrc	/^function remastersys-copy()$/;"	f	language:Sh
+remindme	/media/documentos/Helmuth/Downloads/.bashrc	/^function remindme()$/;"	f	language:Sh
+remount	/media/documentos/Helmuth/Downloads/.bashrc	/^function remount() {$/;"	f	language:Sh
+removeduplines	/media/documentos/Helmuth/Downloads/.bashrc	/^function removeduplines()$/;"	f	language:Sh
+remove_daemon	/media/documentos/Helmuth/Github/aui/aui	/^function remove_daemon(){ #{{{$/;"	f	language:Sh
+remove_module	/media/documentos/Helmuth/Github/aui/aui	/^function remove_module(){ #{{{$/;"	f	language:Sh
+repath	/media/documentos/Helmuth/Downloads/.bashrc	/^function repath() { ( _E=`echo "${PATH\/\/:\/$'\\n'}" | awk '!x[$0]++'`; glu ":" $_E ) ; }$/;"	f	language:Sh
+repeat	/media/documentos/Helmuth/Downloads/.bashrc	/^function repeat() {$/;"	f	language:Sh
+repoadd	/media/documentos/Helmuth/Downloads/.bashrc	/^function repoadd() {$/;"	f	language:Sh
+repository	/media/documentos/Helmuth/Downloads/.bashrc	/^function repository-update-check() {$/;"	f	language:Sh
+resetleds	/media/documentos/Helmuth/Downloads/.bashrc	/^function resetleds()$/;"	f	language:Sh
+resetp	/media/documentos/Helmuth/Downloads/.bashrc	/^function resetp() {$/;"	f	language:Sh
+reset_display	/media/documentos/Helmuth/Downloads/.bashrc	/^function reset_display()$/;"	f	language:Sh
+resizeimg	/media/documentos/Helmuth/Downloads/.bashrc	/^function resizeimg()$/;"	f	language:Sh
+resolve	/media/documentos/Helmuth/Downloads/.bashrc	/^function resolve() { curl -Is $1 | sed -n 's\/^Location: \/\/p'; }$/;"	f	language:Sh
+restoremykeys	/media/documentos/Helmuth/Downloads/.bashrc	/^function restoremykeys()$/;"	f	language:Sh
+restowin	/media/documentos/Helmuth/Downloads/.bashrc	/^function restowin() { sudo grub-set-default 3 && sudo reboot; }$/;"	f	language:Sh
+rewrite	/media/documentos/Helmuth/Downloads/.bashrc	/^function rewrite {$/;"	f	language:Sh
+rf	/media/documentos/Helmuth/Downloads/.bashrc	/^function rf() { for i in "$@"; do mv "$i" "$(pwgen 8 1).${i##*.}"; done }$/;"	f	language:Sh
+right	/media/documentos/Helmuth/Downloads/.bashrc	/^function right() { bc <<< "obase=8;ibase=2;$1"; }; # touch foo; chmod $(right 111111011) foo; ls -l foo$/;"	f	language:Sh
+rm	/media/documentos/Helmuth/Downloads/.bashrc	/^function rm() {         workingdir=$( pwdx $$ | awk '{print $2}' )         \/bin\/rm $*         echo "rm $* issued at $(date) by the user $(who am i| awk '{print $1} ') in the directory ${workingdir}"  >> \/tmp\/rm.out ; }$/;"	f	language:Sh
+rmall_but	/media/documentos/Helmuth/Downloads/.bashrc	/^function rmall_but() { declare -A keep;for arg;do keep[$arg]=1;done;for file in *;do [[ ${keep[$file]} ]] || rm -rf "$file";done; }$/;"	f	language:Sh
+rminode	/media/documentos/Helmuth/Downloads/.bashrc	/^function rminode() {$/;"	f	language:Sh
+rmspaces	/media/documentos/Helmuth/Downloads/.bashrc	/^function rmspaces() {$/;"	f	language:Sh
+roll	/media/documentos/Helmuth/Downloads/.bashrc	/^function roll()$/;"	f	language:Sh
+roll	/media/documentos/Helmuth/Downloads/.bashrc	/^function roll-die()$/;"	f	language:Sh
+roll_die	/media/documentos/Helmuth/Downloads/.bashrc	/^function roll_die() {$/;"	f	language:Sh
+roman	/media/documentos/Helmuth/Downloads/.bashrc	/^function roman-numeral()$/;"	f	language:Sh
+rot13	/media/documentos/Helmuth/Downloads/.bashrc	/^function rot13()$/;"	f	language:Sh
+rot47	/media/documentos/Helmuth/Downloads/.bashrc	/^function rot47()$/;"	f	language:Sh
+rotd	/media/documentos/Helmuth/Downloads/.bashrc	/^function rotd() {$/;"	f	language:Sh
+round	/media/documentos/Helmuth/Downloads/.bashrc	/^function round() {$/;"	f	language:Sh
+rr	/media/documentos/Helmuth/Downloads/.bashrc	/^function rr()$/;"	f	language:Sh
+rtfm	/home/helmuth/.bashrc	/^function rtfm() { help $@ || man $@ || lynx "http:\/\/www.google.com\/search?q=$@"; }$/;"	f	language:Sh
+rtfm	/media/documentos/Helmuth/.bashrc	/^function rtfm() { help $@ || man $@ || lynx "http:\/\/www.google.com\/search?q=$@"; }$/;"	f	language:Sh
+rtfm	/media/documentos/Helmuth/Downloads/.bashrc	/^function rtfm() { help $@ || man $@ || $BROWSER "http:\/\/www.google.com\/search?q=$@"; }$/;"	f	language:Sh
+rtrim	/media/documentos/Helmuth/Downloads/.bashrc	/^function rtrim() {$/;"	f	language:Sh
+ruler	/media/documentos/Helmuth/Downloads/.bashrc	/^function ruler() { for s in '....^....|' '1234567890'; do w=${#s}; str=$( for (( i=1; $i<=$(( ($COLUMNS + $w) \/ $w )) ; i=$i+1 )); do echo -n $s; done ); str=$(echo $str | cut -c -$COLUMNS) ; echo $str; done; }$/;"	f	language:Sh
+Run	/media/documentos/Helmuth/Downloads/.bashrc	/^function Run() {                # Outer loop.$/;"	f	language:Sh
+s	/media/documentos/Helmuth/Downloads/.bashrc	/^function s() {$/;"	f	language:Sh
+safeedit	/media/documentos/Helmuth/Downloads/.bashrc	/^function safeedit() {$/;"	f	language:Sh
+sanitize	/media/documentos/Helmuth/Downloads/.bashrc	/^function sanitize()$/;"	f	language:Sh
+save	/media/documentos/Helmuth/Downloads/.bashrc	/^function save() { \/usr\/bin\/sed "\/$@\/d" ~\/.dirs > ~\/.dirs1; \\mv ~\/.dirs1 ~\/.dirs; echo "$@"=\\"`pwd`\\" >> ~\/.dirs; source ~\/.dirs ; }$/;"	f	language:Sh
+saveit	/media/documentos/Helmuth/Downloads/.bashrc	/^function saveit() {$/;"	f	language:Sh
+say	/media/documentos/Helmuth/Downloads/.bashrc	/^function say() { mplayer -user-agent Mozilla "http:\/\/translate.google.com\/translate_tts?tl=en&q=$(echo $* | sed 's#\\ #\\+#g')" > \/dev\/null 2>&1 ; }$/;"	f	language:Sh
+say_	/media/documentos/Helmuth/Downloads/.bashrc	/^function say_()$/;"	f	language:Sh
+scpsend	/media/documentos/Helmuth/Downloads/.bashrc	/^function scpsend()$/;"	f	language:Sh
+screencastw	/media/documentos/Helmuth/Downloads/.bashrc	/^function screencastw()$/;"	f	language:Sh
+searchnreplace	/media/documentos/Helmuth/Downloads/.bashrc	/^function searchnreplace()$/;"	f	language:Sh
+sec2all	/media/documentos/Helmuth/Downloads/.bashrc	/^function sec2all()$/;"	f	language:Sh
+seconds	/media/documentos/Helmuth/Downloads/.bashrc	/^function seconds-convert-part()$/;"	f	language:Sh
+sedi	/media/documentos/Helmuth/Downloads/.bashrc	/^function sedi() { case $# in [01])echo usage: sedi cmds file;;2)sed -an ''"$1"';H;$!d;g;w '"$2"'' $2;;esac; }$/;"	f	language:Sh
+send	/media/documentos/Helmuth/Downloads/.bashrc	/^function send() {$/;"	f	language:Sh
+service	/media/documentos/Helmuth/Downloads/.bashrc	/^function service() {$/;"	f	language:Sh
+services	/media/documentos/Helmuth/Downloads/.bashrc	/^function services() { printf "$(service --status-all 2>&1|sed -e 's\/\\[ + \\]\/\\\\E\\[42m\\[ + \\]\\\\E\\[0m\/g' -e 's\/\\[ - \\]\/\\\\E\\[41m\\[ - \\]\\\\E\\[0m\/g' -e 's\/\\[ ? \\]\/\\\\E\\[43m\\[ ? \\]\\\\E\\[0m\/g')\\n"; }$/;"	f	language:Sh
+service_	/media/documentos/Helmuth/Downloads/.bashrc	/^function service_() {$/;"	f	language:Sh
+setperms	/media/documentos/Helmuth/Downloads/.bashrc	/^function setperms()$/;"	f	language:Sh
+setupmykeys	/media/documentos/Helmuth/Downloads/.bashrc	/^function setupmykeys()$/;"	f	language:Sh
+set_wallpaper	/media/documentos/Helmuth/Downloads/.bashrc	/^function set_wallpaper() {$/;"	f	language:Sh
+set_xtitle	/media/documentos/Helmuth/Downloads/.bashrc	/^function set_xtitle()$/;"	f	language:Sh
+se_	/media/documentos/Helmuth/Downloads/.bashrc	/^function se_() { while read a;do [ "$a" != "${a#*$@*}" ]&&echo $a;done ; }$/;"	f	language:Sh
+shebang	/media/documentos/Helmuth/Downloads/.bashrc	/^function shebang() { if i=$(which $1); then printf '#!%s\\n\\n' $i >  $2 && vim + $2 && chmod 755 $2; else echo "'which' could not find $1, is it in your \\$PATH?"; fi; }$/;"	f	language:Sh
+shot	/home/helmuth/.bashrc	/^function shot() {$/;"	f	language:Sh
+shot	/media/documentos/Helmuth/.bashrc	/^function shot() {$/;"	f	language:Sh
+shot	/media/documentos/Helmuth/Downloads/.bashrc	/^function shot()$/;"	f	language:Sh
+shout	/media/documentos/Helmuth/Downloads/.bashrc	/^function shout() { curl -s "http:\/\/shoutkey.com\/new?url=$1" | sed -n 's\/\\<h1\\>\/\\&\/p' | sed 's\/<[^>]*>\/\/g;\/<\/N;\/\/b' ;}$/;"	f	language:Sh
+showa	/media/documentos/Helmuth/Downloads/.bashrc	/^function showa() { \/usr\/bin\/grep -i -a1 $@ ~\/.aliases.bash | grep -v '^\\s*$' ; }$/;"	f	language:Sh
+showdiff	/media/documentos/Helmuth/Downloads/.bashrc	/^function showdiff()$/;"	f	language:Sh
+showfile	/media/documentos/Helmuth/Downloads/.bashrc	/^function showfile()$/;"	f	language:Sh
+showTimes	/media/documentos/Helmuth/Downloads/.bashrc	/^function showTimes() { stat -f "%N:   %m %c %a" "$@" ; }$/;"	f	language:Sh
+show_battery_load	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_battery_load()$/;"	f	language:Sh
+show_cpu_load	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_cpu_load()$/;"	f	language:Sh
+show_ip	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_ip()$/;"	f	language:Sh
+show_mem	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_mem() {$/;"	f	language:Sh
+show_size	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_size()$/;"	f	language:Sh
+Show_Slots	/media/documentos/Helmuth/Downloads/.bashrc	/^function Show_Slots() {$/;"	f	language:Sh
+show_space	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_space()$/;"	f	language:Sh
+show_system_load	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_system_load() {$/;"	f	language:Sh
+show_tty	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_tty()$/;"	f	language:Sh
+show_uptime	/media/documentos/Helmuth/Downloads/.bashrc	/^function show_uptime() {$/;"	f	language:Sh
+sh_colormsg	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_colormsg()$/;"	f	language:Sh
+sh_coloroff	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_coloroff()$/;"	f	language:Sh
+sh_error	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_error()$/;"	f	language:Sh
+sh_fcore	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_fcore()$/;"	f	language:Sh
+sh_info	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_info()$/;"	f	language:Sh
+sh_mesg	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_mesg()$/;"	f	language:Sh
+sh_success	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_success()$/;"	f	language:Sh
+sh_svnprev	/media/documentos/Helmuth/Downloads/.bashrc	/^function sh_svnprev()$/;"	f	language:Sh
+sitepass	/media/documentos/Helmuth/Downloads/.bashrc	/^function sitepass() { echo -n "$@" |  md5sum | sha1sum | sha224sum | sha256sum | sha384sum | sha512sum | gzip - | strings -n 1 | tr -d "[:space:]"  | tr -s '[:print:]' | tr '!-~' 'P-~!-O' | rev | cut -b 2-11; history -d $(($HISTCMD-1)); }$/;"	f	language:Sh
+sitepass2	/media/documentos/Helmuth/Downloads/.bashrc	/^function sitepass2()$/;"	f	language:Sh
+sl	/media/documentos/Helmuth/Downloads/.bashrc	/^function sl() {$/;"	f	language:Sh
+slak	/media/documentos/Helmuth/Downloads/.bashrc	/^function slak()$/;"	f	language:Sh
+sleeper	/media/documentos/Helmuth/Downloads/.bashrc	/^function sleeper() { while `ps -p $1 &>\/dev\/null`; do echo -n "${2:-.}"; sleep ${3:-1}; done; }; export -f sleeper$/;"	f	language:Sh
+slow2	/media/documentos/Helmuth/Downloads/.bashrc	/^function slow2() { ionice -c3 renice -n 20 $(pstree `pidof $1` -p -a -u -A|gawk 'BEGIN{FS=","}{print $2}'|cut -f1 -d " ") ; }$/;"	f	language:Sh
+slpg	/media/documentos/Helmuth/Downloads/.bashrc	/^function slpg()$/;"	f	language:Sh
+slssh	/media/documentos/Helmuth/Downloads/.bashrc	/^function slssh()$/;"	f	language:Sh
+sort_csn	/media/documentos/Helmuth/Downloads/.bashrc	/^function sort_csn() { echo "${1}" | sed -e "s\/,\/\\n\/g"| sort -nu | awk '{printf("%s,",$0)} END {printf("\\n")}' | sed -e "s\/,$\/\/"; }$/;"	f	language:Sh
+source_print	/media/documentos/Helmuth/Downloads/.bashrc	/^function source_print() { set | sed -n "\/^$1\/,\/^}$\/p"; }$/;"	f	language:Sh
+sp	/media/documentos/Helmuth/Downloads/.bashrc	/^function sp() { apt-cache search "$1" | grep -i "$1"; }  # search all available$/;"	f	language:Sh
+spanner	/media/documentos/Helmuth/Downloads/.bashrc	/^function spanner() {$/;"	f	language:Sh
+spell	/media/documentos/Helmuth/Downloads/.bashrc	/^function spell()$/;"	f	language:Sh
+spellcheck	/media/documentos/Helmuth/Downloads/.bashrc	/^function spellcheck() { typeset y=$@;curl -sd "<spellrequest><text>$y<\/text><\/spellrequest>" https:\/\/www.google.com\/tbproxy\/spell|sed -n '\/s="[0-9]"\/{s\/<[^>]*>\/ \/g;s\/\\t\/ \/g;s\/ *\\(.*\\)\/Suggestions: \\1\\n\/g;p}'|tee >(grep -Eq '.*'||echo -e "OK");}$/;"	f	language:Sh
+spin	/media/documentos/Helmuth/Downloads/.bashrc	/^function spin() {$/;"	f	language:Sh
+spinner	/media/documentos/Helmuth/Downloads/.bashrc	/^function spinner()$/;"	f	language:Sh
+spinner2	/media/documentos/Helmuth/Downloads/.bashrc	/^function spinner2() {$/;"	f	language:Sh
+SplitScreen	/home/helmuth/.vimrc	/^    function! SplitScreen() "{{{$/;"	f	language:Vim
+splitvideo	/media/documentos/Helmuth/Downloads/.bashrc	/^function splitvideo()$/;"	f	language:Sh
+sprunge	/media/documentos/Helmuth/Downloads/.bashrc	/^function sprunge() { curl -s -F "sprunge=@$1" http:\/\/sprunge.us | xclip -selection clipboard && xclip -selection clipboard -o; }$/;"	f	language:Sh
+sqrt	/media/documentos/Helmuth/Downloads/.bashrc	/^function sqrt()$/;"	f	language:Sh
+sshmysql	/media/documentos/Helmuth/Downloads/.bashrc	/^function sshmysql()$/;"	f	language:Sh
+sshpg	/media/documentos/Helmuth/Downloads/.bashrc	/^function sshpg()$/;"	f	language:Sh
+sshpg2	/media/documentos/Helmuth/Downloads/.bashrc	/^function sshpg2()$/;"	f	language:Sh
+statt	/media/documentos/Helmuth/Downloads/.bashrc	/^function statt() { C=c;stat --h|sed '\/Th\/,\/NO\/!d;\/%\/!d'|while read l;do p=${l\/% *\/};[ $p == %Z ]&&C=fc&&echo ^FS:^;echo "`stat -$C $p \\"$1\\"` ^$p^${l#%* }";done|column -ts^; }$/;"	f	language:Sh
+stock	/media/documentos/Helmuth/Downloads/.bashrc	/^function stock()$/;"	f	language:Sh
+stock_	/media/documentos/Helmuth/Downloads/.bashrc	/^function stock_()$/;"	f	language:Sh
+stopwatch	/media/documentos/Helmuth/Downloads/.bashrc	/^function stopwatch() {$/;"	f	language:Sh
+stop_watch	/media/documentos/Helmuth/Downloads/.bashrc	/^function stop_watch()$/;"	f	language:Sh
+strerror	/media/documentos/Helmuth/Downloads/.bashrc	/^function strerror() { python -c "import os; print os.strerror($1)"; }$/;"	f	language:Sh
+strim	/media/documentos/Helmuth/Downloads/.bashrc	/^function strim() {$/;"	f	language:Sh
+string2array	/media/documentos/Helmuth/Downloads/.bashrc	/^function string2array()$/;"	f	language:Sh
+string2bin	/media/documentos/Helmuth/Downloads/.bashrc	/^function string2bin()$/;"	f	language:Sh
+strtolower	/media/documentos/Helmuth/Downloads/.bashrc	/^function strtolower() {$/;"	f	language:Sh
+strtoupper	/media/documentos/Helmuth/Downloads/.bashrc	/^function strtoupper() {$/;"	f	language:Sh
+subdir_find	/media/documentos/Helmuth/Downloads/.bashrc	/^function subdir_find()$/;"	f	language:Sh
+sumary	/media/documentos/Helmuth/Github/aui/aui	/^function sumary(){ #{{{$/;"	f	language:Sh
+suntimes	/media/documentos/Helmuth/Downloads/.bashrc	/^function suntimes()$/;"	f	language:Sh
+supportsWrap	/media/documentos/Helmuth/Downloads/.bashrc	/^function supportsWrap() { ldd `which ${1}` | grep "libwrap" &>\/dev\/null && return 0 || return 1; }$/;"	f	language:Sh
+svnlogedit	/media/documentos/Helmuth/Downloads/.bashrc	/^function svnlogedit() {$/;"	f	language:Sh
+svnradd	/media/documentos/Helmuth/Downloads/.bashrc	/^function svnradd() { for i in $1\/*;do if [ -e "$i" ];then if [ -d "$i" ];then svn add $i;svnradd $i;else svn add $i;fi; fi;done }$/;"	f	language:Sh
+svn_find	/media/documentos/Helmuth/Downloads/.bashrc	/^function svn_find() { local a=$1; shift; find $a -not \\( -name .svn -prune \\) $*; }$/;"	f	language:Sh
+svn_rev	/media/documentos/Helmuth/Downloads/.bashrc	/^function svn_rev() {$/;"	f	language:Sh
+svn_uplog	/media/documentos/Helmuth/Downloads/.bashrc	/^function svn_uplog() {$/;"	f	language:Sh
+swap	/media/documentos/Helmuth/Downloads/.bashrc	/^function swap()$/;"	f	language:Sh
+swap2	/media/documentos/Helmuth/Downloads/.bashrc	/^function swap2() { if [ -f "$1" -a -f "$2" ]; then mv "$1" "$1.$$" && mv "$2" "$1" && mv "$1.$$" "$2" && echo "Success"; else echo "Fail"; fi; }$/;"	f	language:Sh
+swapd	/media/documentos/Helmuth/Downloads/.bashrc	/^function swapd() {$/;"	f	language:Sh
+switchfile	/media/documentos/Helmuth/Downloads/.bashrc	/^function switchfile() {$/;"	f	language:Sh
+system_infos	/media/documentos/Helmuth/Downloads/.bashrc	/^function system_infos()$/;"	f	language:Sh
+system_upgrade	/media/documentos/Helmuth/Github/aui/aui	/^function system_upgrade(){$/;"	f	language:Sh
+tarball	/media/documentos/Helmuth/Downloads/.bashrc	/^function tarball()$/;"	f	language:Sh
+tarcp	/media/documentos/Helmuth/Downloads/.bashrc	/^function tarcp() {$/;"	f	language:Sh
+tcp	/media/documentos/Helmuth/Downloads/.bashrc	/^function tcp() {$/;"	f	language:Sh
+te	/media/documentos/Helmuth/Downloads/.bashrc	/^function te()$/;"	f	language:Sh
+terminal_title	/media/documentos/Helmuth/Downloads/.bashrc	/^function terminal_title {$/;"	f	language:Sh
+termproxy	/media/documentos/Helmuth/Downloads/.bashrc	/^function termproxy()$/;"	f	language:Sh
+termproxyX	/media/documentos/Helmuth/Downloads/.bashrc	/^function termproxyX()$/;"	f	language:Sh
+terrorist	/media/documentos/Helmuth/Downloads/.bashrc	/^function terrorist-level()$/;"	f	language:Sh
+text2morse	/media/documentos/Helmuth/Downloads/.bashrc	/^function text2morse()$/;"	f	language:Sh
+themeinfo	/media/documentos/Helmuth/Downloads/.bashrc	/^function themeinfo() {$/;"	f	language:Sh
+ths	/media/documentos/Helmuth/Downloads/.bashrc	/^function ths() {$/;"	f	language:Sh
+timeDNS	/media/documentos/Helmuth/Downloads/.bashrc	/^function timeDNS() { { for x in "${local_DNS}" "208.67.222.222" "208.67.220.220" "198.153.192.1" "198.153.194.1" "156.154.70.1" "156.154.71.1" "8.8.8.8" "8.8.4.4"; do ({ echo -n "$x "; dig @"$x" "$*"|grep Query ; }|sponge &) done ; } | sort -n -k5 ; }$/;"	f	language:Sh
+timer	/media/documentos/Helmuth/Downloads/.bashrc	/^function timer()$/;"	f	language:Sh
+title	/media/documentos/Helmuth/Downloads/.bashrc	/^function title() { sed 's\/\\<\\w*\/\\u&\/g' <<<$@; }$/;"	f	language:Sh
+tmv	/media/documentos/Helmuth/Downloads/.bashrc	/^function tmv() {$/;"	f	language:Sh
+ToggleScratch	/home/helmuth/.vimrc	/^        function! ToggleScratch()$/;"	f	language:Vim
+ToggleSpell	/home/helmuth/.vimrc	/^    function! ToggleSpell()$/;"	f	language:Vim
+top10	/home/helmuth/.bashrc	/^function top10() {$/;"	f	language:Sh
+top10	/media/documentos/Helmuth/.bashrc	/^function top10() {$/;"	f	language:Sh
+top10	/media/documentos/Helmuth/Downloads/.bashrc	/^function top10() {$/;"	f	language:Sh
+torswitch	/media/documentos/Helmuth/Downloads/.bashrc	/^function torswitch() {$/;"	f	language:Sh
+touchpad_off	/media/documentos/Helmuth/Downloads/.bashrc	/^function touchpad_off()$/;"	f	language:Sh
+touchpad_on	/media/documentos/Helmuth/Downloads/.bashrc	/^function touchpad_on()$/;"	f	language:Sh
+translate	/media/documentos/Helmuth/Downloads/.bashrc	/^function translate() { wget -qO- "http:\/\/ajax.googleapis.com\/ajax\/services\/language\/translate?v=1.0&q=$1&langpair=%7C${2:-en}" | sed 's\/.*{"translatedText":"\\([^"]*\\)".*\/\\1\\n\/'; }$/;"	f	language:Sh
+translate_help	/media/documentos/Helmuth/Downloads/.bashrc	/^function translate_help() {$/;"	f	language:Sh
+transmissionbl	/media/documentos/Helmuth/Downloads/.bashrc	/^function transmissionbl()$/;"	f	language:Sh
+trashit	/media/documentos/Helmuth/Downloads/.bashrc	/^function trashit()$/;"	f	language:Sh
+treecd	/media/documentos/Helmuth/Downloads/.bashrc	/^function treecd() {$/;"	f	language:Sh
+treefind	/media/documentos/Helmuth/Downloads/.bashrc	/^function treefind() {$/;"	f	language:Sh
+treeps	/media/documentos/Helmuth/Downloads/.bashrc	/^function treeps() {$/;"	f	language:Sh
+trig	/media/documentos/Helmuth/Downloads/.bashrc	/^function trig-angle()$/;"	f	language:Sh
+trim	/media/documentos/Helmuth/Downloads/.bashrc	/^function trim() {$/;"	f	language:Sh
+trunc_pwd	/media/documentos/Helmuth/Downloads/.bashrc	/^function trunc_pwd()$/;"	f	language:Sh
+ttl	/media/documentos/Helmuth/Downloads/.bashrc	/^function ttl()$/;"	f	language:Sh
+tv	/media/documentos/Helmuth/Downloads/.bashrc	/^function tv()$/;"	f	language:Sh
+tv	/media/documentos/Helmuth/Downloads/.bashrc	/^function tv-monitor-switch-end() {$/;"	f	language:Sh
+tv	/media/documentos/Helmuth/Downloads/.bashrc	/^function tv-monitor-switch-start() {$/;"	f	language:Sh
+tvcom	/media/documentos/Helmuth/Downloads/.bashrc	/^function tvcom() {$/;"	f	language:Sh
+tweet	/media/documentos/Helmuth/Downloads/.bashrc	/^function tweet() { curl -u "$1" -d status="$2" "http:\/\/twitter.com\/statuses\/update.xml"; }$/;"	f	language:Sh
+txt2pdf	/media/documentos/Helmuth/Downloads/.bashrc	/^function txt2pdf() { xhtml2pdf -b "${1%.*}" < <(txt2html "$1"); }$/;"	f	language:Sh
+type	/media/documentos/Helmuth/Downloads/.bashrc	/^function type() { if [ "$1" = "-c" ]; then shift; for f in "$@"; do ff=$(builtin type -p "$f"); readlink -f "$ff"; done; else builtin type $typeopts "$@"; fi; }$/;"	f	language:Sh
+u2d	/media/documentos/Helmuth/Downloads/.bashrc	/^function u2d() {$/;"	f	language:Sh
+ucfirst	/media/documentos/Helmuth/Downloads/.bashrc	/^function ucfirst() {$/;"	f	language:Sh
+ucwords	/media/documentos/Helmuth/Downloads/.bashrc	/^function ucwords() {$/;"	f	language:Sh
+uncolorpdf	/media/documentos/Helmuth/Downloads/.bashrc	/^function uncolorpdf()$/;"	f	language:Sh
+underscore	/media/documentos/Helmuth/Downloads/.bashrc	/^function underscore()$/;"	f	language:Sh
+unix2normal	/media/documentos/Helmuth/Downloads/.bashrc	/^function unix2normal()$/;"	f	language:Sh
+unjar	/media/documentos/Helmuth/Downloads/.bashrc	/^function unjar() { mkdir -p \/tmp\/unjar\/$1 ; unzip -d \/tmp\/unjar\/$1 $1 *class 1>\/dev\/null && find \/tmp\/unjar\/$1 -name *class -type f | xargs jad -ff -nl -nonlb -o -p -pi99 -space -stat ; rm -r \/tmp\/unjar\/$1 ; }$/;"	f	language:Sh
+unlatex	/media/documentos/Helmuth/Downloads/.bashrc	/^function unlatex() {$/;"	f	language:Sh
+unmark	/media/documentos/Helmuth/Downloads/.bashrc	/^function unmark() {$/;"	f	language:Sh
+up	/media/documentos/Helmuth/Downloads/.bashrc	/^function up() {$/;"	f	language:Sh
+upalevel	/media/documentos/Helmuth/Downloads/.bashrc	/^function upalevel()$/;"	f	language:Sh
+update_count	/media/documentos/Helmuth/Downloads/.bashrc	/^function update_count()$/;"	f	language:Sh
+update_count	/media/documentos/Helmuth/Downloads/.bashrc	/^function update_count()$/;"	f	language:Sh
+upper	/media/documentos/Helmuth/Downloads/.bashrc	/^function upper() { echo ${@^^}; }$/;"	f	language:Sh
+upper_	/media/documentos/Helmuth/Downloads/.bashrc	/^function upper_() { tr [a-z] [A-Z]; }$/;"	f	language:Sh
+uptime_min	/media/documentos/Helmuth/Downloads/.bashrc	/^function uptime_min()$/;"	f	language:Sh
+upto	/media/documentos/Helmuth/Downloads/.bashrc	/^function upto() { cd "${PWD\/\\\/$@\\\/*\/\/$@}"; }$/;"	f	language:Sh
+ur1	/media/documentos/Helmuth/Downloads/.bashrc	/^function ur1() { curl -s --url http:\/\/ur1.ca\/ -d longurl="$1" | sed -n -e '\/Your ur1\/!d;s\/.*<a href="\\(.*\\)">.*$\/\\1\/;p' ; }$/;"	f	language:Sh
+url	/media/documentos/Helmuth/Downloads/.bashrc	/^function url-info()$/;"	f	language:Sh
+usage	/media/documentos/Helmuth/Downloads/.bashrc	/^usage () {$/;"	f	language:Sh
+usage	/media/documentos/Helmuth/Downloads/.bashrc	/^usage() {$/;"	f	language:Sh
+usage_message	/media/documentos/Helmuth/Downloads/.bashrc	/^function usage_message()$/;"	f	language:Sh
+utime	/media/documentos/Helmuth/Downloads/.bashrc	/^function utime() { perl -e "print localtime($1).\\"\\n\\"";}$/;"	f	language:Sh
+validate	/media/documentos/Helmuth/Downloads/.bashrc	/^function validate()$/;"	f	language:Sh
+validator	/media/documentos/Helmuth/Downloads/.bashrc	/^function validator()$/;"	f	language:Sh
+vcd2mpeg	/media/documentos/Helmuth/Downloads/.bashrc	/^function vcd2mpeg()$/;"	f	language:Sh
+vers	/media/documentos/Helmuth/Downloads/.bashrc	/^function vers() { ( IFS=$'\\n'; suf="_versions"; mkdir -p "$1$suf"; nr=`ls "$1$suf" | wc -l`; nr=`printf "%02d" $(($nr + 1))`; cp "$1" "$1$suf\/v${nr}_$1" ) ; }$/;"	f	language:Sh
+video2avi	/media/documentos/Helmuth/Downloads/.bashrc	/^function video2avi()$/;"	f	language:Sh
+video2dvd	/media/documentos/Helmuth/Downloads/.bashrc	/^function video2dvd()$/;"	f	language:Sh
+vie	/media/documentos/Helmuth/Downloads/.bashrc	/^function vie() { vi $(which $1); }$/;"	f	language:Sh
+vimcmd	/media/documentos/Helmuth/Downloads/.bashrc	/^function vimcmd() { $1 > $2 && vim $2; }$/;"	f	language:Sh
+v_	/media/documentos/Helmuth/Downloads/.bashrc	/^function v_() { echo "$@"; "$@"; }$/;"	f	language:Sh
+W	/home/helmuth/.vimrc	/^    cmap W :w !sudo tee % >\/dev\/null$/;"	m	language:Vim
+wallpaperWarn	/media/documentos/Helmuth/Downloads/.bashrc	/^function wallpaperWarn() { BG="\/desktop\/gnome\/background\/picture_filename"; convert "`gconftool-2 -g $BG`" -pointsize 70 -draw "gravity center fill red  text 0,-360 'Warn' fill white  text 0,360 'Warn'" \/tmp\/w.jpg; gconftool-2 --set $BG -t string "\/tmp\/w.jpg" ; }$/;"	f	language:Sh
+weather	/media/documentos/Helmuth/Downloads/.bashrc	/^function weather()$/;"	f	language:Sh
+webcrawl	/media/documentos/Helmuth/Downloads/.bashrc	/^function webcrawl()$/;"	f	language:Sh
+webspell	/media/documentos/Helmuth/Downloads/.bashrc	/^function webspell()$/;"	f	language:Sh
+webster	/media/documentos/Helmuth/Downloads/.bashrc	/^function webster() { curl dict:\/\/dict.org\/d:${1}:web1913; }$/;"	f	language:Sh
+welcome	/media/documentos/Helmuth/Github/aui/aui	/^function welcome(){$/;"	f	language:Sh
+wgetall	/media/documentos/Helmuth/Downloads/.bashrc	/^function wgetall() { wget -r -l2 -nd -Nc -A.$@ $@ ; }$/;"	f	language:Sh
+where	/media/documentos/Helmuth/Downloads/.bashrc	/^function where()$/;"	f	language:Sh
+whichpath	/media/documentos/Helmuth/Downloads/.bashrc	/^function whichpath() { local -A path; local c p; for c; do p=$(type -P "$c"); p=${p%\/*}; path[${p:-\/}]=1; done; local IFS=:; printf '%s\\n' "${!path[*]}"; }$/;"	f	language:Sh
+whodat	/media/documentos/Helmuth/Downloads/.bashrc	/^  function whodat()$/;"	f	language:Sh
+wininfo	/media/documentos/Helmuth/Downloads/.bashrc	/^function wininfo() {$/;"	f	language:Sh
+wipe_	/media/documentos/Helmuth/Downloads/.bashrc	/^function wipe_() {$/;"	f	language:Sh
+wordfreq	/media/documentos/Helmuth/Downloads/.bashrc	/^function wordfreq()$/;"	f	language:Sh
+wordnet	/media/documentos/Helmuth/Downloads/.bashrc	/^function wordnet() { curl dict:\/\/dict.org\/d:${1}:wn; }$/;"	f	language:Sh
+words	/media/documentos/Helmuth/Downloads/.bashrc	/^function words()$/;"	f	language:Sh
+working	/media/documentos/Helmuth/Downloads/.bashrc	/^function working()$/;"	f	language:Sh
+writeiso	/media/documentos/Helmuth/Downloads/.bashrc	/^function writeiso() {$/;"	f	language:Sh
+wscan	/media/documentos/Helmuth/Downloads/.bashrc	/^function wscan()$/;"	f	language:Sh
+wwwrc	/media/documentos/Helmuth/Downloads/.bashrc	/^function wwwrc()$/;"	f	language:Sh
+xchown	/media/documentos/Helmuth/Downloads/.bashrc	/^function xchown() {$/;"	f	language:Sh
+xdel	/media/documentos/Helmuth/Downloads/.bashrc	/^function xdel() {$/;"	f	language:Sh
+xpath	/media/documentos/Helmuth/Downloads/.bashrc	/^function xpath() { xmllint --format --shell "$2" <<< "cat $1" | sed '\/^\\\/ >\/d' ; }$/;"	f	language:Sh
+xtitle	/media/documentos/Helmuth/Downloads/.bashrc	/^function xtitle()$/;"	f	language:Sh
+xzv	/media/documentos/Helmuth/Downloads/.bashrc	/^function xzv() { THREADS=`grep processor \/proc\/cpuinfo | wc -l`; for file in $*; do pv -s `stat -c%s $file` < $file | pxz -q -T $THREADS > $file.xz ; done; }$/;"	f	language:Sh
+Y	/home/helmuth/.vimrc	/^    nmap Y y\$$/;"	m	language:Vim
+yaourt	/media/documentos/Helmuth/Downloads/.bashrc	/^function yaourt() {$/;"	f	language:Sh
+yaourtd	/home/helmuth/.bashrc	/^function yaourtd() {$/;"	f	language:Sh
+yaourtd	/media/documentos/Helmuth/.bashrc	/^function yaourtd() {$/;"	f	language:Sh
+yt	/media/documentos/Helmuth/Downloads/.bashrc	/^function yt-chanrip() { for i in $(curl -s http:\/\/gdata.youtube.com\/feeds\/api\/users\/"$1"\/uploads | grep -Eo "watch\\?v=[^[:space:]\\"\\'\\\\]{11}" | uniq); do youtube-dl --title --no-overwrites http:\/\/youtube.com\/"$i"; done }$/;"	f	language:Sh
+yt	/media/documentos/Helmuth/Downloads/.bashrc	/^function yt-pl2mp3() { umph -m 50 $1 | cclive -f mp4_720p; IFS=$(echo -en "\\n\\b"); for track in $(ls | grep mp4 | awk '{print $0}' | sed -e 's\/\\.mp4\/\/'); do (ffmpeg -i $track.mp4 -vn -ar 44100 -ac 2 -ab 320 -f mp3 $track.mp3); done; rm -f *.mp4 ; }$/;"	f	language:Sh
+yt2mp3	/media/documentos/Helmuth/Downloads/.bashrc	/^function yt2mp3() { for j in `seq 1 301`;do i=`curl -s gdata.youtube.com\/feeds\/api\/users\/$1\/uploads\\?start-index=$j\\&max-results=1|grep -o "watch[^&]*"`;ffmpeg -i `wget youtube.com\/$i -qO-|grep -o 'url_map"[^,]*'|sed -n '1{s_.*|__;s_\\\\\\__g;p}'` -vn -ab 128k "`youtube-dl -e ${i#*=}`.mp3";done;}$/;"	f	language:Sh
+yt2mp3	/media/documentos/Helmuth/Downloads/.bashrc	/^function yt2mp3-chanrip() { for count in 1 51 101 151 201 251 301; do for i in $(curl -s http:\/\/gdata.youtube.com\/feeds\/api\/users\/"$1"\/uploads\\?start-index="$count"\\&max-results=50 | grep -Eo "watch\\?v=[^[:space:]\\"\\'\\\\]{11}" | uniq); do ffmpeg -i $(wget http:\/\/youtube.com\/"$i" -qO- | sed -n "\/fmt_url_map\/{s\/[\\'\\"\\|]\/\\n\/g;p}" | sed -n '\/^fmt_url_map\/,\/videoplayback\/p' | sed -e :a -e '$q;N;5,$D;ba' | tr -d '\\n' | sed -e 's\/\\(.*\\),\\(.\\)\\{1,3\\}\/\\1\/') -vn -ab 128k "$(youtube-dl -e http:\/\/youtube.com\/"$i").mp3"; done; done; unset count i; }$/;"	f	language:Sh
+yt2ogg	/media/documentos/Helmuth/Downloads/.bashrc	/^function yt2ogg() {$/;"	f	language:Sh
+ytplay	/media/documentos/Helmuth/Downloads/.bashrc	/^function ytplay() { args="$*";mplayer -fs $(youtube-dl -g "http:\/\/www.youtube.com$(lynx --source "http:\/\/www.youtube.com\/results?search_query=${args\/\/ \/+}&aq=f"|grep -m1 '<a id=.*watch?v=.*title'|cut -d\\" -f4)"); }$/;"	f	language:Sh
+zero	/media/documentos/Helmuth/Downloads/.bashrc	/^function zero() {$/;"	f	language:Sh
+zipf	/home/helmuth/.bashrc	/^function zipf() { zip -r "$1".zip "$1" ; }$/;"	f	language:Sh
+zipf	/media/documentos/Helmuth/.bashrc	/^function zipf() { zip -r "$1".zip "$1" ; }$/;"	f	language:Sh
+zipf	/media/documentos/Helmuth/Downloads/.bashrc	/^function zipf() { zip -r "$1".zip "$1" ; }$/;"	f	language:Sh
+_expand	/media/documentos/Helmuth/Downloads/.bashrc	/^function _expand()$/;"	f	language:Sh
+_get_longopts	/media/documentos/Helmuth/Downloads/.bashrc	/^function _get_longopts()$/;"	f	language:Sh
+_killall	/media/documentos/Helmuth/Downloads/.bashrc	/^function _killall()$/;"	f	language:Sh
+_longopts	/media/documentos/Helmuth/Downloads/.bashrc	/^function _longopts()$/;"	f	language:Sh
+_make	/media/documentos/Helmuth/Downloads/.bashrc	/^function _make()$/;"	f	language:Sh
+_meta_comp	/media/documentos/Helmuth/Downloads/.bashrc	/^function _meta_comp()$/;"	f	language:Sh
+_tar	/media/documentos/Helmuth/Downloads/.bashrc	/^function _tar()$/;"	f	language:Sh
