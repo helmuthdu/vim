@@ -140,7 +140,6 @@
                 "}}}
                 " Mac "{{{
                 if has('gui_mac') || has('gui_macvim')
-                    set transp=5
                     set guifont=Menlo:h12
                 endif
                 "}}}
