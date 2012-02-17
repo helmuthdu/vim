@@ -62,25 +62,16 @@ Reference to vim mappings.
 ## Plug-Ins
 
 - [autoPairs](https://github.com/jiangmiao/auto-pairs) - Automatic closing of quotes, parenthesis, brackets, etc. \-\-
-<<<<<<< HEAD
-- [bufexplorer]
 - [buftabs]
 - [calendar]
-- [drawIt]
-- [easyGrep]
 - [easyMotion]
-- [fuzzyFinder]
+- [CtrlP]
 - [gundo](https://github.com/vim-scripts/Gundo/blob/master/doc/gundo.txt) - Graph Vim's undo tree so it is actually usable
-- [mru]
-=======
 - [buftabs]
 - [calendar]
 - [CtrolP]
-- [drawIt]
-- [easyGrep]
 - [easyMotion]
 - [gundo](https://github.com/vim-scripts/Gundo/blob/master/doc/gundo.txt) - Graph Vim's undo tree so it is actually usable
->>>>>>> bd6ca9e10bf6a825600e52c8823d7560c6f2683d
 - [markdown-preview.vim](https://github.com/mkitt/markdown-preview.vim/blob/master/doc/markdown-preview.txt)
 - [matchit]
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter/blob/master/doc/NERD_commenter.txt)
