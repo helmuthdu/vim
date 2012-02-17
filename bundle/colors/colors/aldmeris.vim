@@ -1,7 +1,7 @@
 " Vim color scheme
 " Name:         aldmeris.vim
 " Maintainer:   Vincent Velociter <vincent.velociter@gmail.com>
-" Version:      1.0
+" Version:      1.1
 " Url:          https://github.com/veloce/vim-aldmeris
 
 " Aldmeris is based on the gedit oblivion theme for vim.
@@ -13,6 +13,11 @@
 " ------------
 " NOTE FOR TERMINAL USERS:
 " -----------------------
+" If you wish to use aldmeris with a transparent terminal, you can set this
+" option in your .vimrc:
+"
+"   let g:aldmeris_transparent = 1
+"
 " The colorscheme is compatible with terminals that support 256 colors. See:
 "
 "   http://vim.wikia.com/wiki/256_colors_in_vim
@@ -113,7 +118,10 @@ endfunc
 if !exists("g:aldmeris_termcolors")
     let g:aldmeris_termcolors = "xterm"
 endif
-
+" option to disable bg color for transparent terminals
+if !exists("g:aldmeris_transparent")
+    let g:aldmeris_transparent = 0
+endif
 " List terminals that support italics (I'm sure only for xrvt)
 let s:terms_italic = ["rxvt", "rxvt-unicode", "rxvt-unicode-256color"]
 " }}}
@@ -204,22 +212,25 @@ else
     let s:aluminium6  = "DarkGrey"
     let s:black       = "Black"
 endif
+if (!has("gui_running") && g:aldmeris_transparent == 1)
+    let s:aluminium6 = "NONE"
+endif
 " }}}
 " Syntax groups colors (:help group-name) {{{
 " ---------------------------------------
-call s:Hi( 'Normal',       s:aluminium6,  s:aluminium2 )
-call s:Hi( 'Comment',      "bg",          s:aluminium4, "italic" )
-call s:Hi( 'Constant',     "bg",          s:butter2 )
-call s:Hi( 'Boolean',      "bg",          s:orange3 )
-call s:Hi( 'Identifier',   "bg",          s:skyblue1,   "NONE" )
-call s:Hi( 'Statement',    "bg",          s:aluminium1, "bold" )
-call s:Hi( 'PreProc',      "bg",          s:plum1 )
-call s:Hi( 'Type',         "bg",          s:chameleon1, "bold" )
-call s:Hi( 'Special',      "bg",          s:orange1 )
-call s:Hi( 'SpecialChar',  "bg",          s:orange3 )
-call s:Hi( 'Underlined',   "bg",          s:skyblue1,   "underline" )
-call s:Hi( 'Error',        s:scarletred2, s:aluminium1, "bold" )
-call s:Hi( 'Todo',         s:butter1,     s:aluminium4, "bold" )
+call s:Hi( 'Normal',       s:aluminium6,   s:aluminium2 )
+call s:Hi( 'Comment',      s:aluminium6,   s:aluminium4,   "italic" )
+call s:Hi( 'Constant',     s:aluminium6,   s:butter2 )
+call s:Hi( 'Boolean',      s:aluminium6,   s:orange3 )
+call s:Hi( 'Identifier',   s:aluminium6,   s:skyblue1,     "NONE" )
+call s:Hi( 'Statement',    s:aluminium6,   s:aluminium1,   "bold" )
+call s:Hi( 'PreProc',      s:aluminium6,   s:plum1 )
+call s:Hi( 'Type',         s:aluminium6,   s:chameleon1,   "bold" )
+call s:Hi( 'Special',      s:aluminium6,   s:orange1 )
+call s:Hi( 'SpecialChar',  s:aluminium6,   s:orange3 )
+call s:Hi( 'Underlined',   s:aluminium6,   s:skyblue1,     "underline" )
+call s:Hi( 'Error',        s:scarletred2,  s:aluminium1,   "bold" )
+call s:Hi( 'Todo',         s:butter1,      s:aluminium4,   "bold" )
 
 " italic is a special case
 if !has("gui_running")
@@ -232,54 +243,54 @@ endif
 " -------------------------------------------
 " ColorColumn	used for the columns set with 'colorcolumn'
 " Conceal		placeholder characters substituted for concealed
-call s:Hi( 'Cursor',       s:aluminium2,  s:black )
+call s:Hi( 'Cursor',        s:aluminium2,   s:black )
 " CursorIM	like Cursor, but used when in IME mode
-call s:Hi( 'CursorColumn', s:aluminium5,  "NONE",        "NONE" )
-call s:Hi( 'CursorLine',   s:aluminium5,  "NONE",        "NONE" )
-call s:Hi( 'Directory',    "bg",          s:skyblue1,    "NONE" )
-call s:Hi( 'DiffAdd',      s:aluminium5,  s:chameleon3,  "bold" )
-call s:Hi( 'DiffChange',   s:aluminium5,  s:orange1,     "bold" )
-call s:Hi( 'DiffDelete',   s:aluminium5,  s:scarletred2, "bold" )
-call s:Hi( 'DiffText',     s:aluminium5,  s:skyblue1,    "bold" )
-call s:Hi( 'ErrorMsg',     s:scarletred2, s:aluminium1 )
-call s:Hi( 'VertSplit',    s:aluminium4,  s:aluminium6,  "bold" )
-call s:Hi( 'Folded',       s:black,       s:aluminium5)
-call s:Hi( 'FoldColumn',   s:black,       s:black )
-call s:Hi( 'SignColumn',   s:aluminium3,  s:aluminium5 )
+call s:Hi( 'CursorColumn',  s:aluminium5,   "NONE",         "NONE" )
+call s:Hi( 'CursorLine',    s:aluminium5,   "NONE",         "NONE" )
+call s:Hi( 'Directory',     s:aluminium6,   s:skyblue1,     "NONE" )
+call s:Hi( 'DiffAdd',       s:aluminium5,   s:chameleon3,   "bold" )
+call s:Hi( 'DiffChange',    s:aluminium5,   s:orange1,      "bold" )
+call s:Hi( 'DiffDelete',    s:aluminium5,   s:scarletred2,  "bold" )
+call s:Hi( 'DiffText',      s:aluminium5,   s:skyblue1,     "bold" )
+call s:Hi( 'ErrorMsg',      s:scarletred2,  s:aluminium1 )
+call s:Hi( 'VertSplit',     s:aluminium4,   s:aluminium6,   "bold" )
+call s:Hi( 'Folded',        s:aluminium6,   s:aluminium3,   "bold,underline" )
+call s:Hi( 'FoldColumn',    s:aluminium3,   s:aluminium5 )
+call s:Hi( 'SignColumn',    s:aluminium3,   s:aluminium5 )
 " IncSearch	'incsearch' highlighting
-call s:Hi( 'LineNr',       s:black,       s:aluminium5 )
-call s:Hi( 'MatchParen',   s:plum1,       s:aluminium1 )
+call s:Hi( 'LineNr',        s:black,        s:aluminium5 )
+call s:Hi( 'MatchParen',    s:plum1,        s:aluminium1 )
 " ModeMsg		'showmode' message (e.g. , "-- INSERT --")
-call s:Hi( 'MoreMsg',      "bg",          s:chameleon1,  "bold" )
-call s:Hi( 'NonText',      "bg",          s:aluminium5 )
-call s:Hi( 'Pmenu',        s:black,       s:aluminium3 )
-call s:Hi( 'PmenuSel',     s:aluminium5,  s:aluminium1 )
-call s:Hi( 'PmenuSbar',    s:aluminium5,  s:aluminium5 )
-call s:Hi( 'PmenuThumb',   s:aluminium4,  s:aluminium4 )
-call s:Hi( 'Question',     "bg",          s:chameleon1,  "bold" )
-call s:Hi( 'Search',       s:chameleon3,  s:aluminium1 )
-call s:Hi( 'SpecialKey',   "bg",          s:aluminium5 )
+call s:Hi( 'MoreMsg',       s:aluminium6,   s:chameleon1,   "bold" )
+call s:Hi( 'NonText',       s:aluminium6,   s:aluminium5 )
+call s:Hi( 'Pmenu',         s:black,        s:aluminium3 )
+call s:Hi( 'PmenuSel',      s:aluminium5,   s:aluminium1 )
+call s:Hi( 'PmenuSbar',     s:aluminium5,   s:aluminium5 )
+call s:Hi( 'PmenuThumb',    s:aluminium4,   s:aluminium4 )
+call s:Hi( 'Question',      s:aluminium6,   s:chameleon1,   "bold" )
+call s:Hi( 'Search',        s:chameleon3,   s:aluminium1 )
+call s:Hi( 'SpecialKey',    s:aluminium6,   s:aluminium5 )
     if has("gui_running")
-call s:Hi( 'SpellBad',     "bg",          "NONE",        "undercurl", s:scarletred1 )
-call s:Hi( 'SpellCap',     "bg",          "NONE",        "undercurl", s:skyblue1 )
-call s:Hi( 'SpellLocal',   "bg",          "NONE",        "undercurl", s:orange1 )
-call s:Hi( 'SpellRare',    "bg",          "NONE",        "undercurl", s:plum1 )
+call s:Hi( 'SpellBad',      s:aluminium6,   "NONE",         "undercurl",   s:scarletred1 )
+call s:Hi( 'SpellCap',      s:aluminium6,   "NONE",         "undercurl",   s:skyblue1 )
+call s:Hi( 'SpellLocal',    s:aluminium6,   "NONE",         "undercurl",   s:orange1 )
+call s:Hi( 'SpellRare',     s:aluminium6,   "NONE",         "undercurl",   s:plum1 )
     else
-call s:Hi( 'SpellBad',     s:scarletred2, "NONE",        "undercurl" )
-call s:Hi( 'SpellCap',     s:skyblue2,    "NONE",        "undercurl" )
-call s:Hi( 'SpellLocal',   s:orange2,     "NONE",        "undercurl" )
-call s:Hi( 'SpellRare',    s:plum2,       "NONE",        "undercurl" )
+call s:Hi( 'SpellBad',      s:scarletred2,  "NONE",         "undercurl" )
+call s:Hi( 'SpellCap',      s:skyblue2,     "NONE",         "undercurl" )
+call s:Hi( 'SpellLocal',    s:orange2,      "NONE",         "undercurl" )
+call s:Hi( 'SpellRare',     s:plum2,        "NONE",         "undercurl" )
     endif
-call s:Hi( 'StatusLine',   s:aluminium6,  s:aluminium3,  "bold,reverse" )
-call s:Hi( 'StatusLineNC', s:aluminium4,  s:aluminium6,  "NONE" )
+call s:Hi( 'StatusLine',    s:aluminium6,   s:aluminium3,   "bold,reverse" )
+call s:Hi( 'StatusLineNC',  s:aluminium4,   s:aluminium6,   "NONE" )
 " TabLine		tab pages line, not active tab page label
 " TabLineFill	tab pages line, where there are no labels
 " TabLineSel	tab pages line, active tab page label
-call s:Hi( 'Title',        "bg",          s:butter1,     "bold" )
-call s:Hi( 'Visual',       s:aluminium4,  s:aluminium1 )
+call s:Hi( 'Title',         s:aluminium6,   s:butter1,       "bold" )
+call s:Hi( 'Visual',        s:aluminium4,   s:aluminium1 )
 " VisualNOS	Visual mode selection when vim is "Not Owning the Selection".
-call s:Hi( 'WarningMsg',   "bg",          s:scarletred1 )
-call s:Hi( 'WildMenu',     s:butter2,     s:aluminium6  )
+call s:Hi( 'WarningMsg',    s:aluminium6,   s:scarletred1 )
+call s:Hi( 'WildMenu',      s:butter2,      s:aluminium6  )
 " }}}
 " gitcommit colors {{{
 " ----------------
@@ -290,16 +301,15 @@ hi link gitcommitHeader    gitcommitComment
 hi link gitcommitUntracked gitcommitComment
 hi link gitcommitDiscarded gitcommitComment
 hi link gitcommitSelected  gitcommitComment
-call s:Hi( 'gitcommitDiscardedType',  "NONE", s:scarletred1 )
 call s:Hi( 'gitcommitSelectedType',   "NONE", s:chameleon1 )
-call s:Hi( 'gitcommitUnmergedType',   "NONE", s:butter1 )
-call s:Hi( 'gitcommitUntrackedFile',  "NONE", s:plum1,       "bold" )
-call s:Hi( 'gitcommitDiscardedFile',  "NONE", s:scarletred1, "bold" )
+call s:Hi( 'gitcommitDiscardedType',  "NONE", s:butter1 )
+call s:Hi( 'gitcommitUnmergedType',   "NONE", s:scarletred1 )
 call s:Hi( 'gitcommitSelectedFile',   "NONE", s:chameleon1,  "bold" )
-call s:Hi( 'gitcommitUnmergedFile',   "NONE", s:butter1,     "bold" )
+call s:Hi( 'gitcommitDiscardedFile',  "NONE", s:butter1,     "bold" )
+call s:Hi( 'gitcommitUnmergedFile',   "NONE", s:scarletred1, "bold" )
+call s:Hi( 'gitcommitUntrackedFile',  "NONE", s:plum1,       "bold" )
 " }}}
 " diff colors {{{
-" -----------
 hi link diffFile           Special
 hi link diffNewFile        diffFile
 call s:Hi( 'diffAdded',               "NONE", s:chameleon1 )
@@ -360,4 +370,5 @@ hi link cssGeneratedContentProp cssRenderProp
 hi link cssValueLength Boolean
 hi link cssPseudoClassId Identifier
 " }}}
-" vim:foldmethod=marker
+
+" vim: set fdm=marker:

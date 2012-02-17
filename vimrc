@@ -97,7 +97,6 @@
                 "colorscheme molokai
                 colorscheme badwolf
                 "colorscheme eddie
-                "colorscheme ambient
                 "colorscheme aldmeris
                 "colorscheme darkspectrum
                 "colorscheme zenburn
@@ -296,9 +295,12 @@
     Bundle 'xolox/vim-easytags'
     Bundle 'YankRing.vim'
     "colorscheme "{{{
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'jelera/vim-gummybears-colorscheme'
-    Bundle 'sjl/badwolf'
+    "Bundle 'altercation/vim-colors-solarized'
+    "Bundle 'jelera/vim-gummybears-colorscheme'
+    "Bundle 'sjl/badwolf'
+    "Bundle 'mattsa/vim-eddie'
+    "Bundle 'veloce/vim-aldmeris'
+    "Bundle 'jeremycw/darkspectrum'
     "}}}
 "}}}
 " Plugins Config "{{{
