@@ -100,7 +100,6 @@
                 "colorscheme aldmeris
                 "colorscheme darkspectrum
                 "colorscheme zenburn
-                "colorscheme vividchalk
                 "colorscheme getafe
                 "colorscheme jellybeans
             else
