@@ -94,7 +94,8 @@
             if &t_Co >= 256 || has('gui_running')
                 set t_Co=256
                 set background=dark
-                colorscheme molokai
+                "colorscheme molokai
+                colorscheme badwolf
                 "colorscheme eddie
                 "colorscheme ambient
                 "colorscheme aldmeris
@@ -268,12 +269,7 @@
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 "}}}
 " Plugins Bundle "{{{
-    Bundle 'Gundo'
-    Bundle 'YankRing.vim'
     Bundle 'buftabs'
-    Bundle 'matchit.zip'
-    Bundle 'scratch.vim'
-    Bundle 'altercation/vim-colors-solarized'
     Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'gregsexton/VimCalc'
@@ -284,17 +280,26 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'majutsushi/tagbar'
+    Bundle 'matchit.zip'
     Bundle 'mkitt/markdown-preview.vim'
     Bundle 'roman/golden-ratio'
+    Bundle 'scratch.vim'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neocomplcache-snippets-complete'
+    Bundle 'sjl/gundo.vim'
+    Bundle 'skammer/vim-css-color'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-markdown'
-    Bundle 'visualstar.vim'
     Bundle 'xolox/vim-easytags'
+    Bundle 'YankRing.vim'
+    "colorscheme "{{{
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'jelera/vim-gummybears-colorscheme'
+    Bundle 'sjl/badwolf'
+    "}}}
 "}}}
 " Plugins Config "{{{
     " buftabs "{{{
