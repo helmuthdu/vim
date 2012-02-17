@@ -101,7 +101,6 @@
                 "colorscheme darkspectrum
                 "colorscheme zenburn
                 "colorscheme getafe
-                "colorscheme jellybeans
             else
                 set t_Co=8
                 set t_Sf=^[[3%p1%dm
