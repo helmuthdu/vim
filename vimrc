@@ -279,7 +279,7 @@
     Bundle 'majutsushi/tagbar'
     Bundle 'matchit.zip'
     Bundle 'mkitt/markdown-preview.vim'
-    Bundle 'roman/golden-ratio'
+    "Bundle 'roman/golden-ratio'
     Bundle 'scratch.vim'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
