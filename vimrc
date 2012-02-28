@@ -326,7 +326,6 @@
         end
         let g:easytags_cmd = '/usr/bin/ctags'
         let g:easytags_file = $HOME.'/.vim/.tags'
-        let g:easytags_updatetime_autodisable = 1
     "}}}
     " gundo "{{{
         nmap <leader>u :GundoToggle<CR>
@@ -392,8 +391,8 @@
      let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
      " Plugin key-mappings.
-     imap <C-space>     <Plug>(neocomplcache_snippets_expand)
-     smap <C-space>     <Plug>(neocomplcache_snippets_expand)
+     imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+     smap <C-k>     <Plug>(neocomplcache_snippets_expand)
      inoremap <expr><C-g>     neocomplcache#undo_completion()
      inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
