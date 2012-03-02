@@ -74,7 +74,7 @@
             set wildmenu           " nice tab-completion on the command line
             set wildchar=9         " tab as completion character
             set wildmode=longest:full,list:full
-            set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.ncb,*.opt,*.plg,.svn,.git,.hg,.app
+            set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.app,*/.git/*,*/.hg/*,*/.svn/*
         "}}}
         " chars to show for list "{{{
             "set list
@@ -215,8 +215,6 @@
     let g:mapleader=","
     " F2 = Paste Toggle
     set pastetoggle=<F2>
-    " search+replace word under cursor
-    nnoremap <C-h> :,$s/\<<C-R><C-W>\>/
     " calculate the value in one line
     map <silent><Leader>cl :call CalcLine(".")<CR>
     " spacebar create/open/close folding
@@ -228,8 +226,9 @@
     nmap <silent> <leader>L :set nolist!<CR>
     " ,/ turn off search highlighting
     nmap <leader>/ :nohl<CR>
-    " Map escape key to jj -- much faster
+    " Map escape key to jj or <Leader>e
     imap jj <esc>
+    imap <Leader>e <esc>
     " Vertically split window and select it
     nnoremap <Leader><Leader>w :call SplitScreen()<cr>
     " Sudo to write
@@ -266,32 +265,39 @@
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 "}}}
 " Plugins Bundle "{{{
+    " General
     Bundle 'buftabs'
     Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'gregsexton/VimCalc'
-    Bundle 'honza/snipmate-snippets'
     Bundle 'hotoo/calendar-vim'
-    Bundle 'jiangmiao/auto-pairs'
+    Bundle 'jeetsukumaran/vim-buffergator'
     Bundle 'kien/ctrlp.vim'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Lokaltog/vim-powerline'
-    Bundle 'majutsushi/tagbar'
-    Bundle 'matchit.zip'
-    Bundle 'mkitt/markdown-preview.vim'
-    "Bundle 'roman/golden-ratio'
     Bundle 'scratch.vim'
-    Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/nerdtree'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'Shougo/neocomplcache'
-    Bundle 'Shougo/neocomplcache-snippets-complete'
     Bundle 'sjl/gundo.vim'
-    Bundle 'skammer/vim-css-color'
     Bundle 'tpope/vim-fugitive'
-    Bundle 'tpope/vim-markdown'
     Bundle 'xolox/vim-easytags'
     Bundle 'YankRing.vim'
+    " Markdown
+    Bundle 'mkitt/markdown-preview.vim'
+    Bundle 'tpope/vim-markdown'
+    " Developer
+    Bundle 'jiangmiao/auto-pairs'
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'Shougo/neocomplcache-snippets-complete'
+    Bundle 'honza/snipmate-snippets'
+    Bundle 'majutsushi/tagbar'
+    Bundle 'matchit.zip'
+    Bundle 'mileszs/ack.vim'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'skammer/vim-css-color'
+    Bundle 'tpope/vim-surround'
+    Bundle 'vim-scripts/jsbeautify'
+    Bundle 'walm/jshint.vim'
     "colorscheme "{{{
     "Bundle 'altercation/vim-colors-solarized'
     "Bundle 'jelera/vim-gummybears-colorscheme'
@@ -303,9 +309,15 @@
 "}}}
 " Plugins Config "{{{
     " buftabs "{{{
+        let g:buftabs_active_highlight_group="WarningMsg"
+        let g:buftabs_inactive_highlight_group="Visual"
         let g:buftabs_only_basename=1
-        noremap <C-left> :bprev<CR>
-        noremap <C-right> :bnext<CR>
+        noremap <C-S-TAB> :bprev<CR>
+        noremap <C-TAB> :bnext<CR>
+    "}}}
+    " buftergator "{{{
+        let g:buffergator_autoexpand_on_split=0
+        let g:buffergator_viewport_split_policy="R"
     "}}}
     "calendar "{{{
         nmap <leader>ca :Calendar<CR>
@@ -342,6 +354,8 @@
         let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
         let g:ctrlp_max_height = 15
         let g:ctrlp_clear_cache_on_exit = 1
+        let g:ctrlp_follow_symlinks = 1
+        let g:ctrlp_match_window_bottom = 0
 
         nmap <leader>pb :CtrlPBuffer<CR>
         nmap <leader>pm :CtrlPMRUFiles<CR>
@@ -437,8 +451,10 @@
         if exists(":Tabularize")
             nmap <Leader>a= :Tabularize /=<CR>
             vmap <Leader>a= :Tabularize /=<CR>
-            nmap <Leader>a) :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>a) :Tabularize /)/r1c1l0<CR>
+            nmap <Leader>a3 :Tabularize /#<CR>
+            vmap <Leader>a3 :Tabularize /#<CR>
+            nmap <Leader>a0 :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>a0 :Tabularize /)/r1c1l0<CR>
             nmap <Leader>a: :Tabularize /:\zs<CR>
             vmap <Leader>a: :Tabularize /:\zs<CR>
         endif

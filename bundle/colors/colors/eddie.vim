@@ -238,9 +238,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   " Sets the highlighting for the given group
   fun <SID>X(group, fg, bg, attr)
     if a:fg != ""
-      " there's no green in 256 that looks like s:green
       if !has("gui_running") && a:fg == s:green
-        exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=010"
+        exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=151"
+      elseif !has("gui_running") && a:fg == s:green
+        exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=140"
+      elseif !has("gui_running") && a:fg == s:aqua
+        exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=110"
       else
         exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
       endif
@@ -410,12 +413,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   " 256-color cterm fixes for theme colors
   if !has("gui_running") && &t_Co == 256
-    hi Normal ctermbg=234
-    hi DiffChange ctermbg=094
-    hi CursorLine ctermbg=235
-    hi StatusLine ctermfg=239
-    hi StatusLineNC ctermfg=234
-    hi TabLineSel ctermbg=239
-    hi Visual ctermbg=236
+    hi CursorLine               ctermbg=235
+    hi DiffChange               ctermbg=094
+    hi Folded                   ctermbg=NONE
+    hi Normal                   ctermbg=234
+    hi StatusLine   ctermfg=239
+    hi StatusLineNC ctermfg=236
+    hi TabLineFill              ctermbg=234
+    hi TabLineSel               ctermbg=239
+    hi Visual                   ctermbg=236
   endif
 endif

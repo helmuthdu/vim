@@ -6,14 +6,16 @@
 - Vim (7.3+)
 - ctags
 - discount
+- ack
 
-Optional, but recommended (OS X only):
+### Mac:
 
 - [Homebrew][homebrew] - `ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"`
 - [MacVim][macvim] - `brew install macvim`
 - [Homesick][homesick] - `gem install homesick`
 - [discount][discount] - `brew install discount`
-- [ctags][ctags] - `brew install ctags`
+- [ctags][ctags] - `brew install ctags-exuberant`
+- [ack][ack] - `brew install ack`
 
 # Vim
 
@@ -39,16 +41,15 @@ Reference to vim mappings.
 - `<Leader>sp` Spell checking (Previews word)
 - `<Leader>s?` Spell checking (Show list)
 - `<spacebar>` spacebar create/open/close folding.
-- `Ctrl-h` Search+Replace word under cursor.
-- `jj` Map escape key to jj.
+- `jj`|`<Leader>e` Map escape key to jj.
 - `Y` Yank from cursor to end of line (same as `y$`).
 
 ### Plugins
 
-- `<Leader>be` buffexplorer
-- `<F9>` buffexplorer
+- `<Leader>b` buffergator
 - `<Leader>ca` calendar
-- `<Leader>ff` FuzzyFinder
+- `<Leader>pm` CtrlPMRU
+- `<Leader>pb` CtrlPBuffer
 - `<Leader>u` Gundo
 - `<Leader>p` Markdown-Preview
 - `<Leader>nt` NERDTree
