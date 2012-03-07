@@ -284,10 +284,10 @@
     Bundle 'tpope/vim-markdown'
     " Developer
     Bundle 'honza/snipmate-snippets'
-    Bundle 'jiangmiao/auto-pairs'
     Bundle 'majutsushi/tagbar'
     Bundle 'matchit.zip'
     Bundle 'mileszs/ack.vim'
+    Bundle 'Raimondi/delimitMate'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/syntastic'
     Bundle 'Shougo/neocomplcache'
@@ -336,7 +336,6 @@
         if has("gui_macvim")
             let g:easytags_cmd = '/usr/local/bin/ctags'
         end
-        let g:easytags_cmd = '/usr/bin/ctags'
         let g:easytags_file = $HOME.'/.vim/.tags'
     "}}}
     " gundo "{{{
@@ -449,14 +448,18 @@
     "}}}
     " tabularize "{{{
         if exists(":Tabularize")
-            nmap <Leader>a= :Tabularize /=<CR>
-            vmap <Leader>a= :Tabularize /=<CR>
-            nmap <Leader>a3 :Tabularize /#<CR>
-            vmap <Leader>a3 :Tabularize /#<CR>
-            nmap <Leader>a0 :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>a0 :Tabularize /)/r1c1l0<CR>
-            nmap <Leader>a: :Tabularize /:\zs<CR>
-            vmap <Leader>a: :Tabularize /:\zs<CR>
+            nmap <Leader>a=  :Tabularize /=<CR>
+            vmap <Leader>a=  :Tabularize /=<CR>
+            nmap <Leader>a3  :Tabularize /#<CR>
+            vmap <Leader>a3  :Tabularize /#<CR>
+            nmap <Leader>a'  :Tabularize /'<CR>
+            vmap <Leader>a'  :Tabularize /'<CR>
+            nmap <Leader>a'' :Tabularize /"<CR>
+            vmap <Leader>a'' :Tabularize /"<CR>
+            nmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
+            nmap <Leader>a:  :Tabularize /:\zs<CR>
+            vmap <Leader>a:  :Tabularize /:\zs<CR>
         endif
     "}}}
     " tagbar "{{{
