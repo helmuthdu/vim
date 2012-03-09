@@ -251,9 +251,6 @@
     vmap <S-TAB> <gv
     vnoremap < <gv
     vnoremap > >gv
-    " Moving Between buffers
-    nmap <silent> ,. :bnext<CR>
-    nmap <silent> ,m :bprev<CR>
     " Moving Between Windows
     nnoremap <Leader>h <C-w>h
     nnoremap <Leader>l <C-w>l
@@ -287,7 +284,7 @@
     Bundle 'majutsushi/tagbar'
     Bundle 'matchit.zip'
     Bundle 'mileszs/ack.vim'
-    Bundle 'Raimondi/delimitMate'
+    Bundle 'jiangmiao/auto-pairs'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'scrooloose/syntastic'
     Bundle 'Shougo/neocomplcache'
@@ -337,6 +334,8 @@
             let g:easytags_cmd = '/usr/local/bin/ctags'
         end
         let g:easytags_file = $HOME.'/.vim/.tags'
+        set tags=./.tags;
+        let g:easytags_dynamic_files = 1
     "}}}
     " gundo "{{{
         nmap <leader>u :GundoToggle<CR>
