@@ -3,7 +3,7 @@
         set nocompatible                   " explicitly get out of vi-compatible mode
         set title                          " change the terminal's title
         set history=300                    " keep 100 lines of command line history
-        set clipboard=unnamed              " use clipboard register ‘*’ for all y, d, c, p ops
+        set clipboard=unnamedplus          " use clipboard register ‘*’ for all y, d, c, p ops
         set backspace=2                    " make backspace work normal
         set nostartofline                  " don't jump to first character when paging
         set report=0                       " tell us when anything is changed via :...0

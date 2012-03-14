@@ -31,6 +31,10 @@
 " Supporting code -------------------------------------------------------------
 " Preamble {{{
 
+if !has("gui_running") && &t_Co != 88 && &t_Co != 256
+    finish
+endif
+
 set background=dark
 
 if exists("syntax_on")
@@ -38,6 +42,10 @@ if exists("syntax_on")
 endif
 
 let colors_name = "badwolf"
+
+if !exists("g:badwolf_html_link_underline") " {{{
+    let g:badwolf_html_link_underline = 1
+endif " }}}
 
 " }}}
 " Palette {{{
@@ -83,7 +91,7 @@ let s:bwc.tardis = ['0a9dff', 39]
 let s:bwc.orange = ['ffa724', 214]
 
 " A limier green from Getafe.
-let s:bwc.lime = ['aeee00', 148]
+let s:bwc.lime = ['aeee00', 154]
 
 " Rose's dress in The Idiot's Lantern.
 let s:bwc.dress = ['ff9eb8', 211]
@@ -287,7 +295,7 @@ call HL('DiffText',   'snow', 'deepergravel', 'bold')
 " Spelling {{{
 
 if has("spell")
-    call HL('SpellCap', 'dalespale', '', 'undercurl,bold', 'dalespale')
+    call HL('SpellCap', 'dalespale', 'bg', 'undercurl,bold', 'dalespale')
     call HL('SpellBad', '', '', 'undercurl', 'dalespale')
     call HL('SpellLocal', '', '', 'undercurl', 'dalespale')
     call HL('SpellRare', '', '', 'undercurl', 'dalespale')
@@ -425,7 +433,12 @@ call HL('htmlSpecialTagName', 'coffee', '', 'bold')
 call HL('htmlArg', 'coffee', '', 'none')
 
 " Stuff inside an <a> tag
-call HL('htmlLink', 'lightgravel', '', 'underline')
+
+if g:badwolf_html_link_underline
+    call HL('htmlLink', 'lightgravel', '', 'underline')
+else
+    call HL('htmlLink', 'lightgravel', '', 'none')
+endif
 
 " }}}
 " Java {{{
@@ -486,9 +499,12 @@ call HL('markdownCodeBlock', 'dirtyblonde', '', 'none')
 
 hi def link pythonOperator Operator
 call HL('pythonBuiltin',    'dress')
+call HL('pythonBuiltinObj', 'dress')
+call HL('pythonBuiltinFunc', 'dress')
 call HL('pythonEscape',     'dress')
 call HL('pythonException',  'lime', '', 'bold')
 call HL('pythonExceptions', 'lime', '', 'none')
+call HL('pythonPrecondit', 'lime', '', 'none')
 call HL('pythonDecorator',  'taffy', '', 'none')
 
 " }}}
