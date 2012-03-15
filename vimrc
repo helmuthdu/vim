@@ -3,7 +3,7 @@
         set nocompatible                   " explicitly get out of vi-compatible mode
         set title                          " change the terminal's title
         set history=300                    " keep 100 lines of command line history
-        set clipboard=unnamedplus          " use global clipboard
+        set clipboard=unnamed              " use global clipboard
         set backspace=2                    " make backspace work normal
         set nostartofline                  " don't jump to first character when paging
         set report=0                       " tell us when anything is changed via :...0
@@ -233,8 +233,6 @@
     nnoremap <Leader><Leader>w :call SplitScreen()<cr>
     " Sudo to write
     cmap W :w !sudo tee % >/dev/null
-    " Quick yanking to the end of the line
-    nmap Y y$
     " Quick alignment of text
     nmap <leader>al :left<CR>
     nmap <leader>ar :right<CR>
@@ -258,6 +256,11 @@
     nnoremap <Leader>k <C-w>k
     " switch to the directory of the open buffer
     map <leader>cd :cd %:p:h<cr>
+    " copy/cut/paste
+    vmap <C-X> "+x
+    vmap <C-C> "+y
+     map <C-V> "+gP
+    cmap <C-V> <C-R>+
     " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 "}}}
