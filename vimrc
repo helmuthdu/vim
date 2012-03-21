@@ -257,10 +257,10 @@
     " switch to the directory of the open buffer
     map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
-    vmap <C-X> "+x
-    vmap <C-C> "+y
-     map <C-V> "+gP
-    cmap <C-V> <C-R>+
+    vmap <Leader>x "+x
+    vmap <Leader>c "+y
+     map <Leader>v "+gP
+    cmap <Leader>v <C-R>+
     " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 "}}}
