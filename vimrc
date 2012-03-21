@@ -312,8 +312,8 @@
         let g:buftabs_active_highlight_group="WarningMsg"
         let g:buftabs_inactive_highlight_group="Visual"
         let g:buftabs_only_basename=1
-        noremap <C-S-TAB> :bprev<CR>
-        noremap <C-TAB> :bnext<CR>
+        map <C-S-TAB> :bprev<CR>
+        map <C-TAB> :bnext<CR>
     "}}}
     " buftergator "{{{
         let g:buffergator_autoexpand_on_split=0
@@ -408,20 +408,20 @@
      " Plugin key-mappings.
      imap <C-k>     <Plug>(neocomplcache_snippets_expand)
      smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-     inoremap <expr><C-g>     neocomplcache#undo_completion()
-     inoremap <expr><C-l>     neocomplcache#complete_common_string()
+     imap <expr><C-g>     neocomplcache#undo_completion()
+     imap <expr><C-l>     neocomplcache#complete_common_string()
 
      " SuperTab like snippets behavior.
      "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
      " Recommended key-mappings.
      " <TAB>: completion.
-     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+     imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
      " <C-h>, <BS>: close popup and delete backword char.
-     inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-     inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-     inoremap <expr><C-y>  neocomplcache#close_popup()
-     inoremap <expr><C-e>  neocomplcache#cancel_popup()
+     imap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+     imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+     imap <expr><C-y>  neocomplcache#close_popup()
+     imap <expr><C-e>  neocomplcache#cancel_popup()
 
      " Enable omni completion.
      autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -551,11 +551,11 @@
             return a:movement
         endif
     endfunction
-    onoremap <silent> <expr> j ScreenMovement("j")
-    onoremap <silent> <expr> k ScreenMovement("k")
-    onoremap <silent> <expr> 0 ScreenMovement("0")
-    onoremap <silent> <expr> ^ ScreenMovement("^")
-    onoremap <silent> <expr> $ ScreenMovement("$")
+    omap <silent> <expr> j ScreenMovement("j")
+    omap <silent> <expr> k ScreenMovement("k")
+    omap <silent> <expr> 0 ScreenMovement("0")
+    omap <silent> <expr> ^ ScreenMovement("^")
+    omap <silent> <expr> $ ScreenMovement("$")
     nmap <silent> <expr> j ScreenMovement("j")
     nmap <silent> <expr> k ScreenMovement("k")
     nmap <silent> <expr> 0 ScreenMovement("0")
