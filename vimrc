@@ -132,7 +132,7 @@
                 " Linux "{{{
                 if has('gui_gtk')
                     set guioptions-=m
-                    nnoremap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+                    nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
                     set gfn=Deja\ Vu\ Sans\ Mono\ 10
                 endif
                 "}}}
@@ -218,8 +218,8 @@
     " calculate the value in one line
     map <silent><Leader>cl :call CalcLine(".")<CR>
     " spacebar create/open/close folding
-    nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
-    vnoremap <Space> zf
+    nmap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
+    vmap <Space> zf
     " Fast editing of .vimrc
     map <leader>cfg :e! ~/.vimrc <cr>
     " enable/disable list
@@ -230,7 +230,7 @@
     imap jj <esc>
     imap <Leader>e <esc>
     " Vertically split window and select it
-    nnoremap <Leader><Leader>w :call SplitScreen()<cr>
+    nmap <Leader><Leader>w :call SplitScreen()<cr>
     " Sudo to write
     cmap W :w !sudo tee % >/dev/null
     " Quick alignment of text
@@ -247,13 +247,13 @@
     " Use tab to indent a line
     vmap <TAB> >gv
     vmap <S-TAB> <gv
-    vnoremap < <gv
-    vnoremap > >gv
+    vmap < <gv
+    vmap > >gv
     " Moving Between Windows
-    nnoremap <Leader>h <C-w>h
-    nnoremap <Leader>l <C-w>l
-    nnoremap <Leader>j <C-w>j
-    nnoremap <Leader>k <C-w>k
+    nmap <Leader>h <C-w>h
+    nmap <Leader>l <C-w>l
+    nmap <Leader>j <C-w>j
+    nmap <Leader>k <C-w>k
     " switch to the directory of the open buffer
     map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
@@ -556,11 +556,11 @@
     onoremap <silent> <expr> 0 ScreenMovement("0")
     onoremap <silent> <expr> ^ ScreenMovement("^")
     onoremap <silent> <expr> $ ScreenMovement("$")
-    nnoremap <silent> <expr> j ScreenMovement("j")
-    nnoremap <silent> <expr> k ScreenMovement("k")
-    nnoremap <silent> <expr> 0 ScreenMovement("0")
-    nnoremap <silent> <expr> ^ ScreenMovement("^")
-    nnoremap <silent> <expr> $ ScreenMovement("$")
+    nmap <silent> <expr> j ScreenMovement("j")
+    nmap <silent> <expr> k ScreenMovement("k")
+    nmap <silent> <expr> 0 ScreenMovement("0")
+    nmap <silent> <expr> ^ ScreenMovement("^")
+    nmap <silent> <expr> $ ScreenMovement("$")
     "}}}
 "}}}
 " Autocommands "{{{
