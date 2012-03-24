@@ -270,71 +270,68 @@
     nmap <leader>4 yypVr-
 "}}}
 " Plugins Bundle "{{{
-    " Setting up Vundle - the vim plugin bundler "{{{
-        let iCanHazVundle=1
-        let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-        if !filereadable(vundle_readme)
-            echo "Installing Vundle.."
-            echo ""
-            silent !mkdir -p ~/.vim/bundle
-            silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-            let iCanHazVundle=0
-        endif
-        set rtp+=~/.vim/bundle/vundle/
-        call vundle#rc()
-        Bundle 'gmarik/vundle'
-        "Add your bundles here
-        " General "{{{
-        Bundle 'buftabs'
-        Bundle 'godlygeek/tabular'
-        Bundle 'gregsexton/VimCalc'            , {'name': 'vimcalc'}
-        Bundle 'hotoo/calendar-vim'            , {'name': 'calendar'}
-        Bundle 'jeetsukumaran/vim-buffergator' , {'name': 'buffergator'}
-        Bundle 'kien/ctrlp.vim'                , {'name': 'ctrlp'}
-        Bundle 'Lokaltog/vim-easymotion'       , {'name': 'easymotion'}
-        Bundle 'Lokaltog/vim-powerline'        , {'name': 'powerline'}
-        Bundle 'scratch.vim'                   , {'name': 'scratch'}
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'sjl/gundo.vim'                 , {'name': 'gundo'}
-        Bundle 'YankRing.vim'                  , {'name': 'yankring'}
-        "}}}
-        " Markdown "{{{
-        Bundle 'mkitt/markdown-preview.vim'
-        Bundle 'tpope/vim-markdown'            , {'name': 'markdown'}
-        "}}}
-        " Developer "{{{
-        Bundle 'honza/snipmate-snippets'
-        Bundle 'majutsushi/tagbar'
-        Bundle 'matchit.zip'                   , {'name': 'matchit'}
-        Bundle 'mileszs/ack.vim'               , {'name': 'ack'}
-        Bundle 'jiangmiao/auto-pairs'
-        Bundle 'scrooloose/nerdcommenter'
-        Bundle 'scrooloose/syntastic'
-        Bundle 'Shougo/neocomplcache'
-        Bundle 'Shougo/neocomplcache-snippets-complete' , {'name': 'neocomplcache-snippets'}
-        Bundle 'skammer/vim-css-color'         , {'name': 'css-color'}
-        Bundle 'tpope/vim-fugitive'            , {'name': 'fugitive'}
-        Bundle 'tpope/vim-surround'            , {'name': 'surround'}
-        Bundle 'vim-scripts/jsbeautify'
-        Bundle 'walm/jshint.vim'               , {'name': 'jshint'}
-        Bundle 'xolox/vim-easytags'            , {'name': 'easytags'}
-        "}}}
-        "colorscheme "{{{
-        Bundle 'altercation/vim-colors-solarized'  , {'name' : 'color-solarized'}
-        Bundle 'jelera/vim-gummybears-colorscheme' , {'name' : 'color-gummybears'}
-        Bundle 'sjl/badwolf'                       , {'name' : 'color-badwolf'}
-        Bundle 'mattsa/vim-eddie'                  , {'name' : 'color-eddie'}
-        Bundle 'veloce/vim-aldmeris'               , {'name' : 'color-aldmeris'}
-        Bundle 'jeremycw/darkspectrum'             , {'name' : 'color-darkspectrum'}
-        Bundle 'tomasr/molokai'                    , {'name' : 'color-molokai'}
-        "}}}
-        "...All your other bundles...
-        if iCanHazVundle == 0
-            echo "Installing Bundles, please ignore key map error messages"
-            echo ""
-            :BundleInstall
-        endif
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+    "Bundles here:
+    " General "{{{
+    Bundle 'buftabs'
+    Bundle 'godlygeek/tabular'
+    Bundle 'gregsexton/VimCalc'            , {'name' : 'vimcalc'}
+    Bundle 'hotoo/calendar-vim'            , {'name' : 'calendar'}
+    Bundle 'jeetsukumaran/vim-buffergator' , {'name' : 'buffergator'}
+    Bundle 'kien/ctrlp.vim'                , {'name' : 'ctrlp'}
+    Bundle 'Lokaltog/vim-easymotion'       , {'name' : 'easymotion'}
+    Bundle 'Lokaltog/vim-powerline'        , {'name' : 'powerline'}
+    Bundle 'scratch.vim'                   , {'name' : 'scratch'}
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'sjl/gundo.vim'                 , {'name' : 'gundo'}
+    Bundle 'YankRing.vim'                  , {'name' : 'yankring'}
     "}}}
+    " Markdown "{{{
+    Bundle 'mkitt/markdown-preview.vim'
+    Bundle 'tpope/vim-markdown'            , {'name' : 'markdown'}
+    "}}}
+    " Developer "{{{
+    Bundle 'honza/snipmate-snippets'
+    Bundle 'majutsushi/tagbar'
+    Bundle 'matchit.zip'                   , {'name' : 'matchit'}
+    Bundle 'mileszs/ack.vim'               , {'name' : 'ack'}
+    Bundle 'jiangmiao/auto-pairs'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'Shougo/neocomplcache-snippets-complete' , {'name' : 'neocomplcache-snippets'}
+    Bundle 'skammer/vim-css-color'         , {'name' : 'css-color'}
+    Bundle 'tpope/vim-fugitive'            , {'name' : 'fugitive'}
+    Bundle 'tpope/vim-surround'            , {'name' : 'surround'}
+    Bundle 'vim-scripts/jsbeautify'
+    Bundle 'walm/jshint.vim'               , {'name' : 'jshint'}
+    Bundle 'xolox/vim-easytags'            , {'name' : 'easytags'}
+    "}}}
+    "colorscheme "{{{
+    Bundle 'altercation/vim-colors-solarized'  , {'name' : 'color-solarized'}
+    Bundle 'jelera/vim-gummybears-colorscheme' , {'name' : 'color-gummybears'}
+    Bundle 'sjl/badwolf'                       , {'name' : 'color-badwolf'}
+    Bundle 'mattsa/vim-eddie'                  , {'name' : 'color-eddie'}
+    Bundle 'veloce/vim-aldmeris'               , {'name' : 'color-aldmeris'}
+    Bundle 'jeremycw/darkspectrum'             , {'name' : 'color-darkspectrum'}
+    Bundle 'tomasr/molokai'                    , {'name' : 'color-molokai'}
+    "}}}
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
 "}}}
 " Plugins Config "{{{
     " buftabs "{{{
