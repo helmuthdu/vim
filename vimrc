@@ -43,15 +43,18 @@
                 set mousehide
             endif
         "}}}
+        " {{{ Multiplatform compatibility
+        if has('win32') || has('win64')
+            " Make windows use ~/.vim too, I don't want to use _vimfiles
+            set runtimepath^=~/.vim
+        endif
+        " }}}
     "}}}
     " Plugins Manager "{{{
     " To disable a plugin, add it's bundle name to the following list
         filetype off                 " deactivate filetype auto detection before loading bundles to force a reload
         " Pathogen "{{{
             call pathogen#runtime_append_all_bundles()
-        "}}}
-        " Vundle "{{{
-            call vundle#rc()
         "}}}
         filetype plugin indent on    " automatically load filetypeplugins
     "}}}
@@ -229,16 +232,12 @@
     " Map escape key to jj or <Leader>e
     imap jj <esc>
     imap <Leader>e <esc>
-    " Vertically split window and select it
-    nmap <Leader><Leader>w :call SplitScreen()<cr>
     " Sudo to write
     cmap W :w !sudo tee % >/dev/null
     " Quick alignment of text
     nmap <leader>al :left<CR>
     nmap <leader>ar :right<CR>
     nmap <leader>ac :center<CR>
-    " Toggle Spellcheck
-    nmap <silent><Leader>ss :call ToggleSpell()<CR>
     " Spell commands
     map <leader>sn ]s
     map <leader>sp [s
@@ -257,54 +256,84 @@
     " switch to the directory of the open buffer
     map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
-    vmap <Leader>x "+x
-    vmap <Leader>c "+y
-     map <Leader>v "+gP
-    cmap <Leader>v <C-R>+
+    vmap <Leader>d "+x
+    vmap <Leader>y "+y
+     map <Leader>p "+gP
+    cmap <Leader>p <C-R>+
     " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+    " Creating underline/overline headings for markup languages
+    " Inspired by http://sphinx.pocoo.org/rest.html#sections
+    nmap <leader>1 yyPVr=jyypVr=
+    nmap <leader>2 yyPVr-jyypVr-
+    nmap <leader>3 yypVr=
+    nmap <leader>4 yypVr-
 "}}}
 " Plugins Bundle "{{{
-    " General
-    Bundle 'buftabs'
-    Bundle 'gmarik/vundle'
-    Bundle 'godlygeek/tabular'
-    Bundle 'gregsexton/VimCalc'
-    Bundle 'hotoo/calendar-vim'
-    Bundle 'jeetsukumaran/vim-buffergator'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Lokaltog/vim-powerline'
-    Bundle 'scratch.vim'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'sjl/gundo.vim'
-    Bundle 'YankRing.vim'
-    " Markdown
-    Bundle 'mkitt/markdown-preview.vim'
-    Bundle 'tpope/vim-markdown'
-    " Developer
-    Bundle 'honza/snipmate-snippets'
-    Bundle 'majutsushi/tagbar'
-    Bundle 'matchit.zip'
-    Bundle 'mileszs/ack.vim'
-    Bundle 'jiangmiao/auto-pairs'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'Shougo/neocomplcache'
-    Bundle 'Shougo/neocomplcache-snippets-complete'
-    Bundle 'skammer/vim-css-color'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'tpope/vim-surround'
-    Bundle 'vim-scripts/jsbeautify'
-    Bundle 'walm/jshint.vim'
-    Bundle 'xolox/vim-easytags'
-    "colorscheme "{{{
-    "Bundle 'altercation/vim-colors-solarized'
-    "Bundle 'jelera/vim-gummybears-colorscheme'
-    "Bundle 'sjl/badwolf'
-    "Bundle 'mattsa/vim-eddie'
-    "Bundle 'veloce/vim-aldmeris'
-    "Bundle 'jeremycw/darkspectrum'
+    " Setting up Vundle - the vim plugin bundler "{{{
+        let iCanHazVundle=1
+        let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+        if !filereadable(vundle_readme)
+            echo "Installing Vundle.."
+            echo ""
+            silent !mkdir -p ~/.vim/bundle
+            silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+            let iCanHazVundle=0
+        endif
+        set rtp+=~/.vim/bundle/vundle/
+        call vundle#rc()
+        Bundle 'gmarik/vundle'
+        "Add your bundles here
+        " General "{{{
+        Bundle 'buftabs'
+        Bundle 'godlygeek/tabular'
+        Bundle 'gregsexton/VimCalc'            , {'name': 'vimcalc'}
+        Bundle 'hotoo/calendar-vim'            , {'name': 'calendar'}
+        Bundle 'jeetsukumaran/vim-buffergator' , {'name': 'buffergator'}
+        Bundle 'kien/ctrlp.vim'                , {'name': 'ctrlp'}
+        Bundle 'Lokaltog/vim-easymotion'       , {'name': 'easymotion'}
+        Bundle 'Lokaltog/vim-powerline'        , {'name': 'powerline'}
+        Bundle 'scratch.vim'                   , {'name': 'scratch'}
+        Bundle 'scrooloose/nerdtree'
+        Bundle 'sjl/gundo.vim'                 , {'name': 'gundo'}
+        Bundle 'YankRing.vim'                  , {'name': 'yankring'}
+        "}}}
+        " Markdown "{{{
+        Bundle 'mkitt/markdown-preview.vim'
+        Bundle 'tpope/vim-markdown'            , {'name': 'markdown'}
+        "}}}
+        " Developer "{{{
+        Bundle 'honza/snipmate-snippets'
+        Bundle 'majutsushi/tagbar'
+        Bundle 'matchit.zip'                   , {'name': 'matchit'}
+        Bundle 'mileszs/ack.vim'               , {'name': 'ack'}
+        Bundle 'jiangmiao/auto-pairs'
+        Bundle 'scrooloose/nerdcommenter'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'Shougo/neocomplcache'
+        Bundle 'Shougo/neocomplcache-snippets-complete' , {'name': 'neocomplcache-snippets'}
+        Bundle 'skammer/vim-css-color'         , {'name': 'css-color'}
+        Bundle 'tpope/vim-fugitive'            , {'name': 'fugitive'}
+        Bundle 'tpope/vim-surround'            , {'name': 'surround'}
+        Bundle 'vim-scripts/jsbeautify'
+        Bundle 'walm/jshint.vim'               , {'name': 'jshint'}
+        Bundle 'xolox/vim-easytags'            , {'name': 'easytags'}
+        "}}}
+        "colorscheme "{{{
+        Bundle 'altercation/vim-colors-solarized'  , {'name' : 'color-solarized'}
+        Bundle 'jelera/vim-gummybears-colorscheme' , {'name' : 'color-gummybears'}
+        Bundle 'sjl/badwolf'                       , {'name' : 'color-badwolf'}
+        Bundle 'mattsa/vim-eddie'                  , {'name' : 'color-eddie'}
+        Bundle 'veloce/vim-aldmeris'               , {'name' : 'color-aldmeris'}
+        Bundle 'jeremycw/darkspectrum'             , {'name' : 'color-darkspectrum'}
+        Bundle 'tomasr/molokai'                    , {'name' : 'color-molokai'}
+        "}}}
+        "...All your other bundles...
+        if iCanHazVundle == 0
+            echo "Installing Bundles, please ignore key map error messages"
+            echo ""
+            :BundleInstall
+        endif
     "}}}
 "}}}
 " Plugins Config "{{{
@@ -354,7 +383,7 @@
         let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
         let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
         let g:ctrlp_max_height = 15
-        let g:ctrlp_clear_cache_on_exit = 1
+        "let g:ctrlp_clear_cache_on_exit = 1
         let g:ctrlp_follow_symlinks = 1
         let g:ctrlp_match_window_bottom = 0
 
@@ -526,6 +555,8 @@
             set columns=88
         endif
     endfunctio
+    " Vertically split window and select it
+    nmap <Leader><Leader>w :call SplitScreen()<cr>
     "}}}
     " function! ToggleSpell() "{{{
     let b:myLang=0
@@ -542,6 +573,8 @@
         endif
         echo "spell checking language:" g:myLangList[b:myLang]
     endfunction
+    " Toggle Spellcheck
+    nmap <silent><Leader>ss :call ToggleSpell()<CR>
     "}}}
     " function! ScreenMovement "{{{
     function! ScreenMovement(movement)
