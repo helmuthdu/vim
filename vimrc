@@ -551,7 +551,7 @@
             execute "normal \<C-w>c"
             set columns=88
         endif
-    endfunctio
+    endfunction
     " Vertically split window and select it
     nmap <Leader><Leader>w :call SplitScreen()<cr>
     "}}}
