@@ -523,11 +523,8 @@
     "}}}
     " yankring "{{{
         nmap <silent><Leader>yr :YRShow<cr>
-        let g:yankring_replace_n_pkey = '<m-p>'
-        let g:yankring_replace_n_nkey = '<m-n>'
         let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'
         let g:yankring_history_file = '/.vim/.yankring_history'
-        let g:yankring_map_dot = 0
     "}}}
 "}}}
 " Functions "{{{
