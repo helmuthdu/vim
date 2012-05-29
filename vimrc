@@ -1,4 +1,27 @@
 " Global "{{{
+    " Select OS"{{{
+        if has("win32") || has("win32unix")
+            let g:OS#name = "win"
+            let g:OS#win = 1
+            let g:OS#mac = 0
+            let g:OS#unix = 0
+        elseif has("mac")
+            let g:OS#name = "mac"
+            let g:OS#mac = 1
+            let g:OS#win = 0
+            let g:OS#unix = 0
+        elseif has("unix")
+            let g:OS#name = "unix"
+            let g:OS#unix = 1
+            let g:OS#win = 0
+            let g:OS#mac = 0
+        endif
+        if has("gui_running")
+            let g:OS#gui = 1
+        else
+            let g:OS#gui = 0
+        endif
+    "}}}
     " General "{{{
         set nocompatible                   " explicitly get out of vi-compatible mode
         set title                          " change the terminal's title
@@ -89,12 +112,12 @@
     "}}}
     " Appearance Settings "{{{
         " switch syntax highlighting on, when the terminal has colors "{{{
-            if &t_Co > 2 || has('gui_running')
+            if &t_Co > 2 || g:OS#gui
                 syntax on
             endif
         "}}}
         " default colorscheme "{{{
-            if &t_Co >= 256 || has('gui_running')
+            if &t_Co >= 256 || g:OS#gui
                 set t_Co=256
                 set background=dark
                 "colorscheme molokai
@@ -112,7 +135,7 @@
             endif
         "}}}
         " GUI options "{{{
-            if has('gui_running')
+            if g:OS#gui
                 set lines=50 columns=88
                 " guioptions "{{{
                     " m = Menubar
@@ -133,14 +156,14 @@
                     set guioptions=ac
                 "}}}
                 " Linux "{{{
-                if has('gui_gtk')
+                if g:OS#unix
                     set guioptions-=m
                     nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
                     set gfn=Deja\ Vu\ Sans\ Mono\ 10
                 endif
                 "}}}
                 " Mac "{{{
-                if has('gui_mac') || has('gui_macvim')
+                if g:OS#mac
                     set guifont=Menlo:h12
                 endif
                 "}}}
@@ -183,7 +206,7 @@
         match RedundantSpaces / \+\ze\t/
     " }}}
     "}}}
-    " wrap "{{{
+    " Wrap "{{{
         set nowrap                   " word wrap
         set wrapscan                 " Searches wrap around end of file
         set display=lastline         " don't display @ with long paragraphs
@@ -192,7 +215,7 @@
         set textwidth=79
         set formatoptions=qrn1
     "}}}
-    " search config "{{{
+    " Search config "{{{
         set ignorecase      " select case-insenitiv search
         set smartcase       " No ignorecase if Uppercase chars in search
         set magic           " change the way backslashes are used in search patterns
@@ -203,13 +226,13 @@
         set incsearch       " ...and also during entering the pattern
         nohlsearch          " avoid highlighting when reloading vimrc
     "}}}
-    " folding "{{{
-        set foldenable        " enable folding
-        set foldcolumn=2      " add a fold column
-        set foldmethod=marker " detect triple-{ style fold markers
-        set foldlevelstart=0  " start out with everything folded
+    " Folding "{{{
+        set foldenable            " enable folding
+        set foldcolumn=2          " add a fold column
+        set foldmethod=marker     " detect triple-{ style fold markers
+        set foldlevelstart=0      " start out with everything folded
+        set foldtext=MyFoldText() " Which command trigger auto-unfold
         set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-                              " which commands trigger auto-unfold
     "}}}
 "}}}
 " Keymappings "{{{
@@ -219,12 +242,12 @@
     " F2 = Paste Toggle
     set pastetoggle=<F2>
     " calculate the value in one line
-    map <silent><Leader>cl :call CalcLine(".")<CR>
+     map <silent><Leader>cl :call CalcLine(".")<CR>
     " spacebar create/open/close folding
-    nmap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
-    vmap <Space> zf
+    nmap <silent> <Space> za
+    vmap <silent> <Space> zf
     " Fast editing of .vimrc
-    map <leader>cfg :e! ~/.vimrc <cr>
+     map <leader>cfg :e! ~/.vimrc <cr>
     " enable/disable list
     nmap <silent> <leader>L :set nolist!<CR>
     " ,/ turn off search highlighting
@@ -239,10 +262,10 @@
     nmap <leader>ar :right<CR>
     nmap <leader>ac :center<CR>
     " Spell commands
-    map <leader>sn ]s
-    map <leader>sp [s
-    map <leader>sa zg
-    map <leader>s? z=
+     map <leader>sn ]s
+     map <leader>sp [s
+     map <leader>sa zg
+     map <leader>s? z=
     " Use tab to indent a line
     vmap <TAB> >gv
     vmap <S-TAB> <gv
@@ -254,7 +277,7 @@
     nmap <Leader>j <C-w>j
     nmap <Leader>k <C-w>k
     " switch to the directory of the open buffer
-    map <leader>cd :cd %:p:h<cr>
+     map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
     vmap <Leader>d "+x
     vmap <Leader>y "+y
@@ -282,7 +305,7 @@
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
-    "Bundles here:
+    " Bundles here:
     " General "{{{
     Bundle 'buftabs'
     Bundle 'godlygeek/tabular'
@@ -318,7 +341,7 @@
     Bundle 'walm/jshint.vim'               , {'name' : 'jshint'}
     Bundle 'xolox/vim-easytags'            , {'name' : 'easytags'}
     "}}}
-    "colorscheme "{{{
+    " colorscheme "{{{
     Bundle 'altercation/vim-colors-solarized'  , {'name' : 'color-solarized'}
     Bundle 'jelera/vim-gummybears-colorscheme' , {'name' : 'color-gummybears'}
     Bundle 'sjl/badwolf'                       , {'name' : 'color-badwolf'}
@@ -345,7 +368,7 @@
         let g:buffergator_autoexpand_on_split=0
         let g:buffergator_viewport_split_policy="R"
     "}}}
-    "calendar "{{{
+    " calendar "{{{
         nmap <leader>ca :Calendar<CR>
         let g:calendar_list = [
             \   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
@@ -359,7 +382,7 @@
         hi link EasyMotionShade  Comment
     "}}}
     " easytags "{{{
-        if has("gui_macvim")
+        if g:OS#mac
             let g:easytags_cmd = '/usr/local/bin/ctags'
         end
         let g:easytags_file = $HOME.'/.vim/.tags'
@@ -407,69 +430,69 @@
                     \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
                     \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
     "}}}
-     " neocomplcache "{{{
-     " Disable AutoComplPop.
-     let g:acp_enableAtStartup = 0
-     " Use neocomplcache.
-     let g:neocomplcache_enable_at_startup = 1
-     " Use smartcase.
-     let g:neocomplcache_enable_smart_case = 1
-     " Use camel case completion.
-     let g:neocomplcache_enable_camel_case_completion = 1
-     " Use underbar completion.
-     let g:neocomplcache_enable_underbar_completion = 1
-     " Set minimum syntax keyword length.
-     let g:neocomplcache_min_syntax_length = 3
-     let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+    " neocomplcache "{{{
+        " Disable AutoComplPop.
+        let g:acp_enableAtStartup = 0
+        " Use neocomplcache.
+        let g:neocomplcache_enable_at_startup = 1
+        " Use smartcase.
+        let g:neocomplcache_enable_smart_case = 1
+        " Use camel case completion.
+        let g:neocomplcache_enable_camel_case_completion = 1
+        " Use underbar completion.
+        let g:neocomplcache_enable_underbar_completion = 1
+        " Set minimum syntax keyword length.
+        let g:neocomplcache_min_syntax_length = 3
+        let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-     let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
-     let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
+        let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
+        let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
 
-     " Define keyword.
-     if !exists('g:neocomplcache_keyword_patterns')
-         let g:neocomplcache_keyword_patterns = {}
-     endif
-     let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+        " Define keyword.
+        if !exists('g:neocomplcache_keyword_patterns')
+            let g:neocomplcache_keyword_patterns = {}
+        endif
+        let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-     " Plugin key-mappings.
-     imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-     smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-     imap <expr><C-g>     neocomplcache#undo_completion()
-     imap <expr><C-l>     neocomplcache#complete_common_string()
+        " Plugin key-mappings.
+        imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+        smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+        imap <expr><C-g>     neocomplcache#undo_completion()
+        imap <expr><C-l>     neocomplcache#complete_common_string()
 
-     " SuperTab like snippets behavior.
-     "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+        " SuperTab like snippets behavior.
+        "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
-     " Recommended key-mappings.
-     " <TAB>: completion.
-     imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-     " <C-h>, <BS>: close popup and delete backword char.
-     imap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-     imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-     imap <expr><C-y>  neocomplcache#close_popup()
-     imap <expr><C-e>  neocomplcache#cancel_popup()
+        " Recommended key-mappings.
+        " <TAB>: completion.
+        imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+        " <C-h>, <BS>: close popup and delete backword char.
+        imap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+        imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+        imap <expr><C-y>  neocomplcache#close_popup()
+        imap <expr><C-e>  neocomplcache#cancel_popup()
 
-     " Enable omni completion.
-     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-     autocmd FileType c set omnifunc=ccomplete#Complete
-     autocmd FileType java set omnifunc=javacomplete#Complete
+        " Enable omni completion.
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd FileType c set omnifunc=ccomplete#Complete
+        autocmd FileType java set omnifunc=javacomplete#Complete
 
-     " Enable heavy omni completion.
-     if !exists('g:neocomplcache_omni_patterns')
-         let g:neocomplcache_omni_patterns = {}
-     endif
-     let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-     "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-     let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-     let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-     let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-     "}}}
+        " Enable heavy omni completion.
+        if !exists('g:neocomplcache_omni_patterns')
+            let g:neocomplcache_omni_patterns = {}
+        endif
+        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+        let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+        let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+        let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+    "}}}
     " powerline "{{{
-        if &t_Co >= 256 || has('gui_running')
+        if &t_Co >= 256 || g:OS#gui
             let g:Powerline_symbols = 'fancy'
             "let g:Powerline_cache_file = ""
         endif
@@ -491,11 +514,10 @@
         endif
     "}}}
     " tagbar "{{{
-        if has("gui_macvim")
+        if g:OS#mac
             "how to install ctag mac https://weblion.psu.edu/trac/weblion/wiki/MacVim
             let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
         end
-
         let g:tagbar_width = 30
         let g:tagbar_autoclose = 1
         let g:tagbar_autofocus = 1
@@ -530,6 +552,51 @@
     "}}}
 "}}}
 " Functions "{{{
+    "function! ToggleSpell() {{{
+    let b:myLang=0
+    let g:myLangList=["nospell","pt","en"]
+    function! ToggleSpell()
+        let b:myLang=b:myLang+1
+        if b:myLang>=len(g:myLangList)
+            let b:myLang=0
+        endif
+        if b:myLang==0
+            setlocal nospell
+        else
+            execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+        endif
+        echo "spell checking language:" g:myLangList[b:myLang]
+    endfunction
+    " Toggle Spellcheck
+    nmap <silent><Leader>ss :call ToggleSpell()<CR>
+    "}}}
+    "function! ScreenMovement {{{
+    function! ScreenMovement(movement)
+        if &wrap
+            return "g" . a:movement
+        else
+            return a:movement
+        endif
+    endfunction
+    omap <silent> <expr> j ScreenMovement("j")
+    omap <silent> <expr> k ScreenMovement("k")
+    omap <silent> <expr> 0 ScreenMovement("0")
+    omap <silent> <expr> ^ ScreenMovement("^")
+    omap <silent> <expr> $ ScreenMovement("$")
+    nmap <silent> <expr> j ScreenMovement("j")
+    nmap <silent> <expr> k ScreenMovement("k")
+    nmap <silent> <expr> 0 ScreenMovement("0")
+    nmap <silent> <expr> ^ ScreenMovement("^")
+    nmap <silent> <expr> $ ScreenMovement("$")
+    "}}}
+    "function! Replace {{{
+    " Tip #382: Search for <cword> and replace with input() in all open buffers
+    fun! Replace()
+        let s:word = input("Replace " . expand('<cword>') . " with:")
+        :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+        :unlet! s:word
+    endfun
+    "}}}
     function! LastModified() "{{{
         if &modified
             let save_cursor = getpos(".")
@@ -554,42 +621,21 @@
     " Vertically split window and select it
     nmap <Leader><Leader>w :call SplitScreen()<cr>
     "}}}
-    " function! ToggleSpell() "{{{
-    let b:myLang=0
-    let g:myLangList=["nospell","pt","en"]
-    function! ToggleSpell()
-        let b:myLang=b:myLang+1
-        if b:myLang>=len(g:myLangList)
-            let b:myLang=0
-        endif
-        if b:myLang==0
-            setlocal nospell
-        else
-            execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
-        endif
-        echo "spell checking language:" g:myLangList[b:myLang]
+    function! MyFoldText() "{{{
+        let line = getline(v:foldstart)
+
+        let nucolwidth = &fdc + &number * &numberwidth
+        let windowwidth = winwidth(0) - nucolwidth - 3
+        let foldedlinecount = v:foldend - v:foldstart
+
+        " expand tabs into spaces
+        let onetab = strpart('          ', 0, &tabstop)
+        let line = substitute(line, '\t', onetab, 'g')
+
+        let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+        let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+        return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
     endfunction
-    " Toggle Spellcheck
-    nmap <silent><Leader>ss :call ToggleSpell()<CR>
-    "}}}
-    " function! ScreenMovement "{{{
-    function! ScreenMovement(movement)
-        if &wrap
-            return "g" . a:movement
-        else
-            return a:movement
-        endif
-    endfunction
-    omap <silent> <expr> j ScreenMovement("j")
-    omap <silent> <expr> k ScreenMovement("k")
-    omap <silent> <expr> 0 ScreenMovement("0")
-    omap <silent> <expr> ^ ScreenMovement("^")
-    omap <silent> <expr> $ ScreenMovement("$")
-    nmap <silent> <expr> j ScreenMovement("j")
-    nmap <silent> <expr> k ScreenMovement("k")
-    nmap <silent> <expr> 0 ScreenMovement("0")
-    nmap <silent> <expr> ^ ScreenMovement("^")
-    nmap <silent> <expr> $ ScreenMovement("$")
     "}}}
 "}}}
 " Autocommands "{{{
@@ -600,13 +646,13 @@
             au FileType debchangelog        setlocal expandtab spell spelllang=en
             au FileType mail                setlocal formatoptions=ltcrqna
             au FileType txt                 setlocal formatoptions=ltcrqno2
-            au FileType asciidoc,mkd,tex    setlocal formatoptions=ltcrqn
-            au FileType xml,docbk,xhtml,jsp setlocal formatoptions=lcrq
+            au FileType asciidoc,mkd,tex    setlocal tw=78 wrap
+            au filetype html,xml            setlocal shiftwidth=2 tabstop=2 listchars-=tab:>.
             au FileType ruby                setlocal shiftwidth=2
             au FileType help                setlocal nolist textwidth=0
             au FileType org                 setlocal foldminlines=0 foldlevel=1
-            au FileType html                setlocal shiftwidth=2 tabstop=2
             au FileType python              setlocal expandtab shiftwidth=4 softtabstop=4
+            au filetype css,sass,scss,less  setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
             " when enabling diff for a buffer it should be disabled when the
             " buffer is not visible anymore
@@ -625,31 +671,31 @@
         "Automatically removing all trailing whitespace"{{{
             autocmd BufWritePre * :%s/\s\+$//e
         "}}}
-        " jump to the last position when reopening a file "{{{
-        augroup JumpCursorOnEdit
-            au!
-            autocmd BufReadPost *
-                        \ if expand("<afile>:p:h") !=? $TEMP |
-                        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-                        \ let JumpCursorOnEdit_foo = line("'\"") |
-                        \ let b:doopenfold = 1 |
-                        \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-                        \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-                        \ let b:doopenfold = 2 |
-                        \ endif |
-                        \ exe JumpCursorOnEdit_foo |
-                        \ endif |
-                        \ endif
-            " Need to postpone using "zv" until after reading the modelines.
-            autocmd BufWinEnter *
-                        \ if exists("b:doopenfold") |
-                        \ exe "normal zv" |
-                        \ if(b:doopenfold > 1) |
-                        \ exe "+".1 |
-                        \ endif |
-                        \ unlet b:doopenfold |
-                        \ endif
-        augroup END
+        "jump to the last position when reopening a file "{{{
+            augroup JumpCursorOnEdit
+                au!
+                autocmd BufReadPost *
+                            \ if expand("<afile>:p:h") !=? $TEMP |
+                            \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                            \ let JumpCursorOnEdit_foo = line("'\"") |
+                            \ let b:doopenfold = 1 |
+                            \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
+                            \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
+                            \ let b:doopenfold = 2 |
+                            \ endif |
+                            \ exe JumpCursorOnEdit_foo |
+                            \ endif |
+                            \ endif
+                " Need to postpone using "zv" until after reading the modelines.
+                autocmd BufWinEnter *
+                            \ if exists("b:doopenfold") |
+                            \ exe "normal zv" |
+                            \ if(b:doopenfold > 1) |
+                            \ exe "+".1 |
+                            \ endif |
+                            \ unlet b:doopenfold |
+                            \ endif
+            augroup END
         "}}}
     endif
 "}}}
