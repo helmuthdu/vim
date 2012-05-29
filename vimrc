@@ -233,7 +233,7 @@
     imap jj <esc>
     imap <Leader>e <esc>
     " Sudo to write
-    cmap W :w !sudo tee % >/dev/null
+    cmap w!! :w !sudo tee % >/dev/null
     " Quick alignment of text
     nmap <leader>al :left<CR>
     nmap <leader>ar :right<CR>
