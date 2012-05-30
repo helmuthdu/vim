@@ -418,15 +418,15 @@
     "}}}
     " NERDTree "{{{
         nmap <silent><Leader>nt :NERDTreeToggle<CR>
-        let NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-        let NERDTreeShowBookmarks = 1
-        let NERDTreeWinPos = "right"
-        let NERDTreeWinSize = 45
+        let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
+        let g:NERDTreeShowBookmarks = 1
+        let g:NERDTreeWinPos = "right"
+        let g:NERDTreeWinSize = 45
         let g:NERDTreeChristmasTree = 1
         let g:NERDTreeCaseSensitiveSort = 1
         let g:NERDTreeQuitOnOpen = 1
-        let NERDTreeMouseMode=2
-        let NERDTreeIgnore=[
+        let g:NERDTreeMouseMode=2
+        let g:NERDTreeIgnore=[
                     \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
                     \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
     "}}}
