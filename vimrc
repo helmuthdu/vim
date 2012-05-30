@@ -672,7 +672,7 @@
         "Automatically removing all trailing whitespace"{{{
             autocmd BufWritePre * :%s/\s\+$//e
         "}}}
-        "jump to the last position when reopening a file "{{{
+        "Jump to the last position when reopening a file "{{{
             augroup JumpCursorOnEdit
                 au!
                 autocmd BufReadPost *
