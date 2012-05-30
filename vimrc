@@ -596,6 +596,7 @@
         :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
         :unlet! s:word
     endfun
+    map <leader>r :call Replace()<CR>
     "}}}
     function! LastModified() "{{{
         if &modified
