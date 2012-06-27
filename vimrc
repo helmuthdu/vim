@@ -47,7 +47,7 @@
             set sidescrolloff=7
             set sidescroll=1
         "}}}
-        " When vimrc is edited, reload it"{{{
+        " When vimrc is edited, reload it "{{{
             autocmd! bufwritepost .vimrc source %
         "}}}
         " Suffixes that get lower priority when doing tab completion for filenames "{{{
@@ -59,14 +59,14 @@
             set noerrorbells " No noise.
             set vb t_vb=     " disable any beeps or flashes on error
         "}}}
-        " Enable mouse"{{{
+        " Enable mouse "{{{
             if has("mouse")
                 set mouse=a
                 set mousemodel=popup
                 set mousehide
             endif
         "}}}
-        " {{{ Multiplatform compatibility
+        " Multiplatform compatibility "{{{
         if has('win32') || has('win64')
             " Make windows use ~/.vim too, I don't want to use _vimfiles
             set runtimepath^=~/.vim
@@ -293,6 +293,7 @@
     nmap <leader>4 yypVr-
 "}}}
 " Plugins Bundle "{{{
+    " Automatically install vundle if not installed
     let iCanHazVundle=1
     let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
     if !filereadable(vundle_readme)
@@ -490,6 +491,11 @@
         let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+        " For snippet_complete marker.
+        if has('conceal')
+            set conceallevel=2 concealcursor=i
+        endif
     "}}}
     " powerline "{{{
         if &t_Co >= 256 || g:OS#gui
