@@ -159,7 +159,7 @@
                 if g:OS#unix
                     set guioptions-=m
                     nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-                    set gfn=Deja\ Vu\ Sans\ Mono\ 10
+                    set gfn=Liberation\ Mono\ 10
                 endif
                 "}}}
                 " Mac "{{{
@@ -404,6 +404,7 @@
         let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
         let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
         let g:ctrlp_max_height = 15
+        let g:ctrlp_use_caching = 1
         "let g:ctrlp_clear_cache_on_exit = 1
         let g:ctrlp_follow_symlinks = 1
         let g:ctrlp_match_window_bottom = 0
@@ -421,6 +422,7 @@
         nmap <silent><Leader>nt :NERDTreeToggle<CR>
         let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
         let g:NERDTreeShowBookmarks = 1
+        let g:NERDTreeChDirMode = 1
         let g:NERDTreeWinPos = "right"
         let g:NERDTreeWinSize = 45
         let g:NERDTreeChristmasTree = 1
