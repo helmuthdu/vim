@@ -67,7 +67,7 @@
             endif
         "}}}
         " Multiplatform compatibility "{{{
-        if has('win32') || has('win64')
+        if g:OS#win
             " Make windows use ~/.vim too, I don't want to use _vimfiles
             set runtimepath^=~/.vim
         endif
@@ -82,7 +82,8 @@
         filetype plugin indent on    " automatically load filetypeplugins
     "}}}
     " Editor Settings "{{{
-        set shortmess=atI        " shortens messages to avoid 'press a key' prompt
+        set shortmess+=filmnrxoOtT " abbrev. of messages (avoids 'hit enter')
+        set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibilit    set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibilityy
         set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
         set equalalways          " Close a split window in Vim without resizing other windows
         set guitablabel=%t
@@ -92,9 +93,7 @@
         set laststatus=2         " always show statusline
         set guicursor=a:blinkon0 " cursor-blinking off!!
         set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
-        set encoding=utf-8
-        set termencoding=utf-8
-        set fileencoding=utf-8
+        scriptencoding utf-8
         set completeopt+=longest
         " wildmode "{{{
             set wildmenu           " nice tab-completion on the command line
@@ -103,10 +102,7 @@
             set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.app,*/.git/*,*/.hg/*,*/.svn/*
         "}}}
         " chars to show for list "{{{
-            "set list
             set listchars=tab:→\ ,eol:·
-            "set listchars=tab:▸\ ,eol:¬
-            "set listchars=tab:>-,trail:·,eol:$
             set listchars+=extends:»,precedes:«
         "}}}
     "}}}
@@ -272,10 +268,10 @@
     vmap < <gv
     vmap > >gv
     " Moving Between Windows
-    nmap <Leader>h <C-w>h
-    nmap <Leader>l <C-w>l
-    nmap <Leader>j <C-w>j
-    nmap <Leader>k <C-w>k
+    nmap <C-h> <C-w>h
+    nmap <C-l> <C-w>l
+    nmap <C-j> <C-w>j
+    nmap <C-k> <C-w>k
     " switch to the directory of the open buffer
      map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
@@ -306,50 +302,92 @@
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
+    " Bundle Groups
+    " List only the plugin groups you will use
+    if !exists('g:bundle_groups')
+        let g:bundle_groups=['general', 'programming', 'php', 'python', 'javascript', 'html', 'markdown', 'colorscheme']
+    endif
     " Bundles here:
     " General "{{{
-    Bundle 'buftabs'
-    Bundle 'godlygeek/tabular'
-    Bundle 'gregsexton/VimCalc'            , {'name' : 'vimcalc'}
-    Bundle 'hotoo/calendar-vim'            , {'name' : 'calendar'}
-    Bundle 'jeetsukumaran/vim-buffergator' , {'name' : 'buffergator'}
-    Bundle 'kien/ctrlp.vim'                , {'name' : 'ctrlp'}
-    Bundle 'Lokaltog/vim-easymotion'       , {'name' : 'easymotion'}
-    Bundle 'Lokaltog/vim-powerline'        , {'name' : 'powerline'}
-    Bundle 'scratch.vim'                   , {'name' : 'scratch'}
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'sjl/gundo.vim'                 , {'name' : 'gundo'}
-    Bundle 'YankRing.vim'                  , {'name' : 'yankring'}
+        if count(g:bundle_groups, 'general')
+            Bundle 'buftabs'
+            Bundle 'godlygeek/tabular'
+            Bundle 'gregsexton/VimCalc'
+            Bundle 'hotoo/calendar-vim'
+            Bundle 'jeetsukumaran/vim-buffergator'
+            Bundle 'kien/ctrlp.vim'
+            Bundle 'Lokaltog/vim-easymotion'
+            Bundle 'Lokaltog/vim-powerline'
+            Bundle 'scratch.vim'
+            Bundle 'scrooloose/nerdtree'
+            Bundle 'jistr/vim-nerdtree-tabs'
+            Bundle 'sjl/gundo.vim'
+            Bundle 'YankRing.vim'
+            Bundle 'godlygeek/csapprox'
+            Bundle 'matchit.zip'
+            if executable('ack')
+                Bundle 'mileszs/ack.vim'
+            endif
+        endif
+    "}}}
+    " Programming "{{{
+        if count(g:bundle_groups, 'programming')
+            Bundle 'honza/snipmate-snippets'
+            Bundle 'majutsushi/tagbar'
+            Bundle 'jiangmiao/auto-pairs'
+            Bundle 'scrooloose/nerdcommenter'
+            Bundle 'scrooloose/syntastic'
+            Bundle 'Shougo/neocomplcache'
+            Bundle 'Shougo/neocomplcache-snippets-complete'
+            Bundle 'tpope/vim-fugitive'
+            Bundle 'tpope/vim-surround'
+            Bundle 'xolox/vim-easytags'
+        endif
+    "}}}
+    " PHP "{{{
+        if count(g:bundle_groups, 'php')
+            Bundle 'spf13/PIV'
+        endif
+    "}}}
+    " Python "{{{
+        if count(g:bundle_groups, 'python')
+            " Pick either python-mode or pyflakes & pydoc
+            Bundle 'klen/python-mode'
+            Bundle 'python.vim'
+            Bundle 'python_match.vim'
+            Bundle 'pythoncomplete'
+        endif
+    "}}}
+    " Javascript "{{{
+        if count(g:bundle_groups, 'javascript')
+            Bundle 'leshill/vim-json'
+            Bundle 'groenewege/vim-less'
+            Bundle 'taxilian/vim-web-indent'
+        endif
+     "}}}
+    " HTML "{{{
+        if count(g:bundle_groups, 'html')
+            Bundle 'HTML-AutoCloseTag'
+            Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+            Bundle 'skammer/vim-css-color'
+        endif
     "}}}
     " Markdown "{{{
-    Bundle 'mkitt/markdown-preview.vim'
-    Bundle 'tpope/vim-markdown'            , {'name' : 'markdown'}
-    "}}}
-    " Developer "{{{
-    Bundle 'honza/snipmate-snippets'
-    Bundle 'majutsushi/tagbar'
-    Bundle 'matchit.zip'                   , {'name' : 'matchit'}
-    Bundle 'mileszs/ack.vim'               , {'name' : 'ack'}
-    Bundle 'jiangmiao/auto-pairs'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'Shougo/neocomplcache'
-    Bundle 'Shougo/neocomplcache-snippets-complete' , {'name' : 'neocomplcache-snippets'}
-    Bundle 'skammer/vim-css-color'         , {'name' : 'css-color'}
-    Bundle 'tpope/vim-fugitive'            , {'name' : 'fugitive'}
-    Bundle 'tpope/vim-surround'            , {'name' : 'surround'}
-    Bundle 'vim-scripts/jsbeautify'
-    Bundle 'walm/jshint.vim'               , {'name' : 'jshint'}
-    Bundle 'xolox/vim-easytags'            , {'name' : 'easytags'}
+        if count(g:bundle_groups, 'markdown')
+            Bundle 'mkitt/markdown-preview.vim'
+            Bundle 'tpope/vim-markdown'
+        endif
     "}}}
     " colorscheme "{{{
-    Bundle 'altercation/vim-colors-solarized'  , {'name' : 'color-solarized'}
-    Bundle 'jelera/vim-gummybears-colorscheme' , {'name' : 'color-gummybears'}
-    Bundle 'sjl/badwolf'                       , {'name' : 'color-badwolf'}
-    Bundle 'mattsa/vim-eddie'                  , {'name' : 'color-eddie'}
-    Bundle 'veloce/vim-aldmeris'               , {'name' : 'color-aldmeris'}
-    Bundle 'jeremycw/darkspectrum'             , {'name' : 'color-darkspectrum'}
-    Bundle 'tomasr/molokai'                    , {'name' : 'color-molokai'}
+        if count(g:bundle_groups, 'colorscheme')
+            Bundle 'altercation/vim-colors-solarized'
+            Bundle 'jelera/vim-gummybears-colorscheme'
+            Bundle 'sjl/badwolf'
+            Bundle 'mattsa/vim-eddie'
+            Bundle 'veloce/vim-aldmeris'
+            Bundle 'jeremycw/darkspectrum'
+            Bundle 'tomasr/molokai'
+        endif
     "}}}
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
@@ -390,6 +428,14 @@
         set tags=./.tags;
         let g:easytags_dynamic_files = 1
     "}}}
+    " fugitive "{{{
+        nnoremap <silent> <leader>gs :Gstatus<CR>
+        nnoremap <silent> <leader>gd :Gdiff<CR>
+        nnoremap <silent> <leader>gc :Gcommit<CR>
+        nnoremap <silent> <leader>gb :Gblame<CR>
+        nnoremap <silent> <leader>gl :Glog<CR>
+        nnoremap <silent> <leader>gp :Git push<CR>
+    "}}}
     " gundo "{{{
         nmap <leader>u :GundoToggle<CR>
         let g:gundo_width = 50
@@ -403,8 +449,8 @@
         let g:ctrlp_map = '<c-p>'
         let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
         let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
+        let g:ctrlp_working_path_mode = 2
         let g:ctrlp_max_height = 15
-        let g:ctrlp_use_caching = 1
         "let g:ctrlp_clear_cache_on_exit = 1
         let g:ctrlp_follow_symlinks = 1
         let g:ctrlp_match_window_bottom = 0
@@ -505,6 +551,12 @@
             "let g:Powerline_cache_file = ""
         endif
     "}}}
+    " pythonMode "{{{
+        " Disable if python support not present
+        if !has('python')
+            let g:pymode = 1
+        endif
+    "}}}
     " tabularize "{{{
         if exists(":Tabularize")
             nmap <Leader>a=  :Tabularize /=<CR>
@@ -519,6 +571,23 @@
             vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
             nmap <Leader>a:  :Tabularize /:\zs<CR>
             vmap <Leader>a:  :Tabularize /:\zs<CR>
+            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
+            " The following function automatically aligns when typing a
+            " supported character
+            inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+
+            function! s:align()
+                let p = '^\s*|\s.*\s|\s*$'
+                if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+                    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+                    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+                    Tabularize/|/l1
+                    normal! 0
+                    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+                endif
+            endfunction
         endif
     "}}}
     " tagbar "{{{
@@ -606,7 +675,7 @@
     endfun
     map <leader>r :call Replace()<CR>
     "}}}
-    "function! TwiddleCase(str)
+    "function! TwiddleCase(str) {{{
     "press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
     function! TwiddleCase(str)
         if a:str ==# toupper(a:str)
@@ -619,6 +688,7 @@
         return result
     endfunction
     vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+    "}}}
     function! LastModified() "{{{
         if &modified
             let save_cursor = getpos(".")
