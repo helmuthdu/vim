@@ -93,6 +93,8 @@
         set laststatus=2         " always show statusline
         set guicursor=a:blinkon0 " cursor-blinking off!!
         set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
+        set encoding=utf-8
+        set fileencodings=utf-8
         scriptencoding utf-8
         set completeopt+=longest
         " wildmode "{{{
