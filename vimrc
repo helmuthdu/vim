@@ -95,7 +95,6 @@
         set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
         set encoding=utf-8
         set fileencodings=utf-8
-        scriptencoding utf-8
         set completeopt+=longest
         " wildmode "{{{
             set wildmenu           " nice tab-completion on the command line
