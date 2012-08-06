@@ -476,9 +476,11 @@
         let g:NERDTreeQuitOnOpen = 1
         let g:NERDTreeMouseMode=2
         let g:NERDTreeIgnore=[
-        let g:nerdtree_tabs_open_on_gui_startup=0
                     \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
                     \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
+
+        let g:nerdtree_tabs_open_on_gui_startup=0
+        let g:nerdtree_tabs_open_on_console_startup=0
     "}}}
     " neocomplcache "{{{
         " Disable AutoComplPop.
