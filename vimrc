@@ -369,7 +369,6 @@
     " HTML "{{{
         if count(g:bundle_groups, 'html')
             Bundle 'HTML-AutoCloseTag'
-            Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
             Bundle 'skammer/vim-css-color'
         endif
     "}}}
@@ -466,7 +465,7 @@
             \ }
     "}}}
     " NERDTree "{{{
-        nmap <silent><Leader>nt :NERDTreeToggle<CR>
+        nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
         let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
         let g:NERDTreeShowBookmarks = 1
         let g:NERDTreeChDirMode = 1
@@ -477,6 +476,7 @@
         let g:NERDTreeQuitOnOpen = 1
         let g:NERDTreeMouseMode=2
         let g:NERDTreeIgnore=[
+        let g:nerdtree_tabs_open_on_gui_startup=0
                     \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
                     \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
     "}}}
