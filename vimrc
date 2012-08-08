@@ -347,19 +347,15 @@
     "}}}
     " PHP "{{{
         if count(g:bundle_groups, 'php')
-            Bundle 'spf13/PIV'
         endif
     "}}}
     " Javascript "{{{
         if count(g:bundle_groups, 'javascript')
-            Bundle 'leshill/vim-json'
             Bundle 'groenewege/vim-less'
-            Bundle 'taxilian/vim-web-indent'
         endif
      "}}}
     " HTML "{{{
         if count(g:bundle_groups, 'html')
-            Bundle 'HTML-AutoCloseTag'
             Bundle 'skammer/vim-css-color'
         endif
     "}}}
