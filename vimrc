@@ -306,7 +306,7 @@
     " Bundle Groups
     " List only the plugin groups you will use
     if !exists('g:bundle_groups')
-        let g:bundle_groups=['general', 'programming', 'php', 'python', 'javascript', 'html', 'markdown', 'colorscheme']
+        let g:bundle_groups=['general', 'programming', 'php', 'javascript', 'html', 'markdown', 'colorscheme']
     endif
     " Bundles here:
     " General "{{{
@@ -348,15 +348,6 @@
     " PHP "{{{
         if count(g:bundle_groups, 'php')
             Bundle 'spf13/PIV'
-        endif
-    "}}}
-    " Python "{{{
-        if count(g:bundle_groups, 'python')
-            " Pick either python-mode or pyflakes & pydoc
-            Bundle 'klen/python-mode'
-            Bundle 'python.vim'
-            Bundle 'python_match.vim'
-            Bundle 'pythoncomplete'
         endif
     "}}}
     " Javascript "{{{
@@ -620,8 +611,8 @@
     "}}}
     " syntastic "{{{
         let g:syntastic_enable_signs=1
-        let g:syntastic_auto_loc_list=1
-        let g:syntastic_auto_jump=1
+        let g:syntastic_auto_loc_list=2
+        let g:syntastic_auto_jump=0
     "}}}
     " yankring "{{{
         nmap <silent><Leader>yr :YRShow<cr>
