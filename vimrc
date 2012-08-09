@@ -333,9 +333,9 @@
     " Programming "{{{
         if count(g:bundle_groups, 'programming')
             " Snipmate "{{{
-            Bundle 'garbas/vim-snipmate'
-            Bundle 'tomtom/tlib_vim'
-            Bundle 'MarcWeber/vim-addon-mw-utils'
+            "Bundle 'garbas/vim-snipmate'
+            "Bundle 'tomtom/tlib_vim'
+            "Bundle 'MarcWeber/vim-addon-mw-utils'
             Bundle 'honza/snipmate-snippets'
             "}}}
             Bundle 'godlygeek/tabular'
