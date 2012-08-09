@@ -117,13 +117,12 @@
             if &t_Co >= 256 || g:OS#gui
                 set t_Co=256
                 set background=dark
-                "colorscheme molokai
+                colorscheme molokai
                 "colorscheme badwolf
                 "colorscheme eddie
-                "colorscheme aldmeris
                 "colorscheme hickop
-                "colorscheme darkspectrum
-                colorscheme lucius
+                "let g:lucius_style = "dark_dim"
+                "colorscheme lucius
                 "colorscheme solarized
             else
                 set t_Co=8
@@ -162,7 +161,7 @@
                 "}}}
                 " Mac "{{{
                 if g:OS#mac
-                    set guifont=Menlo:h12
+                    set guifont=Menlo:h11
                 endif
                 "}}}
             endif
@@ -313,7 +312,6 @@
     " General "{{{
         if count(g:bundle_groups, 'general')
             Bundle 'buftabs'
-            Bundle 'godlygeek/tabular'
             Bundle 'gregsexton/VimCalc'
             Bundle 'hotoo/calendar-vim'
             Bundle 'jeetsukumaran/vim-buffergator'
@@ -334,8 +332,13 @@
     "}}}
     " Programming "{{{
         if count(g:bundle_groups, 'programming')
+            " Snipmate "{{{
+            Bundle 'garbas/vim-snipmate'
+            Bundle 'tomtom/tlib_vim'
+            Bundle 'MarcWeber/vim-addon-mw-utils'
             Bundle 'honza/snipmate-snippets'
-            Bundle 'majutsushi/tagbar'
+            "}}}
+            Bundle 'godlygeek/tabular'
             Bundle 'jiangmiao/auto-pairs'
             Bundle 'scrooloose/nerdcommenter'
             Bundle 'scrooloose/syntastic'
@@ -344,6 +347,9 @@
             Bundle 'tpope/vim-fugitive'
             Bundle 'tpope/vim-surround'
             Bundle 'xolox/vim-easytags'
+            if executable('ctags')
+                Bundle 'majutsushi/tagbar'
+            endif
         endif
     "}}}
     " PHP "{{{
@@ -353,12 +359,14 @@
     "}}}
     " Javascript "{{{
         if count(g:bundle_groups, 'javascript')
+            Bundle 'leshill/vim-json'
             Bundle 'groenewege/vim-less'
+            Bundle 'taxilian/vim-web-indent'
         endif
      "}}}
     " HTML "{{{
         if count(g:bundle_groups, 'html')
-            Bundle 'skammer/vim-css-color'
+            Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
         endif
     "}}}
     " Markdown "{{{
@@ -385,9 +393,6 @@
 "}}}
 " Plugins Config "{{{
     " buftabs "{{{
-        let g:lucius_style=dark_dim
-    "}}}
-    " buftabs "{{{
         let g:buftabs_active_highlight_group="WarningMsg"
         let g:buftabs_inactive_highlight_group="Visual"
         let g:buftabs_only_basename=1
@@ -397,6 +402,8 @@
     " buftergator "{{{
         let g:buffergator_autoexpand_on_split=0
         let g:buffergator_viewport_split_policy="R"
+        let g:buffergator_suppress_keymaps=1
+        nmap <leader>b :BuffergatorToggle<CR>
     "}}}
     " calendar "{{{
         nmap <leader>ca :Calendar<CR>
@@ -474,8 +481,6 @@
         let g:nerdtree_tabs_open_on_console_startup=0
     "}}}
     " neocomplcache "{{{
-        " Disable AutoComplPop.
-        let g:acp_enableAtStartup = 0
         " Use neocomplcache.
         let g:neocomplcache_enable_at_startup = 1
         " Use smartcase.
@@ -498,22 +503,25 @@
         let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
         " Plugin key-mappings.
-        imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-        smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-        imap <expr><C-g>     neocomplcache#undo_completion()
-        imap <expr><C-l>     neocomplcache#complete_common_string()
+        imap <C-k> <Plug>(neocomplcache_snippets_expand)
+        smap <C-k> <Plug>(neocomplcache_snippets_expand)
+        imap <expr><C-g> neocomplcache#undo_completion()
+        imap <expr><C-l> neocomplcache#complete_common_string()
+
+        " AutoComplPop like behavior.
+        let g:neocomplcache_enable_auto_select = 0
 
         " SuperTab like snippets behavior.
-        "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+        imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
         " Recommended key-mappings.
         " <TAB>: completion.
-        imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+        imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
         " <C-h>, <BS>: close popup and delete backword char.
         imap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
         imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-        imap <expr><C-y>  neocomplcache#close_popup()
-        imap <expr><C-e>  neocomplcache#cancel_popup()
+        imap <expr><C-y> neocomplcache#close_popup()
+        imap <expr><C-e> neocomplcache#cancel_popup()
 
         " Enable omni completion.
         autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
