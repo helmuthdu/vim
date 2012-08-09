@@ -118,12 +118,13 @@
                 set t_Co=256
                 set background=dark
                 "colorscheme molokai
-                colorscheme badwolf
+                "colorscheme badwolf
                 "colorscheme eddie
                 "colorscheme aldmeris
+                "colorscheme hickop
                 "colorscheme darkspectrum
-                "colorscheme zenburn
-                "colorscheme getafe
+                colorscheme lucius
+                "colorscheme solarized
             else
                 set t_Co=8
                 set t_Sf=^[[3%p1%dm
@@ -347,6 +348,7 @@
     "}}}
     " PHP "{{{
         if count(g:bundle_groups, 'php')
+            Bundle 'paulyg/Vim-PHP-Stuff'
         endif
     "}}}
     " Javascript "{{{
@@ -371,8 +373,7 @@
             Bundle 'jelera/vim-gummybears-colorscheme'
             Bundle 'sjl/badwolf'
             Bundle 'mattsa/vim-eddie'
-            Bundle 'veloce/vim-aldmeris'
-            Bundle 'jeremycw/darkspectrum'
+            Bundle 'Lucius'
             Bundle 'tomasr/molokai'
         endif
     "}}}
@@ -383,6 +384,9 @@
     endif
 "}}}
 " Plugins Config "{{{
+    " buftabs "{{{
+        let g:lucius_style=dark_dim
+    "}}}
     " buftabs "{{{
         let g:buftabs_active_highlight_group="WarningMsg"
         let g:buftabs_inactive_highlight_group="Visual"
@@ -729,7 +733,7 @@
             au FileType mail                setlocal formatoptions=ltcrqna
             au FileType txt                 setlocal formatoptions=ltcrqno2
             au FileType asciidoc,mkd,tex    setlocal tw=78 wrap
-            au filetype html,xml            setlocal shiftwidth=2 tabstop=2 listchars-=tab:>.
+            au filetype html,xml            setlocal shiftwidth=2 tabstop=2 filetype=htmlm4
             au FileType ruby                setlocal shiftwidth=2
             au FileType help                setlocal nolist textwidth=0
             au FileType org                 setlocal foldminlines=0 foldlevel=1
