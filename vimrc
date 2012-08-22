@@ -156,7 +156,7 @@
                 if g:OS#unix
                     set guioptions-=m
                     nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-                    set gfn=Liberation\ Mono\ 10
+                    set gfn=DejaVu\ Sans\ Mono\ 9
                 endif
                 "}}}
                 " Mac "{{{
@@ -561,20 +561,21 @@
     "}}}
     " tabularize "{{{
         if exists(":Tabularize")
-            nmap <Leader>a=  :Tabularize /=<CR>
-            vmap <Leader>a=  :Tabularize /=<CR>
-            nmap <Leader>a3  :Tabularize /#<CR>
-            vmap <Leader>a3  :Tabularize /#<CR>
-            nmap <Leader>a'  :Tabularize /'<CR>
-            vmap <Leader>a'  :Tabularize /'<CR>
-            nmap <Leader>a'' :Tabularize /"<CR>
-            vmap <Leader>a'' :Tabularize /"<CR>
-            nmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
-            nmap <Leader>a:  :Tabularize /:\zs<CR>
-            vmap <Leader>a:  :Tabularize /:\zs<CR>
-            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            nmap <Leader>c=  :Tabularize /=<CR>
+            vmap <Leader>c=  :Tabularize /=<CR>
+            nmap <Leader>c3  :Tabularize /#<CR>
+            vmap <Leader>c3  :Tabularize /#<CR>
+            nmap <Leader>c'  :Tabularize /'<CR>
+            vmap <Leader>c'  :Tabularize /'<CR>
+            nmap <Leader>c'' :Tabularize /"<CR>
+            vmap <Leader>c'' :Tabularize /"<CR>
+            nmap <Leader>c0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>c0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>c=  :Tabularize /=/r1c1l0<CR>
+            nmap <Leader>c:  :Tabularize /:\zs<CR>
+            vmap <Leader>c:  :Tabularize /:\zs<CR>
+            nmap <Leader>c<Bar> :Tabularize /<Bar><CR>
+            vmap <Leader>c<Bar> :Tabularize /<Bar><CR>
 
             " The following function automatically aligns when typing a
             " supported character
