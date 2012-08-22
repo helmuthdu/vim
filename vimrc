@@ -561,21 +561,13 @@
     "}}}
     " tabularize "{{{
         if exists(":Tabularize")
-            nmap <Leader>a=  :Tabularize /=<CR>
             vmap <Leader>a=  :Tabularize /=<CR>
-            nmap <Leader>a3  :Tabularize /#<CR>
             vmap <Leader>a3  :Tabularize /#<CR>
-            nmap <Leader>a'  :Tabularize /'<CR>
             vmap <Leader>a'  :Tabularize /'<CR>
-            nmap <Leader>a'' :Tabularize /"<CR>
             vmap <Leader>a'' :Tabularize /"<CR>
-            nmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
             vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>a=  :Tabularize /=/r1c1l0<CR>
-            nmap <Leader>a:  :Tabularize /:\zs<CR>
+            vmap <Leader>a== :Tabularize /=/r1c1l0<CR>
             vmap <Leader>a:  :Tabularize /:\zs<CR>
-            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
         endif
     "}}}
     " tagbar "{{{
