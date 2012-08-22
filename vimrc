@@ -561,36 +561,21 @@
     "}}}
     " tabularize "{{{
         if exists(":Tabularize")
-            nmap <Leader>c=  :Tabularize /=<CR>
-            vmap <Leader>c=  :Tabularize /=<CR>
-            nmap <Leader>c3  :Tabularize /#<CR>
-            vmap <Leader>c3  :Tabularize /#<CR>
-            nmap <Leader>c'  :Tabularize /'<CR>
-            vmap <Leader>c'  :Tabularize /'<CR>
-            nmap <Leader>c'' :Tabularize /"<CR>
-            vmap <Leader>c'' :Tabularize /"<CR>
-            nmap <Leader>c0  :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>c0  :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>c=  :Tabularize /=/r1c1l0<CR>
-            nmap <Leader>c:  :Tabularize /:\zs<CR>
-            vmap <Leader>c:  :Tabularize /:\zs<CR>
-            nmap <Leader>c<Bar> :Tabularize /<Bar><CR>
-            vmap <Leader>c<Bar> :Tabularize /<Bar><CR>
-
-            " The following function automatically aligns when typing a
-            " supported character
-            inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
-
-            function! s:align()
-                let p = '^\s*|\s.*\s|\s*$'
-                if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-                    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-                    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-                    Tabularize/|/l1
-                    normal! 0
-                    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-                endif
-            endfunction
+            nmap <Leader>a=  :Tabularize /=<CR>
+            vmap <Leader>a=  :Tabularize /=<CR>
+            nmap <Leader>a3  :Tabularize /#<CR>
+            vmap <Leader>a3  :Tabularize /#<CR>
+            nmap <Leader>a'  :Tabularize /'<CR>
+            vmap <Leader>a'  :Tabularize /'<CR>
+            nmap <Leader>a'' :Tabularize /"<CR>
+            vmap <Leader>a'' :Tabularize /"<CR>
+            nmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>a=  :Tabularize /=/r1c1l0<CR>
+            nmap <Leader>a:  :Tabularize /:\zs<CR>
+            vmap <Leader>a:  :Tabularize /:\zs<CR>
+            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
         endif
     "}}}
     " tagbar "{{{
