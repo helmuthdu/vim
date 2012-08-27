@@ -117,8 +117,8 @@
             if &t_Co >= 256 || g:OS#gui
                 set t_Co=256
                 set background=dark
-                colorscheme molokai
-                "colorscheme badwolf
+                "colorscheme molokai
+                colorscheme badwolf
                 "colorscheme eddie
                 "colorscheme hickop
                 "let g:lucius_style = "dark_dim"
@@ -133,7 +133,7 @@
         "}}}
         " GUI options "{{{
             if g:OS#gui
-                set lines=50 columns=88
+                set lines=999 columns=999
                 " guioptions "{{{
                     " m = Menubar
                     " T = Toolbar
@@ -164,6 +164,8 @@
                     set guifont=Menlo:h11
                 endif
                 "}}}
+            else
+                set lines=50 columns=88
             endif
         "}}}
     "}}}
@@ -269,16 +271,16 @@
     vmap < <gv
     vmap > >gv
     " Moving Between Windows
-    nmap <C-h> <C-w>h
-    nmap <C-l> <C-w>l
-    nmap <C-j> <C-w>j
-    nmap <C-k> <C-w>k
+    nmap <Leader>h <C-w>h
+    nmap <Leader>l <C-w>l
+    nmap <Leader>j <C-w>j
+    nmap <Leader>k <C-w>k
     " switch to the directory of the open buffer
      map <leader>cd :cd %:p:h<cr>
     " copy/cut/paste
     vmap <Leader>d "+x
     vmap <Leader>y "+y
-     map <Leader>p "+gP
+    imap <Leader>p <C-R>*
     cmap <Leader>p <C-R>+
     " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
@@ -318,7 +320,6 @@
             Bundle 'kien/ctrlp.vim'
             Bundle 'Lokaltog/vim-easymotion'
             Bundle 'Lokaltog/vim-powerline'
-            Bundle 'scratch.vim'
             Bundle 'scrooloose/nerdtree'
             Bundle 'jistr/vim-nerdtree-tabs'
             Bundle 'sjl/gundo.vim'
@@ -406,7 +407,7 @@
         nmap <leader>b :BuffergatorToggle<CR>
     "}}}
     " calendar "{{{
-        nmap <leader>ca :Calendar<CR>
+        map <leader>ca :Calendar<CR>
         let g:calendar_list = [
             \   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
             \   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
@@ -553,21 +554,15 @@
             "let g:Powerline_cache_file = ""
         endif
     "}}}
-    " pythonMode "{{{
-        " Disable if python support not present
-        if !has('python')
-            let g:pymode = 1
-        endif
-    "}}}
     " tabularize "{{{
         if exists(":Tabularize")
-            vmap <Leader>a=  :Tabularize /=<CR>
-            vmap <Leader>a3  :Tabularize /#<CR>
-            vmap <Leader>a'  :Tabularize /'<CR>
-            vmap <Leader>a'' :Tabularize /"<CR>
-            vmap <Leader>a0  :Tabularize /)/r1c1l0<CR>
-            vmap <Leader>a== :Tabularize /=/r1c1l0<CR>
-            vmap <Leader>a:  :Tabularize /:\zs<CR>
+            vmap <Leader>t=  :Tabularize /=<CR>
+            vmap <Leader>t3  :Tabularize /#<CR>
+            vmap <Leader>t'  :Tabularize /'<CR>
+            vmap <Leader>t'' :Tabularize /"<CR>
+            vmap <Leader>t0  :Tabularize /)/r1c1l0<CR>
+            vmap <Leader>t== :Tabularize /=/r1c1l0<CR>
+            vmap <Leader>t:  :Tabularize /:\zs<CR>
         endif
     "}}}
     " tagbar "{{{
@@ -582,18 +577,6 @@
         let g:tagbar_expand = 0
 
         nmap <silent><leader>T :TagbarToggle<CR>
-    "}}}
-    " scratch "{{{
-        " toggle scratch window
-        function! ToggleScratch()
-            if expand('%') == g:ScratchBufferName
-                quit
-            else
-                Sscratch
-            endif
-        endfunction
-
-        nmap <leader>s :call ToggleScratch()<CR>
     "}}}
     " syntastic "{{{
         let g:syntastic_enable_signs=1
@@ -653,7 +636,7 @@
         :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
         :unlet! s:word
     endfun
-    map <leader>r :call Replace()<CR>
+    vmap <C-h> :call Replace()<CR>
     "}}}
     "function! TwiddleCase(str) {{{
     "press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
@@ -681,17 +664,13 @@
     autocmd BufWritePre * call LastModified()
     "}}}
     function! SplitScreen() "{{{
-        let col = &columns
-        if (col < 89)
-            set columns=166
-            vsplit
-        else
-            execute "normal \<C-w>c"
-            set columns=88
-        endif
+        only
+        vsplit
+        split
     endfunction
     " Vertically split window and select it
-    nmap <Leader><Leader>w :call SplitScreen()<cr>
+    nmap <Leader><Leader>w :call SplitScreen()<CR>
+    nmap <Leader>w :only<CR>
     "}}}
     function! MyFoldText() "{{{
         let line = getline(v:foldstart)
