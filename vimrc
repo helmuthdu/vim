@@ -132,8 +132,8 @@
             endif
         "}}}
         " GUI options "{{{
+            set lines=999 columns=999
             if g:OS#gui
-                set lines=999 columns=999
                 " guioptions "{{{
                     " m = Menubar
                     " T = Toolbar
@@ -652,6 +652,19 @@
     endfunction
     vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
     "}}}
+    "Editor Layourt "{{{
+    function! FullScreenEditor()
+        only
+        vsplit
+        split
+    endfunction
+    function! DefaultEditor()
+        only
+    endfunction
+    " Vertically split window and select it
+    nmap <Leader>w :call FullScreenEditor()<CR>
+    nmap <Leader>W :call DefaultEditor()<CR>
+    "}}}
     function! LastModified() "{{{
         if &modified
             let save_cursor = getpos(".")
@@ -662,15 +675,6 @@
         endif
     endfun
     autocmd BufWritePre * call LastModified()
-    "}}}
-    function! SplitScreen() "{{{
-        only
-        vsplit
-        split
-    endfunction
-    " Vertically split window and select it
-    nmap <Leader><Leader>w :call SplitScreen()<CR>
-    nmap <Leader>w :only<CR>
     "}}}
     function! MyFoldText() "{{{
         let line = getline(v:foldstart)
