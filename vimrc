@@ -132,8 +132,8 @@
             endif
         "}}}
         " GUI options "{{{
-            set lines=999 columns=999
             if g:OS#gui
+                set lines=999 columns=999
                 " guioptions "{{{
                     " m = Menubar
                     " T = Toolbar
