@@ -133,7 +133,6 @@
         "}}}
         " GUI options "{{{
             if g:OS#gui
-                set lines=999 columns=999
                 " guioptions "{{{
                     " m = Menubar
                     " T = Toolbar
@@ -164,6 +163,7 @@
                     set guifont=Menlo:h11
                 endif
                 "}}}
+                set lines=999 columns=999
             else
                 set lines=50 columns=88
             endif
@@ -314,16 +314,16 @@
     " General "{{{
         if count(g:bundle_groups, 'general')
             Bundle 'buftabs'
-            Bundle 'gregsexton/VimCalc'
-            Bundle 'hotoo/calendar-vim'
+            "Bundle 'gregsexton/VimCalc'
+            "Bundle 'hotoo/calendar-vim'
             Bundle 'jeetsukumaran/vim-buffergator'
             Bundle 'kien/ctrlp.vim'
             Bundle 'Lokaltog/vim-easymotion'
             Bundle 'Lokaltog/vim-powerline'
             Bundle 'scrooloose/nerdtree'
             Bundle 'jistr/vim-nerdtree-tabs'
-            Bundle 'sjl/gundo.vim'
-            Bundle 'YankRing.vim'
+            "Bundle 'sjl/gundo.vim'
+            "Bundle 'YankRing.vim'
             Bundle 'godlygeek/csapprox'
             Bundle 'matchit.zip'
             if executable('ack')
