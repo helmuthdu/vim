@@ -482,6 +482,8 @@
         let g:nerdtree_tabs_open_on_console_startup=0
     "}}}
     " neocomplcache "{{{
+        " Disable AutoComplPop.
+        let g:acp_enableAtStartup = 0
         " Use neocomplcache.
         let g:neocomplcache_enable_at_startup = 1
         " Use smartcase.
