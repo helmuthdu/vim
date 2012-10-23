@@ -119,7 +119,6 @@
                 set background=dark
                 "colorscheme molokai
                 colorscheme badwolf
-                "colorscheme eddie
                 "colorscheme hickop
                 "let g:lucius_style = "dark_dim"
                 "colorscheme lucius
@@ -194,8 +193,8 @@
     "}}}
     "}}}
     " Text, tab and indent related "{{{
-        set shiftwidth=4 " number of spaces for autoindentation
-        set tabstop=4
+        set shiftwidth=2 " number of spaces for autoindentation
+        set tabstop=2
         set smarttab     " insert spaces only at the beginning of the line
         set smartindent  " always set smartindenting on
         set autoindent   " always set autoindenting on
@@ -344,7 +343,7 @@
             Bundle 'scrooloose/nerdcommenter'
             Bundle 'scrooloose/syntastic'
             Bundle 'Shougo/neocomplcache'
-            Bundle 'Shougo/neocomplcache-snippets-complete'
+            Bundle 'Shougo/neosnippet'
             Bundle 'tpope/vim-fugitive'
             Bundle 'tpope/vim-surround'
             Bundle 'xolox/vim-easytags'
@@ -381,7 +380,6 @@
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'jelera/vim-gummybears-colorscheme'
             Bundle 'sjl/badwolf'
-            Bundle 'mattsa/vim-eddie'
             Bundle 'Lucius'
             Bundle 'tomasr/molokai'
         endif
@@ -544,11 +542,6 @@
         let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-        " For snippet_complete marker.
-        if has('conceal')
-            set conceallevel=2 concealcursor=i
-        endif
     "}}}
     " powerline "{{{
         if &t_Co >= 256 || g:OS#gui
