@@ -211,7 +211,7 @@
         set lbr                      " line break
         let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
         set textwidth=79
-        set formatoptions=qrn1
+        set formatoptions=tcqron
     "}}}
     " Search config "{{{
         set ignorecase      " select case-insenitiv search
@@ -412,6 +412,24 @@
         \ ]
         let g:calendar_current_idx = 1
     "}}}
+    " ctrlp "{{{
+        let g:ctrlp_map = '<c-p>'
+        let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
+        let g:ctrlp_working_path_mode = 'ra'
+        let g:ctrlp_max_height = 15
+        "let g:ctrlp_clear_cache_on_exit = 1
+        let g:ctrlp_follow_symlinks = 1
+        let g:ctrlp_match_window_bottom = 0
+
+        nmap <leader>pb :CtrlPBuffer<CR>
+        nmap <leader>pm :CtrlPMRUFiles<CR>
+
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+            \ 'file': '\.exe$\|\.so$\|\.dll$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
+    "}}}
     " easymotion "{{{
         let g:EasyMotion_leader_key = '<Leader>m'
         hi link EasyMotionTarget ErrorMsg
@@ -434,32 +452,13 @@
         nnoremap <silent> <leader>gp :Git push<CR>
     "}}}
     " gundo "{{{
-        nmap <leader>u :GundoToggle<CR>
-        let g:gundo_width = 50
-        let g:gundo_right = 1
+        "nmap <leader>u :GundoToggle<CR>
+        "let g:gundo_width = 50
+        "let g:gundo_right = 1
     "}}}
     " markdown preview "{{{
         nmap <silent><leader>p :MDP<CR>
         let g:MarkdownPreviewTMP = $HOME.'/Sites/'
-    "}}}
-    " ctrlp "{{{
-        let g:ctrlp_map = '<c-p>'
-        let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
-        let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
-        let g:ctrlp_working_path_mode = 2
-        let g:ctrlp_max_height = 15
-        "let g:ctrlp_clear_cache_on_exit = 1
-        let g:ctrlp_follow_symlinks = 1
-        let g:ctrlp_match_window_bottom = 0
-
-        nmap <leader>pb :CtrlPBuffer<CR>
-        nmap <leader>pm :CtrlPMRUFiles<CR>
-
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-            \ 'file': '\.exe$\|\.so$\|\.dll$',
-            \ 'link': 'some_bad_symbolic_links',
-            \ }
     "}}}
     " NERDTree "{{{
         nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
@@ -696,7 +695,7 @@
             au FileType debchangelog        setlocal expandtab spell spelllang=en
             au FileType mail                setlocal formatoptions=ltcrqna
             au FileType txt                 setlocal formatoptions=ltcrqno2
-            au FileType asciidoc,mkd,tex    setlocal tw=78 wrap
+            au FileType asciidoc,mkd,tex    setlocal wrap
             au filetype html,xml            setlocal shiftwidth=2 tabstop=2 filetype=htmlm4
             au FileType ruby                setlocal shiftwidth=2
             au FileType help                setlocal nolist textwidth=0
