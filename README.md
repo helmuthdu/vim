@@ -46,15 +46,15 @@ Reference to vim mappings.
 
 ### Plugins
 
-- `<Leader>b` buffergator
-- `<Leader>ca` calendar
-- `<Leader>pm` CtrlPMRU
-- `<Leader>pb` CtrlPBuffer
-- `<Leader>u` Gundo
-- `<Leader>p` Markdown-Preview
-- `<Leader>nt` NERDTree
-- `<Leader>T` Tagbar
-- `<Leader>s` Scratch
+-   `<Leader>b`  buffergator
+-   `<Leader>ca` calendar
+-   `<Leader>pm` CtrlPMRU
+-   `<Leader>pb` CtrlPBuffer
+-   `<Leader>u`  Gundo
+-   `<Leader>p`  Markdown-Preview
+-   `<Leader>nt` NERDTree
+-   `<Leader>T`  Tagbar
+-   `<Leader>s`  Scratch
 
 ## Commands
 

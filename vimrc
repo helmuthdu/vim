@@ -577,19 +577,23 @@
 "}}}
 " FUNCTIONS {{{
   "function! ToggleSpell() {{{
-    let b:myLang=0
-    let g:myLangList=["nospell","pt","en"]
     function! ToggleSpell()
-      let b:myLang=b:myLang+1
-      if b:myLang>=len(g:myLangList)
-        let b:myLang=0
-      endif
-      if b:myLang==0
-        setlocal nospell
+      if &spell
+        if &spelllang == "pt"
+          set spelllang=pt,en
+          echo "toggle spell" &spelllang
+        elseif &spelllang == "pt,en"
+          set spelllang=en
+          echo "toggle spell" &spelllang
+        else
+          set spell!
+          echo "toggle spell off"
+        endif
       else
-        execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+        set spelllang=pt
+        set spell!
+        echo "toogle spell" &spelllang
       endif
-      echo "spell checking language:" g:myLangList[b:myLang]
     endfunction
     " Toggle Spellcheck
     nmap <silent><Leader>ss :call ToggleSpell()<CR>
