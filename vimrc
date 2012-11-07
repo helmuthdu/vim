@@ -26,6 +26,11 @@
         set nocompatible                   " explicitly get out of vi-compatible mode
         set title                          " change the terminal's title
         set history=300                    " keep 100 lines of command line history
+        if g:OS#unix
+          set clipboard=unnamedplus        " on Linux use + register for copy-paste
+        else
+          set clipboard=unnamed            " one mac and windows, use * register for copy-paste
+        endif
         set clipboard=unnamed              " use global clipboard
         set backspace=2                    " make backspace work normal
         set nostartofline                  " don't jump to first character when paging
@@ -82,8 +87,8 @@
         filetype plugin indent on    " automatically load filetypeplugins
     "}}}
     " Editor Settings "{{{
-        set shortmess+=filmnrxoOtT " abbrev. of messages (avoids 'hit enter')
-        set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibilit    set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibilityy
+        set shortmess=at         " abbrev. of messages (avoids 'hit enter')
+        set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
         set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
         set equalalways          " Close a split window in Vim without resizing other windows
         set guitablabel=%t
@@ -95,7 +100,7 @@
         set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
         set encoding=utf-8
         set fileencodings=utf-8
-        set completeopt+=longest
+        set completeopt=menu,preview,longest
         " wildmode "{{{
             set wildmenu           " nice tab-completion on the command line
             set wildchar=9         " tab as completion character
@@ -269,6 +274,9 @@
     vmap <S-TAB> <gv
     vmap < <gv
     vmap > >gv
+    " move between buffers
+    nmap <C-S-TAB> :bprev<CR>
+    nmap <C-TAB> :bnext<CR>
     " Moving Between Windows
     nmap <Leader>h <C-w>h
     nmap <Leader>l <C-w>l
@@ -380,7 +388,6 @@
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'jelera/vim-gummybears-colorscheme'
             Bundle 'sjl/badwolf'
-            Bundle 'Lucius'
             Bundle 'tomasr/molokai'
         endif
     "}}}
@@ -395,8 +402,6 @@
         let g:buftabs_active_highlight_group="WarningMsg"
         let g:buftabs_inactive_highlight_group="Visual"
         let g:buftabs_only_basename=1
-        map <C-S-TAB> :bprev<CR>
-        map <C-TAB> :bnext<CR>
     "}}}
     " buftergator "{{{
         let g:buffergator_autoexpand_on_split=0
@@ -405,12 +410,12 @@
         nmap <leader>b :BuffergatorToggle<CR>
     "}}}
     " calendar "{{{
-        map <leader>ca :Calendar<CR>
-        let g:calendar_list = [
-            \   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
-            \   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
-        \ ]
-        let g:calendar_current_idx = 1
+        "map <leader>ca :Calendar<CR>
+        "let g:calendar_list = [
+            "\   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
+            "\   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
+        "\ ]
+        "let g:calendar_current_idx = 1
     "}}}
     " ctrlp "{{{
         let g:ctrlp_map = '<c-p>'
@@ -479,65 +484,56 @@
         let g:nerdtree_tabs_open_on_console_startup=0
     "}}}
     " neocomplcache "{{{
-        " Disable AutoComplPop.
-        let g:acp_enableAtStartup = 0
-        " Use neocomplcache.
+        " automatically open and close the popup menu / preview window
+
         let g:neocomplcache_enable_at_startup = 1
-        " Use smartcase.
-        let g:neocomplcache_enable_smart_case = 1
-        " Use camel case completion.
+        let g:neocomplcache_enable_auto_select = 0
         let g:neocomplcache_enable_camel_case_completion = 1
-        " Use underbar completion.
+        let g:neocomplcache_enable_smart_case = 1
         let g:neocomplcache_enable_underbar_completion = 1
-        " Set minimum syntax keyword length.
         let g:neocomplcache_min_syntax_length = 3
-        let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+        let g:neocomplcache_enable_auto_delimiter = 1
+        let g:neocomplcache_max_list = 15
+        let g:neocomplcache_auto_completion_start_length = 3
+        let g:neocomplcache_force_overwrite_completefunc = 1
 
         let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
         let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
 
+        " Plugin key-mappings.
+        if g:OS#gui
+          imap <C-Space> <Plug>(neocomplcache_snippets_expand)
+          smap <C-Space> <Plug>(neocomplcache_snippets_expand)
+        else
+          imap <C-@> <Plug>(neocomplcache_snippets_expand)
+          smap <C-@> <Plug>(neocomplcache_snippets_expand)
+        endif
+
+        " Recommended key-mappings.
+        imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+        imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+        imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
         " Define keyword.
         if !exists('g:neocomplcache_keyword_patterns')
-            let g:neocomplcache_keyword_patterns = {}
+          let g:neocomplcache_keyword_patterns = {}
         endif
         let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-        " Plugin key-mappings.
-        imap <C-k> <Plug>(neocomplcache_snippets_expand)
-        smap <C-k> <Plug>(neocomplcache_snippets_expand)
-        imap <expr><C-g> neocomplcache#undo_completion()
-        imap <expr><C-l> neocomplcache#complete_common_string()
-
-        " AutoComplPop like behavior.
-        let g:neocomplcache_enable_auto_select = 0
-
-        " SuperTab like snippets behavior.
-        imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-        " Recommended key-mappings.
-        " <TAB>: completion.
-        imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-        " <C-h>, <BS>: close popup and delete backword char.
-        imap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-        imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-        imap <expr><C-y> neocomplcache#close_popup()
-        imap <expr><C-e> neocomplcache#cancel_popup()
-
         " Enable omni completion.
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-        autocmd FileType c set omnifunc=ccomplete#Complete
-        autocmd FileType java set omnifunc=javacomplete#Complete
+        au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        au FileType python setlocal omnifunc=pythoncomplete#Complete
+        au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        au FileType c set omnifunc=ccomplete#Complete
+        au FileType java set omnifunc=javacomplete#Complete
 
         " Enable heavy omni completion.
         if !exists('g:neocomplcache_omni_patterns')
             let g:neocomplcache_omni_patterns = {}
         endif
         let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-        "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
         let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
         let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
         let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
@@ -578,11 +574,11 @@
         let g:syntastic_auto_jump=0
     "}}}
     " yankring "{{{
-        nmap <silent><Leader>yr :YRShow<cr>
-        let g:yankring_replace_n_pkey = '<m-p>'
-        let g:yankring_replace_n_nkey = '<m-n>'
-        let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'
-        let g:yankring_history_file = '/.vim/.yankring_history'
+        "nmap <silent><Leader>yr :YRShow<cr>
+        "let g:yankring_replace_n_pkey = '<m-p>'
+        "let g:yankring_replace_n_nkey = '<m-n>'
+        "let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'
+        "let g:yankring_history_file = '/.vim/.yankring_history'
     "}}}
 "}}}
 " Functions "{{{
