@@ -494,7 +494,7 @@
         let g:neocomplcache_min_syntax_length = 3
         let g:neocomplcache_enable_auto_delimiter = 1
         let g:neocomplcache_max_list = 15
-        let g:neocomplcache_auto_completion_start_length = 3
+        let g:neocomplcache_auto_completion_start_length = 2
         let g:neocomplcache_force_overwrite_completefunc = 1
 
         let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
