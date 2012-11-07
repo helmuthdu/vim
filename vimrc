@@ -211,7 +211,7 @@
         set lbr                      " line break
         let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
         set textwidth=79
-        set formatoptions=tcqron
+        set formatoptions=tcqor	     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
     "}}}
     " Search config "{{{
         set ignorecase      " select case-insenitiv search
