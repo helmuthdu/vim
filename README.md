@@ -27,38 +27,44 @@ Reference to vim mappings.
 
 ### General
 
-- `,` keyleader.
-- `<Leader>cl` Calculate the value in one line.
-- `<Leader>cfg` Fast editing of .vimrc.
-- `<Leader>L` Enable/Disable list.
-- `<Leader>/` Turn off search highlighting.
-- `<Leader><Leader>w` Vertically split window and select it.
-- `<Leader>al` Quick aligning to left
-- `<Leader>ar` Quick aligning to right
-- `<Leader>ac` Quick aligning to center
-- `<Leader>ss` Toggle Spell checking
-- `<Leader>sn` Spell checking (Next word)
-- `<Leader>sp` Spell checking (Previews word)
-- `<Leader>s?` Spell checking (Show list)
-- `<spacebar>` spacebar create/open/close folding.
-- `jj`|`<Leader>e` Map escape key to jj.
-- `Y` Yank from cursor to end of line (same as `y$`).
+- ` ,           ` keyleader.
+- ` <Leader>cl  ` Calculate the value in one line.
+- ` <Leader>cd  ` Switch to the directory of the open buffer
+- ` <Leader>cfg ` Fast editing of .vimrc.
+- ` <Leader>L   ` Enable/Disable list.
+- ` <Leader>/   ` Turn off search highlighting.
+- ` <Leader>w   ` Vertically split window and select it.
+- ` <Leader>W   ` Back to normal view.
+- ` <Leader>al  ` Quick aligning to left
+- ` <Leader>ar  ` Quick aligning to right
+- ` <Leader>ac  ` Quick aligning to center
+- ` <Leader>ss  ` Toggle Spell checking
+- ` <Leader>sn  ` Spell checking (Next word)
+- ` <Leader>sp  ` Spell checking (Previews word)
+- ` <Leader>s?  ` Spell checking (Show list)
+- ` <Leader>tw  ` Set text wrapping toggles
+- ` <spacebar>  ` spacebar create/open/close folding.
+- ` <C-TAB>     ` Move to next buffer
+- ` <S-C-TAB>   ` Move to previews buffer
+- ` <TAB>       ` Indent a line
+- ` <S-TAB>     ` Back-Indent a line
+- ` jj          ` Map escape key to jj.
 
 ### Plugins
 
--   `<Leader>b`  buffergator
--   `<Leader>ca` calendar
--   `<Leader>pm` CtrlPMRU
--   `<Leader>pb` CtrlPBuffer
--   `<Leader>u`  Gundo
--   `<Leader>p`  Markdown-Preview
--   `<Leader>nt` NERDTree
--   `<Leader>T`  Tagbar
--   `<Leader>s`  Scratch
+- ` <Leader>b  ` buffergator
+- ` <Leader>ca ` calendar
+- ` <Leader>pm ` CtrlPMRU
+- ` <Leader>pb ` CtrlPBuffer
+- ` <Leader>u  ` Gundo
+- ` <Leader>p  ` Markdown-Preview
+- ` <Leader>nt ` NERDTree
+- ` <Leader>T  ` Tagbar
+- ` <Leader>s  ` Scratch
 
 ## Commands
 
-- `:W` Sudo write!
+- `:w!` Sudo write!
 
 ## Plug-Ins
 
