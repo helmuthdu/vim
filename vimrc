@@ -684,64 +684,64 @@
   "}}}
 "}}}
 " AUTOCOMMANDS {{{
-if has("autocmd")
-  " augroup filetypesettings {{{
-    augroup filetypesettings
-      autocmd!
-      au FileType c,cpp,h,java        setlocal formatoptions=croql cindent nowrap
-      au FileType debchangelog        setlocal expandtab spell spelllang=en
-      au FileType mail                setlocal formatoptions=ltcrqna
-      au FileType txt                 setlocal formatoptions=ltcrqno2
-      au FileType asciidoc,mkd,tex    setlocal wrap
-      au filetype html,xml            setlocal shiftwidth=2 tabstop=2 filetype=htmlm4
-      au FileType ruby                setlocal shiftwidth=2
-      au FileType help                setlocal nolist textwidth=0
-      au FileType org                 setlocal foldminlines=0 foldlevel=1
-      au FileType python              setlocal expandtab shiftwidth=4 softtabstop=4
-      au filetype css,sass,scss,less  setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  if has("autocmd")
+    " augroup filetypesettings {{{
+      augroup filetypesettings
+        autocmd!
+        au FileType c,cpp,h,java        setlocal formatoptions=croql cindent nowrap
+        au FileType debchangelog        setlocal expandtab spell spelllang=en
+        au FileType mail                setlocal formatoptions=ltcrqna
+        au FileType txt                 setlocal formatoptions=ltcrqno2
+        au FileType asciidoc,mkd,tex    setlocal wrap
+        au filetype html,xml            setlocal shiftwidth=2 tabstop=2 filetype=htmlm4
+        au FileType ruby                setlocal shiftwidth=2
+        au FileType help                setlocal nolist textwidth=0
+        au FileType org                 setlocal foldminlines=0 foldlevel=1
+        au FileType python              setlocal expandtab shiftwidth=4 softtabstop=4
+        au filetype css,sass,scss,less  setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-      " when enabling diff for a buffer it should be disabled when the
-      " buffer is not visible anymore
-      au BufHidden * if &diff == 1 | diffoff | setlocal nowrap | endif
+        " when enabling diff for a buffer it should be disabled when the
+        " buffer is not visible anymore
+        au BufHidden * if &diff == 1 | diffoff | setlocal nowrap | endif
 
-      " Special handling of Makefiles
-      au FileType automake,make setlocal list noexpandtab
+        " Special handling of Makefiles
+        au FileType automake,make setlocal list noexpandtab
 
-      " insert a prompt for every changed file in the commit message
-      "au FileType svn :1![ -f "%" ] && awk '/^[MDA]/ { print $2 ":\n - " }' %
-    augroup END
-  "}}}
-  " Mark as error two identical words separated by space {{{
-    syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
-  "}}}
-  " Automatically removing all trailing whitespace {{{
-    autocmd BufWritePre * :%s/\s\+$//e
-  "}}}
-  " Jump to the last position when reopening a file {{{
-    augroup JumpCursorOnEdit
-      au!
-      autocmd BufReadPost *
-            \ if expand("<afile>:p:h") !=? $TEMP |
-            \ if line("'\"") > 1 && line("'\"") <= line("$") |
-            \ let JumpCursorOnEdit_foo = line("'\"") |
-            \ let b:doopenfold = 1 |
-            \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-            \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-            \ let b:doopenfold = 2 |
-            \ endif |
-            \ exe JumpCursorOnEdit_foo |
-            \ endif |
-            \ endif
-      " Need to postpone using "zv" until after reading the modelines.
-      autocmd BufWinEnter *
-            \ if exists("b:doopenfold") |
-            \ exe "normal zv" |
-            \ if(b:doopenfold > 1) |
-            \ exe "+".1 |
-            \ endif |
-            \ unlet b:doopenfold |
-            \ endif
-    augroup END
-  "}}}
-endif
+        " insert a prompt for every changed file in the commit message
+        "au FileType svn :1![ -f "%" ] && awk '/^[MDA]/ { print $2 ":\n - " }' %
+      augroup END
+    "}}}
+    " Mark as error two identical words separated by space {{{
+      syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
+    "}}}
+    " Automatically removing all trailing whitespace {{{
+      autocmd BufWritePre * :%s/\s\+$//e
+    "}}}
+    " Jump to the last position when reopening a file {{{
+      augroup JumpCursorOnEdit
+        au!
+        autocmd BufReadPost *
+              \ if expand("<afile>:p:h") !=? $TEMP |
+              \ if line("'\"") > 1 && line("'\"") <= line("$") |
+              \ let JumpCursorOnEdit_foo = line("'\"") |
+              \ let b:doopenfold = 1 |
+              \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
+              \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
+              \ let b:doopenfold = 2 |
+              \ endif |
+              \ exe JumpCursorOnEdit_foo |
+              \ endif |
+              \ endif
+        " Need to postpone using "zv" until after reading the modelines.
+        autocmd BufWinEnter *
+              \ if exists("b:doopenfold") |
+              \ exe "normal zv" |
+              \ if(b:doopenfold > 1) |
+              \ exe "+".1 |
+              \ endif |
+              \ unlet b:doopenfold |
+              \ endif
+      augroup END
+    "}}}
+  endif
 "}}}
