@@ -31,7 +31,6 @@
     else
       set clipboard=unnamed            " one mac and windows, use * register for copy-paste
     endif
-    set clipboard=unnamed              " use global clipboard
     set backspace=2                    " make backspace work normal
     set nostartofline                  " don't jump to first character when paging
     set report=0                       " tell us when anything is changed via :...0
@@ -85,7 +84,6 @@
     filetype plugin indent on    " automatically load filetypeplugins
   "}}}
   " Editor Settings {{{
-    set shortmess=at         " abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
     set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
     set equalalways          " Close a split window in Vim without resizing other windows
