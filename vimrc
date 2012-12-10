@@ -1,5 +1,5 @@
-" GLOBAL {{{
-  " Select OS {{{
+" GLOBAL
+  " Select OS
     if has("win32") || has("win32unix")
       let g:OS#name = "win"
       let g:OS#win = 1
@@ -21,8 +21,7 @@
     else
       let g:OS#gui = 0
     endif
-  "}}}
-  " General {{{
+  " General
     set nocompatible                   " explicitly get out of vi-compatible mode
     set title                          " change the terminal's title
     set history=300                    " keep 100 lines of command line history
@@ -46,44 +45,36 @@
     set gdefault                       " regex /g by default
     set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
     set viminfo='20,\"80               " read/write a .viminfo file, don't store more
-    " vertical/horizontal scroll off settings "{{{
-      set scrolloff=3
-      set sidescrolloff=7
-      set sidescroll=1
-    "}}}
-    " When vimrc is edited, reload it "{{{
-      autocmd! bufwritepost .vimrc source %
-    "}}}
-    " Suffixes that get lower priority when doing tab completion for filenames "{{{
+    " vertical/horizontal scroll off settings
+    set scrolloff=3
+    set sidescrolloff=7
+    set sidescroll=1
+    " When vimrc is edited, reload it
+    autocmd! bufwritepost .vimrc source %
+    " Suffixes that get lower priority when doing tab completion for filenames
     " These are files we are not likely to want to edit or read.
-      set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
-    "}}}
-    " No bell or flash wanted "{{{
-      set novisualbell " No blinking
-      set noerrorbells " No noise.
-      set vb t_vb=     " disable any beeps or flashes on error
-    "}}}
-    " Enable mouse "{{{
-      if has("mouse")
-        set mouse=a
-        set mousemodel=popup
-        set mousehide
-      endif
-    "}}}
-    " Multiplatform compatibility "{{{
-      if g:OS#win
-        " Make windows use ~/.vim too, I don't want to use _vimfiles
-        set runtimepath^=~/.vim
-      endif
-    " }}}
-  "}}}
-  " Plugins Manager {{{
+    set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
+    " No bell or flash wanted
+    set novisualbell " No blinking
+    set noerrorbells " No noise.
+    set vb t_vb=     " disable any beeps or flashes on error
+    " Enable mouse
+    if has("mouse")
+      set mouse=a
+      set mousemodel=popup
+      set mousehide
+    endif
+    " Multiplatform compatibility
+    if g:OS#win
+      " Make windows use ~/.vim too, I don't want to use _vimfiles
+      set runtimepath^=~/.vim
+    endif
+  " Plugins Manager
     " To disable a plugin, add it's bundle name to the following list
     filetype off                 " deactivate filetype auto detection before loading bundles to force a reload
     call pathogen#runtime_append_all_bundles()
     filetype plugin indent on    " automatically load filetypeplugins
-  "}}}
-  " Editor Settings {{{
+  " Editor Settings
     set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
     set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
     set equalalways          " Close a split window in Vim without resizing other windows
@@ -97,42 +88,35 @@
     set encoding=utf-8
     set fileencodings=utf-8
     set completeopt=menu,preview,longest
-    " wildmode {{{
-      set wildmenu           " nice tab-completion on the command line
-      set wildchar=9         " tab as completion character
-      set wildmode=longest:full,list:full
-      set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.app,*/.git/*,*/.hg/*,*/.svn/*
-    "}}}
-    " chars to show for list {{{
-      set listchars=tab:→\ ,eol:·
-      set listchars+=extends:»,precedes:«
-    "}}}
-  "}}}
-  " Appearance Settings {{{
-    " switch syntax highlighting on, when the terminal has colors {{{
+    " wildmode
+    set wildmenu           " nice tab-completion on the command line
+    set wildchar=9         " tab as completion character
+    set wildmode=longest:full,list:full
+    set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.app,*/.git/*,*/.hg/*,*/.svn/*
+    " chars to show for list
+    set listchars=tab:→\ ,eol:·
+    set listchars+=extends:»,precedes:«
+  " Appearance Settings
+    " switch syntax highlighting on, when the terminal has colors
       if &t_Co > 2 || g:OS#gui
         syntax on
       endif
-    "}}}
-    " default colorscheme {{{
+    " default colorscheme
       if &t_Co >= 256 || g:OS#gui
         set t_Co=256
         set background=dark
-        "colorscheme molokai
-        colorscheme badwolf
-        "colorscheme hickop
-        "let g:lucius_style = "dark_dim"
-        "colorscheme lucius
+        "colorscheme badwolf
+        colorscheme gruvbox
+        "colorscheme harlequin
         "colorscheme solarized
       else
         set t_Co=8
         set t_Sf=^[[3%p1%dm
         set t_Sb=^[[4%p1%dm
       endif
-    "}}}
-    " GUI options {{{
+    " GUI options
       if g:OS#gui
-        " guioptions "{{{
+        " guioptions
         " m = Menubar
         " T = Toolbar
         " t = tearoff menus
@@ -149,61 +133,51 @@
         " L = show left scrollbar on split
         " i = icon
         set guioptions=ac
-        "}}}
-        " Linux "{{{
+        " Linux
         if g:OS#unix
           set guioptions-=m
           nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
           set gfn=DejaVu\ Sans\ Mono\ 9
         endif
-        "}}}
-        " Mac "{{{
+        " Mac
         if g:OS#mac
           set guifont=Menlo:h11
         endif
-        "}}}
-        set lines=999 columns=999
-      else
         set lines=50 columns=88
       endif
-    "}}}
-  "}}}
-  " Language Settings {{{
+  " Language Settings
     highlight SpellBad term=underline gui=undercurl guisp=Orange
     " the following line makes vim ignore camelCase and CamelCase words
     " so they are not highlighted as spelling mistakes
     au Syntax * syn match CamelCase "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l\l*\)\%(\u\l*\)\{1,}\>" transparent containedin=.*Comment.*,.*String.*,VimwikiLink contains=@NoSpell contained
-  "}}}
-  " Files, backups and undo {{{
+  " Files, backups and undo
   " Turn backup off, since most stuff are in git anyway...
     set nobackup
     set nowb
     set noswapfile
-    " enable persistent undo {{{
-      if has('persistent_undo')
-        set undodir=$HOME/.vim/.undofile
-        set undofile
-        set undolevels=100   "maximum number of changes that can be undone
-        set undoreload=10000 "maximum number lines to save for undo on a buffer reload
-        if ! isdirectory(&undodir)
-          call mkdir(&undodir, 'p')
-        endif
+    " enable persistent undo
+    if has('persistent_undo')
+      set undodir=$HOME/.vim/.undofile
+      set undofile
+      set undolevels=100   "maximum number of changes that can be undone
+      set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+      if ! isdirectory(&undodir)
+        call mkdir(&undodir, 'p')
       endif
-    "}}}
-  "}}}
-  " Text, tab and indent related {{{
-    set shiftwidth=2 " number of spaces for autoindentation
-    set tabstop=2
-    set smarttab     " insert spaces only at the beginning of the line
-    set smartindent  " always set smartindenting on
-    set autoindent   " always set autoindenting on
-    set expandtab    " use space when <tab> is pressed
-    " Highlight problematic whitespace (spaces before tabs) {{{
-      hi RedundantSpaces ctermfg=214 ctermbg=160 cterm=bold
-      match RedundantSpaces / \+\ze\t/
-    " }}}
-  "}}}
-  " Wrap {{{
+    endif
+  " Text, tab and indent related
+    set shiftwidth=2  " Number of spaces to use in each autoindent step
+    set tabstop=2     " Two tab spaces
+    set softtabstop=2 " Number of spaces to skip or insert when <BS>ing or <Tab>ing
+    set expandtab     " Spaces instead of tabs for better cross-editor compatibility
+    set autoindent    " Keep the indent when creating a new line
+    set smarttab      " Use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
+    set cindent       " Recommended seting for automatic C-style indentation
+    set autoindent    " Automatic indentation in non-C files
+    " Highlight problematic whitespace (spaces before tabs)
+    hi RedundantSpaces ctermfg=214 ctermbg=160 cterm=bold
+    match RedundantSpaces / \+\ze\t/
+  " Wrap
     set nowrap                   " word wrap
     set wrapscan                 " Searches wrap around end of file
     set display=lastline         " don't display @ with long paragraphs
@@ -211,8 +185,7 @@
     let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
     set textwidth=79
     set formatoptions=tcqor	     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
-  "}}}
-  " Search config {{{
+  " Search config
     set ignorecase      " select case-insenitiv search
     set smartcase       " No ignorecase if Uppercase chars in search
     set magic           " change the way backslashes are used in search patterns
@@ -222,17 +195,15 @@
     set hlsearch        " highlight all matches...
     set incsearch       " ...and also during entering the pattern
     nohlsearch          " avoid highlighting when reloading vimrc
-  "}}}
-  " Folding {{{
-    set foldenable            " enable folding
+  " Folding
+    set foldenable          " enable folding
     set foldcolumn=2          " add a fold column
     set foldmethod=marker     " detect triple-{ style fold markers
-    set foldlevelstart=0      " start out with everything folded
+    set foldlevel=1           " start out with everything folded
+    set foldnestmax=10        "deepest fold is 10 levels
     set foldtext=MyFoldText() " Which command trigger auto-unfold
     set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-  "}}}
-"}}}
-" KEYMAPPINGS {{{
+" KEYMAPPINGS
   " Set mapleader
   let mapleader=","
   let g:mapleader=","
@@ -271,11 +242,6 @@
   " move between buffers
   nmap <C-S-TAB> :bprev<CR>
   nmap <C-TAB> :bnext<CR>
-  " Moving Between Windows
-  nmap <Leader>h <C-w>h
-  nmap <Leader>l <C-w>l
-  nmap <Leader>j <C-w>j
-  nmap <Leader>k <C-w>k
   " switch to the directory of the open buffer
   map <leader>cd :cd %:p:h<cr>
   " copy/cut/paste
@@ -291,8 +257,7 @@
   nmap <leader>2 yyPVr-jyypVr-
   nmap <leader>3 yypVr=
   nmap <leader>4 yypVr-
-"}}}
-" PLUGINS BUNDLE {{{
+" PLUGINS BUNDLE
   " Automatically install vundle if not installed
   let iCanHazVundle=1
   let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -312,7 +277,7 @@
     let g:bundle_groups=['general', 'programming', 'php', 'javascript', 'html', 'markdown', 'colorscheme']
   endif
   " Bundles here:
-  " General {{{
+  " GENERAL
     if count(g:bundle_groups, 'general')
       Bundle 'buftabs'
       "Bundle 'gregsexton/VimCalc'
@@ -323,23 +288,23 @@
       Bundle 'Lokaltog/vim-powerline'
       Bundle 'scrooloose/nerdtree'
       Bundle 'jistr/vim-nerdtree-tabs'
-      "Bundle 'sjl/gundo.vim'
       "Bundle 'YankRing.vim'
+      Bundle 'mbbill/undotree'
       Bundle 'godlygeek/csapprox'
       Bundle 'matchit.zip'
+      Bundle 'spolu/dwm.vim'
       if executable('ack')
         Bundle 'mileszs/ack.vim'
       endif
     endif
-  "}}}
-  " Programming {{{
+  " PROGRAMMING
     if count(g:bundle_groups, 'programming')
-      " Snipmate "{{{
+      " Snipmate {
       "Bundle 'garbas/vim-snipmate'
       "Bundle 'tomtom/tlib_vim'
       "Bundle 'MarcWeber/vim-addon-mw-utils'
       Bundle 'honza/snipmate-snippets'
-      "}}}
+      "}
       Bundle 'godlygeek/tabular'
       Bundle 'jiangmiao/auto-pairs'
       Bundle 'scrooloose/nerdcommenter'
@@ -349,69 +314,62 @@
       Bundle 'tpope/vim-fugitive'
       Bundle 'tpope/vim-surround'
       Bundle 'xolox/vim-easytags'
+      Bundle 'nathanaelkane/vim-indent-guides'
+      Bundle 'kien/rainbow_parentheses.vim'
       if executable('ctags')
         Bundle 'majutsushi/tagbar'
       endif
     endif
-  "}}}
-  " PHP {{{
+  " PHP
     if count(g:bundle_groups, 'php')
       Bundle 'paulyg/Vim-PHP-Stuff'
     endif
-  "}}}
-  " Javascript {{{
+  " JAVASCRIPT
     if count(g:bundle_groups, 'javascript')
       Bundle 'leshill/vim-json'
       Bundle 'groenewege/vim-less'
       Bundle 'taxilian/vim-web-indent'
+      Bundle 'einars/js-beautify'
     endif
-  "}}}
-  " HTML {{{
+  " HTML
     if count(g:bundle_groups, 'html')
       Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
     endif
-  "}}}
-  " Markdown {{{
+  " MARKDOWN
     if count(g:bundle_groups, 'markdown')
       Bundle 'mkitt/markdown-preview.vim'
       Bundle 'tpope/vim-markdown'
     endif
-  "}}}
-  " colorscheme {{{
+  " COLORSCHEME
     if count(g:bundle_groups, 'colorscheme')
       Bundle 'altercation/vim-colors-solarized'
-      Bundle 'jelera/vim-gummybears-colorscheme'
       Bundle 'sjl/badwolf'
-      Bundle 'tomasr/molokai'
+      Bundle 'morhetz/gruvbox'
+      Bundle 'nielsmadan/harlequin'
     endif
-  "}}}
   if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :BundleInstall
   endif
-"}}}
-" PLUGINS CONFIG {{{
-  " buftabs {{{
+" PLUGINS CONFIG
+  " buftabs
     let g:buftabs_active_highlight_group="WarningMsg"
     let g:buftabs_inactive_highlight_group="Visual"
     let g:buftabs_only_basename=1
-  "}}}
-  " buftergator {{{
+  " buftergator
     let g:buffergator_autoexpand_on_split=0
     let g:buffergator_viewport_split_policy="R"
     let g:buffergator_suppress_keymaps=1
     nmap <leader>b :BuffergatorToggle<CR>
-  "}}}
-  " calendar {{{
+  " calendar
     "map <leader>ca :Calendar<CR>
     "let g:calendar_list = [
     "\   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
     "\   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
     "\ ]
     "let g:calendar_current_idx = 1
-  "}}}
-  " ctrlp {{{
+  " ctrlp
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
     let g:ctrlp_working_path_mode = 'ra'
@@ -428,38 +386,32 @@
           \ 'file': '\.exe$\|\.so$\|\.dll$',
           \ 'link': 'some_bad_symbolic_links',
           \ }
-  "}}}
-  " easymotion {{{
-    let g:EasyMotion_leader_key = '<Leader>m'
+  " easymotion
+    let g:EasyMotion_leader_key = '<Leader>e'
     hi link EasyMotionTarget ErrorMsg
     hi link EasyMotionShade  Comment
-  "}}}
-  " easytags {{{
+  " easytags
     if g:OS#mac
       let g:easytags_cmd = '/usr/local/bin/ctags'
     end
     let g:easytags_file = $HOME.'/.vim/.tags'
     set tags=./.tags;
     let g:easytags_dynamic_files = 1
-  "}}}
-  " fugitive {{{
+  " fugitive
     nmap <silent> <leader>gs :Gstatus<CR>
     nmap <silent> <leader>gd :Gdiff<CR>
     nmap <silent> <leader>gc :Gcommit<CR>
     nmap <silent> <leader>gb :Gblame<CR>
     nmap <silent> <leader>gl :Glog<CR>
     nmap <silent> <leader>gp :Git push<CR>
-  "}}}
-  " gundo {{{
-    "nmap <leader>u :GundoToggle<CR>
-    "let g:gundo_width = 50
-    "let g:gundo_right = 1
-  "}}}
-  " markdown preview {{{
+  " indentguide
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_color_change_percent = 3
+    let g:indent_guides_auto_colors=1
+  " markdown preview
     nmap <silent><leader>p :MDP<CR>
     let g:MarkdownPreviewTMP = $HOME.'/Sites/'
-  "}}}
-  " NERDTree {{{
+  " NERDTree
     nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
     let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
     let g:NERDTreeShowBookmarks = 1
@@ -476,8 +428,7 @@
 
     let g:nerdtree_tabs_open_on_gui_startup=0
     let g:nerdtree_tabs_open_on_console_startup=0
-  "}}}
-  " neocomplcache {{{
+  " neocomplcache
     let g:neocomplcache_enable_at_startup = 1
     let g:neocomplcache_enable_auto_select = 0
     let g:neocomplcache_enable_camel_case_completion = 1
@@ -529,14 +480,21 @@
     let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
     let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-  "}}}
-  " powerline {{{
+  " powerline
     if &t_Co >= 256 || g:OS#gui
       let g:Powerline_symbols = 'fancy'
       "let g:Powerline_cache_file = ""
     endif
-  "}}}
-  " tabularize {{{
+  " rainbow parentheses
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+  " syntastic
+    let g:syntastic_enable_signs=1
+    let g:syntastic_auto_loc_list=2
+    let g:syntastic_auto_jump=0
+  " tabularize
     if exists(":Tabularize")
       vmap <Leader>t=  :Tabularize /=<CR>
       vmap <Leader>t3  :Tabularize /#<CR>
@@ -546,8 +504,7 @@
       vmap <Leader>t== :Tabularize /=/r1c1l0<CR>
       vmap <Leader>t:  :Tabularize /:\zs<CR>
     endif
-  "}}}
-  " tagbar {{{
+  " tagbar
     if g:OS#mac
       "how to install ctag mac https://weblion.psu.edu/trac/weblion/wiki/MacVim
       let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
@@ -558,131 +515,122 @@
     let g:tagbar_compact = 1
     let g:tagbar_expand = 0
     nmap <silent><leader>T :TagbarToggle<CR>
-  "}}}
-  " syntastic {{{
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=2
-    let g:syntastic_auto_jump=0
-  "}}}
-  " yankring {{{
+  " undotree
+    nmap <leader>u :UndotreeToggle<CR>
+  " yankring
     "nmap <silent><Leader>yr :YRShow<cr>
     "let g:yankring_replace_n_pkey = '<m-p>'
     "let g:yankring_replace_n_nkey = '<m-n>'
     "let g:yankring_ignore_operator = 'g~ gu gU ! = gq g? > < zf g@'
     "let g:yankring_history_file = '/.vim/.yankring_history'
-  "}}}
-"}}}
-" FUNCTIONS {{{
-  "function! ToggleSpell() {{{
-    function! ToggleSpell()
-      if &spell
-        if &spelllang == "pt"
-          set spelllang=pt,en
-          echo "toggle spell" &spelllang
-        elseif &spelllang == "pt,en"
-          set spelllang=en
-          echo "toggle spell" &spelllang
-        else
-          set spell!
-          echo "toggle spell off"
-        endif
+" FUNCTIONS
+  function! ToggleSpell()
+    if &spell
+      if &spelllang == "pt"
+        set spelllang=pt,en
+        echo "toggle spell" &spelllang
+      elseif &spelllang == "pt,en"
+        set spelllang=en
+        echo "toggle spell" &spelllang
       else
-        set spelllang=pt
         set spell!
-        echo "toogle spell" &spelllang
+        echo "toggle spell off"
       endif
-    endfunction
-    " Toggle Spellcheck
-    nmap <silent><Leader>ss :call ToggleSpell()<CR>
-  "}}}
-  "function! ScreenMovement {{{
-    function! ScreenMovement(movement)
+    else
+      set spelllang=pt
+      set spell!
+      echo "toogle spell" &spelllang
+    endif
+  endfunction
+  " Toggle Spellcheck
+  nmap <silent><Leader>ss :call ToggleSpell()<CR>
+
+  function! ScreenMovement(movement)
       if &wrap
         return "g" . a:movement
       else
         return a:movement
       endif
-    endfunction
-    omap <silent> <expr> j ScreenMovement("j")
-    omap <silent> <expr> k ScreenMovement("k")
-    omap <silent> <expr> 0 ScreenMovement("0")
-    omap <silent> <expr> ^ ScreenMovement("^")
-    omap <silent> <expr> $ ScreenMovement("$")
-    nmap <silent> <expr> j ScreenMovement("j")
-    nmap <silent> <expr> k ScreenMovement("k")
-    nmap <silent> <expr> 0 ScreenMovement("0")
-    nmap <silent> <expr> ^ ScreenMovement("^")
-    nmap <silent> <expr> $ ScreenMovement("$")
-  "}}}
-  "function! Replace {{{
-    " Tip #382: Search for <cword> and replace with input() in all open buffers
-    fun! Replace()
-      let s:word = input("Replace " . expand('<cword>') . " with:")
-      :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
-      :unlet! s:word
-    endfun
-    vmap <C-h> :call Replace()<CR>
-  "}}}
-  "function! TwiddleCase(str) {{{
-  "press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
-    function! TwiddleCase(str)
-      if a:str ==# toupper(a:str)
-        let result = tolower(a:str)
-      elseif a:str ==# tolower(a:str)
-        let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
-      else
-        let result = toupper(a:str)
-      endif
-      return result
-    endfunction
-    vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
-  "}}}
-  "function! FullScreenEditor {{{
-    function! FullScreenEditor()
-      only
-      vsplit
-      split
-    endfunction
-    function! DefaultEditor()
-      only
-    endfunction
-    " Vertically split window and select it
-    nmap <Leader>w :call FullScreenEditor()<CR>
-    nmap <Leader>W :call DefaultEditor()<CR>
-  "}}}
-  "function! LastModified() {{{
-    function! LastModified()
-      if &modified
-        let save_cursor = getpos(".")
-        let n = min([20, line("$")])
-        exe '1,' . n . 's#^\(.\{,10}Last Change:\).*#\1'
-              \ strftime("%a %d/%b/%Y hs %H:%M") . '#e'
-        call setpos('.', save_cursor)
-      endif
-    endfun
-    autocmd BufWritePre * call LastModified()
-  "}}}
-  "function! MyFoldText() {{{
-    function! MyFoldText()
-      let line = getline(v:foldstart)
+  endfunction
+  omap <silent> <expr> j ScreenMovement("j")
+  omap <silent> <expr> k ScreenMovement("k")
+  omap <silent> <expr> 0 ScreenMovement("0")
+  omap <silent> <expr> ^ ScreenMovement("^")
+  omap <silent> <expr> $ ScreenMovement("$")
+  nmap <silent> <expr> j ScreenMovement("j")
+  nmap <silent> <expr> k ScreenMovement("k")
+  nmap <silent> <expr> 0 ScreenMovement("0")
+  nmap <silent> <expr> ^ ScreenMovement("^")
+  nmap <silent> <expr> $ ScreenMovement("$")
 
-      let nucolwidth = &fdc + &number * &numberwidth
-      let windowwidth = winwidth(0) - nucolwidth - 3
-      let foldedlinecount = v:foldend - v:foldstart
+  " Tip #382: Search for <cword> and replace with input() in all open buffers
+  fun! Replace()
+    let s:word = input("Replace " . expand('<cword>') . " with:")
+    :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+    :unlet! s:word
+  endfun
+  vmap <C-h> :call Replace()<CR>
 
-      " expand tabs into spaces
-      let onetab = strpart('          ', 0, &tabstop)
-      let line = substitute(line, '\t', onetab, 'g')
+  " press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
+  function! TwiddleCase(str)
+    if a:str ==# toupper(a:str)
+      let result = tolower(a:str)
+    elseif a:str ==# tolower(a:str)
+      let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+    else
+      let result = toupper(a:str)
+    endif
+    return result
+  endfunction
+  vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
-      let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-      let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-      return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
-    endfunction
-  "}}}
-"}}}
-" AUTOCOMMANDS {{{
+  function! FullScreenEditor()
+    if &lines < '51'
+      set lines=999 columns=999
+    else
+      set lines=50 columns=88
+    endif
+  endfunction
+  nmap <Leader>w :call FullScreenEditor()<CR>
+
+  function! LastModified()
+    if &modified
+      let save_cursor = getpos(".")
+      let n = min([20, line("$")])
+      exe '1,' . n . 's#^\(.\{,10}Last Change:\).*#\1'
+            \ strftime("%a %d/%b/%Y hs %H:%M") . '#e'
+      call setpos('.', save_cursor)
+    endif
+  endfun
+  autocmd BufWritePre * call LastModified()
+
+  function! MyFoldText()
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
+  endfunction
+
+  fun! ToggleFold()
+    if &foldmethod == 'marker'
+      exe 'set foldmethod=indent'
+    else
+      exe 'set foldmethod=marker'
+    endif
+  endfun
+  map <leader>ff :call ToggleFold()<cr>
+" AUTOCOMMANDS
   if has("autocmd")
-    " augroup filetypesettings {{{
+    " augroup filetypesettings
       augroup filetypesettings
         autocmd!
         au FileType c,cpp,h,java        setlocal formatoptions=croql cindent nowrap
@@ -707,38 +655,38 @@
         " insert a prompt for every changed file in the commit message
         "au FileType svn :1![ -f "%" ] && awk '/^[MDA]/ { print $2 ":\n - " }' %
       augroup END
-    "}}}
-    " Mark as error two identical words separated by space {{{
+    " Mark as error two identical words separated by space
       syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
-    "}}}
-    " Automatically removing all trailing whitespace {{{
+    " Automatically removing all trailing whitespace
       autocmd BufWritePre * :%s/\s\+$//e
-    "}}}
-    " Jump to the last position when reopening a file {{{
+    " Jump to the last position when reopening a file
       augroup JumpCursorOnEdit
         au!
         autocmd BufReadPost *
-              \ if expand("<afile>:p:h") !=? $TEMP |
-              \ if line("'\"") > 1 && line("'\"") <= line("$") |
-              \ let JumpCursorOnEdit_foo = line("'\"") |
-              \ let b:doopenfold = 1 |
-              \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-              \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-              \ let b:doopenfold = 2 |
-              \ endif |
-              \ exe JumpCursorOnEdit_foo |
-              \ endif |
-              \ endif
+          \ if expand("<afile>:p:h") !=? $TEMP |
+          \ if line("'\"") > 1 && line("'\"") <= line("$") |
+          \ let JumpCursorOnEdit_foo = line("'\"") |
+          \ let b:doopenfold = 1 |
+          \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
+          \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
+          \ let b:doopenfold = 2 |
+          \ endif |
+          \ exe JumpCursorOnEdit_foo |
+          \ endif |
+          \ endif
         " Need to postpone using "zv" until after reading the modelines.
         autocmd BufWinEnter *
-              \ if exists("b:doopenfold") |
-              \ exe "normal zv" |
-              \ if(b:doopenfold > 1) |
-              \ exe "+".1 |
-              \ endif |
-              \ unlet b:doopenfold |
-              \ endif
+          \ if exists("b:doopenfold") |
+          \ exe "normal zv" |
+          \ if(b:doopenfold > 1) |
+          \ exe "+".1 |
+          \ endif |
+          \ unlet b:doopenfold |
+          \ endif
       augroup END
-    "}}}
+    " Markdown files
+    autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} set ft=markdown
+
+    " Save on FocusLost
+    autocmd FocusLost * nested :silent! wall
   endif
-"}}}
