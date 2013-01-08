@@ -59,14 +59,17 @@ function! TwiddleCase(str)
 endfunction
 vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
-function! FullScreenEditor()
-  if &lines < '51'
-    set lines=999 columns=999
+function! DualView()
+  if &columns == '80'
+    set lines=50 columns=160
+    only
+    vsplit
   else
-    set lines=50 columns=88
+    set lines=50 columns=80
+    only
   endif
 endfunction
-nmap <Leader>w :call FullScreenEditor()<CR>
+nmap <Leader>d :call DualView()<CR>
 
 function! LastModified()
   if &modified

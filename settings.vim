@@ -112,7 +112,7 @@ if g:OS#gui
   colorscheme gruvbox
 elseif &t_Co >= 256
   set t_Co=256
-  colorscheme molokai
+  colorscheme badwolf
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm
@@ -132,7 +132,7 @@ if g:OS#gui
   if g:OS#mac
     set guifont=Menlo:h11
   endif
-  set lines=50 columns=88
+  set lines=50 columns=80
 endif
 
 " Language Settings
