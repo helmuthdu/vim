@@ -1,2 +1,0 @@
-/media/dados/helmuth/Downloads/Temporary/common_git_commands.txt
-/home/helmuth/Downloads/Temporary/common_git_commands.txt
