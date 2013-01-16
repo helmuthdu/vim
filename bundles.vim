@@ -26,7 +26,6 @@ if count(g:bundle_groups, 'general')
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'Lokaltog/vim-powerline'
   Bundle 'scrooloose/nerdtree'
   Bundle 'jistr/vim-nerdtree-tabs'
   "Bundle 'YankRing.vim'

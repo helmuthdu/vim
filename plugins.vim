@@ -131,6 +131,7 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " powerline
+source /usr/lib/python2.7/site-packages/powerline/ext/vim/source_plugin.vim
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
   "let g:Powerline_cache_file = ""
