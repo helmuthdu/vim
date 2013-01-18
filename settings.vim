@@ -107,7 +107,7 @@ if g:OS#gui
   endif
   " Mac
   if g:OS#mac
-    set guifont=Menlo\ for\ Powerline:h11
+    set guifont=Inconsolata\ for\ Powerline:h13
   endif
   set lines=50 columns=80
 endif

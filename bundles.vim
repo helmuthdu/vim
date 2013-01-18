@@ -33,6 +33,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'godlygeek/csapprox'
   Bundle 'matchit.zip'
   Bundle 'spolu/dwm.vim'
+  Bundle 'Lokaltog/powerline'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif

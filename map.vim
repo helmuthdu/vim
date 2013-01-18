@@ -27,6 +27,9 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+" easier formatting of paragraphs
+vmap Q gq
+nmap Q gqap
 " Use tab to indent a line
 vmap <TAB> >gv
 vmap <S-TAB> <gv

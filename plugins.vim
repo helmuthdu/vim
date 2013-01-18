@@ -131,10 +131,9 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " powerline
-python from powerline.ext.vim import source_plugin; source_plugin()
+source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
-  "let g:Powerline_cache_file = ""
 endif
 
 " rainbow parentheses
@@ -163,7 +162,7 @@ endif
 if g:OS#mac
   "how to install ctag mac https://weblion.psu.edu/trac/weblion/wiki/MacVim
   let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-end
+endif
 let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
