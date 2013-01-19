@@ -1,27 +1,4 @@
 " SETTINGS
-" Select OS
-if has("win32") || has("win32unix")
-  let g:OS#name = "win"
-  let g:OS#win = 1
-  let g:OS#mac = 0
-  let g:OS#unix = 0
-elseif has("mac")
-  let g:OS#name = "mac"
-  let g:OS#mac = 1
-  let g:OS#win = 0
-  let g:OS#unix = 0
-elseif has("unix")
-  let g:OS#name = "unix"
-  let g:OS#unix = 1
-  let g:OS#win = 0
-  let g:OS#mac = 0
-endif
-if has("gui_running")
-  let g:OS#gui = 1
-else
-  let g:OS#gui = 0
-endif
-
 " General
 set nocompatible                   " explicitly get out of vi-compatible mode
 set title                          " change the terminal's title
@@ -108,8 +85,8 @@ endif
 set background=dark
 if g:OS#gui
   set t_Co=256
-  "colorscheme badwolf
-  colorscheme gruvbox
+  colorscheme badwolf
+  "colorscheme gruvbox
 elseif &t_Co >= 256
   set t_Co=256
   colorscheme badwolf
@@ -130,7 +107,7 @@ if g:OS#gui
   endif
   " Mac
   if g:OS#mac
-    set guifont=Menlo for Powerline:h11
+    set guifont=Menlo\ for\ Powerline:h11
   endif
   set lines=50 columns=80
 endif
