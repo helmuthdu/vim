@@ -134,7 +134,7 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 if executable('powerline-prompt')
   python from powerline.bindings.vim import source_plugin; source_plugin()
 else
-  source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+  source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/powerline.vim
 endif
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
