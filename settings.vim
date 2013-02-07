@@ -48,8 +48,7 @@ if g:OS#win
 endif
 
 " Plugins Manager
-filetype off                 " deactivate filetype auto detection before loading bundles to force a reload
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 filetype plugin indent on    " automatically load filetypeplugins
 
 " Editor Settings
