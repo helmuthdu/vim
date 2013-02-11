@@ -131,11 +131,7 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " powerline
-if executable('powerline-prompt')
-  python from powerline.bindings.vim import source_plugin; source_plugin()
-else
-  source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/powerline.vim
-endif
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
 endif
@@ -147,9 +143,12 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " syntastic
-let g:syntastic_enable_signs=1
+let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_auto_jump=0
+let g:syntastic_enable_signs=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " tabularize
 if exists(":Tabularize")
