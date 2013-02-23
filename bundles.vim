@@ -20,44 +20,35 @@ endif
 " Bundles here:
 " GENERAL
 if count(g:bundle_groups, 'general')
-  Bundle 'buftabs'
   "Bundle 'gregsexton/VimCalc'
   "Bundle 'hotoo/calendar-vim'
-  Bundle 'jeetsukumaran/vim-buffergator'
-  Bundle 'kien/ctrlp.vim'
+  Bundle 'Lokaltog/powerline'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
   Bundle 'jistr/vim-nerdtree-tabs'
-  "Bundle 'YankRing.vim'
-  Bundle 'mbbill/undotree'
-  Bundle 'godlygeek/csapprox'
+  Bundle 'kien/ctrlp.vim'
   Bundle 'matchit.zip'
+  Bundle 'mbbill/undotree'
   Bundle 'spolu/dwm.vim'
-  Bundle 'Lokaltog/powerline'
+  Bundle 'Stormherz/tablify'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif
 endif
 " PROGRAMMING
 if count(g:bundle_groups, 'programming')
-  " Snipmate {
-  "Bundle 'garbas/vim-snipmate'
-  "Bundle 'tomtom/tlib_vim'
-  "Bundle 'MarcWeber/vim-addon-mw-utils'
-  Bundle 'honza/snipmate-snippets'
-  "}
-  Bundle 'godlygeek/tabular'
-  Bundle 'jiangmiao/auto-pairs'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'scrooloose/syntastic'
   Bundle 'Shougo/neocomplcache'
   Bundle 'Shougo/neosnippet'
+  Bundle 'Yggdroot/indentLine'
+  Bundle 'godlygeek/tabular'
+  Bundle 'honza/snipmate-snippets'
+  Bundle 'jiangmiao/auto-pairs'
+  Bundle 'kien/rainbow_parentheses.vim'
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
   Bundle 'xolox/vim-easytags'
-  "Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'Yggdroot/indentLine'
-  Bundle 'kien/rainbow_parentheses.vim'
   if executable('ctags')
     Bundle 'majutsushi/tagbar'
   endif
@@ -69,13 +60,13 @@ endif
 " JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
   Bundle 'leshill/vim-json'
-  Bundle 'groenewege/vim-less'
-  Bundle 'taxilian/vim-web-indent'
-  Bundle 'einars/js-beautify'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'othree/javascript-libraries-syntax.vim'
 endif
 " HTML
 if count(g:bundle_groups, 'html')
-  Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+  Bundle 'Arkham/vim-web-indent'
+  Bundle 'mattn/zencoding-vim'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
@@ -85,9 +76,10 @@ endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
   Bundle 'altercation/vim-colors-solarized'
-  Bundle 'sjl/badwolf'
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
+  Bundle 'sjl/badwolf'
+  Bundle 'zeis/vim-kolor'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"

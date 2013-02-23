@@ -52,7 +52,6 @@ execute pathogen#infect()
 filetype plugin indent on    " automatically load filetypeplugins
 
 " Editor Settings
-set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
 set equalalways          " Close a split window in Vim without resizing other windows
 set guitablabel=%t
@@ -64,7 +63,6 @@ set guicursor=a:blinkon0 " cursor-blinking off!!
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
 set encoding=utf-8
 set fileencodings=utf-8
-set completeopt=menu,preview,longest
 
 " wildmode
 set wildmenu           " nice tab-completion on the command line
@@ -84,8 +82,9 @@ endif
 set background=dark
 if g:OS#gui
   set t_Co=256
-  colorscheme badwolf
-  "colorscheme gruvbox
+  "colorscheme badwolf
+  "colorscheme kolor
+  colorscheme gruvbox
 elseif &t_Co >= 256
   set t_Co=256
   colorscheme badwolf

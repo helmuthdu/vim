@@ -1,15 +1,4 @@
 " PLUGINS CONFIG
-" buftabs
-let g:buftabs_active_highlight_group="WarningMsg"
-let g:buftabs_inactive_highlight_group="Visual"
-let g:buftabs_only_basename=1
-
-" buftergator
-let g:buffergator_autoexpand_on_split=0
-let g:buffergator_viewport_split_policy="R"
-let g:buffergator_suppress_keymaps=1
-nmap <leader>b :BuffergatorToggle<CR>
-
 " calendar
 "map <leader>ca :Calendar<CR>
 "let g:calendar_list = [
@@ -17,18 +6,17 @@ nmap <leader>b :BuffergatorToggle<CR>
 "\   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
 "\ ]
 "let g:calendar_current_idx = 1
-"
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
-let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_height = 15
-"let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_match_window_bottom = 0
 
-nmap <leader>pb :CtrlPBuffer<CR>
-nmap <leader>pm :CtrlPMRUFiles<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>m :CtrlPMRUFiles<CR>
 
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -58,12 +46,16 @@ nmap <silent> <leader>gl :Glog<CR>
 nmap <silent> <leader>gp :Git push<CR>
 
 " indentline
-" chars: ╎╏┆┇│┃
 let g:indentLine_char = '│'
 
 " markdown preview
 nmap <silent><leader>p :MDP<CR>
 let g:MarkdownPreviewTMP = $HOME.'/Sites/'
+
+" NERDcommenter
+let NERDSpaceDelims=1
+" map <Leader>/ <Plug>NERDCommenterToggle<CR>
+" vmap <Leader>/ <Plug>NERDCommenterToggle<CR>
 
 " NERDTree
 nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
@@ -84,16 +76,13 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_console_startup=0
 
 " neocomplcache
+set completeopt-=preview
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_auto_delimiter = 1
-let g:neocomplcache_max_list = 15
-let g:neocomplcache_auto_completion_start_length = 2
-let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
 let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
 " Plugin key-mappings.
@@ -121,14 +110,6 @@ au FileType python setlocal omnifunc=pythoncomplete#Complete
 au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 au FileType c set omnifunc=ccomplete#Complete
 au FileType java set omnifunc=javacomplete#Complete
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim

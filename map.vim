@@ -12,7 +12,7 @@ vmap <silent> <Space> zf
 " enable/disable list
 nmap <silent> <leader>L :set nolist!<CR>
 " ,/ turn off search highlighting
-nmap <leader>/ :nohl<CR>
+nnoremap <CR> :noh<CR><CR>/<BS>
 " Map escape key to jj or <Leader>e
 imap jj <esc>
 imap <Leader>e <esc>
