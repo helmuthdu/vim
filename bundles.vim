@@ -31,6 +31,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'mbbill/undotree'
   Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
+  Bundle 'hwrod/interactive-replace'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif
@@ -49,6 +50,7 @@ if count(g:bundle_groups, 'programming')
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
   Bundle 'xolox/vim-easytags'
+  Bundle 'SyntaxComplete'
   if executable('ctags')
     Bundle 'majutsushi/tagbar'
   endif
@@ -59,14 +61,15 @@ if count(g:bundle_groups, 'php')
 endif
 " JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
-  Bundle 'leshill/vim-json'
+  " Bundle 'leshill/vim-json'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'othree/javascript-libraries-syntax.vim'
 endif
-" HTML
+" HTML+CSS
 if count(g:bundle_groups, 'html')
   Bundle 'Arkham/vim-web-indent'
   Bundle 'mattn/zencoding-vim'
+  Bundle 'groenewege/vim-less'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')

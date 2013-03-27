@@ -12,10 +12,10 @@ vmap <silent> <Space> zf
 " enable/disable list
 nmap <silent> <leader>L :set nolist!<CR>
 " ,/ turn off search highlighting
-nnoremap <CR> :noh<CR><CR>/<BS>
+nmap <Leader>/ :noh<CR>
 " Map escape key to jj or <Leader>e
 imap jj <esc>
-imap <Leader>e <esc>
+imap <Leader>e <ESC>
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 " Quick alignment of text

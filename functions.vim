@@ -38,14 +38,6 @@ nmap <silent> <expr> 0 ScreenMovement("0")
 nmap <silent> <expr> ^ ScreenMovement("^")
 nmap <silent> <expr> $ ScreenMovement("$")
 
-" Tip #382: Search for <cword> and replace with input() in all open buffers
-fun! Replace()
-  let s:word = input("Replace " . expand('<cword>') . " with:")
-  :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
-  :unlet! s:word
-endfun
-vmap <C-h> :call Replace()<CR>
-
 " press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)

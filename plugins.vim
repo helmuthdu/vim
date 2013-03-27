@@ -48,6 +48,9 @@ nmap <silent> <leader>gp :Git push<CR>
 " indentline
 let g:indentLine_char = '│'
 
+" less
+nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 " markdown preview
 nmap <silent><leader>p :MDP<CR>
 let g:MarkdownPreviewTMP = $HOME.'/Sites/'
@@ -112,7 +115,12 @@ au FileType c set omnifunc=ccomplete#Complete
 au FileType java set omnifunc=javacomplete#Complete
 
 " powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+if g:OS#mac
+    set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+else
+    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+endif
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
 endif
