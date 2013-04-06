@@ -86,7 +86,6 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/snipmate-snippets/snippets/'
 let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
 " Plugin key-mappings.
 if g:OS#gui
