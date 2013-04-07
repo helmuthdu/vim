@@ -43,6 +43,7 @@ if count(g:bundle_groups, 'programming')
   Bundle 'Yggdroot/indentLine'
   Bundle 'godlygeek/tabular'
   Bundle 'hlissner/vim-multiedit'
+  Bundle 'honza/vim-snippets'
   Bundle 'jiangmiao/auto-pairs'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'scrooloose/nerdcommenter'

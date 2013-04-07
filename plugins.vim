@@ -61,6 +61,9 @@ let NERDSpaceDelims=1
 " vmap <Leader>/ <Plug>NERDCommenterToggle<CR>
 
 " NERDTree
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_console_startup=0
+
 nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
 let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
 let g:NERDTreeShowBookmarks = 1
@@ -75,9 +78,6 @@ let g:NERDTreeIgnore=[
       \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_console_startup=0
-
 " neocomplcache
 set completeopt-=preview
 let g:neocomplcache_enable_at_startup = 1
@@ -86,24 +86,33 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/vim-snippets/snippets/'
 let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
-" Plugin key-mappings.
-if g:OS#gui
-  imap <C-Space> <Plug>(neocomplcache_snippets_expand)
-  smap <C-Space> <Plug>(neocomplcache_snippets_expand)
-else
-  imap <C-@> <Plug>(neocomplcache_snippets_expand)
-  smap <C-@> <Plug>(neocomplcache_snippets_expand)
-endif
-" Recommended key-mappings.
-imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+let g:neosnippet#enable_snipmate_compatibility = 1
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
   let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" Plugin key-mappings.
+if g:OS#gui
+  imap <C-Space> <Plug>(neosnippet_expand_or_jump)
+  smap <C-Space> <Plug>(neosnippet_expand_or_jump)
+else
+  imap <C-@> <Plug>(neosnippet_expand_or_jump)
+  smap <C-@> <Plug>(neosnippet_expand_or_jump)
+endif
+" " SuperTab like snippets behavior.
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  " \ "\<Plug>(neosnippet_expand_or_jump)"
+  " \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  " \ "\<Plug>(neosnippet_expand_or_jump)"
+  " \: "\<TAB>"
+" Recommended key-mappings.
+imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 " Enable omni completion.
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
@@ -111,9 +120,12 @@ if has("autocmd") && exists("+omnifunc")
     \ setlocal omnifunc=syntaxcomplete#Complete |
     \ endif
 endif
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " powerline
-
 if g:OS#mac
   set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 else
