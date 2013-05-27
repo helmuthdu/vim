@@ -6,6 +6,7 @@ if has("autocmd")
     au BufEnter *.json setlocal ft=javascript
     au BufEnter *.py setlocal ts=4 sw=4 sts=4
     au BufEnter *.php setlocal ts=4 sw=4 sts=4
+    au BufEnter *.html setlocal ts=2 sw=2 sts=2
     au BufEnter *.tex setlocal wrap tw=79 fo=tcqor noet
     au BufEnter *.[ch] setlocal cindent
     au BufEnter *.[ch]pp setlocal cindent

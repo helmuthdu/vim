@@ -32,6 +32,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
   Bundle 'hwrod/interactive-replace'
+  Bundle 'bling/vim-bufferline'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif
@@ -50,9 +51,9 @@ if count(g:bundle_groups, 'programming')
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
-  Bundle 'xolox/vim-easytags'
   Bundle 'SyntaxComplete'
   if executable('ctags')
+    Bundle 'xolox/vim-easytags'
     Bundle 'majutsushi/tagbar'
   endif
 endif
