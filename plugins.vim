@@ -129,7 +129,6 @@ endif
 
 " powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-endif
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
 endif
