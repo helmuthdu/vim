@@ -1,2 +1,0 @@
-/Volumes/Documentos/Helmuth/Github/vim/plugins.vim
-/Volumes/Documentos/Helmuth/Github/vim/settings.vim
