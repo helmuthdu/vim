@@ -2,6 +2,11 @@
 " Set mapleader
 let mapleader=","
 let g:mapleader=","
+inoremap <C-U> <C-G>u<C-U>
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+" Make Y consistent with C and D. See :help Y.
+nnoremap Y y$
 " F2 = Paste Toggle
 set pastetoggle=<F2>
 " calculate the value in one line
@@ -45,11 +50,6 @@ if g:OS#unix
 endif
 " switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
-" copy/cut/paste
-vmap <Leader>d "+x
-vmap <Leader>y "+y
-imap <Leader>p <C-R>*
-cmap <Leader>p <C-R>+
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 " Creating underline/overline headings for markup languages

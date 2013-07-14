@@ -19,9 +19,12 @@ set gdefault                       " regex /g by default
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
 " vertical/horizontal scroll off settings
-set scrolloff=3
-set sidescrolloff=7
-set sidescroll=1
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
 " Suffixes that get lower priority when doing tab completion for filenames
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
 " No bell or flash wanted
@@ -49,7 +52,9 @@ endif
 
 " Plugins Manager
 execute pathogen#infect()
-filetype plugin indent on    " automatically load filetypeplugins
+if has('autocmd')
+  filetype plugin indent on    " automatically load filetypeplugins
+endif
 
 " Editor Settings
 set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
@@ -61,8 +66,9 @@ set cmdheight=1          " the command bar is 1 high
 set laststatus=2         " always show statusline
 set guicursor=a:blinkon0 " cursor-blinking off!!
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
-set encoding=utf-8
-set fileencodings=utf-8
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
 
 " wildmode
 set wildmenu           " nice tab-completion on the command line
@@ -76,7 +82,7 @@ set listchars=precedes:«,extends:»,trail:⠿,eol:·,tab:→\
 " Appearance Settings
 " switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || g:OS#gui
-  syntax on
+  syntax enable
 endif
 " default colorscheme
 set background=dark
