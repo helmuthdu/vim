@@ -74,6 +74,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" sexy scroller
+let g:SexyScroller_EasingStyle = 1
+
 " syntastic
 let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_loc_list=2
