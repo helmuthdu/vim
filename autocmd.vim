@@ -3,22 +3,20 @@ if has("autocmd")
   au BufEnter * execute ":lcd " . expand("%:p:h")
   augroup filetypedetect
     au BufEnter *.markdown,*.mkd,*.md setlocal wrap tw=79
-    au BufEnter *.json setlocal ft=javascript
-    au BufEnter *.py setlocal ts=4 sw=4 sts=4
-    au BufEnter *.php setlocal ts=4 sw=4 sts=4
-    au BufEnter *.html setlocal ts=2 sw=2 sts=2
-    au BufEnter *.tex setlocal wrap tw=79 fo=tcqor noet
-    au BufEnter *.[ch] setlocal cindent
-    au BufEnter *.[ch]pp setlocal cindent
-    au BufEnter Makefile setlocal ts=4 sts=4 sw=4 noet list
+    au BufEnter *.json setl ft=javascript
+    au BufEnter *.coffee setl sw=2
+    au BufEnter *.py setl ts=4 sw=4 sts=4
+    au BufEnter *.php setl ts=4 sw=4 sts=4
+    au BufEnter *.html setl ts=2 sw=2 sts=2
+    au BufEnter *.tex setl wrap tw=79 fo=tcqor noet
+    au BufEnter *.[ch] setl cindent
+    au BufEnter *.[ch]pp setl cindent
+    au BufEnter Makefile setl ts=4 sts=4 sw=4 noet list
   augroup END
 
   " when enabling diff for a buffer it should be disabled when the
   " buffer is not visible anymore
   au BufHidden * if &diff == 1 | diffoff | setlocal nowrap | endif
-
-  " Mark as error two identical words separated by space
-  syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
 
   " Automatically removing all trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e

@@ -10,10 +10,7 @@
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
-let g:ctrlp_max_height = 15
-let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_match_window_bottom = 0
 
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>m :CtrlPMRUFiles<CR>
@@ -28,16 +25,6 @@ let g:ctrlp_custom_ignore = {
 let g:EasyMotion_leader_key = '<Leader>e'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
-
-" easytags
-if g:OS#mac
-  let g:easytags_cmd = '/usr/local/bin/ctags'
-end
-let g:easytags_file = $HOME.'/.vim/.tags'
-set tags=./.tags;
-let g:easytags_events = ['BufWritePost']
-let g:easytags_dynamic_files = 2
-let g:easytags_python_enabled = 1
 
 " fugitive
 nmap <silent> <leader>gs :Gstatus<CR>
@@ -59,14 +46,9 @@ let g:MarkdownPreviewTMP = $HOME.'/Sites/'
 
 " NERDcommenter
 let NERDSpaceDelims=1
-" map <Leader>/ <Plug>NERDCommenterToggle<CR>
-" vmap <Leader>/ <Plug>NERDCommenterToggle<CR>
 
 " NERDTree
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_console_startup=0
-
-nmap <silent><Leader>nt :NERDTreeMirrorToggle<CR>
+nmap <silent><Leader>nt :NERDTreeToggle<CR>
 let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
@@ -80,55 +62,11 @@ let g:NERDTreeIgnore=[
       \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
-" neocomplcache
-set completeopt-=preview
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_auto_select = 0
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_snippets_dir = $HOME.'/.vim/bundle/vim-snippets/snippets/'
-let g:neocomplcache_temporary_dir = $HOME.'/.vim/.neocon'
-let g:neosnippet#enable_snipmate_compatibility = 1
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-if g:OS#gui
-  imap <C-Space> <Plug>(neosnippet_expand_or_jump)
-  smap <C-Space> <Plug>(neosnippet_expand_or_jump)
-else
-  imap <C-@> <Plug>(neosnippet_expand_or_jump)
-  smap <C-@> <Plug>(neosnippet_expand_or_jump)
-endif
-" " SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  " \ "\<Plug>(neosnippet_expand_or_jump)"
-  " \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  " \ "\<Plug>(neosnippet_expand_or_jump)"
-  " \: "\<TAB>"
-" Recommended key-mappings.
-imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-imap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" Enable omni completion.
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-    \ if &omnifunc == "" |
-    \ setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
-endif
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
 " powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let powerline_vim=expand('/usr/share/vim/vimfiles/plugin/powerline.vim')
+if !filereadable(powerline_vim)
+  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+endif
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
 endif
@@ -172,3 +110,16 @@ nmap <silent><leader>T :TagbarToggle<CR>
 
 " undotree
 nmap <leader>u :UndotreeToggle<CR>
+
+" ultisnips
+if g:OS#gui
+  let g:UltiSnipsExpandTrigger="<C-Space>"
+  let g:UltiSnipsJumpForwardTrigger="<C-Space>"
+else
+  let g:UltiSnipsExpandTrigger="<C-@>"
+  let g:UltiSnipsJumpForwardTrigger="<C-@>"
+endif
+
+" YouCompleteMe
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_add_preview_to_completeopt = 1

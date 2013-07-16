@@ -25,7 +25,6 @@ if count(g:bundle_groups, 'general')
   Bundle 'Lokaltog/powerline'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'jistr/vim-nerdtree-tabs'
   Bundle 'kien/ctrlp.vim'
   Bundle 'matchit.zip'
   Bundle 'mbbill/undotree'
@@ -34,18 +33,17 @@ if count(g:bundle_groups, 'general')
   Bundle 'hwrod/interactive-replace'
   Bundle 'bling/vim-bufferline'
   Bundle 'mhinz/vim-startify'
+  Bundle 'joeytwiddle/sexy_scroller.vim'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif
 endif
 " PROGRAMMING
 if count(g:bundle_groups, 'programming')
-  Bundle 'Shougo/neocomplcache'
-  Bundle 'Shougo/neosnippet'
+  Bundle 'Valloric/YouCompleteMe'
+  Bundle 'SirVer/ultisnips'
   Bundle 'Yggdroot/indentLine'
   Bundle 'godlygeek/tabular'
-  Bundle 'hlissner/vim-multiedit'
-  Bundle 'honza/vim-snippets'
   Bundle 'jiangmiao/auto-pairs'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'scrooloose/nerdcommenter'
@@ -54,8 +52,6 @@ if count(g:bundle_groups, 'programming')
   Bundle 'tpope/vim-surround'
   Bundle 'SyntaxComplete'
   if executable('ctags')
-    Bundle 'xolox/vim-misc'
-    Bundle 'xolox/vim-easytags'
     Bundle 'majutsushi/tagbar'
   endif
 endif
@@ -65,13 +61,11 @@ if count(g:bundle_groups, 'php')
 endif
 " JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
-  " Bundle 'leshill/vim-json'
   Bundle 'kchmck/vim-coffee-script'
-  Bundle 'othree/javascript-libraries-syntax.vim'
+  Bundle 'jelera/vim-javascript-syntax'
 endif
 " HTML+CSS
 if count(g:bundle_groups, 'html')
-  Bundle 'Arkham/vim-web-indent'
   Bundle 'mattn/zencoding-vim'
   Bundle 'groenewege/vim-less'
 endif
@@ -86,7 +80,6 @@ if count(g:bundle_groups, 'colorscheme')
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
-  Bundle 'zeis/vim-kolor'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
