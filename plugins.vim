@@ -63,10 +63,7 @@ let g:NERDTreeIgnore=[
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
 " powerline
-let powerline_vim=expand('/usr/share/vim/vimfiles/plugin/powerline.vim')
-if !filereadable(powerline_vim)
-  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-endif
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 if &t_Co >= 256 || g:OS#gui
   let g:Powerline_symbols = 'fancy'
 endif
