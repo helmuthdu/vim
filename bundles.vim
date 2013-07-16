@@ -26,7 +26,6 @@ if count(g:bundle_groups, 'general')
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'matchit.zip'
   Bundle 'mbbill/undotree'
   Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'

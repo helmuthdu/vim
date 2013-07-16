@@ -66,9 +66,7 @@ set cmdheight=1          " the command bar is 1 high
 set laststatus=2         " always show statusline
 set guicursor=a:blinkon0 " cursor-blinking off!!
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
+set encoding=utf-8
 
 " wildmode
 set wildmenu           " nice tab-completion on the command line
