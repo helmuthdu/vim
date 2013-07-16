@@ -75,7 +75,9 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " sexy scroller
-let g:SexyScroller_EasingStyle = 1
+if g:OS#unix
+  let g:SexyScroller_EasingStyle = 1
+endif
 
 " syntastic
 let g:syntastic_enable_balloons = 1
