@@ -44,7 +44,7 @@ if count(g:bundle_groups, 'programming')
   Bundle 'SirVer/ultisnips'
   Bundle 'Yggdroot/indentLine'
   Bundle 'godlygeek/tabular'
-  Bundle 'jiangmiao/auto-pairs'
+  Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'scrooloose/syntastic'
