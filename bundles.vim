@@ -22,7 +22,6 @@ endif
 if count(g:bundle_groups, 'general')
   "Bundle 'gregsexton/VimCalc'
   "Bundle 'hotoo/calendar-vim'
-  Bundle 'Lokaltog/powerline'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
   Bundle 'kien/ctrlp.vim'
@@ -34,6 +33,9 @@ if count(g:bundle_groups, 'general')
   Bundle 'mhinz/vim-startify'
   if g:OS#unix
     Bundle 'joeytwiddle/sexy_scroller.vim'
+  endif
+  if !executable('powerline')
+    Bundle 'Lokaltog/powerline'
   endif
   if executable('ack')
     Bundle 'mileszs/ack.vim'

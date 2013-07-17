@@ -63,9 +63,8 @@ let g:NERDTreeIgnore=[
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
 " powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-if &t_Co >= 256 || g:OS#gui
-  let g:Powerline_symbols = 'fancy'
+if !executable('powerline')
+  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 endif
 
 " rainbow parentheses
