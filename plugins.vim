@@ -86,17 +86,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-" tabularize
-if exists(":Tabularize")
-  vmap <Leader>t=  :Tabularize /=<CR>
-  vmap <Leader>t3  :Tabularize /#<CR>
-  vmap <Leader>t'  :Tabularize /'<CR>
-  vmap <Leader>t'' :Tabularize /"<CR>
-  vmap <Leader>t0  :Tabularize /)/r1c1l0<CR>
-  vmap <Leader>t== :Tabularize /=/r1c1l0<CR>
-  vmap <Leader>t:  :Tabularize /:\zs<CR>
-endif
-
 " tagbar
 if g:OS#mac
   "how to install ctag mac https://weblion.psu.edu/trac/weblion/wiki/MacVim

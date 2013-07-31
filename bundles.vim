@@ -46,7 +46,7 @@ if count(g:bundle_groups, 'programming')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
   Bundle 'Yggdroot/indentLine'
-  Bundle 'godlygeek/tabular'
+  Bundle 'junegunn/vim-easy-align'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'scrooloose/nerdcommenter'
@@ -62,15 +62,16 @@ endif
 if count(g:bundle_groups, 'php')
   Bundle 'paulyg/Vim-PHP-Stuff'
 endif
-" JAVASCRIPT
+" COFFESCRIPT|JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'jelera/vim-javascript-syntax'
 endif
-" HTML+CSS
+" CSS|HTML
 if count(g:bundle_groups, 'html')
   Bundle 'mattn/zencoding-vim'
   Bundle 'groenewege/vim-less'
+  Bundle 'digitaltoad/vim-jade'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
@@ -79,10 +80,11 @@ if count(g:bundle_groups, 'markdown')
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
-  Bundle 'altercation/vim-colors-solarized'
+  Bundle 'lsdr/monokai'
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
+  Bundle 'altercation/vim-colors-solarized'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
