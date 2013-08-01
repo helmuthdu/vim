@@ -31,11 +31,9 @@ if count(g:bundle_groups, 'general')
   Bundle 'hwrod/interactive-replace'
   Bundle 'bling/vim-bufferline'
   Bundle 'mhinz/vim-startify'
+  Bundle 'bling/vim-airline'
   if g:OS#unix
     Bundle 'joeytwiddle/sexy_scroller.vim'
-  endif
-  if !executable('powerline')
-    Bundle 'Lokaltog/powerline'
   endif
   if executable('ack')
     Bundle 'mileszs/ack.vim'
@@ -83,6 +81,7 @@ if count(g:bundle_groups, 'colorscheme')
   Bundle 'lsdr/monokai'
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
+  Bundle 'veloce/vim-aldmeris'
   Bundle 'sjl/badwolf'
   Bundle 'altercation/vim-colors-solarized'
 endif

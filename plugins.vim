@@ -7,6 +7,18 @@
 "\ ]
 "let g:calendar_current_idx = 1
 
+" airline
+" let g:airline_powerline_fonts = 1
+let g:airline_enable_branch=1
+let g:airline_enable_syntastic=1
+let g:airline_enable_tagbar=1
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_theme='badwolf'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_branch_prefix = '⎇ '
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
@@ -61,11 +73,6 @@ let g:NERDTreeMouseMode=2
 let g:NERDTreeIgnore=[
       \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
-
-" powerline
-if !executable('powerline')
-  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-endif
 
 " rainbow parentheses
 au VimEnter * RainbowParenthesesToggle

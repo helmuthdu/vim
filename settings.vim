@@ -86,9 +86,9 @@ endif
 set background=dark
 if g:OS#gui
   set t_Co=256
-  "colorscheme badwolf
-  "colorscheme kolor
-  colorscheme gruvbox
+  colorscheme badwolf
+  " colorscheme kolor
+  " colorscheme gruvbox
 elseif &t_Co >= 256
   set t_Co=256
   colorscheme badwolf
