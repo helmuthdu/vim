@@ -38,6 +38,14 @@ let g:EasyMotion_leader_key = '<Leader>e'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
+" easytags
+if g:OS#mac
+  let g:easytags_cmd = '/usr/local/bin/ctags'
+end
+let g:easytags_file = $HOME.'/.vim/.tags'
+let g:easytags_events = ['BufWritePost']
+set tags=./.tags;
+
 " fugitive
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gd :Gdiff<CR>

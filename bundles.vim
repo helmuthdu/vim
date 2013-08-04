@@ -54,6 +54,8 @@ if count(g:bundle_groups, 'programming')
   Bundle 'SyntaxComplete'
   if executable('ctags')
     Bundle 'majutsushi/tagbar'
+    Bundle 'xolox/vim-misc'
+    Bundle 'xolox/vim-easytags'
   endif
 endif
 " PHP
@@ -69,7 +71,7 @@ endif
 if count(g:bundle_groups, 'html')
   Bundle 'mattn/zencoding-vim'
   Bundle 'groenewege/vim-less'
-  Bundle 'digitaltoad/vim-jade'
+  Bundle 'tpope/vim-haml'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
@@ -81,7 +83,6 @@ if count(g:bundle_groups, 'colorscheme')
   Bundle 'lsdr/monokai'
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
-  Bundle 'veloce/vim-aldmeris'
   Bundle 'sjl/badwolf'
   Bundle 'altercation/vim-colors-solarized'
 endif
