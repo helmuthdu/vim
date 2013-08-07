@@ -46,6 +46,9 @@ let g:easytags_file = $HOME.'/.vim/.tags'
 let g:easytags_events = ['BufWritePost']
 set tags=./.tags;
 
+" emmet
+let g:user_emmet_leader_key = '<c-e>'
+
 " fugitive
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gd :Gdiff<CR>
