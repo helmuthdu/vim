@@ -32,9 +32,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'bling/vim-bufferline'
   Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
-  if g:OS#unix
-    Bundle 'joeytwiddle/sexy_scroller.vim'
-  endif
+  Bundle 'yonchu/accelerated-smooth-scroll'
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif

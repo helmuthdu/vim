@@ -91,11 +91,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" sexy scroller
-if g:OS#unix
-  let g:SexyScroller_EasingStyle = 1
-endif
-
 " syntastic
 let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_loc_list=2
