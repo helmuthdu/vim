@@ -20,24 +20,6 @@ endfunction
 " Toggle Spellcheck
 nmap <silent><Leader>ss :call ToggleSpell()<CR>
 
-function! ScreenMovement(movement)
-  if &wrap
-    return "g" . a:movement
-  else
-    return a:movement
-  endif
-endfunction
-omap <silent> <expr> j ScreenMovement("j")
-omap <silent> <expr> k ScreenMovement("k")
-omap <silent> <expr> 0 ScreenMovement("0")
-omap <silent> <expr> ^ ScreenMovement("^")
-omap <silent> <expr> $ ScreenMovement("$")
-nmap <silent> <expr> j ScreenMovement("j")
-nmap <silent> <expr> k ScreenMovement("k")
-nmap <silent> <expr> 0 ScreenMovement("0")
-nmap <silent> <expr> ^ ScreenMovement("^")
-nmap <silent> <expr> $ ScreenMovement("$")
-
 " press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)

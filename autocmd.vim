@@ -48,5 +48,13 @@ if has("autocmd")
   augroup END
 
   " Save on FocusLost
-  autocmd FocusLost * nested :silent! wall
+  au FocusLost * :silent! wall " Save on FocusLost
+  au FocusLost * call feedkeys("\<C-\>\<C-n>") " Return to normal mode on FocustLost
+
+  " Disable paste mode when leaving Insert Mode
+  au InsertLeave * set nopaste
+
+  " Resize splits when the window is resized
+  au VimResized * exe "normal! \<c-w>="
+
 endif

@@ -75,7 +75,8 @@ set wildmode=longest:full,list:full
 set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.app,*/.git/*,*/.hg/*,*/.svn/*
 
 " chars to show for list
-set listchars=precedes:«,extends:»,trail:⠿,eol:·,tab:→\
+set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
 
 " Appearance Settings
 " switch syntax highlighting on, when the terminal has colors
@@ -150,9 +151,9 @@ set nowrap                   " word wrap
 set wrapscan                 " Searches wrap around end of file
 set display=lastline         " don't display @ with long paragraphs
 set lbr                      " line break
-let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 set textwidth=0
-set formatoptions=croql      " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
+set formatoptions=tcroql     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
+let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 
 " Search config
 set ignorecase      " select case-insenitiv search

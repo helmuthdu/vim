@@ -28,7 +28,6 @@ if count(g:bundle_groups, 'general')
   Bundle 'mbbill/undotree'
   Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
-  Bundle 'hwrod/interactive-replace'
   Bundle 'bling/vim-bufferline'
   Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'

@@ -115,14 +115,17 @@ nmap <silent><leader>T :TagbarToggle<CR>
 nmap <leader>u :UndotreeToggle<CR>
 
 " ultisnips
-if g:OS#gui
-  let g:UltiSnipsExpandTrigger="<C-Space>"
-  let g:UltiSnipsJumpForwardTrigger="<C-Space>"
-else
-  let g:UltiSnipsExpandTrigger="<C-@>"
-  let g:UltiSnipsJumpForwardTrigger="<C-@>"
-endif
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+if g:OS#gui
+  let g:ycm_key_invoke_completion = '<C-Space>'
+else
+  let g:ycm_key_invoke_completion = '<C-@>'
+endif
