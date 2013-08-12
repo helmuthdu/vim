@@ -47,8 +47,6 @@ if count(g:bundle_groups, 'programming')
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-surround'
-  Bundle 'SyntaxComplete'
   if executable('ctags')
     Bundle 'majutsushi/tagbar'
     Bundle 'xolox/vim-misc'
