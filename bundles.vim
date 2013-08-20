@@ -41,7 +41,7 @@ if count(g:bundle_groups, 'programming')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
   Bundle 'Yggdroot/indentLine'
-  Bundle 'junegunn/vim-easy-align'
+  Bundle 'godlygeek/tabular'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'scrooloose/nerdcommenter'
