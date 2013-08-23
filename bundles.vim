@@ -70,8 +70,8 @@ if count(g:bundle_groups, 'html')
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
-  Bundle 'mkitt/markdown-preview.vim'
   Bundle 'tpope/vim-markdown'
+  Bundle 'suan/vim-instant-markdown'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')

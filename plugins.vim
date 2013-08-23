@@ -63,10 +63,6 @@ let g:indentLine_char = '│'
 " less
 nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
 
-" markdown preview
-nmap <silent><leader>p :MDP<CR>
-let g:MarkdownPreviewTMP = $HOME.'/Sites/'
-
 " NERDcommenter
 let NERDSpaceDelims=1
 
