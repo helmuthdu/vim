@@ -28,6 +28,9 @@ nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
 nmap <leader>ac :center<CR>
 
+" Show Git diff in window split when commiting
+autocmd FileType gitcommit DiffGitCached | wincmd p
+
 " Spell commands
 map <leader>sn ]s
 map <leader>sp [s
@@ -63,6 +66,10 @@ nmap <silent> g# g#zz
 nmap <C-S-TAB> :bprev<CR>
 nmap <C-TAB> :bnext<CR>
 
+" Use sane regexes
+nmap / /\v
+vmap / /\v
+
 " Close tab/Quit vim
 if g:OS#unix
   nmap <C-w> :bw<CR>
@@ -74,6 +81,9 @@ map <leader>cd :cd %:p:h<cr>
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" I can type :help on my own, thanks.
+nmap <F1> <Esc>
 
 " Creating underline/overline headings for markup languages
 " Inspired by http://sphinx.pocoo.org/rest.html#sections
