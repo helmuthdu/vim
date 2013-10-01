@@ -39,7 +39,7 @@ endif
 
 " Enable mouse
 if has("mouse")
-  set mouse=a
+  set mouse-=a
   set mousemodel=popup
   set mousehide
 endif
