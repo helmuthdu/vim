@@ -130,7 +130,7 @@ set noswapfile
 if has('persistent_undo')
   set undodir=$HOME/.vim/.undofile
   set undofile
-  set undolevels=100   "maximum number of changes that can be undone
+  set undolevels=1000  "maximum number of changes that can be undone
   set undoreload=10000 "maximum number lines to save for undo on a buffer reload
   if ! isdirectory(&undodir)
     call mkdir(&undodir, 'p')

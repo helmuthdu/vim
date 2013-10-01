@@ -20,21 +20,20 @@ endif
 " Bundles here:
 " GENERAL
 if count(g:bundle_groups, 'general')
-  "Bundle 'gregsexton/VimCalc'
-  "Bundle 'hotoo/calendar-vim'
+  " Bundle 'gregsexton/VimCalc'
+  " Bundle 'hotoo/calendar-vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
   Bundle 'kien/ctrlp.vim'
   Bundle 'mbbill/undotree'
-  Bundle 'spolu/dwm.vim'
+  " Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
   Bundle 'bling/vim-bufferline'
   Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
-  Bundle 'yonchu/accelerated-smooth-scroll'
-  if executable('ack')
-    Bundle 'mileszs/ack.vim'
-  endif
+  Bundle 'joeytwiddle/sexy_scroller.vim'
+  Bundle 'vim-multiple-cursors'
+  Bundle 'mtth/locate.vim'
 endif
 " PROGRAMMING
 if count(g:bundle_groups, 'programming')

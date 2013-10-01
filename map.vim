@@ -3,6 +3,9 @@
 let mapleader=","
 let g:mapleader=","
 
+" I can type :help on my own, thanks.
+nmap <F1> <Esc>
+
 " F2 = Paste Toggle
 set pastetoggle=<F2>
 
@@ -28,9 +31,6 @@ nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
 nmap <leader>ac :center<CR>
 
-" Show Git diff in window split when commiting
-autocmd FileType gitcommit DiffGitCached | wincmd p
-
 " Spell commands
 map <leader>sn ]s
 map <leader>sp [s
@@ -44,15 +44,21 @@ nmap k gk
 " Make Y consistent with C and D. See :help Y.
 nmap Y y$
 
+" jump to start/end of line
+noremap H ^
+noremap L $
+
 " easier formatting of paragraphs
 vmap Q gq
 nmap Q gqap
 
 " Use tab to indent a line
-vmap <TAB> >gv
-vmap <S-TAB> <gv
 vmap < <gv
 vmap > >gv
+
+" Easier increment/decrement
+nmap + <C-a>
+nmap - <C-x>
 
 " Keep search pattern at the center of the screen
 nmap <silent> n nzz
@@ -66,24 +72,17 @@ nmap <silent> g# g#zz
 nmap <C-S-TAB> :bprev<CR>
 nmap <C-TAB> :bnext<CR>
 
-" Use sane regexes
-nmap / /\v
-vmap / /\v
-
-" Close tab/Quit vim
-if g:OS#unix
-  nmap <C-w> :bw<CR>
-  nmap <C-q> :q<CR>
-endif
+" move between windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-
-" I can type :help on my own, thanks.
-nmap <F1> <Esc>
 
 " Creating underline/overline headings for markup languages
 " Inspired by http://sphinx.pocoo.org/rest.html#sections

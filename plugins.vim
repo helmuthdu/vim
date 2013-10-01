@@ -68,6 +68,7 @@ let NERDSpaceDelims=1
 
 " NERDTree
 nmap <silent><Leader>nt :NERDTreeToggle<CR>
+nmap <silent><C-o> :NERDTreeToggle<CR><C-w>p:NERDTreeFind<CR>
 let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
@@ -120,15 +121,16 @@ nmap <silent><leader>T :TagbarToggle<CR>
 nmap <leader>u :UndotreeToggle<CR>
 
 " ultisnips
-let g:UltiSnipsExpandTrigger="<TAB>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+let g:UltiSnipsListSnippets="<C-Tab>"
 
 " YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 if g:OS#gui
   let g:ycm_key_invoke_completion = '<C-Space>'
 else
