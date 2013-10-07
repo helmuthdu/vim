@@ -25,10 +25,13 @@ if count(g:bundle_groups, 'general')
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
   Bundle 'kien/ctrlp.vim'
+  Bundle 'tacahiroy/ctrlp-funky'
   Bundle 'mbbill/undotree'
   " Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
   Bundle 'bling/vim-bufferline'
+  " Bundle 'fholgado/minibufexpl.vim'
+  Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
   Bundle 'joeytwiddle/sexy_scroller.vim'
@@ -70,7 +73,7 @@ endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
   Bundle 'tpope/vim-markdown'
-  Bundle 'suan/vim-instant-markdown'
+  " Bundle 'suan/vim-instant-markdown'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')

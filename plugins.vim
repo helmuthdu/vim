@@ -19,12 +19,20 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_branch_prefix = '⎇ '
 
+" buffergator
+nmap <leader>b :BuffergatorToggle<CR>
+let g:buffergator_suppress_keymaps = 1
+let g:buffergator_viewport_split_policy = "R"
+let g:buffergator_autoexpand_on_split = 0
+
+" coffeescript
+let coffee_indent_keep_current = 1
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
 let g:ctrlp_follow_symlinks = 1
 
-nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>m :CtrlPMRUFiles<CR>
 
 let g:ctrlp_custom_ignore = {
@@ -73,7 +81,7 @@ let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
 let g:NERDTreeWinPos = "right"
-let g:NERDTreeWinSize = 45
+let g:NERDTreeWinSize = 40
 let g:NERDTreeChristmasTree = 1
 let g:NERDTreeCaseSensitiveSort = 1
 let g:NERDTreeQuitOnOpen = 1
