@@ -12,8 +12,8 @@ if has("autocmd")
     au BufEnter *.tex setl wrap tw=79 fo=tcqor noet
     au BufEnter *.[ch] setl cindent
     au BufEnter *.[ch]pp setl cindent
+    au BufEnter *.coffee setl sw=2 expandtab
     au BufEnter Makefile setl ts=4 sts=4 sw=4 noet list
-    au BufEnter *.coffee setl shiftwidth=2 expandtab foldmethod=indent nofoldenable
   augroup END
 
   " when enabling diff for a buffer it should be disabled when the

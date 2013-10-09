@@ -73,10 +73,10 @@ nmap <C-S-TAB> :bprev<CR>
 nmap <C-TAB> :bnext<CR>
 
 " move between windows
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" nmap <C-h> <C-w>h
+" nmap <C-j> <C-w>j
+" nmap <C-k> <C-w>k
+" nmap <C-l> <C-w>l
 
 " switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
