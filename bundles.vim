@@ -33,7 +33,8 @@ if count(g:bundle_groups, 'general')
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
-  Bundle 'joeytwiddle/sexy_scroller.vim'
+  " Bundle 'joeytwiddle/sexy_scroller.vim'
+  Bundle 'yonchu/accelerated-smooth-scroll'
   Bundle 'mtth/locate.vim'
 endif
 " PROGRAMMING
