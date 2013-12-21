@@ -27,7 +27,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'kien/ctrlp.vim'
   Bundle 'tacahiroy/ctrlp-funky'
   Bundle 'mbbill/undotree'
-  Bundle 'spolu/dwm.vim'
+  " Bundle 'spolu/dwm.vim'
   Bundle 'Stormherz/tablify'
   Bundle 'bling/vim-bufferline'
   Bundle 'jeetsukumaran/vim-buffergator'

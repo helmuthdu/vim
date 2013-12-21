@@ -78,9 +78,9 @@ let NERDSpaceDelims=1
 nmap <silent><Leader>nt :NERDTreeToggle<CR>
 nmap <silent><C-o> :NERDTreeToggle<CR><C-w>p:NERDTreeFind<CR>
 let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
-let g:NERDTreeWinPos = "right"
 let g:NERDTreeWinSize = 40
 let g:NERDTreeChristmasTree = 1
 let g:NERDTreeCaseSensitiveSort = 1
