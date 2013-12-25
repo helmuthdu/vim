@@ -96,6 +96,16 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" signify
+let g:signify_sign_add = '+'
+let g:signify_sign_change = '!'
+let g:signify_sign_delete = '-'
+let g:signify_sign_delete_first_line = '-'
+
+" sneak
+nmap f <Plug>SneakForward
+nmap F <Plug>SneakBackward
+
 " syntastic
 let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_loc_list=2
