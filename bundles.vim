@@ -15,7 +15,7 @@ Bundle 'gmarik/vundle'
 " Bundle Groups
 " List only the plugin groups you will use
 if !exists('g:bundle_groups')
-  let g:bundle_groups=['general', 'programming', 'php', 'javascript', 'html', 'markdown', 'colorscheme']
+  let g:bundle_groups=['general', 'devel', 'web_devel', 'markdown', 'colorscheme']
 endif
 " Bundles here:
 " GENERAL
@@ -36,8 +36,8 @@ if count(g:bundle_groups, 'general')
   Bundle 'yonchu/accelerated-smooth-scroll'
   Bundle 'mtth/locate.vim'
 endif
-" PROGRAMMING
-if count(g:bundle_groups, 'programming')
+" DEVELOPER
+if count(g:bundle_groups, 'devel')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
   Bundle 'Yggdroot/indentLine'
@@ -54,20 +54,17 @@ if count(g:bundle_groups, 'programming')
     Bundle 'xolox/vim-easytags'
   endif
 endif
-" PHP
-if count(g:bundle_groups, 'php')
+" WEB DEVELOPER
+if count(g:bundle_groups, 'web_devel')
   Bundle 'paulyg/Vim-PHP-Stuff'
-endif
-" COFFESCRIPT|JAVASCRIPT
-if count(g:bundle_groups, 'javascript')
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'jelera/vim-javascript-syntax'
-endif
-" CSS|HTML
-if count(g:bundle_groups, 'html')
   Bundle 'mattn/emmet-vim'
   Bundle 'groenewege/vim-less'
   Bundle 'tpope/vim-haml'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-bundler'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
