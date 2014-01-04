@@ -1,6 +1,6 @@
 " PLUGINS CONFIG
 " calendar
-"map <leader>ca :Calendar<CR>
+"map <Leader>ca :Calendar<CR>
 "let g:calendar_list = [
 "\   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
 "\   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
@@ -8,19 +8,29 @@
 "let g:calendar_current_idx = 1
 
 " airline
-" let g:airline_powerline_fonts = 1
 let g:airline_enable_branch=1
-let g:airline_enable_syntastic=1
-let g:airline_enable_tagbar=1
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
-let g:airline_theme='powerlineish'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_branch_prefix = '⎇ '
+let g:airline_inactive_collapse=1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline_theme='wombat'
+if g:OS#gui
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.linenr = ''
+endif
 
 " buffergator
-nmap <leader>b :BuffergatorToggle<CR>
+nmap <Leader>b :BuffergatorToggle<CR>
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_autoexpand_on_split = 0
@@ -33,7 +43,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
 let g:ctrlp_follow_symlinks = 1
 
-nmap <leader>m :CtrlPMRUFiles<CR>
+nmap <silent><Leader>m :CtrlPMRUFiles<CR>
 
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -42,7 +52,7 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 " easymotion
-let g:EasyMotion_leader_key = '<Leader>e'
+let g:EasyMotion_Leader_key = '<Leader>e'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
@@ -51,28 +61,33 @@ if g:OS#mac
   let g:easytags_cmd = '/usr/local/bin/ctags'
 end
 let g:easytags_file = $HOME.'/.vim/.tags'
-let g:easytags_events = ['BufWritePost']
 set tags=./.tags;
 
 " emmet
-let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_Leader_key = '<c-e>'
 
 " fugitive
-nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>gc :Gcommit<CR>
-nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>gl :Glog<CR>
-nmap <silent> <leader>gp :Git push<CR>
+nmap <silent><Leader>gb :Gblame<CR>
+nmap <silent><Leader>gc :Gcommit<CR>
+nmap <silent><Leader>gd :Gdiff<CR>
+nmap <silent><Leader>gl :Glog<CR>
+nmap <silent><Leader>gm :Gmove<CR>
+nmap <silent><Leader>gs :Gstatus<CR>
+nmap <silent><Leader>gp :Git push<CR>
 
 " indentline
 let g:indentLine_char = '│'
+let g:indentLine_indentLevel = 20
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
 " less
 nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " NERDcommenter
 let NERDSpaceDelims=1
+nmap <silent> <Leader>/ :call NERDComment(0, "toggle")<CR>
+vmap <silent> <Leader>/ :call NERDComment(0, "toggle")<CR>
+vmap <silent> <Leader>? :call NERDComment(0, "sexy")<CR>
 
 " NERDTree
 nmap <silent><Leader>nt :NERDTreeToggle<CR>
@@ -97,14 +112,11 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " signify
+let g:signify_sign_overwrite = 1
 let g:signify_sign_add = '+'
 let g:signify_sign_change = '!'
 let g:signify_sign_delete = '-'
 let g:signify_sign_delete_first_line = '-'
-
-" sneak
-nmap f <Plug>SneakForward
-nmap F <Plug>SneakBackward
 
 " syntastic
 let g:syntastic_enable_balloons = 1
@@ -133,10 +145,10 @@ let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_expand = 0
-nmap <silent><leader>T :TagbarToggle<CR>
+nmap <silent><Leader>T :TagbarToggle<CR>
 
 " undotree
-nmap <leader>u :UndotreeToggle<CR>
+nmap <Leader>u :UndotreeToggle<CR>
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<Tab>"
@@ -147,6 +159,9 @@ let g:UltiSnipsListSnippets="<C-Tab>"
 " YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 if g:OS#gui

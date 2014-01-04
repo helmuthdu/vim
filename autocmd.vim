@@ -1,6 +1,5 @@
 " AUTOCOMMANDS
 if has("autocmd")
-  au BufEnter * execute ":lcd " . expand("%:p:h")
   augroup filetypedetect
     au BufEnter *.markdown,*.mkd,*.md setlocal wrap tw=79
     au BufEnter *.json setl ft=javascript

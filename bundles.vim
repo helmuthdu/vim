@@ -22,8 +22,8 @@ endif
 if count(g:bundle_groups, 'general')
   " Bundle 'gregsexton/VimCalc'
   " Bundle 'hotoo/calendar-vim'
+  Bundle 'hwrod/interactive-replace'
   Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'justinmk/vim-sneak'
   Bundle 'scrooloose/nerdtree'
   Bundle 'kien/ctrlp.vim'
   Bundle 'tacahiroy/ctrlp-funky'
@@ -35,6 +35,8 @@ if count(g:bundle_groups, 'general')
   Bundle 'bling/vim-airline'
   Bundle 'yonchu/accelerated-smooth-scroll'
   Bundle 'mtth/locate.vim'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'tpope/vim-surround'
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
@@ -61,6 +63,7 @@ if count(g:bundle_groups, 'web_devel')
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'mattn/emmet-vim'
   Bundle 'groenewege/vim-less'
+  Bundle 'ap/vim-css-color'
   Bundle 'tpope/vim-haml'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'tpope/vim-rails'
@@ -69,12 +72,10 @@ endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
   Bundle 'tpope/vim-markdown'
-  " Bundle 'suan/vim-instant-markdown'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
   Bundle 'altercation/vim-colors-solarized'
-  Bundle 'lsdr/monokai'
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
