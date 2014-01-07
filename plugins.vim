@@ -23,10 +23,15 @@ if g:OS#gui
   if !exists('g:airline_symbols')
     let g:airline_symbols = {}
   endif
-  let g:airline_left_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.linenr = ''
+  if g:OS#unix
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.linenr = ''
+  else
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+  endif
 endif
 
 " buffergator
