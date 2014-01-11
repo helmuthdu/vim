@@ -37,6 +37,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'mtth/locate.vim'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'tpope/vim-surround'
+  Bundle 'spolu/dwm.vim'
   Bundle 'terryma/vim-multiple-cursors'
 endif
 " DEVELOPER
