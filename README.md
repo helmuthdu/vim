@@ -5,17 +5,13 @@
 - Git (1.7+)
 - Vim (7.3+)
 - ctags
-- discount
-- ack
 
 ### Mac:
 
-- [Homebrew][homebrew] - `ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"`
+- [Homebrew][homebrew] - `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
 - [MacVim][macvim] - `brew install macvim`
 - [Homesick][homesick] - `gem install homesick`
-- [discount][discount] - `brew install discount`
 - [ctags][ctags] - `brew install ctags-exuberant`
-- [ack][ack] - `brew install ack`
 
 # Vim
 
@@ -29,38 +25,43 @@ Reference to vim mappings.
 
 - ` ,           ` keyleader.
 - ` <Leader>cl  ` Calculate the value in one line.
-- ` <Leader>cd  ` Switch to the directory of the open buffer
+- ` <Leader>cd  ` Switch to the directory of the open buffer.
 - ` <Leader>cfg ` Fast editing of .vimrc.
 - ` <Leader>L   ` Enable/Disable list.
-- ` <Leader>/   ` Turn off search highlighting.
-- ` <Leader>w   ` Vertically split window and select it.
-- ` <Leader>W   ` Back to normal view.
-- ` <Leader>al  ` Quick aligning to left
-- ` <Leader>ar  ` Quick aligning to right
-- ` <Leader>ac  ` Quick aligning to center
+- ` <Leader>/   ` Comment/Uncoment Code.
+- ` <Leader>d   ` Enable/Disable dual mode view.
+- ` <Leader>al  ` Quick aligning to left.
+- ` <Leader>ar  ` Quick aligning to right.
+- ` <Leader>ac  ` Quick aligning to center.
+- ` <Leader>ff  ` Toggle indention mode.
 - ` <Leader>ss  ` Toggle Spell checking
 - ` <Leader>sn  ` Spell checking (Next word)
 - ` <Leader>sp  ` Spell checking (Previews word)
 - ` <Leader>s?  ` Spell checking (Show list)
-- ` <Leader>tw  ` Set text wrapping toggles
+- ` <Leader>tw  ` Set text wrapping toggles.
+- ` <Enter>     ` Turn off search highlighting.
 - ` <spacebar>  ` spacebar create/open/close folding.
 - ` <C-TAB>     ` Move to next buffer
 - ` <S-C-TAB>   ` Move to previews buffer
 - ` <TAB>       ` Indent a line
 - ` <S-TAB>     ` Back-Indent a line
+- ` <S-TAB>     ` Back-Indent a line
+- ` +/-         ` Easy increment/decrement.
 - ` jj          ` Map escape key to jj.
 
 ### Plugins
 
-- ` <Leader>b  ` buffergator
+- ` <Leader>B  ` buffergator
 - ` <Leader>ca ` calendar
-- ` <Leader>pm ` CtrlPMRU
-- ` <Leader>pb ` CtrlPBuffer
+- ` <Leader>m  ` CtrlPMRU
+- ` <Leader>b  ` CtrlPBuffer
 - ` <Leader>u  ` Gundo
-- ` <Leader>p  ` Markdown-Preview
 - ` <Leader>nt ` NERDTree
 - ` <Leader>T  ` Tagbar
-- ` <Leader>s  ` Scratch
+- ` <C-e>      ` Emmet
+- ` <C-Space>  ` YouCompleteMe: Display preview window
+- ` <Tab>      ` Ultisnips: Expand snippers
+- ` <C-Tab>    ` Ultisnips: Display list of snippers
 
 ## Commands
 
@@ -68,27 +69,26 @@ Reference to vim mappings.
 
 ## Plug-Ins
 
-- [autoPairs](https://github.com/jiangmiao/auto-pairs) - Automatic closing of quotes, parenthesis, brackets, etc. \-\-
-- [buftabs]
+- [accelerated-smooth-scroll](https://github.com/yonchu/accelerated-smooth-scroll)
+- [airline](https://github.com/bling/vim-airline)
+- [bufferline](https://github.com/bling/vim-bufferline)
 - [calendar]
-- [easyMotion]
-- [CtrlP]
-- [gundo](https://github.com/vim-scripts/Gundo/blob/master/doc/gundo.txt) - Graph Vim's undo tree so it is actually usable
-- [buftabs]
-- [calendar]
-- [CtrolP]
-- [easyMotion]
-- [gundo](https://github.com/vim-scripts/Gundo/blob/master/doc/gundo.txt) - Graph Vim's undo tree so it is actually usable
-- [markdown-preview.vim](https://github.com/mkitt/markdown-preview.vim/blob/master/doc/markdown-preview.txt)
-- [matchit]
+- [CtrlP](https://github.com/kien/ctrlp.vim)
+- [CtrlP-funky](https://github.com/tacahiroy/ctrlp-funky)
+- [delimitMate](https://github.com/Raimondi/delimitMate) - Automatic closing of quotes, parenthesis, brackets, etc. \-\-
+- [easyMotion](https://github.com/Lokaltog/vim-easymotion)
+- [IndentLine](https://github.com/Yggdroot/indentLine)
+- [Interactive-replace](https://github.com/hwrod/interactive-replace)
+- [multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter/blob/master/doc/NERD_commenter.txt)
 - [nerdtree](https://github.com/scrooloose/nerdtree/blob/master/doc/NERD_tree.txt)
 - [syntastic](https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt)
 - [tabular](https://github.com/godlygeek/tabular/blob/master/doc/Tabular.txt) - Configurable, flexible, intuitive text aligning \-\-
 - [tagbar]
-- [vim-markdown](https://github.com/tpope/vim-markdown)
-- [vim-powerline]
-- [vim-surround](https://github.com/tpope/vim-surround/blob/master/doc/surround.txt) - Delete, change, and add "surroundings" i.e. parentheses, quotes, and HTML tags \-\-
+- [markdown](https://github.com/tpope/vim-markdown)
+- [surround](https://github.com/tpope/vim-surround/blob/master/doc/surround.txt) - Delete, change, and add "surroundings" i.e. parentheses, quotes, and HTML tags \-\-
+- [Ultisnips](https://github.com/SirVer/ultisnips)
+- [undotree](https://github.com/mbbill/undotree) - Graph Vim's undo tree so it is actually usable
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 - [vimCalc]
 - [vundle]
-- [yankring](https://github.com/chrismetcalf/vim-yankring/blob/master/doc/yankring.txt)

@@ -69,6 +69,12 @@ nmap <silent> # #zz
 nmap <silent> g* g*zz
 nmap <silent> g# g#zz
 
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
 " move between buffers
 nmap <C-S-TAB> :bprev<CR>
 nmap <C-TAB> :bnext<CR>

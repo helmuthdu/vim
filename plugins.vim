@@ -35,7 +35,7 @@ if g:OS#gui
 endif
 
 " buffergator
-nmap <Leader>b :BuffergatorToggle<CR>
+nmap <Leader>B :BuffergatorToggle<CR>
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_autoexpand_on_split = 0
@@ -49,6 +49,7 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
 let g:ctrlp_follow_symlinks = 1
 
 nmap <silent><Leader>m :CtrlPMRUFiles<CR>
+nmap <silent><Leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -57,7 +58,7 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 " easymotion
-let g:EasyMotion_Leader_key = '<Leader>e'
+let g:EasyMotion_leader_key = '<Leader>e'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
@@ -69,7 +70,7 @@ let g:easytags_file = $HOME.'/.vim/.tags'
 set tags=./.tags;
 
 " emmet
-let g:user_emmet_Leader_key = '<c-e>'
+let g:user_emmet_leader_key = '<C-e>'
 
 " fugitive
 nmap <silent><Leader>gb :Gblame<CR>
