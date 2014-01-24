@@ -7,12 +7,11 @@
 "\ ]
 "let g:calendar_current_idx = 1
 
-" airline
+" airline-case
 let g:airline_enable_branch=1
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
-let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
@@ -47,9 +46,12 @@ let coffee_indent_keep_current = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
 let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_extensions = ['funky']
 
 nmap <silent><Leader>m :CtrlPMRUFiles<CR>
+nmap <silent><Leader>f :CtrlPFunky<CR>
 nmap <silent><Leader>b :CtrlPBuffer<CR>
+nmap <silent><Leader>T :CtrlPBufTag<CR>
 
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -86,6 +88,11 @@ let g:indentLine_char = '│'
 let g:indentLine_indentLevel = 20
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 10
+
 " less
 nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
 
@@ -117,6 +124,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" scroll-position
+let g:scroll_position_visual = 2
+
 " signify
 let g:signify_sign_overwrite = 1
 let g:signify_sign_add = '+'
@@ -140,18 +150,6 @@ vmap <Leader>t" :Tabularize /"<CR>
 vmap <Leader>t) :Tabularize /)/r1c1l0<CR>
 vmap <Leader>t== :Tabularize /=/r1c1l0<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
-
-" tagbar
-if g:OS#mac
-  "how to install ctag mac https://weblion.psu.edu/trac/weblion/wiki/MacVim
-  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-endif
-let g:tagbar_width = 30
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-let g:tagbar_compact = 1
-let g:tagbar_expand = 0
-nmap <silent><Leader>T :TagbarToggle<CR>
 
 " undotree
 nmap <Leader>u :UndotreeToggle<CR>

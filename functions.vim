@@ -20,7 +20,7 @@ endfunction
 " Toggle Spellcheck
 nmap <silent><Leader>ss :call ToggleSpell()<CR>
 
-" press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
+" Convert text case
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)
     let result = tolower(a:str)
@@ -32,6 +32,23 @@ function! TwiddleCase(str)
   return result
 endfunction
 vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+" Convert variable case
+function! TwistCase(str)
+  if a:str =~# '^[a-z0-9_]\+[!?]\?$'
+    let result = substitute(a:str, '_', '-', 'g')
+  elseif a:str =~# '^[a-z0-9?!-]\+[!?]\?$'
+    let result = substitute(a:str, '\C-\([^-]\)', '\u\1', 'g')
+  elseif a:str =~# '^[a-z0-9]\+\([A-Z][a-z0-9]*\)\+[!?]\?$'
+    let result = toupper(a:str[0]) . strpart(a:str, 1)
+  elseif a:str =~# '^\([A-Z][a-z0-9]*\)\{2,}[!?]\?$'
+    let result = strpart(substitute(a:str, '\C\([A-Z]\)', '_\l\1', 'g'), 1)
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vmap ' ygv"=TwistCase(@")<CR>Pgv
 
 function! DualView()
   if &columns == '80'
@@ -79,4 +96,60 @@ fun! ToggleFold()
     exe 'set foldmethod=marker'
   endif
 endfun
-map <leader>ff :call ToggleFold()<cr>
+map <leader>F :call ToggleFold()<cr>
+
+" Syntax highlighting in code snippets
+function! s:syntax_include(lang, b, e, inclusive)
+  let syns = split(globpath(&rtp, "syntax/".a:lang.".vim"), "\n")
+  if empty(syns)
+    return
+  endif
+
+  if exists('b:current_syntax')
+    let csyn = b:current_syntax
+    unlet b:current_syntax
+  endif
+
+  let z = "'" " Default
+  for nr in range(char2nr('a'), char2nr('z'))
+    let char = nr2char(nr)
+    if a:b !~ char && a:e !~ char
+      let z = char
+      break
+    endif
+  endfor
+
+  silent! exec printf("syntax include @%s %s", a:lang, syns[0])
+  if a:inclusive
+    exec printf('syntax region %sSnip start=%s\(\)\(%s\)\@=%s ' .
+                \ 'end=%s\(%s\)\@<=\(\)%s contains=@%s containedin=ALL',
+                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
+  else
+    exec printf('syntax region %sSnip matchgroup=Snip start=%s%s%s ' .
+                \ 'end=%s%s%s contains=@%s containedin=ALL',
+                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
+  endif
+
+  if exists('csyn')
+    let b:current_syntax = csyn
+  endif
+endfunction
+
+function! s:file_type_handler()
+  if &ft =~ 'jinja' && &ft != 'jinja'
+    call s:syntax_include('jinja', '{{', '}}', 1)
+    call s:syntax_include('jinja', '{%', '%}', 1)
+  elseif &ft == 'mkd' || &ft == 'markdown'
+    let map = { 'bash': 'sh' }
+    for lang in ['ruby', 'yaml', 'vim', 'sh', 'bash', 'python', 'java', 'c']
+      call s:syntax_include(get(map, lang, lang), '```'.lang, '```', 0)
+    endfor
+
+    if &background == 'light'
+      highlight def Snip ctermfg=231
+    else
+      highlight def Snip ctermfg=232
+    endif
+    set textwidth=80
+  endif
+endfunction

@@ -43,7 +43,8 @@ endif
 if count(g:bundle_groups, 'devel')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
-  Bundle 'Yggdroot/indentLine'
+  " Bundle 'Yggdroot/indentLine'
+  Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'godlygeek/tabular'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
@@ -52,7 +53,6 @@ if count(g:bundle_groups, 'devel')
   Bundle 'tpope/vim-fugitive'
   Bundle 'mhinz/vim-signify'
   if executable('ctags')
-    Bundle 'majutsushi/tagbar'
     Bundle 'xolox/vim-misc'
     Bundle 'xolox/vim-easytags'
   endif
@@ -80,6 +80,7 @@ if count(g:bundle_groups, 'colorscheme')
   Bundle 'morhetz/gruvbox'
   Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
+  Bundle 'junegunn/seoul256.vim'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"

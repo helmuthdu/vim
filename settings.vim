@@ -18,6 +18,8 @@ set ttyfast                        " smoother changes
 set gdefault                       " regex /g by default
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
+set shortmess=aI
+set shortmess+=T
 " vertical/horizontal scroll off settings
 if !&scrolloff
   set scrolloff=1
