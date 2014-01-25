@@ -1,25 +1,16 @@
-" Select OS
-if has("win32") || has("win32unix")
-  let g:OS#name = "win"
-  let g:OS#win = 1
-  let g:OS#mac = 0
-  let g:OS#unix = 0
-elseif has("mac")
-  let g:OS#name = "mac"
-  let g:OS#mac = 1
-  let g:OS#win = 0
-  let g:OS#unix = 0
-elseif has("unix")
-  let g:OS#name = "unix"
-  let g:OS#unix = 1
-  let g:OS#win = 0
-  let g:OS#mac = 0
-endif
-if has("gui_running")
-  let g:OS#gui = 1
-else
-  let g:OS#gui = 0
-endif
+" Identify platform
+silent function! OSX()
+  return has('macunix')
+endfunction
+silent function! LINUX()
+  return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+  return (has('win16') || has('win32') || has('win64'))
+endfunction
+silent function! GUI()
+  return (has('gui_running'))
+endfunction
 
 source $HOME/.vim/settings.vim
 source $HOME/.vim/map.vim

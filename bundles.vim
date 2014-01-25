@@ -21,7 +21,7 @@ endif
 " GENERAL
 if count(g:bundle_groups, 'general')
   " Bundle 'gregsexton/VimCalc'
-  " Bundle 'hotoo/calendar-vim'
+  Bundle 'hotoo/calendar-vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'Stormherz/tablify'
   Bundle 'bling/vim-airline'
@@ -43,12 +43,12 @@ endif
 if count(g:bundle_groups, 'devel')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
-  " Bundle 'Yggdroot/indentLine'
+  Bundle 'AzizLight/TaskList.vim'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'godlygeek/tabular'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'tpope/vim-commentary'
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-fugitive'
   Bundle 'mhinz/vim-signify'

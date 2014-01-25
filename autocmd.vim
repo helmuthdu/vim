@@ -20,7 +20,7 @@ if has("autocmd")
   au BufHidden * if &diff == 1 | diffoff | setlocal nowrap | endif
 
   " Automatically removing all trailing whitespace
-  autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :call StripTrailingWhitespace()
 
   " Save on FocusLost
   au FocusLost * :silent! wall " Save on FocusLost
@@ -32,10 +32,31 @@ if has("autocmd")
   " Resize splits when the window is resized
   au VimResized * exe "normal! \<c-w>="
 
+  " preceding line best in a plugin but here for now.
+  au BufNewFile,BufRead *.coffee set filetype=coffee
+
+  " Workaround vim-commentary for Haskell
+  au FileType haskell setlocal commentstring=--\ %s
+  " Workaround broken colour highlighting in Haskell
+  au FileType haskell setlocal nospell
+
   " 80-character line coloring
   if exists('+colorcolumn')
     set colorcolumn=80
   else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  endif
+
+  " Stupid shift key fixes
+  if has("user_commands")
+      command! -bang -nargs=* -complete=file E e<bang> <args>
+      command! -bang -nargs=* -complete=file W w<bang> <args>
+      command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+      command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+      command! -bang Wa wa<bang>
+      command! -bang WA wa<bang>
+      command! -bang Q q<bang>
+      command! -bang QA qa<bang>
+      command! -bang Qa qa<bang>
   endif
 endif

@@ -14,11 +14,11 @@ function! ToggleSpell()
   else
     set spelllang=pt
     set spell!
-    echo "toogle spell" &spelllang
+    echo "toggle spell" &spelllang
   endif
 endfunction
-" Toggle Spellcheck
-nmap <silent><Leader>ss :call ToggleSpell()<CR>
+" Toggle spell check
+nmap <silent>ts :call ToggleSpell()<CR>
 
 " Convert text case
 function! TwiddleCase(str)
@@ -60,14 +60,14 @@ function! DualView()
     only
   endif
 endfunction
-nmap <Leader>d :call DualView()<CR>
+nmap <silent><Leader>d :call DualView()<CR>
 
 function! LastModified()
   if &modified
     let save_cursor = getpos(".")
     let n = min([20, line("$")])
     exe '1,' . n . 's#^\(.\{,10}Last Change:\).*#\1'
-          \ strftime("%a %d/%b/%Y hs %H:%M") . '#e'
+          \ strftime("%a %d/%b/%Y hr %H:%M") . '#e'
     call setpos('.', save_cursor)
   endif
 endfun
@@ -96,60 +96,16 @@ fun! ToggleFold()
     exe 'set foldmethod=marker'
   endif
 endfun
-map <leader>F :call ToggleFold()<cr>
+map <silent>tf :call ToggleFold()<cr>
 
-" Syntax highlighting in code snippets
-function! s:syntax_include(lang, b, e, inclusive)
-  let syns = split(globpath(&rtp, "syntax/".a:lang.".vim"), "\n")
-  if empty(syns)
-    return
-  endif
-
-  if exists('b:current_syntax')
-    let csyn = b:current_syntax
-    unlet b:current_syntax
-  endif
-
-  let z = "'" " Default
-  for nr in range(char2nr('a'), char2nr('z'))
-    let char = nr2char(nr)
-    if a:b !~ char && a:e !~ char
-      let z = char
-      break
-    endif
-  endfor
-
-  silent! exec printf("syntax include @%s %s", a:lang, syns[0])
-  if a:inclusive
-    exec printf('syntax region %sSnip start=%s\(\)\(%s\)\@=%s ' .
-                \ 'end=%s\(%s\)\@<=\(\)%s contains=@%s containedin=ALL',
-                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
-  else
-    exec printf('syntax region %sSnip matchgroup=Snip start=%s%s%s ' .
-                \ 'end=%s%s%s contains=@%s containedin=ALL',
-                \ a:lang, z, a:b, z, z, a:e, z, a:lang)
-  endif
-
-  if exists('csyn')
-    let b:current_syntax = csyn
-  endif
-endfunction
-
-function! s:file_type_handler()
-  if &ft =~ 'jinja' && &ft != 'jinja'
-    call s:syntax_include('jinja', '{{', '}}', 1)
-    call s:syntax_include('jinja', '{%', '%}', 1)
-  elseif &ft == 'mkd' || &ft == 'markdown'
-    let map = { 'bash': 'sh' }
-    for lang in ['ruby', 'yaml', 'vim', 'sh', 'bash', 'python', 'java', 'c']
-      call s:syntax_include(get(map, lang, lang), '```'.lang, '```', 0)
-    endfor
-
-    if &background == 'light'
-      highlight def Snip ctermfg=231
-    else
-      highlight def Snip ctermfg=232
-    endif
-    set textwidth=80
-  endif
+function! StripTrailingWhitespace()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " do the business:
+  %s/\s\+$//e
+  " clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction

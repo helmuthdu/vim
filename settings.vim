@@ -18,8 +18,9 @@ set ttyfast                        " smoother changes
 set gdefault                       " regex /g by default
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
-set shortmess=aI
-set shortmess+=T
+set virtualedit=onemore            " Allow for cursor beyond last character
+" set shortmess+=filmnrxoOtT         " Abbrev. of messages (avoids 'hit enter')
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 " vertical/horizontal scroll off settings
 if !&scrolloff
   set scrolloff=1
@@ -33,10 +34,12 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set novisualbell " No blinking
 set noerrorbells " No noise.
 set vb t_vb=     " disable any beeps or flashes on error
-if g:OS#unix
-  set clipboard=unnamedplus        " on Linux use + register for copy-paste
-else
-  set clipboard=unnamed            " one mac and windows, use * register for copy-paste
+if has('clipboard')
+  if LINUX() " On Linux use + register for copy-paste
+    set clipboard=unnamedplus
+  else " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
 endif
 
 " Enable mouse
@@ -47,15 +50,16 @@ if has("mouse")
 endif
 
 " Multiplatform compatibility
-if g:OS#win
-  " Make windows use ~/.vim too, I don't want to use _vimfiles
-  set runtimepath^=~/.vim
+if WINDOWS()
+  " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+  " across (heterogeneous) systems easier.
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
 " Plugins Manager
 execute pathogen#infect()
 if has('autocmd')
-  filetype plugin indent on    " automatically load filetypeplugins
+  filetype plugin indent on    " automatically load filetype plugins
 endif
 
 " Editor Settings
@@ -82,12 +86,12 @@ set showbreak=↪
 
 " Appearance Settings
 " switch syntax highlighting on, when the terminal has colors
-if &t_Co > 2 || g:OS#gui
+if &t_Co > 2 || GUI()
   syntax enable
 endif
 " default colorscheme
 set background=dark
-if g:OS#gui
+if GUI()
   set t_Co=256
   " colorscheme badwolf
   colorscheme gruvbox
@@ -102,26 +106,26 @@ else
 endif
 
 " GUI options
-if g:OS#gui
+if GUI()
   set guioptions=ac
   " Linux
-  if g:OS#unix
+  if LINUX()
     set guioptions-=m
     nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-    set gfn=Liberation\ Mono\ 11
+    set guifont=Liberation\ Mono\ 11
   endif
   " Mac
-  if g:OS#mac
+  if OSX()
     set guifont=Menlo:h13
   endif
   set lines=50 columns=80
 endif
 
 " Language Settings
-highlight SpellBad term=underline gui=undercurl guisp=Orange
 " Highlight problematic whitespace (spaces before tabs)
-hi RedundantSpaces ctermfg=214 ctermbg=160 cterm=bold
-match RedundantSpaces / \+\ze\t/
+highlight SpellBad term=underline gui=undercurl guisp=Orange
+" highlight clear SignColumn " SignColumn should match background
+" highlight clear LineNr " Current line number row will have same background color in relative mode
 
 " Files, backups and undo
 " Turn backup off, since most stuff are in git anyway...
@@ -155,9 +159,12 @@ set display=lastline         " don't display @ with long paragraphs
 set lbr                      " line break
 set textwidth=0
 set formatoptions=tcroql     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
+set nojoinspaces             " Prevents inserting two spaces after punctuation on a join (J)
+set splitright               " Puts new vsplit windows to the right of the current
+set splitbelow               " Puts new split windows to the bottom of the current
 let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 
-" Search config
+" Search
 set ignorecase      " select case-insenitiv search
 set smartcase       " No ignorecase if Uppercase chars in search
 set magic           " change the way backslashes are used in search patterns

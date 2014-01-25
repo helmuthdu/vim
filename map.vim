@@ -1,28 +1,31 @@
 " KEYMAPPINGS
-" Set mapLeader
-let mapleader=","
+" Set mapleader
 let g:mapleader=","
+
+" Session List
+set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
+nmap <leader>sl :SessionList<CR>
+nmap <leader>ss :SessionSave<CR>
+nmap <leader>sc :SessionClose<CR>
 
 " I can type :help on my own, thanks.
 map <F1> <ESC>
 
-" F2 = Paste Toggle
-set pastetoggle=<F2>
+" F12 = Paste Toggle
+set pastetoggle=<F12>
 
 " spacebar create/open/close folding
 nmap <silent> <Space> za
 vmap <silent> <Space> zf
 
 " enable/disable list
-nmap <silent> <Leader>L :set nolist!<CR>
+nmap <silent> <Leader>l :set nolist!<CR>
 
 " ,/ turn off search highlighting
-nmap <F4> :set hls! <cr>
-nnoremap <silent><CR> :nohlsearch<CR><CR>
+nmap <silent><Leader>/ :nohls<CR>
 
 " Map escape key to jj or <Leader>e
 imap jj <ESC>
-imap <Leader>e <ESC>
 
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
@@ -33,16 +36,16 @@ nmap <Leader>ar :right<CR>
 nmap <Leader>ac :center<CR>
 
 " Spell commands
-map <Leader>sn ]s
-map <Leader>sp [s
-map <Leader>sa zg
-map <Leader>s? z=
+nmap <Leader>sn ]s
+nmap <Leader>sp [s
+nmap <Leader>sa zg
+nmap <Leader>s? z=
 
 " Improve up/down movement on wrapped lines
 nmap j gj
 nmap k gk
 
-" Make Y consistent with C and D. See :help Y.
+" Make Y consistent with C and D
 nmap Y y$
 
 " jump to start/end of line
@@ -54,8 +57,8 @@ vmap Q gq
 nmap Q gqap
 
 " Use tab to indent a line
-vmap < <gv
 vmap > >gv
+vmap < <gv
 
 " Easier increment/decrement
 nmap + <C-a>
@@ -73,6 +76,10 @@ nmap <silent> g# g#zz
 nmap <C-j> <c-w>w
 nmap <C-k> <c-w>W
 
+" Drag Current Line/s Vertically
+vmap <A-j> :m'>+<CR>gv
+vmap <A-k> :m-2<CR>gv
+
 " move between buffers
 nmap <C-S-TAB> :bprev<CR>
 nmap <C-TAB> :bnext<CR>
@@ -81,7 +88,11 @@ nmap <C-TAB> :bnext<CR>
 map <Leader>cd :cd %:p:h<cr>
 
 " set text wrapping toggles
-nmap <silent> <Leader>tw :set invwrap<CR>:set wrap?<CR>
+nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
+
+" Map <Leader>ff to display all lines with keyword under cursor
+" and ask which one to jump to
+nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Creating underline/overline headings for markup languages
 " Inspired by http://sphinx.pocoo.org/rest.html#sections
