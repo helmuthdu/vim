@@ -19,7 +19,9 @@ set gdefault                       " regex /g by default
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
 set virtualedit=onemore            " Allow for cursor beyond last character
+set autochdir                      " Change directory to the current buffer when opening files.
 " set shortmess+=filmnrxoOtT         " Abbrev. of messages (avoids 'hit enter')
+set cursorline
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 " vertical/horizontal scroll off settings
 if !&scrolloff
@@ -98,7 +100,7 @@ if GUI()
 elseif &t_Co >= 256
   set t_Co=256
   " colorscheme badwolf
-  colorscheme harlequin
+  colorscheme gruvbox
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm
@@ -177,7 +179,13 @@ nohlsearch          " avoid highlighting when reloading vimrc
 
 " Folding
 set foldenable            " enable folding
-set foldmethod=indent     " detect triple-{ style fold markers
+set foldmethod=marker     " detect triple-{ style fold markers
 set foldlevel=1           " start out with everything folded
 set foldtext=MyFoldText() " Which command trigger auto-unfold
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+
+" Session
+set sessionoptions=buffers,curdir,folds,tabpages,winsize
+let s:sessiondir  = expand("~/.vim/sessions", 1)
+let s:sessionfile = expand(s:sessiondir . "/session.vim", 1)
+let s:sessionlock = expand(s:sessiondir . "/session.lock", 1)
