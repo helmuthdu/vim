@@ -118,6 +118,22 @@
 " less
   nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
 
+" NERDTree
+  nmap <silent><Leader>nt :NERDTreeToggle<CR>
+  let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
+  let g:NERDTreeWinPos = "right"
+  let g:NERDTreeShowBookmarks = 1
+  let g:NERDTreeChDirMode = 0
+  let g:NERDTreeWinSize = 40
+  let g:NERDTreeChristmasTree = 1
+  let g:NERDTreeCaseSensitiveSort = 1
+  let g:NERDTreeQuitOnOpen = 1
+  let g:NERDTreeShowHidden = 1
+  let g:NERDTreeMouseMode = 2
+  let g:NERDTreeIgnore=[
+        \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+        \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
+
 " rainbow parentheses
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound

@@ -32,7 +32,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'mbbill/undotree'
   Bundle 'mhinz/vim-startify'
   Bundle 'mtth/locate.vim'
-  " Bundle 'scrooloose/nerdtree'
+  Bundle 'scrooloose/nerdtree'
   Bundle 'tpope/vim-vinegar'
   Bundle 'tacahiroy/ctrlp-funky'
   Bundle 'terryma/vim-multiple-cursors'
