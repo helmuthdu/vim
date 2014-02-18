@@ -53,6 +53,7 @@ if count(g:bundle_groups, 'devel')
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-fugitive'
   Bundle 'mhinz/vim-signify'
+  Bundle 'gcmt/wildfire.vim'
   if executable('ctags')
     Bundle 'xolox/vim-misc'
     Bundle 'xolox/vim-easytags'
