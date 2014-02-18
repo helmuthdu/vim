@@ -51,7 +51,7 @@ if count(g:bundle_groups, 'devel')
     Bundle 'SirVer/ultisnips'
   endif
   Bundle 'AzizLight/TaskList.vim'
-  Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'Yggdroot/indentLine'
   Bundle 'godlygeek/tabular'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'

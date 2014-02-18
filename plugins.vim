@@ -42,6 +42,7 @@
 
 " coffeescript
   let coffee_indent_keep_current = 1
+  autocmd BufWritePost *.coffee silent make!
 
 " ctrlp
   let g:ctrlp_map = 'cp'
@@ -109,11 +110,7 @@
   nmap <silent> <leader>gg :SignifyToggle<CR>
 
 " indent guides
-  if GUI()
-    let g:indent_guides_start_level = 2
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
-  endif
+  let g:indentLine_char = '│'
 
 " less
   nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
@@ -243,9 +240,9 @@
 
   " Enable omni completion.
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags

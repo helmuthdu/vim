@@ -48,7 +48,7 @@ function! TwistCase(str)
   endif
   return result
 endfunction
-vmap ' ygv"=TwistCase(@")<CR>Pgv
+vmap ^ ygv"=TwistCase(@")<CR>Pgv
 
 function! DualView()
   if &columns == '80'
