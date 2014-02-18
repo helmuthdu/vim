@@ -111,15 +111,15 @@ endif
 if GUI()
   set guioptions=ac
   " Linux
-  if LINUX()
-    set guioptions-=m
-    nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-    set guifont=Liberation\ Mono\ 11
+  if WINDOWS()
+    set gfn=Liberation_Mono:h10
+  elseif OSX()
+    set gfn=Menlo:h13
+  else
+    set gfn=Liberation\ Mono\ 11
   endif
-  " Mac
-  if OSX()
-    set guifont=Menlo:h13
-  endif
+  set guioptions-=m
+  nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
   set lines=50 columns=80
 endif
 

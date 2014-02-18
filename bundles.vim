@@ -42,8 +42,14 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  Bundle 'Valloric/YouCompleteMe'
-  Bundle 'SirVer/ultisnips'
+  if WINDOWS()
+    Bundle 'Shougo/neocomplete.vim'
+    Bundle 'Shougo/neosnippet'
+    Bundle 'Shougo/neosnippet-snippets'
+  elseif
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'SirVer/ultisnips'
+  endif
   Bundle 'AzizLight/TaskList.vim'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'godlygeek/tabular'

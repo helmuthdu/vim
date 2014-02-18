@@ -134,6 +134,7 @@
         \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
+
 " rainbow parentheses
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound
@@ -172,24 +173,67 @@
   " If undotree is opened, it is likely one wants to interact with it.
   let g:undotree_SetFocusWhenToggle=1
 
-" ultisnips
-  let g:UltiSnipsExpandTrigger = "<Tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
-  let g:UltiSnipsListSnippets="<C-Tab>"
+  if WINDOWS()
+    " neocomplete
+    set completeopt-=preview
+    " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
+    " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+    " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" YouCompleteMe
-  let g:ycm_register_as_syntastic_checker = 1
-  let g:ycm_add_preview_to_completeopt = 1
-  let g:ycm_autoclose_preview_window_after_completion = 1
-  let g:ycm_autoclose_preview_window_after_insertion = 1
-  let g:ycm_seed_identifiers_with_syntax = 1
-  let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-  let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-  if GUI()
-    let g:ycm_key_invoke_completion = '<C-Space>'
-  else
-    let g:ycm_key_invoke_completion = '<C-@>'
+    " Plugin key-mappings.
+    if GUI()
+      imap <C-Space> <Plug>(neosnippet_expand_or_jump)
+      smap <C-Space> <Plug>(neosnippet_expand_or_jump)
+    else
+      imap <C-@> <Plug>(neosnippet_expand_or_jump)
+      smap <C-@> <Plug>(neosnippet_expand_or_jump)
+    endif
+
+    " SuperTab like snippets behavior.
+    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
+
+    " Some convenient mappings
+    imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<TAB>"
+    imap <expr><Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+    " AutoComplPop like behavior.
+    " let g:neocomplete#enable_auto_select = 1
+  elseif
+    " ultisnips
+      let g:UltiSnipsExpandTrigger = "<Tab>"
+      let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+      let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+      let g:UltiSnipsListSnippets="<C-Tab>"
+
+    " YouCompleteMe
+      let g:ycm_register_as_syntastic_checker = 1
+      let g:ycm_add_preview_to_completeopt = 1
+      let g:ycm_autoclose_preview_window_after_completion = 1
+      let g:ycm_autoclose_preview_window_after_insertion = 1
+      let g:ycm_seed_identifiers_with_syntax = 1
+      let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+      let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+      if GUI()
+        let g:ycm_key_invoke_completion = '<C-Space>'
+      else
+        let g:ycm_key_invoke_completion = '<C-@>'
+      endif
   endif
 
   " For snippet_complete marker.
