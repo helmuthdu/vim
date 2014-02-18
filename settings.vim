@@ -112,7 +112,7 @@ if GUI()
   set guioptions=ac
   " Linux
   if WINDOWS()
-    set gfn=Liberation_Mono:h10
+    set gfn=DejaVu_Sans_Mono_for_Powerline:h10
   elseif OSX()
     set gfn=Menlo:h13
   else
