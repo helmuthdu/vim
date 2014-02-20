@@ -170,8 +170,9 @@
   " If undotree is opened, it is likely one wants to interact with it.
   let g:undotree_SetFocusWhenToggle=1
 
-  if WINDOWS()
-    " neocomplete
+  let neocomplete_readme=expand('~/.vim/bundle/neocomplete.vim/README.md')
+  if WINDOWS() || filereadable(neocomplete_readme)
+  " neocomplete
     set completeopt-=preview
     " Use neocomplete.
     let g:neocomplete#enable_at_startup = 1
@@ -186,15 +187,6 @@
     endif
     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    " Plugin key-mappings.
-    if GUI()
-      imap <C-Space> <Plug>(neosnippet_expand_or_jump)
-      smap <C-Space> <Plug>(neosnippet_expand_or_jump)
-    else
-      imap <C-@> <Plug>(neosnippet_expand_or_jump)
-      smap <C-@> <Plug>(neosnippet_expand_or_jump)
-    endif
-
     " SuperTab like snippets behavior.
     imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)"
@@ -208,29 +200,26 @@
     imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<TAB>"
     imap <expr><Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
     imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+  else
+  " ultisnips
+    let g:UltiSnipsExpandTrigger = "<Tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+    let g:UltiSnipsListSnippets="<C-Tab>"
 
-    " AutoComplPop like behavior.
-    " let g:neocomplete#enable_auto_select = 1
-  elseif
-    " ultisnips
-      let g:UltiSnipsExpandTrigger = "<Tab>"
-      let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-      let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
-      let g:UltiSnipsListSnippets="<C-Tab>"
-
-    " YouCompleteMe
-      let g:ycm_register_as_syntastic_checker = 1
-      let g:ycm_add_preview_to_completeopt = 1
-      let g:ycm_autoclose_preview_window_after_completion = 1
-      let g:ycm_autoclose_preview_window_after_insertion = 1
-      let g:ycm_seed_identifiers_with_syntax = 1
-      let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-      let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-      if GUI()
-        let g:ycm_key_invoke_completion = '<C-Space>'
-      else
-        let g:ycm_key_invoke_completion = '<C-@>'
-      endif
+  " YouCompleteMe
+    let g:ycm_register_as_syntastic_checker = 1
+    let g:ycm_add_preview_to_completeopt = 1
+    let g:ycm_autoclose_preview_window_after_completion = 1
+    let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_seed_identifiers_with_syntax = 1
+    let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+    if GUI()
+      let g:ycm_key_invoke_completion = '<C-Space>'
+    else
+      let g:ycm_key_invoke_completion = '<C-@>'
+    endif
   endif
 
   " For snippet_complete marker.
