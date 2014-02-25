@@ -172,13 +172,11 @@
   if WINDOWS() || filereadable(neocomplete_readme)
   " neocomplete
     set completeopt-=preview
-    " Use neocomplete.
     let g:neocomplete#enable_at_startup = 1
-    " Use smartcase.
     let g:neocomplete#enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    let g:neocomplete#enable_auto_delimiter = 1
+    let g:neocomplete#max_list = 15
+    let g:neocomplete#force_overwrite_completefunc = 1
     " Define keyword.
     if !exists('g:neocomplete#keyword_patterns')
         let g:neocomplete#keyword_patterns = {}
@@ -194,10 +192,24 @@
     \: "\<TAB>"
 
     " Some convenient mappings
-    imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<TAB>"
-    imap <expr><Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+    imap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
+    imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
+
+    imap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+    imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+
+    imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
+    imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
   else
   " ultisnips
     let g:UltiSnipsExpandTrigger = "<Tab>"
