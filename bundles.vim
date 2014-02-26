@@ -42,14 +42,13 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  if WINDOWS()
+  " NeoComplete
     Bundle 'Shougo/neocomplete.vim'
     Bundle 'Shougo/neosnippet'
     Bundle 'Shougo/neosnippet-snippets'
-  else
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'SirVer/ultisnips'
-  endif
+  " YouCompleteMe
+    " Bundle 'Valloric/YouCompleteMe'
+    " Bundle 'SirVer/ultisnips'
   Bundle 'AzizLight/TaskList.vim'
   Bundle 'Yggdroot/indentLine'
   Bundle 'godlygeek/tabular'
@@ -86,9 +85,8 @@ endif
 if count(g:bundle_groups, 'colorscheme')
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'morhetz/gruvbox'
-  Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
-  Bundle 'junegunn/seoul256.vim'
+  Bundle 'reedes/vim-colors-pencil'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"

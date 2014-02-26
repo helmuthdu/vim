@@ -93,14 +93,11 @@ if &t_Co > 2 || GUI()
 endif
 " default colorscheme
 set background=dark
-if GUI()
+if GUI() || &t_Co >= 256
   set t_Co=256
   " colorscheme badwolf
-  colorscheme gruvbox
-elseif &t_Co >= 256
-  set t_Co=256
-  " colorscheme badwolf
-  colorscheme gruvbox
+  " colorscheme gruvbox
+  colorscheme pencil
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm

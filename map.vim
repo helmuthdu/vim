@@ -13,9 +13,6 @@ map <silent> <C-o> :Explore<CR>
 " I can type :help on my own, thanks.
 map <F1> <ESC>
 
-" F12 = Paste Toggle
-set pastetoggle=<F12>
-
 " spacebar create/open/close folding
 nmap <silent> <Space> za
 vmap <silent> <Space> zf
