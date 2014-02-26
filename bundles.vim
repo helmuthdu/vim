@@ -25,6 +25,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'Stormherz/tablify'
   Bundle 'bling/vim-airline'
+  Bundle 'paranoida/vim-airlineish'
   Bundle 'bling/vim-bufferline'
   Bundle 'hwrod/interactive-replace'
   Bundle 'jeetsukumaran/vim-buffergator'

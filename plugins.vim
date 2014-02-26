@@ -18,7 +18,7 @@
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  let g:airline_theme='powerlineish'
+  let g:airline_theme='airlineish'
   if GUI()
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
