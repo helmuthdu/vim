@@ -74,6 +74,7 @@ if count(g:bundle_groups, 'web_devel')
   Bundle 'groenewege/vim-less'
   Bundle 'ap/vim-css-color'
   Bundle 'tpope/vim-haml'
+  Bundle 'mustache/vim-mustache-handlebars'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-bundler'
