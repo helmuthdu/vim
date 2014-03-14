@@ -18,7 +18,8 @@
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  let g:airline_theme='airlineish'
+  " let g:airline_theme='airlineish'
+  let g:airline_theme='badwolf'
   if GUI()
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
@@ -42,7 +43,7 @@
 
 " coffeescript
   let coffee_indent_keep_current = 1
-  autocmd BufWritePost *.coffee silent make!
+  " autocmd BufWritePost *.coffee silent make!
 
 " ctrlp
   let g:ctrlp_map = 'cp'

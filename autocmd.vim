@@ -39,13 +39,6 @@ if has("autocmd")
   " Workaround broken colour highlighting in Haskell
   au FileType haskell setlocal nospell
 
-  " 80-character line coloring
-  if exists('+colorcolumn')
-    set colorcolumn=80
-  else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-  endif
-
   " Stupid shift key fixes
   if has("user_commands")
       command! -bang -nargs=* -complete=file E e<bang> <args>
