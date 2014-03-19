@@ -2,6 +2,10 @@
 " Set mapleader
 let g:mapleader=","
 
+" Toggle paste mode
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+
 " Session List
 nmap <leader>sl :SessionList<CR>
 nmap <leader>ss :SessionSave<CR>
@@ -29,10 +33,23 @@ imap jj <ESC>
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 
+" format the entire file
+nnoremap <leader>fef :normal! gg=G``<CR>
+
 " Quick alignment of text
 nmap <Leader>al :left<CR>
 nmap <Leader>ar :right<CR>
 nmap <Leader>ac :center<CR>
+
+" Some helpers to edit mode
+" http://vimcasts.org/e/14
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
+
+" Swap two words
+nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Spell commands
 nmap <Leader>sn ]s
@@ -93,9 +110,8 @@ nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
 " and ask which one to jump to
 nmap <F12> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Creating underline/overline headings for markup languages
-" Inspired by http://sphinx.pocoo.org/rest.html#sections
-nmap <Leader>1 yyPVr=jyypVr=
-nmap <Leader>2 yyPVr-jyypVr-
-nmap <Leader>3 yypVr=
-nmap <Leader>4 yypVr-
+" Underline the current line with '='
+nmap <silent> <leader>ul :t.<CR>Vr-
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>

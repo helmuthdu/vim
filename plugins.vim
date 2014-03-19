@@ -45,8 +45,8 @@
   let coffee_indent_keep_current = 1
   " autocmd BufWritePost *.coffee silent make!
 
-" ctrlp
-  let g:ctrlp_map = 'cp'
+" " ctrlp
+"   let g:ctrlp_map = 'cp'
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_extensions = ['funky']

@@ -36,7 +36,7 @@ if count(g:bundle_groups, 'general')
   Bundle 'scrooloose/nerdtree'
   Bundle 'tpope/vim-vinegar'
   Bundle 'tacahiroy/ctrlp-funky'
-  Bundle 'terryma/vim-multiple-cursors'
+  Bundle 'kris89/vim-multiple-cursors'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'yonchu/accelerated-smooth-scroll'
