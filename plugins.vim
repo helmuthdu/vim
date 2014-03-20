@@ -112,6 +112,7 @@
 
 " indent guides
   let g:indentLine_char = '│'
+  let g:indentLine_faster = 1
 
 " less
   nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
