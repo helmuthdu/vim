@@ -11,9 +11,6 @@ nmap <leader>sl :SessionList<CR>
 nmap <leader>ss :SessionSave<CR>
 nmap <leader>sc :SessionClose<CR>
 
-" netrw
-map <silent> <C-o> :Explore<CR>
-
 " I can type :help on my own, thanks.
 map <F1> <ESC>
 

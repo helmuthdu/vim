@@ -60,9 +60,6 @@ endif
 
 " Plugins Manager
 execute pathogen#infect()
-if has('autocmd')
-  filetype plugin indent on    " automatically load filetype plugins
-endif
 
 " Editor Settings
 set cmdheight=1          " the command bar is 1 high

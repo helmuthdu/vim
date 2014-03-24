@@ -51,12 +51,13 @@
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_extensions = ['funky']
 
+  nmap <silent>cp :CtrlP<CR>
   nmap <silent>cm :CtrlPMRUFiles<CR>
   nmap <silent>cf :CtrlPFunky<CR>
   nmap <silent>cl :CtrlPLine<CR>
   nmap <silent>cb :CtrlPBuffer<CR>
   nmap <silent>ct :CtrlPBufTag<CR>
-  nmap <silent>cx :CtrlPMixed<CR>
+  nmap <silent><C-p> :CtrlPMixed<CR>
 
   let g:ctrlp_custom_ignore = {
         \ 'dir': '\.git$\|\.hg$\|\.svn$',
@@ -117,21 +118,6 @@
 " less
   nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
 
-" NERDTree
-  nmap <silent><Leader>nt :NERDTreeToggle<CR>
-  let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-  let g:NERDTreeWinPos = "right"
-  let g:NERDTreeShowBookmarks = 1
-  let g:NERDTreeWinSize = 40
-  let g:NERDTreeChristmasTree = 0
-  let g:NERDTreeCaseSensitiveSort = 1
-  let g:NERDTreeQuitOnOpen = 1
-  let g:NERDTreeShowHidden = 1
-  let g:NERDTreeMouseMode = 2
-  let g:NERDTreeIgnore=[
-        \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-        \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
-
 " rainbow parentheses
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound
@@ -169,6 +155,11 @@
   nmap <silent>U :UndotreeToggle<CR>
   " If undotree is opened, it is likely one wants to interact with it.
   let g:undotree_SetFocusWhenToggle=1
+
+" vimfiler
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_split_action = "right"
+  nmap <silent> <C-o> :VimFilerBufferDir<CR>
 
   let neocomplete_readme=expand('~/.vim/bundle/neocomplete.vim/README.md')
   if WINDOWS() || filereadable(neocomplete_readme)
