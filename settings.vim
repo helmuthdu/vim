@@ -106,8 +106,9 @@ if GUI() || &t_Co >= 256
   " colorscheme badwolf
   colorscheme gruvbox
   " colorscheme pencil
-  hi Comment ctermfg=bg ctermbg=240
-  hi Comment guifg=#585858 guibg=bg
+  " color fixes
+  " hi Comment ctermfg=bg ctermbg=240
+  " hi Comment guifg=#585858 guibg=bg
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm
