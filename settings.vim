@@ -1,6 +1,5 @@
 " SETTINGS
 " General
-set nocompatible                   " explicitly get out of vi-compatible mode
 set title                          " change the terminal's title
 set history=1000                   " keep 100 lines of command line history
 set autochdir                      " Change directory to the current buffer when opening files.
@@ -50,16 +49,6 @@ if has("mouse")
   set mousemodel=popup
   set mousehide
 endif
-
-" Multiplatform compatibility
-if WINDOWS()
-  " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-  " across (heterogeneous) systems easier.
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-endif
-
-" Plugins Manager
-execute pathogen#infect()
 
 " Editor Settings
 set cmdheight=1          " the command bar is 1 high

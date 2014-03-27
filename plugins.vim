@@ -45,19 +45,17 @@
   let coffee_indent_keep_current = 1
   " autocmd BufWritePost *.coffee silent make!
 
-" " ctrlp
-"   let g:ctrlp_map = 'cp'
+" ctrlp
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_extensions = ['funky']
 
-  nmap <silent>cp :CtrlP<CR>
+  nmap <silent>cp :CtrlPMixed<CR>
   nmap <silent>cm :CtrlPMRUFiles<CR>
   nmap <silent>cf :CtrlPFunky<CR>
   nmap <silent>cl :CtrlPLine<CR>
   nmap <silent>cb :CtrlPBuffer<CR>
   nmap <silent>ct :CtrlPBufTag<CR>
-  nmap <silent><C-p> :CtrlPMixed<CR>
 
   let g:ctrlp_custom_ignore = {
         \ 'dir': '\.git$\|\.hg$\|\.svn$',
