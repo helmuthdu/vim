@@ -46,18 +46,17 @@ if count(g:bundle_groups, 'general')
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'tpope/vim-unimpaired'
   NeoBundle 'yonchu/accelerated-smooth-scroll'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/vimfiler.vim'
+  NeoBundle 'Shougo/vimfiler', {'depends' : 'Shougo/unite.vim' }
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
   " NeoComplete
-    NeoBundle 'Shougo/neocomplete.vim'
-    NeoBundle 'Shougo/neosnippet'
-    NeoBundle 'Shougo/neosnippet-snippets'
+		NeoBundle 'Shougo/neocomplete', {'depends' : [
+        \ 'Shougo/neosnippet.git',
+		    \ 'Shougo/neosnippet-snippets'
+		    \ ]}
   " YouCompleteMe
-    " NeoBundle 'Valloric/YouCompleteMe'
-    " NeoBundle 'SirVer/ultisnips'
+    " NeoBundle 'Valloric/YouCompleteMe', {'depends' : 'SirVer/ultisnips'}
   NeoBundle 'AzizLight/TaskList.vim'
   NeoBundle 'Yggdroot/indentLine'
   NeoBundle 'godlygeek/tabular'
@@ -69,8 +68,8 @@ if count(g:bundle_groups, 'devel')
   NeoBundle 'mhinz/vim-signify'
   NeoBundle 'gcmt/wildfire.vim'
   if executable('ctags')
-    NeoBundle 'xolox/vim-misc'
-    NeoBundle 'xolox/vim-easytags'
+    NeoBundle 'xolox/vim-easytags', {'depends' : 'xolox/vim-misc'}
+endif
   endif
 endif
 " WEB DEVELOPER
