@@ -69,7 +69,6 @@ if count(g:bundle_groups, 'devel')
   NeoBundle 'gcmt/wildfire.vim'
   if executable('ctags')
     NeoBundle 'xolox/vim-easytags', {'depends' : 'xolox/vim-misc'}
-endif
   endif
 endif
 " WEB DEVELOPER
