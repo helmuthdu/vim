@@ -11,6 +11,7 @@ endif
 if has('vim_starting')
   set nocompatible
   set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+  set sessionoptions-=options
 endif
 
 call neobundle#rc(expand($HOME.'/.vim/bundle/'))
@@ -52,7 +53,7 @@ endif
 if count(g:bundle_groups, 'devel')
   " NeoComplete
 		NeoBundle 'Shougo/neocomplete', {'depends' : [
-        \ 'Shougo/neosnippet.git',
+        \ 'Shougo/neosnippet',
 		    \ 'Shougo/neosnippet-snippets'
 		    \ ]}
   " YouCompleteMe
@@ -94,6 +95,7 @@ if count(g:bundle_groups, 'colorscheme')
   NeoBundle 'morhetz/gruvbox'
   NeoBundle 'sjl/badwolf'
   NeoBundle 'reedes/vim-colors-pencil'
+  NeoBundle 'cocopon/iceberg.vim'
 endif
 
 " automatically load filetype plugins
@@ -102,3 +104,5 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+

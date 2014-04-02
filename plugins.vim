@@ -159,7 +159,7 @@
   let g:vimfiler_split_action = "right"
   nmap <silent> <C-o> :VimFilerBufferDir<CR>
 
-  let neocomplete_readme=expand('~/.vim/bundle/neocomplete.vim/README.md')
+  let neocomplete_readme=expand('~/.vim/bundle/neocomplete/README.md')
   if WINDOWS() || filereadable(neocomplete_readme)
   " neocomplete
     set completeopt-=preview

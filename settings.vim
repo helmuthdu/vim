@@ -45,9 +45,9 @@ endif
 
 " Enable mouse
 if has("mouse")
-  set mouse-=a
+  set mouse=a
   set mousemodel=popup
-  set mousehide
+  set ttymouse=xterm2
 endif
 
 " Editor Settings
@@ -96,8 +96,8 @@ if GUI() || &t_Co >= 256
   colorscheme gruvbox
   " colorscheme pencil
   " color fixes
-  " hi Comment ctermfg=bg ctermbg=240
-  " hi Comment guifg=#585858 guibg=bg
+  hi Comment ctermfg=bg ctermbg=240
+  hi Comment guifg=#585858 guibg=bg
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm
