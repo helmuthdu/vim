@@ -4,7 +4,7 @@ if !filereadable(neobundle_readme)
   echo "Installing NeoBundle.."
   echo ""
   silent !mkdir -p $HOME/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neocomplete.vim/
+  silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
