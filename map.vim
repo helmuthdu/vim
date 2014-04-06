@@ -14,6 +14,9 @@ nmap <leader>sc :SessionClose<CR>
 " I can type :help on my own, thanks.
 map <F1> <ESC>
 
+" netrw
+map <silent> <C-o> :Explore<CR>
+
 " spacebar create/open/close folding
 nmap <silent> <Space> za
 vmap <silent> <Space> zf
@@ -44,9 +47,6 @@ nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
 nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
-
-" Swap two words
-nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Spell commands
 nmap <Leader>sn ]s

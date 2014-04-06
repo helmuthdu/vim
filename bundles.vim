@@ -1,108 +1,104 @@
 " PLUGINS BUNDLE
-let neobundle_readme=expand($HOME.'/.vim/bundle/neobundle.vim/README.md')
-if !filereadable(neobundle_readme)
-  echo "Installing NeoBundle.."
+let vundle_readme=expand($HOME.'/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Plugin.."
   echo ""
   silent !mkdir -p $HOME/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim/
+  silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle/
 endif
 
 " Required:
 if has('vim_starting')
   set nocompatible
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+  set runtimepath+=$HOME/.vim/bundle/vundle/
   set sessionoptions-=options
 endif
 
-call neobundle#rc(expand($HOME.'/.vim/bundle/'))
+call vundle#rc(expand($HOME.'/.vim/bundle/'))
+Bundle 'gmarik/vundle'
 
-" Let NeoBundle manage bundles
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" NeoBundle Groups
+" Plugin Groups
 " List only the plugin groups you will use
 if !exists('g:bundle_groups')
   let g:bundle_groups=['general', 'devel', 'web_devel', 'colorscheme']
 endif
 
-" NeoBundles here:
+" Plugins here:
 " GENERAL
 if count(g:bundle_groups, 'general')
-  " NeoBundle 'gregsexton/VimCalc'
-  NeoBundle 'hotoo/calendar-vim'
-  NeoBundle 'Lokaltog/vim-easymotion'
-  NeoBundle 'Stormherz/tablify'
-  NeoBundle 'bling/vim-airline'
-  NeoBundle 'paranoida/vim-airlineish'
-  NeoBundle 'bling/vim-bufferline'
-  NeoBundle 'hwrod/interactive-replace'
-  NeoBundle 'jeetsukumaran/vim-buffergator'
-  NeoBundle 'kien/ctrlp.vim'
-  NeoBundle 'mbbill/undotree'
-  NeoBundle 'mhinz/vim-startify'
-  NeoBundle 'mtth/locate.vim'
-  NeoBundle 'tpope/vim-vinegar'
-  NeoBundle 'tacahiroy/ctrlp-funky'
-  NeoBundle 'kris89/vim-multiple-cursors'
-  NeoBundle 'tpope/vim-surround'
-  NeoBundle 'tpope/vim-unimpaired'
-  NeoBundle 'yonchu/accelerated-smooth-scroll'
-  NeoBundle 'Shougo/vimfiler', {'depends' : 'Shougo/unite.vim' }
+  " Plugin 'gregsexton/VimCalc'
+  Plugin 'hotoo/calendar-vim'
+  Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'Stormherz/tablify'
+  Plugin 'bling/vim-airline'
+  Plugin 'paranoida/vim-airlineish'
+  Plugin 'bling/vim-bufferline'
+  Plugin 'hwrod/interactive-replace'
+  Plugin 'troydm/easybuffer.vim'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'mbbill/undotree'
+  Plugin 'mhinz/vim-startify'
+  Plugin 'mtth/locate.vim'
+  Plugin 'tpope/vim-vinegar'
+  Plugin 'tacahiroy/ctrlp-funky'
+  Plugin 'kris89/vim-multiple-cursors'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'yonchu/accelerated-smooth-scroll'
+  Plugin 'chrisbra/NrrwRgn'
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
   " NeoComplete
-		NeoBundle 'Shougo/neocomplete', {'depends' : [
-        \ 'Shougo/neosnippet',
-		    \ 'Shougo/neosnippet-snippets'
-		    \ ]}
+		Plugin 'Shougo/neocomplete'
+		Plugin 'Shougo/neosnippet'
+		Plugin 'Shougo/neosnippet-snippets'
   " YouCompleteMe
-    " NeoBundle 'Valloric/YouCompleteMe', {'depends' : 'SirVer/ultisnips'}
-  NeoBundle 'AzizLight/TaskList.vim'
-  NeoBundle 'Yggdroot/indentLine'
-  NeoBundle 'godlygeek/tabular'
-  NeoBundle 'Raimondi/delimitMate'
-  NeoBundle 'kien/rainbow_parentheses.vim'
-  NeoBundle 'tpope/vim-commentary'
-  NeoBundle 'scrooloose/syntastic'
-  NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'mhinz/vim-signify'
-  NeoBundle 'gcmt/wildfire.vim'
+    " Plugin 'Valloric/YouCompleteMe'
+    " Plugin 'SirVer/ultisnips'
+  Plugin 'AzizLight/TaskList.vim'
+  Plugin 'Yggdroot/indentLine'
+  Plugin 'godlygeek/tabular'
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'kien/rainbow_parentheses.vim'
+  Plugin 'tomtom/tcomment_vim'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'mhinz/vim-signify'
+  Plugin 'gcmt/wildfire.vim'
+  Plugin 'mutewinter/swap-parameters'
+  Plugin 'zhaocai/GoldenView.vim'
+  Plugin 'Xuyuanp/git-nerdtree'
   if executable('ctags')
-    NeoBundle 'xolox/vim-easytags', {'depends' : 'xolox/vim-misc'}
+    Plugin 'xolox/vim-easytags'
+    Plugin 'xolox/vim-misc'
   endif
 endif
 " WEB DEVELOPER
 if count(g:bundle_groups, 'web_devel')
-  NeoBundle 'ap/vim-css-color'
-  NeoBundle 'groenewege/vim-less'
-  NeoBundleLazy 'jelera/vim-javascript-syntax', { 'autoload': { 'filetypes': ['javascript'] } }
-  NeoBundle 'guileen/simple-javascript-indenter'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'mattn/emmet-vim'
-  NeoBundle 'mustache/vim-mustache-handlebars'
-  NeoBundle 'othree/html5.vim'
-  NeoBundle 'paulyg/Vim-PHP-Stuff'
-  NeoBundle 'tpope/vim-bundler'
-  NeoBundle 'tpope/vim-haml'
-  NeoBundle 'tpope/vim-markdown'
-  NeoBundle 'tpope/vim-rails'
-  NeoBundle 'vim-ruby/vim-ruby'
+  Plugin 'ap/vim-css-color'
+  Plugin 'groenewege/vim-less'
+  Plugin 'jelera/vim-javascript-syntax'
+  Plugin 'guileen/simple-javascript-indenter'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'mustache/vim-mustache-handlebars'
+  Plugin 'othree/html5.vim'
+  Plugin 'paulyg/Vim-PHP-Stuff'
+  Plugin 'tpope/vim-bundler'
+  Plugin 'tpope/vim-haml'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'tpope/vim-rails'
+  Plugin 'vim-ruby/vim-ruby'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
-  NeoBundle 'altercation/vim-colors-solarized'
-  NeoBundle 'morhetz/gruvbox'
-  NeoBundle 'sjl/badwolf'
-  NeoBundle 'reedes/vim-colors-pencil'
-  NeoBundle 'cocopon/iceberg.vim'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'morhetz/gruvbox'
+  Plugin 'sjl/badwolf'
+  Plugin 'reedes/vim-colors-pencil'
+  Plugin 'cocopon/iceberg.vim'
 endif
 
 " automatically load filetype plugins
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-

@@ -46,6 +46,7 @@ endif
 " Enable mouse
 if has("mouse")
   set mouse=a
+  set mousehide
   set mousemodel=popup
   set ttymouse=xterm2
 endif
@@ -63,6 +64,8 @@ set number               " turn on line numbers
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
 
 " wildmode
+set completeopt+=longest " Optimize auto complete
+set completeopt-=preview
 set wildmenu           " nice tab-completion on the command line
 set wildchar=9         " tab as completion character
 set wildmode=longest:full,list:full
@@ -117,7 +120,6 @@ if GUI()
   endif
   set guioptions-=m
   nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-  set lines=50 columns=80
 endif
 
 " Language Settings
