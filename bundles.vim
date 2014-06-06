@@ -41,7 +41,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'mtth/locate.vim'
   Plugin 'tpope/vim-vinegar'
   Plugin 'tacahiroy/ctrlp-funky'
-  Plugin 'kris89/vim-multiple-cursors'
+  Plugin 'jrhorn424/vim-multiple-cursors'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'pocke/accelerated-smooth-scroll'
@@ -49,18 +49,21 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
+  if WINDOWS()
   " NeoComplete
 		Plugin 'Shougo/neocomplete'
 		Plugin 'Shougo/neosnippet'
 		Plugin 'Shougo/neosnippet-snippets'
+	else
   " YouCompleteMe
-    " Plugin 'Valloric/YouCompleteMe'
-    " Plugin 'SirVer/ultisnips'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'SirVer/ultisnips'
+  endif
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
   Plugin 'Raimondi/delimitMate'
-  Plugin 'kien/rainbow_parentheses.vim'
+  Plugin 'jbnicolai/rainbow_parentheses.vim'
   Plugin 'tomtom/tcomment_vim'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-fugitive'
@@ -79,7 +82,7 @@ if count(g:bundle_groups, 'web_devel')
   Plugin 'ap/vim-css-color'
   Plugin 'groenewege/vim-less'
   Plugin 'jelera/vim-javascript-syntax'
-  Plugin 'guileen/simple-javascript-indenter'
+  Plugin 'burnettk/vim-angular'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'mattn/emmet-vim'
   Plugin 'mustache/vim-mustache-handlebars'
