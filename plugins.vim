@@ -38,10 +38,6 @@
 " buffergator
   nmap <silent><Leader>b :EasyBuffer<CR>
 
-" coffeescript
-  let coffee_indent_keep_current = 1
-  " autocmd BufWritePost *.coffee silent make!
-
 " ctrlp
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
   let g:ctrlp_working_path_mode = 'ra'

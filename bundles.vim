@@ -72,25 +72,14 @@ if count(g:bundle_groups, 'devel')
   Plugin 'mutewinter/swap-parameters'
   Plugin 'zhaocai/GoldenView.vim'
   Plugin 'Xuyuanp/git-nerdtree'
-  if executable('ctags')
-    Plugin 'xolox/vim-easytags'
-    Plugin 'xolox/vim-misc'
-  endif
+  Plugin 'sheerun/vim-polyglot'
 endif
 " WEB DEVELOPER
 if count(g:bundle_groups, 'web_devel')
   Plugin 'ap/vim-css-color'
-  Plugin 'groenewege/vim-less'
-  Plugin 'jelera/vim-javascript-syntax'
   Plugin 'burnettk/vim-angular'
-  Plugin 'kchmck/vim-coffee-script'
   Plugin 'mattn/emmet-vim'
-  Plugin 'mustache/vim-mustache-handlebars'
-  Plugin 'othree/html5.vim'
-  Plugin 'paulyg/Vim-PHP-Stuff'
   Plugin 'tpope/vim-bundler'
-  Plugin 'tpope/vim-haml'
-  Plugin 'tpope/vim-markdown'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif
