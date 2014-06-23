@@ -49,16 +49,9 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  if WINDOWS()
-  " NeoComplete
-		Plugin 'Shougo/neocomplete'
-		Plugin 'Shougo/neosnippet'
-		Plugin 'Shougo/neosnippet-snippets'
-	else
-  " YouCompleteMe
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'SirVer/ultisnips'
-  endif
+  Plugin 'Shougo/neocomplete'
+  Plugin 'Shougo/neosnippet'
+  Plugin 'Shougo/neosnippet-snippets'
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
