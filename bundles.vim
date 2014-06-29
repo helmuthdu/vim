@@ -44,6 +44,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'jrhorn424/vim-multiple-cursors'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-repeat'
   Plugin 'pocke/accelerated-smooth-scroll'
   Plugin 'chrisbra/NrrwRgn'
 endif
@@ -52,6 +53,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'Shougo/neocomplete'
   Plugin 'Shougo/neosnippet'
   Plugin 'Shougo/neosnippet-snippets'
+  Plugin 'othree/html5.vim'
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
@@ -63,7 +65,6 @@ if count(g:bundle_groups, 'devel')
   Plugin 'mhinz/vim-signify'
   Plugin 'gcmt/wildfire.vim'
   Plugin 'mutewinter/swap-parameters'
-  Plugin 'zhaocai/GoldenView.vim'
   Plugin 'Xuyuanp/git-nerdtree'
   Plugin 'sheerun/vim-polyglot'
 endif
