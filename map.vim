@@ -1,4 +1,14 @@
 " KEYMAPPINGS
+"DISABLED DEFAULT MAPPING: UNSET SHORTCUTS {{{
+  " Unmapping help from F1 and Ctrl-F1 for use toggling the reference manual
+  " the :h topic feature works, and <Leader><F1> displays quickref
+  inoremap <F1> <nop>
+  nnoremap <F1> <nop>
+  vnoremap <F1> <nop>
+  "unmap the suspend function
+  map <C-z> <Nop>
+"}}}
+
 " Set mapleader
 let g:mapleader=","
 
@@ -10,9 +20,6 @@ imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 nmap <leader>sl :SessionList<CR>
 nmap <leader>ss :SessionSave<CR>
 nmap <leader>sc :SessionClose<CR>
-
-" I can type :help on my own, thanks.
-map <F1> <ESC>
 
 " netrw
 map <silent> <C-o> :Explore<CR>
@@ -33,9 +40,6 @@ imap jj <ESC>
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 
-" format the entire file
-nnoremap <leader>fef :normal! gg=G``<CR>
-
 " Quick alignment of text
 nmap <Leader>al :left<CR>
 nmap <Leader>ar :right<CR>
@@ -49,14 +53,15 @@ nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
 nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 
 " Spell commands
-nmap <Leader>sn ]s
-nmap <Leader>sp [s
-nmap <Leader>sa zg
-nmap <Leader>s? z=
+nmap ?n ]s
+nmap ?p [s
+nmap ?+ zg
+nmap ?? z=
 
 " Improve up/down movement on wrapped lines
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
+
 
 " Make Y consistent with C and D
 nmap Y y$
@@ -70,8 +75,18 @@ vmap Q gq
 nmap Q gqap
 
 " Use tab to indent a line
-vmap > >gv
-vmap < <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+" Map command-[ and command-] to indenting or outdenting
+" while keeping the original selection in visual mode
+vmap <A-]> >gv
+vmap <A-[> <gv
+nmap <A-]> >>
+nmap <A-[> <<
+imap <A-]> <Esc>>>i
+imap <A-[> <Esc><<i
 
 " Easier increment/decrement
 nmap + <C-a>
@@ -90,8 +105,16 @@ nmap <C-j> <c-w>w
 nmap <C-k> <c-w>W
 
 " Drag Current Line/s Vertically
-vmap <A-j> :m'>+<CR>gv
-vmap <A-k> :m-2<CR>gv
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
 
 " move between buffers
 nmap <C-S-TAB> :bprev<CR>
@@ -107,7 +130,7 @@ nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
 " and ask which one to jump to
 nmap <F12> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Underline the current line with '='
+" Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
 
 " find merge conflict markers

@@ -6,10 +6,9 @@ set autochdir                      " Change directory to the current buffer when
 set autoread                       " Set to auto read when a file is changed from the outside
 set autowrite                      " Auto save before commands like next and make
 set backspace=2                    " make backspace work normal
+set diffopt=foldcolumn:0,filler    " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite                " Ignore whitespace changes (focus on code changes)
-set diffopt=filler                 " Add vertical spaces to keep right and left aligned
 set esckeys                        " Allow cursor keys in insert mode.
-set fileformats=unix,mac,dos       " support all three, in this order
 set gdefault                       " regex /g by default
 set hid                            " you can change buffers without saving
 set nostartofline                  " don't jump to first character when paging
@@ -23,39 +22,36 @@ set virtualedit=onemore            " Allow for cursor beyond last character
 set cursorline
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 " vertical/horizontal scroll off settings
-if !&scrolloff
-  set scrolloff=1
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
-" Suffixes that get lower priority when doing tab completion for filenames
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
+set scrolloff=0 sidescrolloff=0
+
 " No bell or flash wanted
 set novisualbell " No blinking
 set noerrorbells " No noise.
 set vb t_vb=     " disable any beeps or flashes on error
-if has('clipboard')
-  if LINUX() " On Linux use + register for copy-paste
-    set clipboard=unnamedplus
-  else " On mac and Windows, use * register for copy-paste
-    set clipboard=unnamed
-  endif
+
+" Use the '*' register as well as the the '+' register if it's available too
+set clipboard=unnamed
+if has('unnamedplus')|set clipboard+=unnamedplus|endif
+
+" Configure to primarily use utf8
+if has("multi_byte")
+  if &termencoding == ""|let &termencoding = &encoding|endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
 endif
+set fileformats=unix,dos,mac "set compatible line endings in order of preference
 
 " Enable mouse
 if has("mouse")
   set mouse=a
   set mousehide
   set mousemodel=popup
-  set ttymouse=xterm2
+  if has("mouse_sgr")|set ttymouse=sgr|else|set ttymouse=xterm2|endif
 endif
 
 " Editor Settings
 set cmdheight=1          " the command bar is 1 high
-set encoding=utf-8
 set equalalways          " Close a split window in Vim without resizing other windows
-set guicursor=a:blinkon0 " cursor-blinking off!!
 set guitablabel=%t
 set laststatus=2         " always show statusline
 set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
@@ -64,8 +60,7 @@ set number               " turn on line numbers
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
 
 " wildmode
-set completeopt+=longest " Optimize auto complete
-set completeopt-=preview
+set completeopt=longest,menuone
 set wildmenu           " nice tab-completion on the command line
 set wildchar=9         " tab as completion character
 set wildmode=longest:full,list:full
@@ -73,14 +68,11 @@ set wildmode=longest:full,list:full
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 " Disable archive files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-" Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-" Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
-set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
-" Ignore rails temporary asset caches
-set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
+
+" Suffixes that get lower priority when doing tab completion for filenames
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
 
 " chars to show for list
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
@@ -96,8 +88,10 @@ set background=dark
 if GUI() || &t_Co >= 256
   set t_Co=256
   " colorscheme badwolf
-  colorscheme gruvbox
-  " colorscheme pencil
+  " colorscheme gruvbox
+  let base16colorspace=256  " Access colors present in 256 colorspace
+  " colorscheme base16-monokai
+  colorscheme base16-eighties
   " color fixes
   hi Comment ctermfg=bg ctermbg=240
   hi Comment guifg=#585858 guibg=bg
@@ -109,7 +103,11 @@ endif
 
 " GUI options
 if GUI()
+  set guicursor=a:blinkon0 " cursor-blinking off!!
   set guioptions=ac
+  set guioptions+=p " enable pointer callbacks for X11 (required by some WMs)
+  set guioptions+=h " prevent the cursor jumping to the longest line while scrolling
+  set winaltkeys=no " don't select the menu when pressing the alt-keys
   " Linux
   if WINDOWS()
     set gfn=DejaVu_Sans_Mono_for_Powerline:h10
@@ -118,7 +116,6 @@ if GUI()
   else
     set gfn=Liberation\ Mono\ 11
   endif
-  set guioptions-=m
   nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 endif
 
@@ -137,12 +134,25 @@ set noswapfile
 if has('persistent_undo')
   set undodir=$HOME/.vim/.undofile
   set undofile
-  set undolevels=1000  "maximum number of changes that can be undone
-  set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+  set undolevels=1000  " maximum number of changes that can be undone
+  set undoreload=10000 " maximum number lines to save for undo on a buffer reload
   if ! isdirectory(&undodir)
     call mkdir(&undodir, 'p')
   endif
 endif
+
+" Wrap
+set display=lastline         " don't display @ with long paragraphs
+" set formatoptions=tcroql     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
+set formatoptions=roqnl12    " How automatic formatting is to be done
+set lbr                      " line break
+set nojoinspaces             " Prevents inserting two spaces after punctuation on a join (J)
+set nowrap                   " word wrap
+set splitbelow               " Puts new split windows to the bottom of the current
+set splitright               " Puts new vsplit windows to the right of the current
+set textwidth=0
+set wrapscan                 " Searches wrap around end of file
+let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 
 " Text, tab and indent related
 set autoindent    " Keep the indent when creating a new line
@@ -152,18 +162,6 @@ set shiftwidth=2  " Number of spaces to use in each autoindent step
 set smarttab      " Use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
 set softtabstop=2 " Number of spaces to skip or insert when <BS>ing or <Tab>ing
 set tabstop=2     " Two tab spaces
-
-" Wrap
-set display=lastline         " don't display @ with long paragraphs
-set formatoptions=tcroql     " t=text, c=comments, q=format with gq command, o,r=autoinsert comment leader
-set lbr                      " line break
-set nojoinspaces             " Prevents inserting two spaces after punctuation on a join (J)
-set nowrap                   " word wrap
-set splitbelow               " Puts new split windows to the bottom of the current
-set splitright               " Puts new vsplit windows to the right of the current
-set textwidth=0
-set wrapscan                 " Searches wrap around end of file
-let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 
 " Search
 set hlsearch      " highlight all matches...
@@ -178,6 +176,7 @@ nohlsearch          " avoid highlighting when reloading vimrc
 
 " Folding
 set foldenable            " enable folding
+set foldcolumn=1
 set foldlevel=1           " start out with everything folded
 set foldmethod=marker     " detect triple-{ style fold markers
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo

@@ -12,21 +12,25 @@
   let g:airline_detect_modified=1
   let g:airline_detect_paste=1
   let g:airline_inactive_collapse=1
-  let g:bufferline_echo = 0
+   "let g:bufferline_echo = 0
+   "let g:airline#extensions#bufferline#enabled = 1
   let g:airline#extensions#syntastic#enabled = 1
-  let g:airline#extensions#bufferline#enabled = 1
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
+  let g:airline#extensions#tabline#enabled = 1
   " let g:airline_theme='airlineish'
-  let g:airline_theme='badwolf'
+  " let g:airline_theme='badwolf'
+  let g:airline_theme='base16'
   if GUI()
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
     endif
     if !exists('g:airline_powerline_fonts')
-      let g:airline_left_sep = ''
-      let g:airline_right_sep = ''
+      "let g:airline_left_sep = ''
+      "let g:airline_right_sep = ''
+      let g:airline_left_sep = ''
+      let g:airline_right_sep = ''
       let g:airline_symbols.branch = ''
       let g:airline_symbols.linenr = ''
     else
@@ -37,6 +41,10 @@
 
 " buffergator
   nmap <silent><Leader>b :EasyBuffer<CR>
+
+" commentary
+  nmap ; <Plug>NERDCommenterToggle
+  vmap ; <Plug>NERDCommenterToggle
 
 " ctrlp
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
@@ -140,8 +148,10 @@
 
 " syntastic
   let g:syntastic_enable_balloons = 1
-  let g:syntastic_auto_loc_list=2
   let g:syntastic_auto_jump=0
+  let g:syntastic_always_populate_loc_list=1
+  let g:syntastic_auto_loc_list=1
+  let g:syntastic_loc_list_height=5
   let g:syntastic_enable_signs=1
   let g:syntastic_error_symbol='✗'
   let g:syntastic_warning_symbol='⚠'
@@ -197,11 +207,22 @@
   if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
   endif
-  let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-  let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.c='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+  let g:neocomplete#sources#omni#input_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+  let g:neocomplete#sources#omni#input_patterns.xml='<[^>]*'
+  let g:neocomplete#sources#omni#input_patterns.html='<[^>]*'
+  let g:neocomplete#sources#omni#input_patterns.markdown='<[^>]*'
+  let g:neocomplete#sources#omni#input_patterns.css='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+  let g:neocomplete#sources#omni#input_patterns.less='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+  let g:neocomplete#sources#omni#input_patterns.javascript='[^. \t]\.\%(\h\w*\)\?'
+  let g:neocomplete#sources#omni#input_patterns.json='[^. \t]\.\%(\h\w*\)\?'
+  let g:neocomplete#sources#omni#input_patterns.python='[^. *\t]\.\h\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.php='[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+  let g:neocomplete#sources#omni#input_patterns.python3='[^. *\t]\.\h\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.go='\h\w*\%.'
+  let g:neocomplete#sources#omni#input_patterns.perl='\h\w*->\h\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.java='\%(\h\w*\|)\)\.'
 
   " For snippet_complete marker.
   if has('conceal')

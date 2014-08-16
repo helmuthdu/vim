@@ -32,7 +32,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
   Plugin 'paranoida/vim-airlineish'
-  Plugin 'bling/vim-bufferline'
+  " Plugin 'bling/vim-bufferline'
   Plugin 'hwrod/interactive-replace'
   Plugin 'troydm/easybuffer.vim'
   Plugin 'kien/ctrlp.vim'
@@ -59,9 +59,10 @@ if count(g:bundle_groups, 'devel')
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
+  Plugin 'Chiel92/vim-autoformat'
   Plugin 'Raimondi/delimitMate'
   Plugin 'jbnicolai/rainbow_parentheses.vim'
-  Plugin 'tomtom/tcomment_vim'
+  Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-fugitive'
   Plugin 'mhinz/vim-signify'
@@ -84,8 +85,7 @@ if count(g:bundle_groups, 'colorscheme')
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'morhetz/gruvbox'
   Plugin 'sjl/badwolf'
-  Plugin 'reedes/vim-colors-pencil'
-  Plugin 'cocopon/iceberg.vim'
+  Plugin 'chriskempson/base16-vim'
 endif
 
 " automatically load filetype plugins
