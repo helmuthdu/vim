@@ -20,19 +20,6 @@ endfunction
 " Toggle spell check
 nmap <silent>ts :call ToggleSpell()<CR>
 
-" Convert text case
-function! TwiddleCase(str)
-  if a:str ==# toupper(a:str)
-    let result = tolower(a:str)
-  elseif a:str ==# tolower(a:str)
-    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
-  else
-    let result = toupper(a:str)
-  endif
-  return result
-endfunction
-vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
-
 " Convert variable case
 function! TwistCase(str)
   if a:str =~# '^[a-z0-9_]\+[!?]\?$'

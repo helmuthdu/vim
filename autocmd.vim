@@ -18,6 +18,10 @@ if has("autocmd")
   " buffer is not visible anymore
   au BufHidden * if &diff == 1 | diffoff | setlocal nowrap | endif
 
+  " Instead of reverting the cursor to the last position in the buffer, we
+  " set it to the first line when editing a git commit message
+  au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
   " Automatically removing all trailing whitespace
   autocmd BufWritePre * :call StripTrailingWhitespace()
 

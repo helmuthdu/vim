@@ -50,6 +50,7 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
+  Plugin 'honza/vim-snippets'
   Plugin 'Shougo/neocomplete'
   Plugin 'Shougo/neosnippet'
   Plugin 'Shougo/neosnippet-snippets'

@@ -26,32 +26,24 @@
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
     endif
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
     if !exists('g:airline_powerline_fonts')
       "let g:airline_left_sep = ''
       "let g:airline_right_sep = ''
-      let g:airline_left_sep = ''
-      let g:airline_right_sep = ''
       let g:airline_symbols.branch = ''
       let g:airline_symbols.linenr = ''
-    else
-      let g:airline_left_sep = '▶'
-      let g:airline_right_sep = '◀'
     endif
   endif
 
 " buffergator
   nmap <silent><Leader>b :EasyBuffer<CR>
 
-" commentary
-  nmap ; <Plug>NERDCommenterToggle
-  vmap ; <Plug>NERDCommenterToggle
-
 " ctrlp
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_extensions = ['funky']
 
-  nmap <silent><c-p> :CtrlP<CR>
   nmap <silent>cp :CtrlPMixed<CR>
   nmap <silent>cm :CtrlPMRUFiles<CR>
   nmap <silent>cf :CtrlPFunky<CR>
@@ -114,6 +106,10 @@
 " indent guides
   let g:indentLine_char = '│'
   let g:indentLine_faster = 1
+
+" NERDCommenter
+  nmap ; <Plug>NERDCommenterToggle
+  vmap ; <Plug>NERDCommenterToggle
 
 " NERDTree
   nmap <silent><Leader>nt :NERDTreeToggle<CR>
@@ -179,6 +175,10 @@
   let g:neocomplete#enable_auto_delimiter = 1
   let g:neocomplete#max_list = 15
   let g:neocomplete#force_overwrite_completefunc = 1
+
+   "Use honza's snippets.
+  let g:neosnippet#snippets_directory=expand($HOME.'/.vim/bundle/vim-snippets/snippets')
+
   " Define keyword.
   if !exists('g:neocomplete#keyword_patterns')
       let g:neocomplete#keyword_patterns = {}
@@ -194,14 +194,30 @@
   \: "\<TAB>"
 
   " Some convenient mappings
-  imap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
+  imap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
   imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
 
-  imap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+  imap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
   imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
 
   imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
-  imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+  "imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+
+  " <CR>: close popup
+  function! SmartReturn()
+    if pumvisible()
+      if neosnippet#expandable()
+        let expand = "\<Plug>(neosnippet_expand)"
+        return expand . neocomplete#smart_close_popup()
+      else
+        return neocomplete#smart_close_popup()
+      endif
+    else
+      return "\<CR>"
+    endif
+  endfunction
+  " <CR> close popup and save indent or expand snippet
+  imap <expr> <CR> SmartReturn()
 
   " Enable heavy omni completion.
   if !exists('g:neocomplete#sources#omni#input_patterns')

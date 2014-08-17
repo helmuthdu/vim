@@ -16,11 +16,6 @@ let g:mapleader=","
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
-" Session List
-nmap <leader>sl :SessionList<CR>
-nmap <leader>ss :SessionSave<CR>
-nmap <leader>sc :SessionClose<CR>
-
 " netrw
 map <silent> <C-o> :Explore<CR>
 
@@ -62,9 +57,13 @@ nmap ?? z=
 nnoremap j gj
 nnoremap k gk
 
+" Session controls
+nmap <leader>sl :SessionList<CR>
+nmap <leader>ss :SessionSave<CR>
+nmap <leader>sc :SessionClose<CR>
 
 " Make Y consistent with C and D
-nmap Y y$
+nnoremap Y y$
 
 " jump to start/end of line
 noremap H ^
