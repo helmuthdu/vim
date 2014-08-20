@@ -45,7 +45,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-repeat'
-  Plugin 'pocke/accelerated-smooth-scroll'
+  Plugin 'yonchu/accelerated-smooth-scroll'
   Plugin 'chrisbra/NrrwRgn'
 endif
 " DEVELOPER
