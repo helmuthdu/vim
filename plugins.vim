@@ -7,7 +7,7 @@
   \ ]
   let g:calendar_current_idx = 1
 
-" airline-case
+" airline
   let g:airline_enable_branch=1
   let g:airline_detect_modified=1
   let g:airline_detect_paste=1
@@ -19,15 +19,13 @@
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
   let g:airline#extensions#tabline#enabled = 1
-  " let g:airline_theme='airlineish'
-  " let g:airline_theme='badwolf'
   let g:airline_theme='base16'
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
   if GUI()
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
     endif
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
     if !exists('g:airline_powerline_fonts')
       "let g:airline_left_sep = ''
       "let g:airline_right_sep = ''
@@ -78,13 +76,6 @@
   let g:EasyMotion_leader_key = 'e'
   hi link EasyMotionTarget ErrorMsg
   hi link EasyMotionShade  Comment
-
-" easytags
-  if OSX()
-    let g:easytags_cmd = '/usr/local/bin/ctags'
-  end
-  let g:easytags_file = $HOME.'/.vim/.tags'
-  set tags=./.tags;
 
 " emmet
   let g:user_emmet_leader_key = '<C-e>'
