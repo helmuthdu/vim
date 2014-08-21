@@ -107,13 +107,13 @@ nmap <C-k> <c-w>W
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
-nmap <C-k> [e
-nmap <C-j> ]e
+nmap <A-k> [e
+nmap <A-j> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-vmap <C-k> [egv
-vmap <C-j> ]egv
+vmap <A-k> [egv
+vmap <A-j> ]egv
 
 " move between buffers
 nmap <C-S-TAB> :bprev<CR>
