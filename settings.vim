@@ -87,18 +87,18 @@ endif
 set background=dark
 if GUI()
   set t_Co=256
-  " colorscheme badwolf
-  " colorscheme gruvbox
+  "colorscheme badwolf
+  colorscheme gruvbox
   let base16colorspace=256  " Access colors present in 256 colorspace
-  " colorscheme base16-monokai
-  colorscheme base16-eighties
+  "colorscheme base16-monokai
+  "colorscheme base16-eighties
   " color fixes
-  hi Comment ctermfg=bg ctermbg=240
-  hi Comment guifg=#585858 guibg=bg
+  "hi Comment ctermfg=bg ctermbg=240
+  "hi Comment guifg=#585858 guibg=bg
 elseif &t_Co >= 256
   colorscheme gruvbox
-  hi Comment ctermfg=bg ctermbg=240
-  hi Comment guifg=#585858 guibg=bg
+  "hi Comment ctermfg=bg ctermbg=240
+  "hi Comment guifg=#585858 guibg=bg
 else
   colorscheme gruvbox
   set t_Co=8
