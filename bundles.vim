@@ -15,69 +15,70 @@ if has('vim_starting')
 endif
 
 call vundle#rc(expand($HOME.'/.vim/bundle/'))
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Plugin Groups
 " List only the plugin groups you will use
 if !exists('g:bundle_groups')
-  let g:bundle_groups=['general', 'devel', 'web_devel', 'colorscheme']
+  let g:bundle_groups=['general', 'devel', 'languages', 'colorscheme']
 endif
 
 " Plugins here:
 " GENERAL
 if count(g:bundle_groups, 'general')
-  " Plugin 'gregsexton/VimCalc'
   Plugin 'hotoo/calendar-vim'
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
-  Plugin 'paranoida/vim-airlineish'
-  " Plugin 'bling/vim-bufferline'
-  Plugin 'hwrod/interactive-replace'
-  Plugin 'troydm/easybuffer.vim'
+  Plugin 'chrisbra/NrrwRgn'
   Plugin 'kien/ctrlp.vim'
-  Plugin 'mbbill/undotree'
-  Plugin 'mhinz/vim-startify'
-  Plugin 'mtth/locate.vim'
-  Plugin 'tpope/vim-vinegar'
   Plugin 'tacahiroy/ctrlp-funky'
   Plugin 'kris89/vim-multiple-cursors'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-unimpaired'
+  Plugin 'mbbill/undotree'
+  Plugin 'mhinz/vim-startify'
+  Plugin 'tpope/vim-abolish'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-vinegar'
+  Plugin 'tpope/vim-bundler'
+  Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
-  Plugin 'chrisbra/NrrwRgn'
+  "replace tools
+  Plugin 'dkprice/vim-easygrep'
+  Plugin 'hwrod/interactive-replace'
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  Plugin 'honza/vim-snippets'
   Plugin 'Shougo/neocomplete'
   Plugin 'Shougo/neosnippet'
   Plugin 'Shougo/neosnippet-snippets'
+  Plugin 'honza/vim-snippets'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'AzizLight/TaskList.vim'
+  Plugin 'Chiel92/vim-autoformat'
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'Xuyuanp/git-nerdtree'
+  Plugin 'Yggdroot/indentLine'
+  Plugin 'gcmt/wildfire.vim'
+  Plugin 'godlygeek/tabular'
+  Plugin 'jbnicolai/rainbow_parentheses.vim'
+  Plugin 'mhinz/vim-signify'
+  Plugin 'mutewinter/swap-parameters'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/syntastic'
+endif
+" LANGUAGES
+if count(g:bundle_groups, 'languages')
+  Plugin 'sheerun/vim-polyglot'
   Plugin 'othree/html5.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'othree/javascript-libraries-syntax.vim'
-  Plugin 'AzizLight/TaskList.vim'
-  Plugin 'Yggdroot/indentLine'
-  Plugin 'godlygeek/tabular'
-  Plugin 'Chiel92/vim-autoformat'
-  Plugin 'Raimondi/delimitMate'
-  Plugin 'jbnicolai/rainbow_parentheses.vim'
-  Plugin 'scrooloose/nerdcommenter'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'mhinz/vim-signify'
-  Plugin 'gcmt/wildfire.vim'
-  Plugin 'mutewinter/swap-parameters'
-  Plugin 'Xuyuanp/git-nerdtree'
-  Plugin 'sheerun/vim-polyglot'
-endif
-" WEB DEVELOPER
-if count(g:bundle_groups, 'web_devel')
   Plugin 'ap/vim-css-color'
   Plugin 'burnettk/vim-angular'
-  Plugin 'mattn/emmet-vim'
-  Plugin 'tpope/vim-bundler'
+  Plugin 'davidhalter/jedi-vim'
+  Plugin 'tpope/vim-coffee-script'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif
