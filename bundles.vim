@@ -65,7 +65,6 @@ if count(g:bundle_groups, 'devel')
   Plugin 'godlygeek/tabular'
   Plugin 'jbnicolai/rainbow_parentheses.vim'
   Plugin 'mhinz/vim-signify'
-  Plugin 'mutewinter/swap-parameters'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/syntastic'
 endif

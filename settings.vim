@@ -60,7 +60,8 @@ set number               " turn on line numbers
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
 
 " wildmode
-set completeopt=longest,menuone
+set completeopt=longest
+set completeopt-=preview
 set wildmenu           " nice tab-completion on the command line
 set wildchar=9         " tab as completion character
 set wildmode=longest:full,list:full
@@ -93,12 +94,12 @@ if GUI()
   "colorscheme base16-monokai
   "colorscheme base16-eighties
   " color fixes
-  "hi Comment ctermfg=bg ctermbg=240
-  "hi Comment guifg=#585858 guibg=bg
+  hi Comment ctermfg=bg ctermbg=240
+  hi Comment guifg=#585858 guibg=bg
 elseif &t_Co >= 256
   colorscheme gruvbox
-  "hi Comment ctermfg=bg ctermbg=240
-  "hi Comment guifg=#585858 guibg=bg
+  hi Comment ctermfg=bg ctermbg=240
+  hi Comment guifg=#585858 guibg=bg
 else
   colorscheme gruvbox
   set t_Co=8
