@@ -105,15 +105,15 @@ nmap <C-k> <c-w>W
 
 " Drag Current Line/s Vertically
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-nmap <A-k> [e
-nmap <A-j> ]e
+nnoremap <C-Up> [e
+nnoremap <C-Down> ]e
+nnoremap <A-k> [e
+nnoremap <A-j> ]e
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <A-k> [egv
-vmap <A-j> ]egv
+vnoremap <C-Up> [egv
+vnoremap <C-Down> ]egv
+vnoremap <A-k> [egv
+vnoremap <A-j> ]egv
 
 " move between buffers
 nmap <C-S-TAB> :bprev<CR>

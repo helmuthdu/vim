@@ -59,7 +59,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Chiel92/vim-autoformat'
   Plugin 'Raimondi/delimitMate'
-  Plugin 'Xuyuanp/git-nerdtree'
+  Plugin 'scrooloose/nerdtree'
   Plugin 'Yggdroot/indentLine'
   Plugin 'gcmt/wildfire.vim'
   Plugin 'godlygeek/tabular'

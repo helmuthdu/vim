@@ -18,7 +18,9 @@
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  let g:airline#extensions#tabline#enabled = 1
+  if &t_Co > 2 || GUI()
+    let g:airline#extensions#tabline#enabled = 1
+  endif
   let g:airline_theme='base16'
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
@@ -113,6 +115,7 @@
   let g:NERDTreeQuitOnOpen = 1
   let g:NERDTreeShowHidden = 1
   let g:NERDTreeMouseMode = 2
+  let NERDTreeAutoDeleteBuffer=1
   let g:NERDTreeIgnore=[
         \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
