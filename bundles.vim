@@ -36,7 +36,6 @@ if count(g:bundle_groups, 'general')
   Plugin 'kris89/vim-multiple-cursors'
   Plugin 'mbbill/undotree'
   Plugin 'mhinz/vim-startify'
-  Plugin 'tpope/vim-abolish'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-repeat'
@@ -46,14 +45,26 @@ if count(g:bundle_groups, 'general')
   Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
   "replace tools
-  Plugin 'dkprice/vim-easygrep'
-  Plugin 'hwrod/interactive-replace'
+  if executable('ack')
+    Bundle 'mileszs/ack.vim'
+  endif
+  if executable('ctags')
+    Bundle 'xolox/vim-misc'
+    Bundle 'xolox/vim-easytags'
+  endif
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  Plugin 'Shougo/neocomplete'
-  Plugin 'Shougo/neosnippet'
-  Plugin 'Shougo/neosnippet-snippets'
+  if WINDOWS()
+    " NeoComplete
+    Plugin 'Shougo/neocomplete'
+    Plugin 'Shougo/neosnippet'
+    Plugin 'Shougo/neosnippet-snippets'
+  else
+    " YouCompleteMe
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'SirVer/ultisnips'
+  endif
   Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
   Plugin 'AzizLight/TaskList.vim'

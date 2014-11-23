@@ -37,18 +37,6 @@ function! TwistCase(str)
 endfunction
 vmap ^ ygv"=TwistCase(@")<CR>Pgv
 
-function! DualView()
-  if &columns == '80'
-    set lines=50 columns=160
-    only
-    vsplit
-  else
-    set lines=50 columns=80
-    only
-  endif
-endfunction
-nmap <silent><Leader>d :call DualView()<CR>
-
 function! LastModified()
   if &modified
     let save_cursor = getpos(".")

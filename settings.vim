@@ -22,7 +22,12 @@ set virtualedit=onemore            " Allow for cursor beyond last character
 set cursorline
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 " vertical/horizontal scroll off settings
-set scrolloff=0 sidescrolloff=0
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
 
 " No bell or flash wanted
 set novisualbell " No blinking
@@ -58,9 +63,11 @@ set lazyredraw           " do not redraw while running macros (much faster) (Laz
 set linespace=0          " space it out a little more (easier to read)
 set number               " turn on line numbers
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
+set ttimeout
+set ttimeoutlen=100
 
 " wildmode
-set completeopt=longest
+set complete-=i
 set completeopt-=preview
 set wildmenu           " nice tab-completion on the command line
 set wildchar=9         " tab as completion character

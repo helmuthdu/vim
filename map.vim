@@ -40,22 +40,11 @@ nmap <Leader>al :left<CR>
 nmap <Leader>ar :right<CR>
 nmap <Leader>ac :center<CR>
 
-" Some helpers to edit mode
-" http://vimcasts.org/e/14
-nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
-nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
-nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
-nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
-
 " Spell commands
 nmap ?n ]s
 nmap ?p [s
 nmap ?+ zg
 nmap ?? z=
-
-" Improve up/down movement on wrapped lines
-nnoremap j gj
-nnoremap k gk
 
 " Session controls
 nmap <leader>sl :SessionList<CR>
@@ -105,19 +94,20 @@ nmap <C-k> <c-w>W
 
 " Drag Current Line/s Vertically
 " Bubble single lines
-nnoremap <C-Up> [e
-nnoremap <C-Down> ]e
-nnoremap <A-k> [e
-nnoremap <A-j> ]e
-" Bubble multiple lines
-vnoremap <C-Up> [egv
-vnoremap <C-Down> ]egv
-vnoremap <A-k> [egv
-vnoremap <A-j> ]egv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" move between buffers
-nmap <C-S-TAB> :bprev<CR>
-nmap <C-TAB> :bnext<CR>
+nnoremap <silent> 1 :only<CR>
+nnoremap <silent> 2 :only<CR> <C-w>v
+nnoremap <silent> 3 :only<CR> <C-w>v<C-w>s
+nnoremap <silent> 4 :only<CR> <C-w>v<C-w>s<C-w>h<C-w>s
+
+" search and replace the word under the cursor
+nnoremap <C-h> :%s/\<<C-r><C-w>\>/
 
 " switch to the directory of the open buffer
 map <Leader>cd :cd %:p:h<cr>

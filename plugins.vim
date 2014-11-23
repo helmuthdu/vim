@@ -37,7 +37,8 @@
   endif
 
 " buffergator
-  nmap <silent><Leader>b :EasyBuffer<CR>
+  nmap <silent><Leader>b :EasyBufferHorizontal<CR>
+  let g:easybuffer_horizontal_height = '15'
 
 " ctrlp
   let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
@@ -79,6 +80,12 @@
   hi link EasyMotionTarget ErrorMsg
   hi link EasyMotionShade  Comment
 
+" easytags
+  let g:easytags_file = $HOME.'/.vim/.tags'
+  let g:easytags_async = 1
+  let g:easytags_dynamic_files = 1
+  set tags=./.tags;
+
 " emmet
   let g:user_emmet_leader_key = '<C-e>'
 
@@ -105,6 +112,7 @@
   vmap ; <Plug>NERDCommenterToggle
 
 " NERDTree
+  let g:netrw_liststyle=3
   nmap <silent><Leader>nt :NERDTreeToggle<CR>
   let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
   let g:NERDTreeWinPos = "right"
@@ -164,75 +172,95 @@
   let g:undotree_SetFocusWhenToggle=1
 
 " neocomplete
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#enable_auto_delimiter = 1
-  let g:neocomplete#max_list = 15
-  let g:neocomplete#force_overwrite_completefunc = 1
+  let neocomplete_readme=expand('~/.vim/bundle/neocomplete/README.md')
+  if WINDOWS() || filereadable(neocomplete_readme)
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#enable_auto_delimiter = 1
+    let g:neocomplete#max_list = 15
+    let g:neocomplete#force_overwrite_completefunc = 1
 
-   "Use honza's snippets.
-  let g:neosnippet#snippets_directory=expand($HOME.'/.vim/bundle/vim-snippets/snippets')
+     "Use honza's snippets.
+    let g:neosnippet#snippets_directory=expand($HOME.'/.vim/bundle/vim-snippets/snippets')
 
-  " Define keyword.
-  if !exists('g:neocomplete#keyword_patterns')
-      let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-  " SuperTab like snippets behavior.
-  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
-
-  " Some convenient mappings
-  imap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
-  imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
-
-  imap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
-  imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-
-  imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
-  "imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
-
-  " <CR>: close popup
-  function! SmartReturn()
-    if pumvisible()
-      if neosnippet#expandable()
-        let expand = "\<Plug>(neosnippet_expand)"
-        return expand . neocomplete#smart_close_popup()
-      else
-        return neocomplete#smart_close_popup()
-      endif
-    else
-      return "\<CR>"
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
     endif
-  endfunction
-  " <CR> close popup and save indent or expand snippet
-  imap <expr> <CR> SmartReturn()
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-  " Enable heavy omni completion.
-  if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
+    " SuperTab like snippets behavior.
+    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
+
+    " Some convenient mappings
+    imap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
+    imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
+
+    imap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
+    imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+
+    imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
+    "imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+
+    " <CR>: close popup
+    function! SmartReturn()
+      if pumvisible()
+        if neosnippet#expandable()
+          let expand = "\<Plug>(neosnippet_expand)"
+          return expand . neocomplete#smart_close_popup()
+        else
+          return neocomplete#smart_close_popup()
+        endif
+      else
+        return "\<CR>"
+      endif
+    endfunction
+    " <CR> close popup and save indent or expand snippet
+    imap <expr> <CR> SmartReturn()
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+    let g:neocomplete#sources#omni#input_patterns.c='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+    let g:neocomplete#sources#omni#input_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+    let g:neocomplete#sources#omni#input_patterns.xml='<[^>]*'
+    let g:neocomplete#sources#omni#input_patterns.html='<[^>]*'
+    let g:neocomplete#sources#omni#input_patterns.markdown='<[^>]*'
+    let g:neocomplete#sources#omni#input_patterns.css='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+    let g:neocomplete#sources#omni#input_patterns.less='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+    let g:neocomplete#sources#omni#input_patterns.javascript='[^. \t]\.\%(\h\w*\)\?'
+    let g:neocomplete#sources#omni#input_patterns.json='[^. \t]\.\%(\h\w*\)\?'
+    let g:neocomplete#sources#omni#input_patterns.python='[^. *\t]\.\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.php='[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+    let g:neocomplete#sources#omni#input_patterns.python3='[^. *\t]\.\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.go='\h\w*\%.'
+    let g:neocomplete#sources#omni#input_patterns.perl='\h\w*->\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.java='\%(\h\w*\|)\)\.'
+
+  else
+    " ultisnips
+    let g:UltiSnipsExpandTrigger = "<Tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+    let g:UltiSnipsListSnippets="<C-Tab>"
+    " YouCompleteMe
+    let g:ycm_register_as_syntastic_checker = 1
+    let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+    if GUI()
+      let g:ycm_key_invoke_completion = '<C-Space>'
+    else
+      let g:ycm_key_invoke_completion = '<C-@>'
+    endif
+
   endif
-  let g:neocomplete#sources#omni#input_patterns.c='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-  let g:neocomplete#sources#omni#input_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-  let g:neocomplete#sources#omni#input_patterns.xml='<[^>]*'
-  let g:neocomplete#sources#omni#input_patterns.html='<[^>]*'
-  let g:neocomplete#sources#omni#input_patterns.markdown='<[^>]*'
-  let g:neocomplete#sources#omni#input_patterns.css='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
-  let g:neocomplete#sources#omni#input_patterns.less='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
-  let g:neocomplete#sources#omni#input_patterns.javascript='[^. \t]\.\%(\h\w*\)\?'
-  let g:neocomplete#sources#omni#input_patterns.json='[^. \t]\.\%(\h\w*\)\?'
-  let g:neocomplete#sources#omni#input_patterns.python='[^. *\t]\.\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.php='[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-  let g:neocomplete#sources#omni#input_patterns.python3='[^. *\t]\.\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.go='\h\w*\%.'
-  let g:neocomplete#sources#omni#input_patterns.perl='\h\w*->\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.java='\%(\h\w*\|)\)\.'
 
   " For snippet_complete marker.
   if has('conceal')
