@@ -80,12 +80,6 @@
   hi link EasyMotionTarget ErrorMsg
   hi link EasyMotionShade  Comment
 
-" easytags
-  let g:easytags_file = $HOME.'/.vim/.tags'
-  let g:easytags_async = 1
-  let g:easytags_dynamic_files = 1
-  set tags=./.tags;
-
 " emmet
   let g:user_emmet_leader_key = '<C-e>'
 

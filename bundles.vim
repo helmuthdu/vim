@@ -48,10 +48,6 @@ if count(g:bundle_groups, 'general')
   if executable('ack')
     Bundle 'mileszs/ack.vim'
   endif
-  if executable('ctags')
-    Bundle 'xolox/vim-misc'
-    Bundle 'xolox/vim-easytags'
-  endif
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
