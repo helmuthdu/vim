@@ -18,9 +18,6 @@
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  if &t_Co > 2 || GUI()
-    let g:airline#extensions#tabline#enabled = 1
-  endif
   let g:airline_theme='base16'
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
@@ -53,7 +50,7 @@
   nmap <silent>ct :CtrlPBufTag<CR>
 
   let g:ctrlp_custom_ignore = {
-        \ 'dir': '\.git$\|\.hg$\|\.svn$',
+        \ 'dir': '\.git$\|\.hg$\|\.svn|\bower_components|\node_modules$',
         \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
   " On Windows use "dir" as fallback command.

@@ -62,23 +62,23 @@ noremap L $
 vmap Q gq
 nmap Q gqap
 
-" Use tab to indent a line
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-" Map command-[ and command-] to indenting or outdenting
-" while keeping the original selection in visual mode
-vmap <A-]> >gv
-vmap <A-[> <gv
-nmap <A-]> >>
-nmap <A-[> <<
-imap <A-]> <Esc>>>i
-imap <A-[> <Esc><<i
-
-" Easier increment/decrement
-nmap + <C-a>
-nmap - <C-x>
+" Map command-[ and command-] to indenting or outdenting while keeping the
+" original selection in visual mode
+if OSX()
+  vmap <D-]> >gv
+  vmap <D-[> <gv
+  nmap <D-]> >>
+  nmap <D-[> <<
+  imap <D-]> <Esc>>>i
+  imap <D-[> <Esc><<i
+else
+  vmap <A-]> >gv
+  vmap <A-[> <gv
+  nmap <A-]> >>
+  nmap <A-[> <<
+  imap <A-]> <Esc>>>i
+  imap <A-[> <Esc><<i
+endif
 
 " Keep search pattern at the center of the screen
 nmap <silent> n nzz
@@ -94,12 +94,21 @@ nmap <C-k> <c-w>W
 
 " Drag Current Line/s Vertically
 " Bubble single lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+if OSX()
+  nmap <D-j> :m .+1<CR>==
+  nmap <D-k> :m .-2<CR>==
+  imap <D-j> <Esc>:m .+1<CR>==gi
+  imap <D-k> <Esc>:m .-2<CR>==gi
+  vmap <D-j> :m '>+1<CR>gv=gv
+  vmap <D-k> :m '<-2<CR>gv=gv
+else
+  nnoremap <A-j> :m .+1<CR>==
+  nnoremap <A-k> :m .-2<CR>==
+  inoremap <A-j> <Esc>:m .+1<CR>==gi
+  inoremap <A-k> <Esc>:m .-2<CR>==gi
+  vnoremap <A-j> :m '>+1<CR>gv=gv
+  vnoremap <A-k> :m '<-2<CR>gv=gv
+endif
 
 nnoremap <silent> 1 :only<CR>
 nnoremap <silent> 2 :only<CR> <C-w>v
@@ -115,12 +124,9 @@ map <Leader>cd :cd %:p:h<cr>
 " set text wrapping toggles
 nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
 
-" Map <Leader>ff to display all lines with keyword under cursor
-" and ask which one to jump to
+" Map <Leader>ff to display all lines with keyword under cursor and ask which
+" one to jump to
 nmap <F12> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
-
-" find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>

@@ -2,7 +2,6 @@
 " General
 set title                          " change the terminal's title
 set history=1000                   " keep 100 lines of command line history
-set autochdir                      " Change directory to the current buffer when opening files.
 set autoread                       " Set to auto read when a file is changed from the outside
 set autowrite                      " Auto save before commands like next and make
 set backspace=2                    " make backspace work normal
@@ -125,7 +124,7 @@ if GUI()
   if WINDOWS()
     set gfn=DejaVu_Sans_Mono_for_Powerline:h10
   elseif OSX()
-    set gfn=Menlo:h13
+    set gfn=Liberation_Mono_for_Powerline:h13
   else
     set gfn=Consolas\ 11
   endif

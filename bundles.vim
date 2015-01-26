@@ -26,7 +26,7 @@ endif
 " Plugins here:
 " GENERAL
 if count(g:bundle_groups, 'general')
-  Plugin 'hotoo/calendar-vim'
+  Plugin 'itchyny/calendar.vim'
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
@@ -60,6 +60,7 @@ if count(g:bundle_groups, 'devel')
     " YouCompleteMe
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'SirVer/ultisnips'
+    Plugin 'matthewsimo/angular-vim-snippets'
   endif
   Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
