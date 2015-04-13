@@ -7,8 +7,10 @@
   \ ]
   let g:calendar_current_idx = 1
 
+" autoformat
+  noremap <F3> :Autoformat<CR><CR>
+
 " airline
-  let g:airline_enable_branch=1
   let g:airline_detect_modified=1
   let g:airline_detect_paste=1
   let g:airline_inactive_collapse=1

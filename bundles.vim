@@ -44,10 +44,8 @@ if count(g:bundle_groups, 'general')
   Plugin 'tpope/vim-bundler'
   Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
-  "replace tools
-  if executable('ack')
-    Bundle 'mileszs/ack.vim'
-  endif
+  Plugin 'pelodelfuego/vim-swoop'
+  Plugin 'chrisbra/vim-diff-enhanced'
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
@@ -69,7 +67,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'Raimondi/delimitMate'
   Plugin 'scrooloose/nerdtree'
   Plugin 'Yggdroot/indentLine'
-  Plugin 'gcmt/wildfire.vim'
+  Plugin 'kopischke/vim-stay'
   Plugin 'godlygeek/tabular'
   Plugin 'jbnicolai/rainbow_parentheses.vim'
   Plugin 'mhinz/vim-signify'
@@ -85,7 +83,6 @@ if count(g:bundle_groups, 'languages')
   Plugin 'ap/vim-css-color'
   Plugin 'burnettk/vim-angular'
   Plugin 'davidhalter/jedi-vim'
-  Plugin 'tpope/vim-coffee-script'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif

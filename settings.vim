@@ -19,7 +19,7 @@ set viminfo='20,\"80               " read/write a .viminfo file, don't store mor
 set virtualedit=onemore            " Allow for cursor beyond last character
 " set shortmess+=filmnrxoOtT         " Abbrev. of messages (avoids 'hit enter')
 set cursorline
-set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set viewoptions=cursor,folds,slash,unix
 " vertical/horizontal scroll off settings
 if !&scrolloff
   set scrolloff=1
@@ -126,7 +126,8 @@ if GUI()
   elseif OSX()
     set gfn=Liberation_Mono_for_Powerline:h13
   else
-    set gfn=Consolas\ 11
+    "set gfn=Consolas\ 11
+    set gfn=Meslo\ LG\ S\ 11
   endif
   nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 endif
