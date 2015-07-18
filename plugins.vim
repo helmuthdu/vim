@@ -80,7 +80,7 @@
   hi link EasyMotionShade  Comment
 
 " emmet
-  let g:user_emmet_leader_key = '<C-e>'
+  let g:user_emmet_leader_key = '<C-y>'
 
 " fugitive
   nmap <silent> <leader>gs :Gstatus<CR>
@@ -121,9 +121,6 @@
         \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
-" less
-  nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
-
 " rainbow parentheses
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound
@@ -136,6 +133,13 @@
   let g:signify_sign_change = '!'
   let g:signify_sign_delete = '-'
   let g:signify_sign_delete_first_line = '-'
+
+" swoop
+  let g:swoopUseDefaultKeyMap = 0
+  nmap <Leader>l :call Swoop()<CR>
+  vmap <Leader>l :call SwoopSelection()<CR>
+  nmap <Leader>ml :call SwoopMulti()<CR>
+  vmap <Leader>ml :call SwoopMultiSelection()<CR>
 
 " syntastic
   let g:syntastic_enable_balloons = 1

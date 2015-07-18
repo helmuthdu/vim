@@ -10,7 +10,8 @@
 "}}}
 
 " Set mapleader
-let g:mapleader=","
+" "let g:mapleader="\<C-e>"
+ let g:mapleader=","
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -24,7 +25,7 @@ nmap <silent> <Space> za
 vmap <silent> <Space> zf
 
 " enable/disable list
-nmap <silent> <Leader>l :set nolist!<CR>
+nmap <silent> <C-l> :set nolist!<CR>
 
 " ,/ turn off search highlighting
 nmap <silent><Leader>/ :nohls<CR>
@@ -47,9 +48,9 @@ nmap ?+ zg
 nmap ?? z=
 
 " Session controls
-nmap <leader>sl :SessionList<CR>
-nmap <leader>ss :SessionSave<CR>
-nmap <leader>sc :SessionClose<CR>
+nmap <leader>sl :SLoad<CR>
+nmap <leader>ss :SSave<CR>
+nmap <leader>sd :SDelete<CR>
 
 " Make Y consistent with C and D
 nnoremap Y y$
@@ -110,10 +111,10 @@ else
   vnoremap <A-k> :m '<-2<CR>gv=gv
 endif
 
-nnoremap <silent> 1 :only<CR>
-nnoremap <silent> 2 :only<CR> <C-w>v
-nnoremap <silent> 3 :only<CR> <C-w>v<C-w>s
-nnoremap <silent> 4 :only<CR> <C-w>v<C-w>s<C-w>h<C-w>s
+nnoremap <silent> <C-w>1 :only<CR>
+nnoremap <silent> <C-w>2 :only<CR> <C-w>v
+nnoremap <silent> <C-w>3 :only<CR> <C-w>v<C-w>s
+nnoremap <silent> <C-w>4 :only<CR> <C-w>v<C-w>s<C-w>h<C-w>s
 
 " search and replace the word under the cursor
 nnoremap <C-h> :%s/\<<C-r><C-w>\>/

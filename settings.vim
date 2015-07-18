@@ -126,8 +126,7 @@ if GUI()
   elseif OSX()
     set gfn=Liberation_Mono_for_Powerline:h13
   else
-    "set gfn=Consolas\ 11
-    set gfn=Meslo\ LG\ S\ 11
+    set gfn=Liberation\ Mono\ for\ Powerline\ 13
   endif
   nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 endif

@@ -64,10 +64,9 @@ if count(g:bundle_groups, 'devel')
   Plugin 'mattn/emmet-vim'
   Plugin 'AzizLight/TaskList.vim'
   Plugin 'Chiel92/vim-autoformat'
-  Plugin 'Raimondi/delimitMate'
+  Plugin 'jiangmiao/auto-pairs'
   Plugin 'scrooloose/nerdtree'
   Plugin 'Yggdroot/indentLine'
-  Plugin 'kopischke/vim-stay'
   Plugin 'godlygeek/tabular'
   Plugin 'jbnicolai/rainbow_parentheses.vim'
   Plugin 'mhinz/vim-signify'
@@ -78,20 +77,17 @@ endif
 if count(g:bundle_groups, 'languages')
   Plugin 'sheerun/vim-polyglot'
   Plugin 'othree/html5.vim'
-  Plugin 'pangloss/vim-javascript'
   Plugin 'othree/javascript-libraries-syntax.vim'
+  Plugin 'othree/yajs.vim'
   Plugin 'ap/vim-css-color'
   Plugin 'burnettk/vim-angular'
-  Plugin 'davidhalter/jedi-vim'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
-  Plugin 'altercation/vim-colors-solarized'
   Plugin 'morhetz/gruvbox'
   Plugin 'sjl/badwolf'
-  Plugin 'chriskempson/base16-vim'
 endif
 
 " automatically load filetype plugins
