@@ -1,12 +1,4 @@
 " PLUGINS CONFIG
-" calendar
-  nmap <Leader>ca :Calendar<CR>
-  let g:calendar_list = [
-  \   {'name': 'Tasks', 'path': $HOME.'/.vim/.tasks', 'ext': 'task'},
-  \   {'name': 'Diary', 'path': $HOME.'/.vim/.diary', 'ext': 'diary'},
-  \ ]
-  let g:calendar_current_idx = 1
-
 " autoformat
   noremap <F3> :Autoformat<CR><CR>
 
@@ -14,8 +6,9 @@
   let g:airline_detect_modified=1
   let g:airline_detect_paste=1
   let g:airline_inactive_collapse=1
-   "let g:bufferline_echo = 0
-   "let g:airline#extensions#bufferline#enabled = 1
+  let g:airline_powerline_fonts = 1
+  "let g:bufferline_echo = 0
+  "let g:airline#extensions#bufferline#enabled = 1
   let g:airline#extensions#syntastic#enabled = 1
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
@@ -36,7 +29,7 @@
   endif
 
 " buffergator
-  nmap <silent><Leader>b :EasyBufferHorizontal<CR>
+  nmap <silent><leader>b :EasyBufferHorizontal<CR>
   let g:easybuffer_horizontal_height = '15'
 
 " ctrlp
@@ -80,21 +73,7 @@
   hi link EasyMotionShade  Comment
 
 " emmet
-  let g:user_emmet_leader_key = '<C-y>'
-
-" fugitive
-  nmap <silent> <leader>gs :Gstatus<CR>
-  nmap <silent> <leader>gd :Gdiff<CR>
-  nmap <silent> <leader>gc :Gcommit<CR>
-  nmap <silent> <leader>gb :Gblame<CR>
-  nmap <silent> <leader>gl :Glog<CR>
-  nmap <silent> <leader>gp :Git push<CR>
-  nmap <silent> <leader>gr :Gread<CR>
-  nmap <silent> <leader>gw :Gwrite<CR>
-  nmap <silent> <leader>ge :Gedit<CR>
-  " Mnemonic _i_nteractive
-  nmap <silent> <leader>gi :Git add -p %<CR>
-  nmap <silent> <leader>gg :SignifyToggle<CR>
+  let g:user_emmet_leader_key = '!'
 
 " indent guides
   let g:indentLine_char = '│'
@@ -105,8 +84,7 @@
   vmap ; <Plug>NERDCommenterToggle
 
 " NERDTree
-  let g:netrw_liststyle=3
-  nmap <silent><Leader>nt :NERDTreeToggle<CR>
+  map <silent> <C-o> :NERDTreeToggle<CR>
   let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
   let g:NERDTreeWinPos = "right"
   let g:NERDTreeShowBookmarks = 1
@@ -122,10 +100,7 @@
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
 " rainbow parentheses
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
+  let g:rainbow_active = 1
 
 " signify
   let g:signify_sign_overwrite = 1
@@ -136,10 +111,10 @@
 
 " swoop
   let g:swoopUseDefaultKeyMap = 0
-  nmap <Leader>l :call Swoop()<CR>
-  vmap <Leader>l :call SwoopSelection()<CR>
-  nmap <Leader>ml :call SwoopMulti()<CR>
-  vmap <Leader>ml :call SwoopMultiSelection()<CR>
+  nmap f :call Swoop()<CR>
+  vmap f :call SwoopSelection()<CR>
+  nmap F :call SwoopMulti()<CR>
+  vmap F :call SwoopMultiSelection()<CR>
 
 " syntastic
   let g:syntastic_enable_balloons = 1
@@ -152,21 +127,32 @@
   let g:syntastic_warning_symbol='⚠'
 
 " tabularize
-  vmap <Leader>a=  :Tabularize /=<CR>
-  vmap <Leader>a#  :Tabularize /#<CR>
-  vmap <Leader>a'  :Tabularize /'<CR>
-  vmap <Leader>a"  :Tabularize /"<CR>
-  vmap <Leader>a)  :Tabularize /)/r1c1l0<CR>
-  vmap <Leader>a== :Tabularize /=/r1c1l0<CR>
-  vmap <Leader>a:  :Tabularize /:<CR>
-  vmap <Leader>a:: :Tabularize /:\zs<CR>
-  vmap <Leader>a,  :Tabularize /,<CR>
-  vmap <Leader>a,, :Tabularize /,\zs<CR>
+  nmap <leader>a& :Tabularize /&<CR>
+  vmap <leader>a& :Tabularize /&<CR>
+  nmap <leader>a# :Tabularize /#<CR>
+  vmap <leader>a# :Tabularize /#<CR>
+  nmap <leader>a= :Tabularize /^[^=]*\zs=<CR>
+  vmap <leader>a= :Tabularize /^[^=]*\zs=<CR>
+  nmap <leader>a=> :Tabularize /=><CR>
+  vmap <leader>a=> :Tabularize /=><CR>
+  nmap <leader>a: :Tabularize /:<CR>
+  vmap <leader>a: :Tabularize /:<CR>
+  nmap <leader>a:: :Tabularize /:\zs<CR>
+  vmap <leader>a:: :Tabularize /:\zs<CR>
+  nmap <leader>a, :Tabularize /,<CR>
+  vmap <leader>a, :Tabularize /,<CR>
+  nmap <leader>a,, :Tabularize /,\zs<CR>
+  vmap <leader>a,, :Tabularize /,\zs<CR>
+  nmap <leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <leader>a<Bar> :Tabularize /<Bar><CR>
 
 " undotree
   nmap <silent>U :UndotreeToggle<CR>
   " If undotree is opened, it is likely one wants to interact with it.
   let g:undotree_SetFocusWhenToggle=1
+
+" vim-over
+  nnoremap <C-h> :OverCommandLine<CR>%s/<C-r><C-w>/
 
 " neocomplete
   let neocomplete_readme=expand('~/.vim/bundle/neocomplete/README.md')

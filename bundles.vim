@@ -26,7 +26,11 @@ endif
 " Plugins here:
 " GENERAL
 if count(g:bundle_groups, 'general')
+  if executable('ack')
+    Bundle 'mileszs/ack.vim'
+  endif
   Plugin 'itchyny/calendar.vim'
+  Plugin 'vim-easyclip'
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
@@ -36,12 +40,11 @@ if count(g:bundle_groups, 'general')
   Plugin 'kris89/vim-multiple-cursors'
   Plugin 'mbbill/undotree'
   Plugin 'mhinz/vim-startify'
+  Plugin 'tpope/vim-abolish'
   Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-vinegar'
-  Plugin 'tpope/vim-bundler'
+  Plugin 'jreybert/vimagit'
   Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
   Plugin 'pelodelfuego/vim-swoop'
@@ -60,6 +63,7 @@ if count(g:bundle_groups, 'devel')
     Plugin 'SirVer/ultisnips'
     Plugin 'matthewsimo/angular-vim-snippets'
   endif
+  Plugin 'osyo-manga/vim-over'
   Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
   Plugin 'AzizLight/TaskList.vim'
@@ -68,7 +72,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'scrooloose/nerdtree'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
-  Plugin 'jbnicolai/rainbow_parentheses.vim'
+  Plugin 'luochen1990/rainbow'
   Plugin 'mhinz/vim-signify'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/syntastic'
@@ -81,6 +85,7 @@ if count(g:bundle_groups, 'languages')
   Plugin 'othree/yajs.vim'
   Plugin 'ap/vim-css-color'
   Plugin 'burnettk/vim-angular'
+  Plugin 'kchmck/vim-coffee-script'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif

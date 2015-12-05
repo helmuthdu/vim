@@ -1,4 +1,4 @@
-" SETTINGS
+ "SETTINGS
 " General
 set title                          " change the terminal's title
 set history=1000                   " keep 100 lines of command line history
@@ -176,7 +176,7 @@ set softtabstop=2 " Number of spaces to skip or insert when <BS>ing or <Tab>ing
 set tabstop=2     " Two tab spaces
 
 " Search
-set hlsearch      " highlight all matches...
+"set hlsearch        " highlight all matches...
 set ignorecase      " select case-insenitiv search
 set incsearch       " ...and also during entering the pattern
 set magic           " change the way backslashes are used in search patterns

@@ -1,24 +1,21 @@
 " KEYMAPPINGS
 "DISABLED DEFAULT MAPPING: UNSET SHORTCUTS {{{
-  " Unmapping help from F1 and Ctrl-F1 for use toggling the reference manual
-  " the :h topic feature works, and <Leader><F1> displays quickref
-  inoremap <F1> <nop>
-  nnoremap <F1> <nop>
-  vnoremap <F1> <nop>
-  "unmap the suspend function
-  map <C-z> <Nop>
+" Unmapping help from F1 and Ctrl-F1 for use toggling the reference manual
+" the :h topic feature works, and <leader><F1> displays quickref
+inoremap <F1> <nop>
+nnoremap <F1> <nop>
+vnoremap <F1> <nop>
+"unmap the suspend function
+map <C-z> <Nop>
 "}}}
 
 " Set mapleader
 " "let g:mapleader="\<C-e>"
- let g:mapleader=","
+let g:mapleader=","
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
-
-" netrw
-map <silent> <C-o> :Explore<CR>
 
 " spacebar create/open/close folding
 nmap <silent> <Space> za
@@ -27,19 +24,16 @@ vmap <silent> <Space> zf
 " enable/disable list
 nmap <silent> <C-l> :set nolist!<CR>
 
-" ,/ turn off search highlighting
-nmap <silent><Leader>/ :nohls<CR>
-
-" Map escape key to jj or <Leader>e
+" Map escape key to jj or <leader>e
 imap jj <ESC>
 
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 
 " Quick alignment of text
-nmap <Leader>al :left<CR>
-nmap <Leader>ar :right<CR>
-nmap <Leader>ac :center<CR>
+nmap <leader>al :left<CR>
+nmap <leader>ar :right<CR>
+nmap <leader>ac :center<CR>
 
 " Spell commands
 nmap ?n ]s
@@ -116,18 +110,11 @@ nnoremap <silent> <C-w>2 :only<CR> <C-w>v
 nnoremap <silent> <C-w>3 :only<CR> <C-w>v<C-w>s
 nnoremap <silent> <C-w>4 :only<CR> <C-w>v<C-w>s<C-w>h<C-w>s
 
-" search and replace the word under the cursor
-nnoremap <C-h> :%s/\<<C-r><C-w>\>/
-
 " switch to the directory of the open buffer
-map <Leader>cd :cd %:p:h<cr>
+map <leader>cd :cd %:p:h<cr>
 
 " set text wrapping toggles
 nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
-
-" Map <Leader>ff to display all lines with keyword under cursor and ask which
-" one to jump to
-nmap <F12> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
