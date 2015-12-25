@@ -37,17 +37,6 @@ function! TwistCase(str)
 endfunction
 vmap ^ ygv"=TwistCase(@")<CR>Pgv
 
-function! LastModified()
-  if &modified
-    let save_cursor = getpos(".")
-    let n = min([20, line("$")])
-    exe '1,' . n . 's#^\(.\{,10}Last Change:\).*#\1'
-          \ strftime("%a %d/%b/%Y hr %H:%M") . '#e'
-    call setpos('.', save_cursor)
-  endif
-endfun
-autocmd BufWritePre * call LastModified()
-
 function! MyFoldText()
   let line = getline(v:foldstart)
 

@@ -30,11 +30,9 @@ if count(g:bundle_groups, 'general')
     Bundle 'mileszs/ack.vim'
   endif
   Plugin 'itchyny/calendar.vim'
-  Plugin 'vim-easyclip'
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
-  Plugin 'chrisbra/NrrwRgn'
   Plugin 'kien/ctrlp.vim'
   Plugin 'tacahiroy/ctrlp-funky'
   Plugin 'kris89/vim-multiple-cursors'
@@ -61,12 +59,10 @@ if count(g:bundle_groups, 'devel')
     " YouCompleteMe
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'SirVer/ultisnips'
-    Plugin 'matthewsimo/angular-vim-snippets'
   endif
   Plugin 'osyo-manga/vim-over'
   Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
-  Plugin 'AzizLight/TaskList.vim'
   Plugin 'Chiel92/vim-autoformat'
   Plugin 'jiangmiao/auto-pairs'
   Plugin 'scrooloose/nerdtree'
@@ -79,13 +75,15 @@ if count(g:bundle_groups, 'devel')
 endif
 " LANGUAGES
 if count(g:bundle_groups, 'languages')
+  Plugin 'ap/vim-css-color'
   Plugin 'sheerun/vim-polyglot'
   Plugin 'othree/html5.vim'
   Plugin 'othree/javascript-libraries-syntax.vim'
   Plugin 'othree/yajs.vim'
-  Plugin 'ap/vim-css-color'
+  Plugin 'slava/vim-spacebars'
   Plugin 'burnettk/vim-angular'
   Plugin 'kchmck/vim-coffee-script'
+  Plugin 'leafgarland/typescript-vim'
   Plugin 'tpope/vim-rails'
   Plugin 'vim-ruby/vim-ruby'
 endif

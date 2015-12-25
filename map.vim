@@ -41,11 +41,6 @@ nmap ?p [s
 nmap ?+ zg
 nmap ?? z=
 
-" Session controls
-nmap <leader>sl :SLoad<CR>
-nmap <leader>ss :SSave<CR>
-nmap <leader>sd :SDelete<CR>
-
 " Make Y consistent with C and D
 nnoremap Y y$
 
@@ -114,7 +109,7 @@ nnoremap <silent> <C-w>4 :only<CR> <C-w>v<C-w>s<C-w>h<C-w>s
 map <leader>cd :cd %:p:h<cr>
 
 " set text wrapping toggles
-nmap <silent> tw :set invwrap<CR>:set wrap?<CR>
+nmap <silent> tw :set invwrap<cr>:set wrap?<cr>
 
 " Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
