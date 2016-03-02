@@ -33,6 +33,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'Lokaltog/vim-easymotion'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
   Plugin 'kien/ctrlp.vim'
   Plugin 'tacahiroy/ctrlp-funky'
   Plugin 'kris89/vim-multiple-cursors'
