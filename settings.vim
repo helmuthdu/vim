@@ -82,8 +82,7 @@ set wildignore+=*.swp,*~,._*
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
 
 " chars to show for list
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
+set listchars=tab:▸\ ,eol:¬,trail:⋅
 
 " Appearance Settings
 " switch syntax highlighting on, when the terminal has colors

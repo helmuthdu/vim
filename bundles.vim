@@ -51,16 +51,9 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  if WINDOWS()
-    " NeoComplete
-    Plugin 'Shougo/neocomplete'
-    Plugin 'Shougo/neosnippet'
-    Plugin 'Shougo/neosnippet-snippets'
-  else
-    " YouCompleteMe
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'SirVer/ultisnips'
-  endif
+  Plugin 'Shougo/neocomplete'
+  Plugin 'Shougo/neosnippet'
+  Plugin 'Shougo/neosnippet-snippets'
   Plugin 'osyo-manga/vim-over'
   Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
@@ -85,8 +78,6 @@ if count(g:bundle_groups, 'languages')
   Plugin 'burnettk/vim-angular'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'leafgarland/typescript-vim'
-  Plugin 'tpope/vim-rails'
-  Plugin 'vim-ruby/vim-ruby'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
