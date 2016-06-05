@@ -110,7 +110,6 @@
   let g:signify_sign_delete_first_line = '-'
 
 " startify
-
   let g:startify_change_to_dir          = 0
   let g:startify_enable_special         = 0
   let g:startify_files_number           = 8

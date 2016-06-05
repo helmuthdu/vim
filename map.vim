@@ -10,7 +10,6 @@ map <C-z> <Nop>
 "}}}
 
 " Set mapleader
-" "let g:mapleader="\<C-e>"
 let g:mapleader=","
 
 " Toggle paste mode
@@ -27,8 +26,12 @@ nmap <silent> <C-l> :set nolist!<CR>
 " Map escape key to jj or <leader>e
 imap jj <ESC>
 
-" Sudo to write
-cmap w!! :w !sudo tee % >/dev/null
+"" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
 
 " Quick alignment of text
 nmap <leader>al :left<CR>

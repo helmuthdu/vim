@@ -22,7 +22,7 @@ set cursorline
 set viewoptions=cursor,folds,slash,unix
 " vertical/horizontal scroll off settings
 if !&scrolloff
-  set scrolloff=1
+  set scrolloff=7
 endif
 if !&sidescrolloff
   set sidescrolloff=5
@@ -168,6 +168,7 @@ let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 " Text, tab and indent related
 set autoindent    " Keep the indent when creating a new line
 set copyindent    " Copy the previous indentation on autoindent
+set smartindent
 set expandtab     " Spaces instead of tabs for better cross-editor compatibility
 set shiftwidth=2  " Number of spaces to use in each autoindent step
 set smarttab      " Use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
