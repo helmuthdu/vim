@@ -33,10 +33,9 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-" Quick alignment of text
-nmap <leader>al :left<CR>
-nmap <leader>ar :right<CR>
-nmap <leader>ac :center<CR>
+" Move visual block
+vnoremap <c-J> :m '>+1<CR>gv=gv
+vnoremap <c-K> :m '<-2<CR>gv=gv
 
 " Spell commands
 nmap ?n ]s
@@ -55,24 +54,6 @@ noremap L $
 vmap Q gq
 nmap Q gqap
 
-" Map command-[ and command-] to indenting or outdenting while keeping the
-" original selection in visual mode
-if OSX()
-  vmap <D-]> >gv
-  vmap <D-[> <gv
-  nmap <D-]> >>
-  nmap <D-[> <<
-  imap <D-]> <Esc>>>i
-  imap <D-[> <Esc><<i
-else
-  vmap <A-]> >gv
-  vmap <A-[> <gv
-  nmap <A-]> >>
-  nmap <A-[> <<
-  imap <A-]> <Esc>>>i
-  imap <A-[> <Esc><<i
-endif
-
 " Keep search pattern at the center of the screen
 nmap <silent> n nzz
 nmap <silent> N Nzz
@@ -84,24 +65,6 @@ nmap <silent> g# g#zz
 " Circular windows navigation
 nmap <C-j> <c-w>w
 nmap <C-k> <c-w>W
-
-" Drag Current Line/s Vertically
-" Bubble single lines
-if OSX()
-  nmap <D-j> :m .+1<CR>==
-  nmap <D-k> :m .-2<CR>==
-  imap <D-j> <Esc>:m .+1<CR>==gi
-  imap <D-k> <Esc>:m .-2<CR>==gi
-  vmap <D-j> :m '>+1<CR>gv=gv
-  vmap <D-k> :m '<-2<CR>gv=gv
-else
-  nnoremap <A-j> :m .+1<CR>==
-  nnoremap <A-k> :m .-2<CR>==
-  inoremap <A-j> <Esc>:m .+1<CR>==gi
-  inoremap <A-k> <Esc>:m .-2<CR>==gi
-  vnoremap <A-j> :m '>+1<CR>gv=gv
-  vnoremap <A-k> :m '<-2<CR>gv=gv
-endif
 
 nnoremap <silent> <C-w>1 :only<CR>
 nnoremap <silent> <C-w>2 :only<CR> <C-w>v

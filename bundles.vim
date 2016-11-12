@@ -1,21 +1,21 @@
 " PLUGINS BUNDLE
-let vundle_readme=expand($HOME.'/.vim/bundle/vundle/README.md')
+let vundle_readme=expand($HOME.'/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
   echo "Installing Plugin.."
   echo ""
   silent !mkdir -p $HOME/.vim/bundle
-  silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle/
+  silent !git clone https://github.com/VundleVim/Vundle.vim $HOME/.vim/bundle/Vundle.vim/
 endif
 
 " Required:
 if has('vim_starting')
   set nocompatible
-  set runtimepath+=$HOME/.vim/bundle/vundle/
+  set runtimepath+=$HOME/.vim/bundle/Vundle.vim/
   set sessionoptions-=options
 endif
 
 call vundle#rc(expand($HOME.'/.vim/bundle/'))
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugin Groups
 " List only the plugin groups you will use
@@ -31,6 +31,7 @@ if count(g:bundle_groups, 'general')
   endif
   Plugin 'itchyny/calendar.vim'
   Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'editorconfig/editorconfig-vim'
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
@@ -38,12 +39,13 @@ if count(g:bundle_groups, 'general')
   Plugin 'tacahiroy/ctrlp-funky'
   Plugin 'kris89/vim-multiple-cursors'
   Plugin 'mbbill/undotree'
-  Plugin 'mhinz/vim-startify'
+  Plugin 'Konfekt/FastFold'
+  "Plugin 'mhinz/vim-startify'
   Plugin 'tpope/vim-abolish'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
-  Plugin 'jreybert/vimagit'
+  Plugin 'tpope/vim-fugitive'
   Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
   Plugin 'pelodelfuego/vim-swoop'
@@ -75,8 +77,6 @@ if count(g:bundle_groups, 'languages')
   Plugin 'othree/javascript-libraries-syntax.vim'
   Plugin 'othree/yajs.vim'
   Plugin 'slava/vim-spacebars'
-  Plugin 'burnettk/vim-angular'
-  Plugin 'kchmck/vim-coffee-script'
   Plugin 'leafgarland/typescript-vim'
 endif
 " COLORSCHEME

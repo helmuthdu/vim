@@ -171,7 +171,7 @@
     let g:neocomplete#max_list = 15
     let g:neocomplete#force_overwrite_completefunc = 1
 
-     "Use honza's snippets.
+    " Use honza's snippets.
     let g:neosnippet#snippets_directory=expand($HOME.'/.vim/bundle/vim-snippets/snippets')
 
     " Define keyword.
@@ -189,30 +189,9 @@
     \: "\<TAB>"
 
     " Some convenient mappings
-    imap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
     imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
-
-    imap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
     imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-
     imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
-    "imap <expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
-
-    " <CR>: close popup
-    function! SmartReturn()
-      if pumvisible()
-        if neosnippet#expandable()
-          let expand = "\<Plug>(neosnippet_expand)"
-          return expand . neocomplete#smart_close_popup()
-        else
-          return neocomplete#smart_close_popup()
-        endif
-      else
-        return "\<CR>"
-      endif
-    endfunction
-    " <CR> close popup and save indent or expand snippet
-    imap <expr> <CR> SmartReturn()
 
     " Enable heavy omni completion.
     if !exists('g:neocomplete#sources#omni#input_patterns')

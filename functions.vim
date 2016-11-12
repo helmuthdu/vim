@@ -74,6 +74,18 @@ function! StripTrailingWhitespace()
   call cursor(l, c)
 endfunction
 
+function! Clipboard()
+    reg
+    echo "Register: "
+    let char = nr2char(getchar())
+    if char != "\<Esc>"
+        execute "normal! \"".char."p"
+    endif
+    redraw
+endfunction
+command! -nargs=0 Clipboard call Clipboard()
+nmap <silent>C :call Clipboard()<cr>
+
 " Enable the auto-creation of missing folders in a save path
 if !exists('*s:MakeNewDir')
   function s:MakeNewDir(fullpath, buf)

@@ -50,7 +50,9 @@ if has("mouse")
   set mouse=a
   set mousehide
   set mousemodel=popup
-  if has("mouse_sgr")|set ttymouse=sgr|else|set ttymouse=xterm2|endif
+  if !has('nvim')
+    set ttymouse=xterm2
+  endif
 endif
 
 " Editor Settings
@@ -95,7 +97,8 @@ if GUI()
   set t_Co=256
   "colorscheme badwolf
   colorscheme gruvbox
-  let base16colorspace=256  " Access colors present in 256 colorspace
+  " Access colors present in 256 colorspace
+  let base16colorspace=256
   "colorscheme base16-monokai
   "colorscheme base16-eighties
   " color fixes
@@ -190,7 +193,7 @@ nohlsearch          " avoid highlighting when reloading vimrc
 set foldenable            " enable folding
 set foldcolumn=1
 set foldlevel=1           " start out with everything folded
-set foldmethod=marker     " detect triple-{ style fold markers
+set foldmethod=syntax     " detect triple-{ style fold markers
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set foldtext=MyFoldText() " Which command trigger auto-unfold
 
