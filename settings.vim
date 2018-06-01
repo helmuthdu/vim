@@ -7,7 +7,6 @@ set autowrite                      " Auto save before commands like next and mak
 set backspace=2                    " make backspace work normal
 set diffopt=foldcolumn:0,filler    " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite                " Ignore whitespace changes (focus on code changes)
-set esckeys                        " Allow cursor keys in insert mode.
 set gdefault                       " regex /g by default
 set hid                            " you can change buffers without saving
 set nostartofline                  " don't jump to first character when paging

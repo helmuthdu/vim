@@ -35,17 +35,11 @@ if count(g:bundle_groups, 'general')
   Plugin 'Stormherz/tablify'
   Plugin 'bling/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'tacahiroy/ctrlp-funky'
-  Plugin 'kris89/vim-multiple-cursors'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'terryma/vim-multiple-cursors'
   Plugin 'mbbill/undotree'
   Plugin 'Konfekt/FastFold'
-  "Plugin 'mhinz/vim-startify'
-  Plugin 'tpope/vim-abolish'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-fugitive'
+  Plugin 'mhinz/vim-startify'
   Plugin 'troydm/easybuffer.vim'
   Plugin 'yonchu/accelerated-smooth-scroll'
   Plugin 'pelodelfuego/vim-swoop'
@@ -53,11 +47,16 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  Plugin 'Shougo/neocomplete'
+  if has('nvim')
+    Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plugin 'Shougo/deoplete.nvim'
+    Plugin 'roxma/nvim-yarp'
+    Plugin 'roxma/vim-hug-neovim-rpc'
+  endif
   Plugin 'Shougo/neosnippet'
   Plugin 'Shougo/neosnippet-snippets'
   Plugin 'osyo-manga/vim-over'
-  Plugin 'honza/vim-snippets'
   Plugin 'mattn/emmet-vim'
   Plugin 'Chiel92/vim-autoformat'
   Plugin 'jiangmiao/auto-pairs'
@@ -67,7 +66,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'luochen1990/rainbow'
   Plugin 'mhinz/vim-signify'
   Plugin 'scrooloose/nerdcommenter'
-  Plugin 'scrooloose/syntastic'
+  Plugin 'vim-syntastic/syntastic'
 endif
 " LANGUAGES
 if count(g:bundle_groups, 'languages')

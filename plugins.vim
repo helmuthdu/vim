@@ -1,4 +1,7 @@
 " PLUGINS CONFIG
+" gruvbox
+  let g:gruvbox_contrast_dark='hard'
+
 " autoformat
   noremap <F3> :Autoformat<CR><CR>
 
@@ -162,23 +165,20 @@
 " vim-over
   nnoremap <C-h> :OverCommandLine<CR>%s/<C-r><C-w>/
 
-" neocomplete
-  let neocomplete_readme=expand('~/.vim/bundle/neocomplete/README.md')
-  if WINDOWS() || filereadable(neocomplete_readme)
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_auto_delimiter = 1
-    let g:neocomplete#max_list = 15
-    let g:neocomplete#force_overwrite_completefunc = 1
-
-    " Use honza's snippets.
-    let g:neosnippet#snippets_directory=expand($HOME.'/.vim/bundle/vim-snippets/snippets')
+" deoplete
+  let deoplete_readme=expand('~/.vim/bundle/deoplete.nvim/README.md')
+  if WINDOWS() || filereadable(deoplete_readme)
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_smart_case = 1
+    let g:deoplete#enable_auto_delimiter = 1
+    let g:deoplete#max_list = 15
+    let g:deoplete#force_overwrite_completefunc = 1
 
     " Define keyword.
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
+    if !exists('g:deoplete#keyword_patterns')
+        let g:deoplete#keyword_patterns = {}
     endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
     " SuperTab like snippets behavior.
     imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
@@ -189,47 +189,31 @@
     \: "\<TAB>"
 
     " Some convenient mappings
-    imap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
-    imap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+    imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+    imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
     imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
 
     " Enable heavy omni completion.
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
+    if !exists('g:deoplete#sources#omni#input_patterns')
+      let g:deoplete#sources#omni#input_patterns = {}
     endif
-    let g:neocomplete#sources#omni#input_patterns.c='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-    let g:neocomplete#sources#omni#input_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-    let g:neocomplete#sources#omni#input_patterns.xml='<[^>]*'
-    let g:neocomplete#sources#omni#input_patterns.html='<[^>]*'
-    let g:neocomplete#sources#omni#input_patterns.markdown='<[^>]*'
-    let g:neocomplete#sources#omni#input_patterns.css='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
-    let g:neocomplete#sources#omni#input_patterns.less='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
-    let g:neocomplete#sources#omni#input_patterns.javascript='[^. \t]\.\%(\h\w*\)\?'
-    let g:neocomplete#sources#omni#input_patterns.json='[^. \t]\.\%(\h\w*\)\?'
-    let g:neocomplete#sources#omni#input_patterns.python='[^. *\t]\.\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.php='[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-    let g:neocomplete#sources#omni#input_patterns.python3='[^. *\t]\.\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.go='\h\w*\%.'
-    let g:neocomplete#sources#omni#input_patterns.perl='\h\w*->\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.java='\%(\h\w*\|)\)\.'
-
-  else
-    " ultisnips
-    let g:UltiSnipsExpandTrigger = "<Tab>"
-    let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-    let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
-    let g:UltiSnipsListSnippets="<C-Tab>"
-    " YouCompleteMe
-    let g:ycm_register_as_syntastic_checker = 1
-    let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-    let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-    if GUI()
-      let g:ycm_key_invoke_completion = '<C-Space>'
-    else
-      let g:ycm_key_invoke_completion = '<C-@>'
-    endif
-
+    let g:deoplete#sources#omni#input_patterns.c='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.xml='<[^>]*'
+    let g:deoplete#sources#omni#input_patterns.html='<[^>]*'
+    let g:deoplete#sources#omni#input_patterns.markdown='<[^>]*'
+    let g:deoplete#sources#omni#input_patterns.css='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+    let g:deoplete#sources#omni#input_patterns.less='^\s\+\w+\|\w+[):;]?\s\+\|[@!]'
+    let g:deoplete#sources#omni#input_patterns.javascript='[^. \t]\.\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.typescript='[^. \t]\.\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.json='[^. \t]\.\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.python='[^. *\t]\.\h\w*\|\h\w*::'
+    let g:deoplete#sources#omni#input_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
+    let g:deoplete#sources#omni#input_patterns.php='[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+    let g:deoplete#sources#omni#input_patterns.python3='[^. *\t]\.\h\w*\|\h\w*::'
+    let g:deoplete#sources#omni#input_patterns.go='\h\w*\%.'
+    let g:deoplete#sources#omni#input_patterns.perl='\h\w*->\h\w*\|\h\w*::'
+    let g:deoplete#sources#omni#input_patterns.java='\%(\h\w*\|)\)\.'
   endif
 
   " For snippet_complete marker.
