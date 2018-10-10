@@ -29,10 +29,6 @@ if has("autocmd")
   " Automatically source vimrc on save.
   autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
-  " Save on FocusLost
-  au FocusLost * :silent! wall " Save on FocusLost
-  au FocusLost * call feedkeys("\<C-\>\<C-n>") " Return to normal mode on FocustLost
-
   " Disable paste mode when leaving Insert Mode
   au InsertLeave * set nopaste
 
