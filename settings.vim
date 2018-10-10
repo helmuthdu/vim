@@ -125,9 +125,9 @@ if GUI()
   if WINDOWS()
     set gfn=DejaVu_Sans_Mono_for_Powerline:h10
   elseif OSX()
-    set gfn=Liberation_Mono_for_Powerline:h13
+    set gfn=FuraCode\ Nerd\ Font\ Mono:h14
   else
-    set gfn=Roboto\ Mono\ Medium\ 13
+    set gfn=FuraCode\ Nerd\ Font\ Mono:h14
   endif
   nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 endif

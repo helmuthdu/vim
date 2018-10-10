@@ -120,13 +120,6 @@
   let g:startify_session_delete_buffers = 1
   let g:startify_session_persistence    = 1
 
-" swoop
-  let g:swoopUseDefaultKeyMap = 0
-  nmap f :call Swoop()<CR>
-  vmap f :call SwoopSelection()<CR>
-  nmap F :call SwoopMulti()<CR>
-  vmap F :call SwoopMultiSelection()<CR>
-
 " syntastic
   let g:syntastic_enable_balloons = 1
   let g:syntastic_auto_jump=0

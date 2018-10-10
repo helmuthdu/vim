@@ -41,8 +41,7 @@ if count(g:bundle_groups, 'general')
   Plugin 'Konfekt/FastFold'
   Plugin 'mhinz/vim-startify'
   Plugin 'troydm/easybuffer.vim'
-  Plugin 'yonchu/accelerated-smooth-scroll'
-  Plugin 'pelodelfuego/vim-swoop'
+  "Plugin 'yonchu/accelerated-smooth-scroll'
   Plugin 'chrisbra/vim-diff-enhanced'
 endif
 " DEVELOPER
@@ -61,6 +60,7 @@ if count(g:bundle_groups, 'devel')
   Plugin 'Chiel92/vim-autoformat'
   Plugin 'jiangmiao/auto-pairs'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'ryanoasis/vim-devicons'
   Plugin 'Yggdroot/indentLine'
   Plugin 'godlygeek/tabular'
   Plugin 'luochen1990/rainbow'
