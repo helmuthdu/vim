@@ -1,5 +1,11 @@
 " AUTOCOMMANDS
 if has("autocmd")
+  augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    au BufNewFile,BufRead *.coffee set filetype=coffee
+  augroup END
+
   augroup filetypedetect
     au BufEnter *.markdown,*.mkd,*.md setl wrap tw=79
     au BufEnter *.json setl ft=javascript
@@ -34,12 +40,4 @@ if has("autocmd")
 
   " Resize splits when the window is resized
   au VimResized * exe "normal! \<c-w>="
-
-  " preceding line best in a plugin but here for now.
-  au BufNewFile,BufRead *.coffee set filetype=coffee
-
-  " Workaround vim-commentary for Haskell
-  au FileType haskell setlocal commentstring=--\ %s
-  " Workaround broken colour highlighting in Haskell
-  au FileType haskell setlocal nospell
 endif

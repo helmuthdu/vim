@@ -17,6 +17,7 @@ set ttyfast                        " smoother changes
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
 set virtualedit=onemore            " Allow for cursor beyond last character
 " set shortmess+=filmnrxoOtT         " Abbrev. of messages (avoids 'hit enter')
+set updatetime=100
 set cursorline
 set viewoptions=cursor,folds,slash,unix
 " vertical/horizontal scroll off settings
@@ -39,9 +40,9 @@ if has('unnamedplus')|set clipboard+=unnamedplus|endif
 " Configure to primarily use utf8
 if has("multi_byte")
   if &termencoding == ""|let &termencoding = &encoding|endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
 endif
+set encoding=utf-8
+setglobal fileencoding=utf-8
 set fileformats=unix,dos,mac "set compatible line endings in order of preference
 
 " Enable mouse
@@ -92,23 +93,26 @@ if &t_Co > 2 || GUI()
 endif
 " default colorscheme
 set background=dark
+if (has("termguicolors"))
+ set termguicolors
+endif
 if GUI()
   set t_Co=256
   "colorscheme badwolf
-  colorscheme gruvbox
-  " Access colors present in 256 colorspace
-  let base16colorspace=256
-  "colorscheme base16-monokai
-  "colorscheme base16-eighties
+  "colorscheme gruvbox
+  colorscheme tender
   " color fixes
+  let macvim_skip_colorscheme=1
   hi Comment ctermfg=bg ctermbg=240
   hi Comment guifg=#585858 guibg=bg
 elseif &t_Co >= 256
-  colorscheme gruvbox
+  "colorscheme gruvbox
+  colorscheme tender
   hi Comment ctermfg=bg ctermbg=240
   hi Comment guifg=#585858 guibg=bg
 else
-  colorscheme gruvbox
+  "colorscheme gruvbox
+  colorscheme tender
   set t_Co=8
   set t_Sf=^[[3%p1%dm
   set t_Sb=^[[4%p1%dm
@@ -192,7 +196,7 @@ nohlsearch          " avoid highlighting when reloading vimrc
 set foldenable            " enable folding
 set foldcolumn=1
 set foldlevel=1           " start out with everything folded
-set foldmethod=syntax     " detect triple-{ style fold markers
+set foldmethod=marker    " detect triple-{ style fold markers
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set foldtext=MyFoldText() " Which command trigger auto-unfold
 

@@ -2,8 +2,32 @@
 " gruvbox
   let g:gruvbox_contrast_dark='hard'
 
-" autoformat
-  noremap <F3> :Autoformat<CR><CR>
+" ale
+  let g:ale_enabled = 1
+  let g:ale_fix_on_save = 1
+  let g:jsx_ext_required = 0
+  let g:ale_lint_on_enter = 0
+  let g:ale_set_loclist = 1
+  let g:ale_set_quickfix = 1
+  let g:ale_fixers = {
+        \  'javascript': ['eslint', 'prettier'],
+        \  'typescript': ['tslint', 'prettier'],
+        \  'css': ['prettier'],
+        \  'less': ['prettier'],
+        \  'scss': ['prettier'],
+        \  'json': ['prettier'],
+        \  'graphql': ['prettier'],
+        \  'markdown': ['prettier'],
+        \  'vue': ['prettier'],
+        \}
+  let g:ale_linters = {
+        \  'javascript': ['stylelint', 'eslint'],
+        \  'typescript': ['tslint'],
+        \  'css': ['stylelint', 'eslint'],
+        \}
+  let g:ale_set_signs = 1
+  let g:ale_sign_error='✗'
+  let g:ale_sign_warning ='⚠'
 
 " airline
   let g:airline_detect_modified=1
@@ -12,11 +36,11 @@
   let g:airline_powerline_fonts = 1
   "let g:bufferline_echo = 0
   "let g:airline#extensions#bufferline#enabled = 1
-  let g:airline#extensions#syntastic#enabled = 1
+  let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  let g:airline_theme='base16'
+  let g:airline_theme='nordisk'
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
   if GUI()
@@ -120,16 +144,6 @@
   let g:startify_session_delete_buffers = 1
   let g:startify_session_persistence    = 1
 
-" syntastic
-  let g:syntastic_enable_balloons = 1
-  let g:syntastic_auto_jump=0
-  let g:syntastic_always_populate_loc_list=1
-  let g:syntastic_auto_loc_list=1
-  let g:syntastic_loc_list_height=5
-  let g:syntastic_enable_signs=1
-  let g:syntastic_error_symbol='✗'
-  let g:syntastic_warning_symbol='⚠'
-
 " tabularize
   nmap <leader>a& :Tabularize /&<CR>
   vmap <leader>a& :Tabularize /&<CR>
@@ -185,6 +199,9 @@
     imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
     imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
     imap <expr><Esc> pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
+
+    " deoplete-ternjs
+    let g:deoplete#sources#ternjs#docs = 1
 
     " Enable heavy omni completion.
     if !exists('g:deoplete#sources#omni#input_patterns')

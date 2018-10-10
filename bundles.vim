@@ -27,7 +27,7 @@ endif
 call plug#begin(expand($HOME.'/.vim/bundle'))
 if count(g:bundle_groups, 'general')
   if executable('ack')
-    Bundle 'mileszs/ack.vim'
+    Plug 'mileszs/ack.vim'
   endif
   Plug 'itchyny/calendar.vim'
   Plug 'Lokaltog/vim-easymotion'
@@ -41,8 +41,9 @@ if count(g:bundle_groups, 'general')
   Plug 'Konfekt/FastFold'
   Plug 'mhinz/vim-startify'
   Plug 'troydm/easybuffer.vim'
-  "Plug 'yonchu/accelerated-smooth-scroll'
+  Plug 'yuttie/comfortable-motion.vim'
   Plug 'chrisbra/vim-diff-enhanced'
+  Plug 'itchyny/vim-cursorword'
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
@@ -55,19 +56,18 @@ if count(g:bundle_groups, 'devel')
   endif
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'osyo-manga/vim-over'
   Plug 'mattn/emmet-vim'
-  Plug 'Chiel92/vim-autoformat'
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
   Plug 'luochen1990/rainbow'
-  Plug 'mhinz/vim-signify'
+  Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'vim-syntastic/syntastic'
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  Plug 'w0rp/ale'
 endif
 " LANGUAGES
 if count(g:bundle_groups, 'languages')
@@ -76,11 +76,11 @@ if count(g:bundle_groups, 'languages')
   Plug 'othree/html5.vim'
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'othree/yajs.vim'
-  Plug 'slava/vim-spacebars'
   Plug 'leafgarland/typescript-vim'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
+  Plug 'pulcinello/tender.vim'
   Plug 'morhetz/gruvbox'
   Plug 'sjl/badwolf'
 endif
