@@ -40,7 +40,7 @@
   let g:airline#extensions#hunks#enabled = 1
   let g:airline#extensions#ctrlp#show_adjacent_modes = 1
   let g:airline#extensions#whitespace#enabled = 1
-  let g:airline_theme='nordisk'
+  let g:airline_theme='tender'
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
   if GUI()

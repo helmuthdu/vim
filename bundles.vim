@@ -80,7 +80,7 @@ if count(g:bundle_groups, 'languages')
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
-  Plug 'pulcinello/tender.vim'
+  Plug 'helmuthdu/tender.vim'
   Plug 'morhetz/gruvbox'
   Plug 'sjl/badwolf'
 endif
