@@ -113,9 +113,9 @@
 " NERDTree
   map <silent> <C-o> :NERDTreeToggle<CR>
   let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-  let g:NERDTreeWinPos = "right"
+  let g:NERDTreeWinPos = "left"
   let g:NERDTreeShowBookmarks = 1
-  let g:NERDTreeWinSize = 40
+  let g:NERDTreeWinSize = 30
   let g:NERDTreeChristmasTree = 0
   let g:NERDTreeCaseSensitiveSort = 1
   let g:NERDTreeQuitOnOpen = 1
@@ -123,7 +123,8 @@
   let g:NERDTreeMouseMode = 2
   let NERDTreeAutoDeleteBuffer=1
   let g:NERDTreeIgnore=[
-        \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+        \ 'node_modules',
+        \ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
 " rainbow parentheses
@@ -174,7 +175,7 @@
 
 " deoplete
   let deoplete_readme=expand('~/.vim/bundle/deoplete.nvim/README.md')
-  if WINDOWS() || filereadable(deoplete_readme)
+  if filereadable(deoplete_readme)
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#enable_auto_delimiter = 1

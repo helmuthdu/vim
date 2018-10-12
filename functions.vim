@@ -1,5 +1,5 @@
 " FUNCTIONS
-function! ToggleSpell()
+fun! ToggleSpell()
   if &spell
     if &spelllang == "pt"
       set spelllang=pt,en
@@ -16,28 +16,11 @@ function! ToggleSpell()
     set spell!
     echo "toggle spell" &spelllang
   endif
-endfunction
+endfun
 " Toggle spell check
 nmap <silent>ts :call ToggleSpell()<CR>
 
-" Convert variable case
-function! TwistCase(str)
-  if a:str =~# '^[a-z0-9_]\+[!?]\?$'
-    let result = substitute(a:str, '_', '-', 'g')
-  elseif a:str =~# '^[a-z0-9?!-]\+[!?]\?$'
-    let result = substitute(a:str, '\C-\([^-]\)', '\u\1', 'g')
-  elseif a:str =~# '^[a-z0-9]\+\([A-Z][a-z0-9]*\)\+[!?]\?$'
-    let result = toupper(a:str[0]) . strpart(a:str, 1)
-  elseif a:str =~# '^\([A-Z][a-z0-9]*\)\{2,}[!?]\?$'
-    let result = strpart(substitute(a:str, '\C\([A-Z]\)', '_\l\1', 'g'), 1)
-  else
-    let result = toupper(a:str)
-  endif
-  return result
-endfunction
-vmap ^ ygv"=TwistCase(@")<CR>Pgv
-
-function! MyFoldText()
+fun! FoldText()
   let line = getline(v:foldstart)
 
   let nucolwidth = &fdc + &number * &numberwidth
@@ -51,18 +34,18 @@ function! MyFoldText()
   let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
   let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
   return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
-endfunction
+endfun
 
 fun! ToggleFold()
-  if &foldmethod == 'marker'
-    exe 'set foldmethod=indent'
+  if &foldmethod == "indent"
+    set foldmethod=syntax
   else
-    exe 'set foldmethod=marker'
+    set foldmethod=indent
   endif
 endfun
-map <silent>tf :call ToggleFold()<cr>
+nmap <silent>tf :call ToggleFold()<CR>
 
-function! StripTrailingWhitespace()
+fun! StripTrailingWhitespace()
   " Preparation: save last search, and cursor position.
   let _s=@/
   let l = line(".")
@@ -72,9 +55,9 @@ function! StripTrailingWhitespace()
   " clean up: restore previous search history, and cursor position
   let @/=_s
   call cursor(l, c)
-endfunction
+endfun
 
-function! Clipboard()
+fun! Clipboard()
     reg
     echo "Register: "
     let char = nr2char(getchar())
@@ -82,7 +65,7 @@ function! Clipboard()
         execute "normal! \"".char."p"
     endif
     redraw
-endfunction
+endfun
 command! -nargs=0 Clipboard call Clipboard()
 nmap <silent>C :call Clipboard()<cr>
 
@@ -93,7 +76,7 @@ if !exists('*s:MakeNewDir')
       let dirpath=fnamemodify(a:fullpath,':h')
       if !isdirectory(dirpath)|call mkdir(dirpath,'p')|endif
     endif
-  endfunction
+  endfun
   augroup WriteDir
     autocmd!
     autocmd BufWritePre * :call s:MakeNewDir(expand('<afile>'),+expand('<abuf>'))

@@ -1,15 +1,10 @@
 " AUTOCOMMANDS
 if has("autocmd")
-  augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-    au BufNewFile,BufRead *.coffee set filetype=coffee
-  augroup END
-
-  augroup filetypedetect
+  augroup FileTypeDetect
+    au BufEnter *.jsx set filetype=javascript.jsx
     au BufEnter *.markdown,*.mkd,*.md setl wrap tw=79
     au BufEnter *.json setl ft=javascript
-    au BufEnter *.coffee setl sw=2 expandtab
+    au BufEnter *.coffee setl sw=2 expandtab ft=coffee
     au BufEnter *.py setl ts=4 sw=4 sts=4
     au BufEnter *.php setl ts=4 sw=4 sts=4
     au BufEnter *.js setl ts=2 sw=2 sts=2
@@ -30,10 +25,10 @@ if has("autocmd")
   au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
   " Automatically removing all trailing whitespace
-  autocmd BufWritePre * :call StripTrailingWhitespace()
+  au BufWritePre * :call StripTrailingWhitespace()
 
   " Automatically source vimrc on save.
-  autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+  au! bufwritepost $MYVIMRC source $MYVIMRC
 
   " Disable paste mode when leaving Insert Mode
   au InsertLeave * set nopaste

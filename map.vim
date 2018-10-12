@@ -79,3 +79,6 @@ nmap <silent> tw :set invwrap<cr>:set wrap?<cr>
 
 " Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
+
+" unhighlight
+nnoremap <esc><esc> :noh<return>

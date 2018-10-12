@@ -5,8 +5,6 @@ set history=1000                   " keep 100 lines of command line history
 set autoread                       " Set to auto read when a file is changed from the outside
 set autowrite                      " Auto save before commands like next and make
 set backspace=2                    " make backspace work normal
-set diffopt=foldcolumn:0,filler    " Add vertical spaces to keep right and left aligned
-set diffopt+=iwhite                " Ignore whitespace changes (focus on code changes)
 set gdefault                       " regex /g by default
 set hid                            " you can change buffers without saving
 set nostartofline                  " don't jump to first character when paging
@@ -101,19 +99,20 @@ if GUI()
   "colorscheme badwolf
   "colorscheme gruvbox
   colorscheme tender
-  " color fixes
   let macvim_skip_colorscheme=1
   hi Comment ctermfg=bg ctermbg=240
   hi Comment guifg=#585858 guibg=bg
 elseif &t_Co >= 256
+  "colorscheme badwolf
   "colorscheme gruvbox
   colorscheme tender
-  hi Comment ctermfg=bg ctermbg=240
   hi Comment guifg=#585858 guibg=bg
+  hi Comment ctermfg=bg ctermbg=240
 else
+  set t_Co=8
+  "colorscheme badwolf
   "colorscheme gruvbox
   colorscheme tender
-  set t_Co=8
   set t_Sf=^[[3%p1%dm
   set t_Sb=^[[4%p1%dm
 endif
@@ -125,15 +124,14 @@ if GUI()
   set guioptions+=p " enable pointer callbacks for X11 (required by some WMs)
   set guioptions+=h " prevent the cursor jumping to the longest line while scrolling
   set winaltkeys=no " don't select the menu when pressing the alt-keys
-  " Linux
+  " Fonts
   if WINDOWS()
     set gfn=DejaVu_Sans_Mono_for_Powerline:h10
   elseif OSX()
-    set gfn=FuraCode\ Nerd\ Font\ Mono:h14
+    set gfn=FuraCode_Nerd_Font_Mono:h14
   else
     set gfn=FuraCode\ Nerd\ Font\ Mono:h14
   endif
-  nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 endif
 
 " Language Settings
@@ -195,10 +193,10 @@ nohlsearch          " avoid highlighting when reloading vimrc
 " Folding
 set foldenable            " enable folding
 set foldcolumn=1
-set foldlevel=1           " start out with everything folded
-set foldmethod=marker    " detect triple-{ style fold markers
+set foldlevel=2           " start fold level
+set foldmethod=syntax
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-set foldtext=MyFoldText() " Which command trigger auto-unfold
+set foldtext=FoldText() " Which command trigger auto-unfold
 
 " Session
 set sessionoptions=buffers,curdir,folds,tabpages,winsize
