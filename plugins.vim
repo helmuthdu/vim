@@ -116,7 +116,7 @@
   let g:NERDTreeWinPos = "left"
   let g:NERDTreeShowBookmarks = 1
   let g:NERDTreeWinSize = 30
-  let g:NERDTreeChristmasTree = 0
+  let g:NERDTreeChristmasTree = 1
   let g:NERDTreeCaseSensitiveSort = 1
   let g:NERDTreeQuitOnOpen = 1
   let g:NERDTreeShowHidden = 1
