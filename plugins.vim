@@ -122,7 +122,7 @@
   let g:NERDTreeShowHidden = 1
   let g:NERDTreeMouseMode = 2
   let NERDTreeAutoDeleteBuffer=1
-  let g:NERDTreeIgnore=[
+  let g:NERDTreeIgnore = [
         \ 'node_modules',
         \ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
@@ -131,10 +131,10 @@
   let g:rainbow_active = 1
 
 " signify
-  let g:signify_sign_overwrite = 1
-  let g:signify_sign_add = '+'
-  let g:signify_sign_change = '!'
-  let g:signify_sign_delete = '-'
+  let g:signify_sign_overwrite         = 1
+  let g:signify_sign_add               = '+'
+  let g:signify_sign_change            = '!'
+  let g:signify_sign_delete            = '-'
   let g:signify_sign_delete_first_line = '-'
 
 " startify
@@ -146,22 +146,22 @@
   let g:startify_session_persistence    = 1
 
 " tabularize
-  nmap <leader>a& :Tabularize /&<CR>
-  vmap <leader>a& :Tabularize /&<CR>
-  nmap <leader>a# :Tabularize /#<CR>
-  vmap <leader>a# :Tabularize /#<CR>
-  nmap <leader>a= :Tabularize /^[^=]*\zs=<CR>
-  vmap <leader>a= :Tabularize /^[^=]*\zs=<CR>
-  nmap <leader>a=> :Tabularize /=><CR>
-  vmap <leader>a=> :Tabularize /=><CR>
-  nmap <leader>a: :Tabularize /:<CR>
-  vmap <leader>a: :Tabularize /:<CR>
-  nmap <leader>a:: :Tabularize /:\zs<CR>
-  vmap <leader>a:: :Tabularize /:\zs<CR>
-  nmap <leader>a, :Tabularize /,<CR>
-  vmap <leader>a, :Tabularize /,<CR>
-  nmap <leader>a,, :Tabularize /,\zs<CR>
-  vmap <leader>a,, :Tabularize /,\zs<CR>
+  nmap <leader>a&     :Tabularize /&<CR>
+  vmap <leader>a&     :Tabularize /&<CR>
+  nmap <leader>a#     :Tabularize /#<CR>
+  vmap <leader>a#     :Tabularize /#<CR>
+  nmap <leader>a=     :Tabularize /^[^=]*\zs=<CR>
+  vmap <leader>a=     :Tabularize /^[^=]*\zs=<CR>
+  nmap <leader>a=>    :Tabularize /=><CR>
+  vmap <leader>a=>    :Tabularize /=><CR>
+  nmap <leader>a:     :Tabularize /:<CR>
+  vmap <leader>a:     :Tabularize /:<CR>
+  nmap <leader>a::    :Tabularize /:\zs<CR>
+  vmap <leader>a::    :Tabularize /:\zs<CR>
+  nmap <leader>a,     :Tabularize /,<CR>
+  vmap <leader>a,     :Tabularize /,<CR>
+  nmap <leader>a,,    :Tabularize /,\zs<CR>
+  vmap <leader>a,,    :Tabularize /,\zs<CR>
   nmap <leader>a<Bar> :Tabularize /<Bar><CR>
   vmap <leader>a<Bar> :Tabularize /<Bar><CR>
 

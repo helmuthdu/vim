@@ -23,7 +23,6 @@ endif
 
 " Plugs here:
 " GENERAL
-
 call plug#begin(expand($HOME.'/.vim/bundle'))
 if count(g:bundle_groups, 'general')
   if executable('ack')
@@ -58,9 +57,10 @@ if count(g:bundle_groups, 'devel')
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
   endif
+  "Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'osyo-manga/vim-over'
   Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs'
@@ -81,7 +81,8 @@ if count(g:bundle_groups, 'languages')
   Plug 'othree/html5.vim'
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'othree/yajs.vim'
-  Plug 'leafgarland/typescript-vim'
+  Plug 'HerringtonDarkholme/yats.vim'
+  "Plug 'leafgarland/typescript-vim'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
