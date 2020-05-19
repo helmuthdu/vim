@@ -177,16 +177,8 @@
   let deoplete_readme=expand('~/.vim/bundle/deoplete.nvim/README.md')
   if filereadable(deoplete_readme)
     let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
     let g:deoplete#enable_auto_delimiter = 1
-    let g:deoplete#max_list = 15
     let g:deoplete#force_overwrite_completefunc = 1
-
-    " Define keyword.
-    if !exists('g:deoplete#keyword_patterns')
-        let g:deoplete#keyword_patterns = {}
-    endif
-    let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
     " SuperTab like snippets behavior.
     imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
