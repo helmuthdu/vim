@@ -66,7 +66,6 @@ if count(g:bundle_groups, 'devel')
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'ryanoasis/vim-devicons'
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
   Plug 'luochen1990/rainbow'
