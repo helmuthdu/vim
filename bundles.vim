@@ -51,14 +51,12 @@ endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
   if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugs' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   else
     Plug 'Shougo/deoplete.nvim'
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
   endif
-  "Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'osyo-manga/vim-over'
@@ -68,7 +66,6 @@ if count(g:bundle_groups, 'devel')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
-  Plug 'luochen1990/rainbow'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
   Plug 'w0rp/ale'

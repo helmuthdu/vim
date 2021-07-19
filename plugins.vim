@@ -127,9 +127,6 @@
         \ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
         \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
-" rainbow parentheses
-  let g:rainbow_active = 1
-
 " signify
   let g:signify_sign_overwrite         = 1
   let g:signify_sign_add               = '+'
