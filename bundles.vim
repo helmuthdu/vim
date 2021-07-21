@@ -50,15 +50,7 @@ if count(g:bundle_groups, 'general')
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'osyo-manga/vim-over'
   Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs'
@@ -78,7 +70,6 @@ if count(g:bundle_groups, 'languages')
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'othree/yajs.vim'
   Plug 'HerringtonDarkholme/yats.vim'
-  "Plug 'leafgarland/typescript-vim'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')

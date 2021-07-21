@@ -14,8 +14,8 @@ set switchbuf=useopen              " reveal already opened files from the quickf
 set ttyfast                        " smoother changes
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
 set virtualedit=onemore            " Allow for cursor beyond last character
-" set shortmess+=filmnrxoOtT         " Abbrev. of messages (avoids 'hit enter')
-set updatetime=100
+set shortmess+=c                   " Abbrev. of messages (avoids 'hit enter')
+set updatetime=300
 set cursorline
 set viewoptions=cursor,folds,slash,unix
 " vertical/horizontal scroll off settings
@@ -54,7 +54,7 @@ if has("mouse")
 endif
 
 " Editor Settings
-set cmdheight=1          " the command bar is 1 high
+set cmdheight=1          " the command bar is 2 high
 set equalalways          " Close a split window in Vim without resizing other windows
 set guitablabel=%t
 set laststatus=2         " always show statusline
