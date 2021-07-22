@@ -29,7 +29,7 @@ if count(g:bundle_groups, 'general')
     Plug 'mileszs/ack.vim'
   endif
   Plug 'Konfekt/FastFold'
-  Plug 'Lokaltog/vim-easymotion'
+  Plug 'easymotion/vim-easymotion'
   Plug 'Stormherz/tablify'
   Plug 'bling/vim-airline'
   Plug 'chrisbra/vim-diff-enhanced'
@@ -41,9 +41,6 @@ if count(g:bundle_groups, 'general')
   Plug 'mhinz/vim-startify'
   Plug 'tacahiroy/ctrlp-funky'
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'tpope/vim-abolish'
-  Plug 'tpope/vim-eunuch'
-  Plug 'tpope/vim-fugitive'
   Plug 'troydm/easybuffer.vim'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'yuttie/comfortable-motion.vim'
@@ -66,10 +63,6 @@ endif
 if count(g:bundle_groups, 'languages')
   Plug 'ap/vim-css-color'
   Plug 'sheerun/vim-polyglot'
-  Plug 'othree/html5.vim'
-  Plug 'othree/javascript-libraries-syntax.vim'
-  Plug 'othree/yajs.vim'
-  Plug 'HerringtonDarkholme/yats.vim'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')

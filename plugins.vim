@@ -95,7 +95,7 @@
         \ }
 
 " easymotion
-  let g:EasyMotion_leader_key = 'e'
+  let g:EasyMotion_leader_key = 'f'
   hi link EasyMotionTarget ErrorMsg
   hi link EasyMotionShade  Comment
 

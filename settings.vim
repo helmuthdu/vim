@@ -126,11 +126,11 @@ if GUI()
   set winaltkeys=no " don't select the menu when pressing the alt-keys
   " Fonts
   if WINDOWS()
-    set gfn=DejaVu_Sans_Mono_for_Powerline:h10
+    set gfn=Fira_Code:h14
   elseif OSX()
-    set gfn=FuraCode_Nerd_Font_Mono:h14
+    set gfn=Fira_Code:h14
   else
-    set gfn=FuraCode\ Nerd\ Font\ Mono:h14
+    set gfn=Fira\ Code:h14
   endif
 endif
 
