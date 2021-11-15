@@ -188,7 +188,7 @@ set matchpairs+=<:> " these tokens belong together
 set matchtime=2     " How many tenths of a second to blink
 set showmatch       " jump to matches during entering the pattern
 set smartcase       " No ignorecase if Uppercase chars in search
-nohlsearch          " avoid highlighting when reloading vimrc
+set nohlsearch      " avoid highlighting when reloading vimrc
 
 " Folding
 set foldenable            " enable folding

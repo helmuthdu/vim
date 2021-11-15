@@ -59,40 +59,40 @@
   nmap <silent><leader>b :EasyBufferHorizontal<CR>
   let g:easybuffer_horizontal_height = '15'
 
-" ctrlp
-  let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
-  let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_extensions = ['funky']
-
-  nmap <silent>cp :CtrlPMixed<CR>
-  nmap <silent>cm :CtrlPMRUFiles<CR>
-  nmap <silent>cf :CtrlPFunky<CR>
-  nmap <silent>cl :CtrlPLine<CR>
-  nmap <silent>cb :CtrlPBuffer<CR>
-  nmap <silent>ct :CtrlPBufTag<CR>
-
-  let g:ctrlp_custom_ignore = {
-        \ 'dir': '\.git$\|\.hg$\|\.svn|\bower_components|\node_modules$',
-        \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
-  " On Windows use "dir" as fallback command.
-  if WINDOWS()
-    let s:ctrlp_fallback = 'dir %s /-n /b /s /a-d'
-  elseif executable('ag')
-    let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
-  elseif executable('ack')
-    let s:ctrlp_fallback = 'ack %s --nocolor -f'
+  if has('nvim')
+    nnoremap <leader>ff :Telescope find_files theme=dropdown<CR>
+    nnoremap <leader>fg :Telescope live_grep theme=dropdown<CR>
   else
-    let s:ctrlp_fallback = 'find %s -type f'
-  endif
+    let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
+    let g:ctrlp_working_path_mode = 'ra'
 
-  let g:ctrlp_user_command = {
-        \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-        \ 2: ['.hg', 'hg --cwd %s locate -i .'],
-        \ },
-        \ 'fallback': s:ctrlp_fallback
-        \ }
+    nmap <leader>ff :CtrlPMixed<CR>
+    nmap <leader>fg :CtrlPLine<CR>
+    nmap <leader>fb :CtrlPBuffer<CR>
+
+    let g:ctrlp_custom_ignore = {
+          \ 'dir': '\.git$\|\.hg$\|\.svn|\bower_components|\node_modules$',
+          \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+    " On Windows use "dir" as fallback command.
+    if WINDOWS()
+      let s:ctrlp_fallback = 'dir %s /-n /b /s /a-d'
+    elseif executable('ag')
+      let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
+    elseif executable('ack')
+      let s:ctrlp_fallback = 'ack %s --nocolor -f'
+    else
+      let s:ctrlp_fallback = 'find %s -type f'
+    endif
+
+    let g:ctrlp_user_command = {
+          \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+            \ 2: ['.hg', 'hg --cwd %s locate -i .'],
+            \ },
+            \ 'fallback': s:ctrlp_fallback
+            \ }
+  endif
 
 " easymotion
   let g:EasyMotion_leader_key = 'f'

@@ -1,5 +1,5 @@
 " KEYMAPPINGS
-"DISABLED DEFAULT MAPPING: UNSET SHORTCUTS {{{
+"DISABLED DEFAULT MAPPING: UNSET SHORTCUTS
 " Unmapping help from F1 and Ctrl-F1 for use toggling the reference manual
 " the :h topic feature works, and <leader><F1> displays quickref
 inoremap <F1> <nop>
@@ -7,7 +7,6 @@ nnoremap <F1> <nop>
 vnoremap <F1> <nop>
 "unmap the suspend function
 map <C-z> <Nop>
-"}}}
 
 " Set mapleader
 let g:mapleader=","
@@ -79,6 +78,3 @@ nmap <silent> tw :set invwrap<cr>:set wrap?<cr>
 
 " Underline the current line with '-'
 nmap <silent> <leader>ul :t.<CR>Vr-
-
-" unhighlight
-nnoremap <esc><esc> :noh<return>

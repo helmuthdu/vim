@@ -33,17 +33,23 @@ if count(g:bundle_groups, 'general')
   Plug 'Stormherz/tablify'
   Plug 'bling/vim-airline'
   Plug 'chrisbra/vim-diff-enhanced'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/calendar.vim'
   Plug 'itchyny/vim-cursorword'
   Plug 'mbbill/undotree'
   Plug 'mhinz/vim-startify'
-  Plug 'tacahiroy/ctrlp-funky'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'troydm/easybuffer.vim'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'yuttie/comfortable-motion.vim'
+  if has('nvim')
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+  else
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tacahiroy/ctrlp-funky'
+  endif
 endif
 " DEVELOPER
 if count(g:bundle_groups, 'devel')
