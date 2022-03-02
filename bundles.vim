@@ -31,7 +31,6 @@ if count(g:bundle_groups, 'general')
   Plug 'Konfekt/FastFold'
   Plug 'easymotion/vim-easymotion'
   Plug 'Stormherz/tablify'
-  Plug 'bling/vim-airline'
   Plug 'chrisbra/vim-diff-enhanced'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/calendar.vim'
@@ -40,6 +39,7 @@ if count(g:bundle_groups, 'general')
   Plug 'mhinz/vim-startify'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'troydm/easybuffer.vim'
+  Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'yuttie/comfortable-motion.vim'
   if has('nvim')
