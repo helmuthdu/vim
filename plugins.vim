@@ -60,9 +60,11 @@
   let g:easybuffer_horizontal_height = '15'
 
   if has('nvim')
+" Telescope
     nnoremap <leader>ff :Telescope find_files theme=dropdown<CR>
     nnoremap <leader>fg :Telescope live_grep theme=dropdown<CR>
   else
+" CtrlP
     let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
     let g:ctrlp_working_path_mode = 'ra'
 
@@ -111,21 +113,12 @@
   vmap ; <Plug>NERDCommenterToggle
 
 " NERDTree
-  map <silent> <C-o> :NERDTreeToggle<CR>
-  let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-  let g:NERDTreeWinPos = "left"
-  let g:NERDTreeShowBookmarks = 1
-  let g:NERDTreeWinSize = 30
-  let g:NERDTreeChristmasTree = 1
-  let g:NERDTreeCaseSensitiveSort = 1
-  let g:NERDTreeQuitOnOpen = 1
-  let g:NERDTreeShowHidden = 1
-  let g:NERDTreeMouseMode = 2
-  let NERDTreeAutoDeleteBuffer=1
-  let g:NERDTreeIgnore = [
-        \ 'node_modules',
-        \ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-        \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
+  map <silent> <C-o> :Vexplore<CR>
+  let g:netrw_banner = 0
+  let g:netrw_liststyle = 3
+  let g:netrw_browse_split = 4
+  let g:netrw_altv = 1
+  let g:netrw_winsize = 25
 
 " signify
   let g:signify_sign_overwrite         = 1
@@ -171,6 +164,15 @@
   nnoremap <C-h> :OverCommandLine<CR>%s/<C-r><C-w>/
 
 " coc
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+  if has("nvim-0.5.0") || has("patch-8.1.1564")
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
+  else
+    set signcolumn=yes
+  endif
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -248,6 +250,8 @@
   nmap <leader>ac  <Plug>(coc-codeaction)
   " Apply AutoFix to problem on the current line.
   nmap <leader>qf  <Plug>(coc-fix-current)
+  " Run the Code Lens action on the current line.
+  nmap <leader>cl  <Plug>(coc-codelens-action)
 
   " Map function and class text objects
   " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -276,13 +280,13 @@
   xmap <silent> <C-s> <Plug>(coc-range-select)
 
   " Add `:Format` command to format current buffer.
-  command! -nargs=0 Format :call CocAction('format')
+  command! -nargs=0 Format :call CocActionAsync('format')
 
   " Add `:Fold` command to fold current buffer.
   command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
   " Add `:OR` command for organize imports of the current buffer.
-  command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+  command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
   " Add (Neo)Vim's native statusline support.
   " NOTE: Please see `:h coc-status` for integrations with external plugins that

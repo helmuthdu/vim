@@ -57,8 +57,6 @@ if count(g:bundle_groups, 'devel')
   Plug 'osyo-manga/vim-over'
   Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
   Plug 'airblade/vim-gitgutter'
