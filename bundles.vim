@@ -61,7 +61,7 @@ if count(g:bundle_groups, 'devel')
   Plug 'godlygeek/tabular'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
 endif
 " LANGUAGES
 if count(g:bundle_groups, 'languages')

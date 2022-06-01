@@ -10,21 +10,23 @@
   let g:ale_set_loclist = 1
   let g:ale_set_quickfix = 1
   let g:ale_fixers = {
-        \  'javascript': ['eslint', 'prettier'],
-        \  'typescript': ['tslint', 'prettier'],
-        \  'css': ['prettier'],
-        \  'less': ['prettier'],
-        \  'scss': ['prettier'],
-        \  'json': ['prettier'],
-        \  'graphql': ['prettier'],
-        \  'markdown': ['prettier'],
-        \  'vue': ['prettier'],
-        \}
+    \  '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \  'javascript': ['prettier', 'eslint'],
+    \  'typescript': ['prettier', 'eslint'],
+    \  'css': ['prettier'],
+    \  'less': ['prettier'],
+    \  'scss': ['prettier'],
+    \  'json': ['prettier'],
+    \  'graphql': ['prettier'],
+    \  'markdown': ['prettier'],
+    \  'vue': ['prettier', 'eslint'],
+    \ }
   let g:ale_linters = {
-        \  'javascript': ['stylelint', 'eslint'],
-        \  'typescript': ['tslint'],
-        \  'css': ['stylelint', 'eslint'],
-        \}
+    \  'javascript': ['eslint'],
+    \  'typescript': ['eslint'],
+    \  'css': ['stylelint', 'eslint'],
+    \  'vue': ['eslint'],
+    \ }
   let g:ale_set_signs = 1
   let g:ale_sign_error='✗'
   let g:ale_sign_warning ='⚠'
@@ -33,7 +35,7 @@
   let g:airline_detect_modified=1
   let g:airline_detect_paste=1
   let g:airline_inactive_collapse=1
-  let g:airline_powerline_fonts = 1
+  "let g:airline_powerline_fonts = 1
   "let g:bufferline_echo = 0
   "let g:airline#extensions#bufferline#enabled = 1
   let g:airline#extensions#ale#enabled = 1
@@ -43,16 +45,14 @@
   let g:airline_theme='tender'
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
-  if GUI()
-    if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
-    endif
-    if !exists('g:airline_powerline_fonts')
-      "let g:airline_left_sep = ''
-      "let g:airline_right_sep = ''
-      let g:airline_symbols.branch = ''
-      let g:airline_symbols.linenr = ''
-    endif
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  if exists('g:airline_powerline_fonts')
+    "let g:airline_left_sep = ''
+    "let g:airline_right_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.linenr = ''
   endif
 
 " buffergator
