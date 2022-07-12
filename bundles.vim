@@ -60,6 +60,7 @@ if count(g:bundle_groups, 'devel')
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
   Plug 'airblade/vim-gitgutter'
+  Plug 'scrooloose/nerdtree'
   Plug 'scrooloose/nerdcommenter'
   Plug 'dense-analysis/ale'
 endif

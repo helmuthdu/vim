@@ -58,13 +58,13 @@ fun! StripTrailingWhitespace()
 endfun
 
 fun! Clipboard()
-    reg
-    echo "Register: "
-    let char = nr2char(getchar())
-    if char != "\<Esc>"
-        execute "normal! \"".char."p"
-    endif
-    redraw
+  reg
+  echo "Item: "
+  let char = nr2char(getchar())
+  if char != "\<Esc>"
+    execute "normal! \"".char."p"
+  endif
+  redraw
 endfun
 command! -nargs=0 Clipboard call Clipboard()
 nmap <silent>C :call Clipboard()<cr>
