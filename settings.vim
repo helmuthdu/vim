@@ -64,6 +64,7 @@ set number               " turn on line numbers
 set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
 set ttimeout
 set ttimeoutlen=100
+set signcolumn=yes
 
 " wildmode
 set complete-=i
