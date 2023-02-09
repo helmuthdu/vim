@@ -55,14 +55,11 @@
     let g:airline_symbols.linenr = ''
   endif
 
-" buffergator
-  nmap <silent><leader>b :EasyBufferHorizontal<CR>
-  let g:easybuffer_horizontal_height = '15'
-
   if has('nvim')
 " Telescope
-    nnoremap <leader>ff :Telescope find_files theme=dropdown<CR>
-    nnoremap <leader>fg :Telescope live_grep theme=dropdown<CR>
+    nnoremap <leader>ff :Telescope find_files<CR>
+    nnoremap <leader>fg :Telescope live_grep<CR>
+    nnoremap <leader>fb :Telescope buffers<cr>
   else
 " CtrlP
     let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'
