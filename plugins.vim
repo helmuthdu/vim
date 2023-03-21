@@ -94,9 +94,11 @@
   endif
 
 " easymotion
-  let g:EasyMotion_leader_key = 'f'
-  hi link EasyMotionTarget ErrorMsg
-  hi link EasyMotionShade  Comment
+  if !has('nvim')
+    let g:EasyMotion_leader_key = 's'
+    hi link EasyMotionTarget ErrorMsg
+    hi link EasyMotionShade  Comment
+  endif
 
 " emmet
   let g:user_emmet_leader_key = '!'
@@ -106,30 +108,10 @@
   let g:indentLine_faster = 1
 
 " NERDCommenter
-  nmap ; <Plug>NERDCommenterToggle
-  vmap ; <Plug>NERDCommenterToggle
-
-" NERDTree
-  "map <silent> <C-o> :Vexplore<CR>
-  "let g:netrw_banner = 0
-  "let g:netrw_liststyle = 3
-  "let g:netrw_browse_split = 4
-  "let g:netrw_altv = 1
-  "let g:netrw_winsize = 25
-  map <silent> <C-o> :NERDTreeToggle<CR>
-  let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-  let g:NERDTreeWinPos = "left"
-  let g:NERDTreeShowBookmarks = 1
-  let g:NERDTreeWinSize = 30
-  let g:NERDTreeChristmasTree = 0
-  let g:NERDTreeCaseSensitiveSort = 1
-  let g:NERDTreeQuitOnOpen = 1
-  let g:NERDTreeShowHidden = 1
-  let g:NERDTreeMouseMode = 2
-  let NERDTreeAutoDeleteBuffer=1
-  let g:NERDTreeIgnore=[
-        \'\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-        \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
+  if !has('nvim')
+    nmap gcc <Plug>NERDCommenterToggle
+    vmap gc <Plug>NERDCommenterToggle
+  endif
 
 " signify
   let g:signify_sign_overwrite         = 1

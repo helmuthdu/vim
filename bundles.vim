@@ -29,7 +29,6 @@ if count(g:bundle_groups, 'general')
     Plug 'mileszs/ack.vim'
   endif
   Plug 'Konfekt/FastFold'
-  Plug 'easymotion/vim-easymotion'
   Plug 'Stormherz/tablify'
   Plug 'chrisbra/vim-diff-enhanced'
   Plug 'editorconfig/editorconfig-vim'
@@ -38,7 +37,6 @@ if count(g:bundle_groups, 'general')
   Plug 'mbbill/undotree'
   Plug 'mhinz/vim-startify'
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'troydm/easybuffer.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'yuttie/comfortable-motion.vim'
@@ -46,9 +44,11 @@ if count(g:bundle_groups, 'general')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'ggandor/lightspeed.nvim'
   else
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tacahiroy/ctrlp-funky'
+    Plug 'easymotion/vim-easymotion'
   endif
 endif
 " DEVELOPER
@@ -56,13 +56,17 @@ if count(g:bundle_groups, 'devel')
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'osyo-manga/vim-over'
   Plug 'mattn/emmet-vim'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'Yggdroot/indentLine'
   Plug 'godlygeek/tabular'
   Plug 'airblade/vim-gitgutter'
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
   Plug 'dense-analysis/ale'
+  if has('nvim')
+    Plug 'numToStr/Comment.nvim'
+    Plug 'windwp/nvim-autopairs'
+  else
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'jiangmiao/auto-pairs'
+  endif
 endif
 " LANGUAGES
 if count(g:bundle_groups, 'languages')
@@ -76,3 +80,8 @@ if count(g:bundle_groups, 'colorscheme')
   Plug 'sjl/badwolf'
 endif
 call plug#end()
+
+
+if has('nvim')
+  lua require('Comment').setup()
+endif

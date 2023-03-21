@@ -69,6 +69,29 @@ endfun
 command! -nargs=0 Clipboard call Clipboard()
 nmap <silent>C :call Clipboard()<cr>
 
+function! ToggleNetrw()
+  if g:netrw_is_open
+    let i = bufnr("$")
+    while (i >= 1)
+      if (getbufvar(i, "&filetype") == "netrw")
+        silent exe "bwipeout " . i
+      endif
+      let i-=1
+    endwhile
+    let g:netrw_is_open=0
+  else
+    let g:netrw_is_open=1
+    silent Lexplore
+  endif
+endfunction
+let g:netrw_is_open=0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+noremap <silent> <C-o> :call ToggleNetrw()<CR>
+
 " Enable the auto-creation of missing folders in a save path
 if !exists('*s:MakeNewDir')
   function s:MakeNewDir(fullpath, buf)
