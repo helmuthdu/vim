@@ -8,7 +8,6 @@ set backspace=2                    " make backspace work normal
 set gdefault                       " regex /g by default
 set hid                            " you can change buffers without saving
 set nostartofline                  " don't jump to first character when paging
-set printoptions=paper:a4,syntax:n " controls the default paper size and the printing of syntax highlighting (:n -> none)
 set report=0                       " tell us when anything is changed via :...0
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
 set ttyfast                        " smoother changes
