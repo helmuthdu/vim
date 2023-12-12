@@ -10,20 +10,12 @@ set hid                            " you can change buffers without saving
 set nostartofline                  " don't jump to first character when paging
 set report=0                       " tell us when anything is changed via :...0
 set switchbuf=useopen              " reveal already opened files from the quickfix window instead of opening new buffers
-set ttyfast                        " smoother changes
 set viminfo='20,\"80               " read/write a .viminfo file, don't store more
 set virtualedit=onemore            " Allow for cursor beyond last character
 set shortmess+=c                   " Abbrev. of messages (avoids 'hit enter')
 set updatetime=300
 set cursorline
 set viewoptions=cursor,folds,slash,unix
-" vertical/horizontal scroll off settings
-if !&scrolloff
-  set scrolloff=7
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
 
 " No bell or flash wanted
 set novisualbell " No blinking
@@ -47,20 +39,17 @@ if has("mouse")
   set mouse=a
   set mousehide
   set mousemodel=popup
-  if !has('nvim')
-    set ttymouse=xterm2
-  endif
 endif
 
 " Editor Settings
-set cmdheight=1          " the command bar is 2 high
-set equalalways          " Close a split window in Vim without resizing other windows
+set cmdheight=1
+set equalalways
 set guitablabel=%t
-set laststatus=2         " always show statusline
-set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
-set linespace=0          " space it out a little more (easier to read)
-set number               " turn on line numbers
-set showmode             " If in Insert, Replace or Visual mode put a message on the last line.
+set laststatus=2
+set lazyredraw
+set linespace=0
+set number
+set showmode
 set ttimeout
 set ttimeoutlen=100
 set signcolumn=yes
@@ -89,7 +78,6 @@ set listchars=tab:▸\ ,eol:¬,trail:⋅
 if &t_Co > 2 || GUI()
   syntax enable
 endif
-" default colorscheme
 set background=dark
 if (has("termguicolors"))
  set termguicolors
