@@ -25,11 +25,6 @@ set vb t_vb=     " disable any beeps or flashes on error
 " Use the '*' register as well as the the '+' register if it's available too
 set clipboard=unnamed
 if has('unnamedplus')|set clipboard+=unnamedplus|endif
-
-" Configure to primarily use utf8
-if has("multi_byte")
-  if &termencoding == ""|let &termencoding = &encoding|endif
-endif
 set encoding=utf-8
 setglobal fileencoding=utf-8
 set fileformats=unix,dos,mac "set compatible line endings in order of preference
@@ -44,7 +39,6 @@ endif
 " Editor Settings
 set cmdheight=1
 set equalalways
-set guitablabel=%t
 set laststatus=2
 set lazyredraw
 set linespace=0
