@@ -372,8 +372,10 @@ function! plug#end()
 
   for [cmd, names] in items(lod.cmd)
     execute printf(
-    \ 'command! -nargs=* -range -bang -complete=file %s call s:lod_cmd(%s, "<bang>", <line1>, <line2>, <q-args>, %s)',
-    \ cmd, string(cmd), string(names))
+    \ has('patch-7.4.1898')
+    \ ? 'command! -nargs=* -range -bang -complete=file %s call s:lod_cmd(%s, "<bang>", <line1>, <line2>, <q-args>, <q-mods> ,%s)'
+    \ : 'command! -nargs=* -range -bang -complete=file %s call s:lod_cmd(%s, "<bang>", <line1>, <line2>, <q-args>, %s)'
+    \ , cmd, string(cmd), string(names))
   endfor
 
   for [map, names] in items(lod.map)
@@ -651,11 +653,19 @@ function! s:lod_ft(pat, names)
   call s:doautocmd('filetypeindent', 'FileType')
 endfunction
 
-function! s:lod_cmd(cmd, bang, l1, l2, args, names)
-  call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
-  call s:dobufread(a:names)
-  execute printf('%s%s%s %s', (a:l1 == a:l2 ? '' : (a:l1.','.a:l2)), a:cmd, a:bang, a:args)
-endfunction
+if has('patch-7.4.1898')
+  function! s:lod_cmd(cmd, bang, l1, l2, args, mods, names)
+    call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
+    call s:dobufread(a:names)
+    execute printf('%s %s%s%s %s', a:mods, (a:l1 == a:l2 ? '' : (a:l1.','.a:l2)), a:cmd, a:bang, a:args)
+  endfunction
+else
+  function! s:lod_cmd(cmd, bang, l1, l2, args, names)
+    call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
+    call s:dobufread(a:names)
+    execute printf('%s%s%s %s', (a:l1 == a:l2 ? '' : (a:l1.','.a:l2)), a:cmd, a:bang, a:args)
+  endfunction
+endif
 
 function! s:lod_map(map, names, with_prefix, prefix)
   call s:lod(a:names, ['ftdetect', 'after/ftdetect', 'plugin', 'after/plugin'])
@@ -1075,12 +1085,16 @@ function! s:hash_match(a, b)
   return stridx(a:a, a:b) == 0 || stridx(a:b, a:a) == 0
 endfunction
 
+function! s:disable_credential_helper()
+  return s:git_version_requirement(2) && get(g:, 'plug_disable_credential_helper', 1)
+endfunction
+
 function! s:checkout(spec)
   let sha = a:spec.commit
   let output = s:git_revision(a:spec.dir)
   let error = 0
   if !empty(output) && !s:hash_match(sha, s:lines(output)[0])
-    let credential_helper = s:git_version_requirement(2) ? '-c credential.helper= ' : ''
+    let credential_helper = s:disable_credential_helper() ? '-c credential.helper= ' : ''
     let output = s:system(
           \ 'git '.credential_helper.'fetch --depth 999999 && git checkout '.plug#shellescape(sha).' --', a:spec.dir)
     let error = v:shell_error
@@ -1589,7 +1603,7 @@ while 1 " Without TCO, Vim stack is bound to explode
     let [error, _] = s:git_validate(spec, 0)
     if empty(error)
       if pull
-        let cmd = s:git_version_requirement(2) ? ['git', '-c', 'credential.helper=', 'fetch'] : ['git', 'fetch']
+        let cmd = s:disable_credential_helper() ? ['git', '-c', 'credential.helper=', 'fetch'] : ['git', 'fetch']
         if has_tag && !empty(globpath(spec.dir, '.git/shallow'))
           call extend(cmd, ['--depth', '99999999'])
         endif
@@ -2369,7 +2383,9 @@ function! s:git_validate(spec, check_branch)
       let err = join(['Invalid URI: '.remote,
                     \ 'Expected:    '.a:spec.uri,
                     \ 'PlugClean required.'], "\n")
-    elseif a:check_branch && has_key(a:spec, 'commit')
+    elseif !a:check_branch
+      return ['', 0]
+    elseif has_key(a:spec, 'commit')
       let sha = s:git_revision(a:spec.dir)
       if empty(sha)
         let err = join(add(result, 'PlugClean required.'), "\n")
@@ -2378,18 +2394,16 @@ function! s:git_validate(spec, check_branch)
                               \ a:spec.commit[:6], sha[:6]),
                       \ 'PlugUpdate required.'], "\n")
       endif
+    elseif has_key(a:spec, 'tag')
+      let tag = s:system_chomp('git describe --exact-match --tags HEAD 2>&1', a:spec.dir)
+      if a:spec.tag !=# tag && a:spec.tag !~ '\*'
+        let err = printf('Invalid tag: %s (expected: %s). Try PlugUpdate.',
+              \ (empty(tag) ? 'N/A' : tag), a:spec.tag)
+      endif
     elseif a:check_branch
       let current_branch = result[0]
-      " Check tag
       let origin_branch = s:git_origin_branch(a:spec)
-      if has_key(a:spec, 'tag')
-        let tag = s:system_chomp('git describe --exact-match --tags HEAD 2>&1', a:spec.dir)
-        if a:spec.tag !=# tag && a:spec.tag !~ '\*'
-          let err = printf('Invalid tag: %s (expected: %s). Try PlugUpdate.',
-                \ (empty(tag) ? 'N/A' : tag), a:spec.tag)
-        endif
-      " Check branch
-      elseif origin_branch !=# current_branch
+      if origin_branch !=# current_branch
         let err = printf('Invalid branch: %s (expected: %s). Try PlugUpdate.',
               \ current_branch, origin_branch)
       endif
